@@ -59,9 +59,9 @@
     transform: scale(1.05) !important;
 }
 
-/* ITChamps Logo */
-/* .navbar-brand::before {
-    content: "";
+/* ITChamps Logo - Text Based (No Image Required) */
+.navbar-brand::before {
+    content: "IT" !important;
     width: 48px !important;
     height: 48px !important;
     background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
@@ -74,24 +74,16 @@
     font-size: 20px !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
     transition: all 0.3s ease !important;
-} */
+    /* Remove background-image properties */
+    /* background-image: none !important; */
+    /* background-size: none !important; */
+    /* background-repeat: none !important; */
+    /* background-position: none !important; */
+}
 
-/* .navbar-brand:hover::before {
+.navbar-brand:hover::before {
     transform: rotate(5deg) scale(1.1) !important;
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
-} */
-
-/* You can replace this with actual logo */
-.navbar-brand::before {
-    content: "" !important;
-    display: inline-block;
-    background-image: url('/assets/bus_theme/images/itchamps_logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    margin-right: 8px;
 }
 
 /* Brand text */
@@ -100,8 +92,27 @@
     font-weight: 800 !important;
     font-size: 24px !important;
     color: var(--primary-600) !important;
+    margin-left: 12px !important;
 }
 
+/* Alternative: If you want to use an actual logo image later */
+.navbar-brand.with-logo::before {
+    content: "" !important;
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+/* Remove the problematic custom logo class */
+.navbar-brand.custom-logo::before {
+    /* Remove or comment out the background-image line that's causing 404 */
+    /* background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') !important; */
+    content: "IT" !important;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
+}
 /* ===== CENTER: HORIZONTAL MODULE NAVIGATION ===== */
 .navbar-modules,
 .horizontal-modules {
