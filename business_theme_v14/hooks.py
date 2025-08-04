@@ -12,17 +12,16 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
-# Include CSS files
 app_include_css = [
     "/assets/business_theme_v14/css/business_theme_v14.css",
-    "/assets/business_theme_v14/css/glassmorphism_navbar.css"
+    "/assets/business_theme_v14/css/glassmorphism_navbar.css",
+    "/assets/business_theme_v14/css/professional_friendly_ui.css"  # Add this line
 ]
 
-# Include JS files
 app_include_js = [
-    "/assets/business_theme_v14/js/business_theme_v14.js"
+    "/assets/business_theme_v14/js/business_theme_v14.js",
+    "/assets/business_theme_v14/js/friendly_ui_interactions.js"    # Add this line
 ]
-
 # Include CSS and JS in specific doctypes
 # --------------------------------------
 
