@@ -12,17 +12,19 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
+# Include CSS files - ALL THREE FILES IN CORRECT ORDER
 app_include_css = [
     "/assets/business_theme_v14/css/business_theme_v14.css",
     "/assets/business_theme_v14/css/glassmorphism_navbar.css",
-    "/assets/business_theme_v14/css/professional_friendly_ui.css"  # Add this line
+    "/assets/business_theme_v14/css/professional_friendly_ui.css"  # THIS WAS MISSING!
 ]
 
-
+# Include JS files - BOTH FILES
 app_include_js = [
     "/assets/business_theme_v14/js/business_theme_v14.js",
-    "/assets/business_theme_v14/js/friendly_ui_interactions.js"    # Add this line
+    "/assets/business_theme_v14/js/friendly_ui_interactions.js"  # THIS WAS MISSING!
 ]
+
 # Include CSS and JS in specific doctypes
 # --------------------------------------
 
@@ -72,7 +74,7 @@ website_route_rules = [
 # Translations will be found at path below
 # if not translated the doc will be in English
 # e.g. in erpnext.po
-# Translation for ERPNext will be at erpnext/erpnext.po
+# Translation for ERPNext will be found at erpnext/erpnext.po
 # language_pack = ["es", "fr", "de", "pt", "ru", "ar", "hi", "zh", "ja"]
 
 # Generators
