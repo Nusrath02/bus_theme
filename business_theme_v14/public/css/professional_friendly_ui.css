@@ -743,7 +743,7 @@ body,
 	font-weight: 500 !important;
 }
 
-/* Search Icon */
+/* Search Icon 
 .search-bar::before,
 .global-search::before {
 	content: "🔍";
@@ -754,7 +754,7 @@ body,
 	font-size: 18px;
 	z-index: 1;
 }
-
+*/
 /* ===== TABLES AS CARD GRIDS ===== */
 .table,
 .datatable {
