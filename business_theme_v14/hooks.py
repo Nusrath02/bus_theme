@@ -18,6 +18,7 @@ app_include_css = [
     "/assets/business_theme_v14/css/professional_friendly_ui.css"  # Add this line
 ]
 
+
 app_include_js = [
     "/assets/business_theme_v14/js/business_theme_v14.js",
     "/assets/business_theme_v14/js/friendly_ui_interactions.js"    # Add this line
