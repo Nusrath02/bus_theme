@@ -83,7 +83,15 @@
 
 /* You can replace this with actual logo */
 .navbar-brand::before {
-    content: "IT" !important; /* Replace with your logo */
+    content: "" !important;
+    display: inline-block;
+    background-image: url('/assets/bus_theme/images/itchamps_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 /* Brand text */
