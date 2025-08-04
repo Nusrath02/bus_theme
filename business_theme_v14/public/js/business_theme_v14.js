@@ -1,109 +1,37 @@
-// Simple Theme JavaScript - Just add icons and basic enhancements
-$(document).ready(function() {
-    console.log('Sky Blue Theme Loaded');
+// Business Theme V14 with Glassmorphism UI - JavaScript Enhancements
+// Modern interactive features for the glass navbar and UI elements
+
+frappe.ready(function() {
+    console.log("Business Theme V14 with Glassmorphism UI loaded successfully");
     
-    // Add simple icons to sidebar
-    addSidebarIcons();
-    
-    // Add hover effects
-    addHoverEffects();
+    // Initialize theme features
+    initializeGlassmorphismEffects();
+    initializeNavbarInteractions();
+    initializeResponsiveFeatures();
+    initializeAccessibilityFeatures();
 });
 
-function addSidebarIcons() {
-    // Simple icon mapping
-    const icons = {
-        'home': '🏠',
-        'dashboard': '📊',
-        'accounts': '💰',
-        'selling': '🛒',
-        'buying': '🛍️',
-        'stock': '📦',
-        'manufacturing': '🏭',
-        'hr': '👥',
-        'payroll': '💵',
-        'projects': '📋',
-        'crm': '🤝',
-        'support': '🎧',
-        'assets': '🏢',
-        'website': '🌐',
-        'setup': '⚙️',
-        'settings': '🔧',
-        'reports': '📈',
-        'tools': '🛠️'
-    };
-    
-    // Add icons to sidebar labels
-    $('.sidebar-label').each(function() {
-        const $label = $(this);
-        const text = $label.text().toLowerCase().trim();
+// Glassmorphism Effects Initialization
+function initializeGlassmorphismEffects() {
+    // Add glassmorphism class to navbar elements
+    $(document).ready(function() {
+        // Enhance navbar with glass effects
+        $('.navbar, .sticky-top, .desk-nav').addClass('glass-navbar');
         
-        // Find matching icon
-        let icon = '📁'; // default folder icon
-        Object.keys(icons).forEach(key => {
-            if (text.includes(key)) {
-                icon = icons[key];
-            }
-        });
+        // Add glass effect to search elements
+        $('.search-bar input, #navbar-search, .nav-search').addClass('glass-search');
         
-        // Add icon if not already present
-        if (!$label.find('.menu-icon').length) {
-            $label.prepend(`<span class="menu-icon" style="margin-right: 8px; font-size: 16px;">${icon}</span>`);
-        }
+        // Enhance dropdowns
+        $('.dropdown-menu').addClass('glass-dropdown');
+        
+        // Add glass effect to page headers
+        $('.page-head, .page-header').addClass('glass-page-head');
+        
+        console.log("Glassmorphism effects initialized");
     });
 }
 
-function addHoverEffects() {
-    // Add smooth hover effects to buttons
-    $('.btn').hover(
-        function() {
-            $(this).css('transform', 'translateY(-1px)');
-        },
-        function() {
-            $(this).css('transform', 'translateY(0)');
-        }
-    );
-    
-    // Add hover effects to cards
-    $('.widget, .card').hover(
-        function() {
-            $(this).css({
-                'transform': 'translateY(-3px)',
-                'box-shadow': '0 6px 25px rgba(30, 144, 255, 0.15)'
-            });
-        },
-        function() {
-            $(this).css({
-                'transform': 'translateY(0)',
-                'box-shadow': '0 2px 15px rgba(30, 144, 255, 0.1)'
-            });
-        }
-    );
-}
-
-// Add custom CSS for smooth transitions
-const customCSS = `
-<style>
-.btn {
-    transition: all 0.3s ease !important;
-}
-
-.widget, .card {
-    transition: all 0.3s ease !important;
-}
-
-.sidebar-label {
-    transition: all 0.3s ease !important;
-}
-
-.menu-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.sidebar-label:hover .menu-icon {
-    transform: scale(1.2);
-}
-</style>
-`;
-
-$('head').append(customCSS);
+// Navbar Interaction Enhancements
+function initializeNavbarInteractions() {
+    // Smooth scroll behavior for navbar links
+    $('.navbar-nav .nav-link').on
