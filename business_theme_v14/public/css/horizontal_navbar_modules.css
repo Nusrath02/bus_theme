@@ -60,7 +60,7 @@
 }
 
 /* ITChamps Logo */
-.navbar-brand::before {
+/* .navbar-brand::before {
     content: "";
     width: 48px !important;
     height: 48px !important;
@@ -74,12 +74,12 @@
     font-size: 20px !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
     transition: all 0.3s ease !important;
-}
+} */
 
-.navbar-brand:hover::before {
+/* .navbar-brand:hover::before {
     transform: rotate(5deg) scale(1.1) !important;
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
-}
+} */
 
 /* You can replace this with actual logo */
 .navbar-brand::before {
