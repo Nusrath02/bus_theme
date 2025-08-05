@@ -59,26 +59,21 @@
     transform: scale(1.05) !important;
 }
 
-/* ITChamps Logo - Text Based (No Image Required) */
+/* ITChamps Logo - Using actual image */
 .navbar-brand::before {
-    content: "IT" !important;
+    content: "" !important;
     width: 48px !important;
     height: 48px !important;
-    background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: white !important;
-    font-weight: bold !important;
-    font-size: 20px !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
     transition: all 0.3s ease !important;
-    /* Remove background-image properties */
-    /* background-image: none !important; */
-    /* background-size: none !important; */
-    /* background-repeat: none !important; */
-    /* background-position: none !important; */
 }
 
 .navbar-brand:hover::before {
@@ -95,16 +90,6 @@
     margin-left: 12px !important;
 }
 
-/* Alternative: If you want to use an actual logo image later */
-.navbar-brand.with-logo::before {
-    content: "" !important;
-    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    width: 48px !important;
-    height: 48px !important;
-}
 
 /* Remove the problematic custom logo class */
 .navbar-brand.custom-logo::before {
@@ -546,7 +531,7 @@
 /* ===== BRAND CUSTOMIZATION ===== */
 /* You can customize your logo here */
 .navbar-brand.custom-logo::before {
-    background-image: url('/assets/business_theme_v14/images/itchamps-logo.png') !important;
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;

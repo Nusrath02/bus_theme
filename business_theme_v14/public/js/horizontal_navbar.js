@@ -29,8 +29,8 @@ console.log("🚀 Horizontal Navbar Script Loading...");
         navbar.innerHTML = `
             <div class="navbar-expand">
                 <!-- Left: ITChamps Logo + Brand -->
-                <div class="navbar-brand">
-                    <!-- Logo and brand will be styled via CSS -->
+                <div class="navbar-brand custom-logo">
+                    <!-- Logo will be displayed via CSS background-image -->
                 </div>
                 
                 <!-- Center: Module Links -->

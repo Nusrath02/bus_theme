@@ -58,6 +58,15 @@
 	color: var(--text-primary);
 	text-decoration: none;
 	margin-right: var(--space-8);
+	background-image: url('/assets/business_theme_v14/images/itchamps_logo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left center;
+	width: 180px;
+	height: 60px;
+	padding-left: 10px;
+	display: flex;
+	align-items: center;
 }
 
 .navbar-nav {
