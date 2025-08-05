@@ -20,7 +20,7 @@ body {
 }
 
 /* Top Navigation Bar - Dark Blue */
-.navbar {
+/* .navbar {
 	background: var(--bg-elevated) !important;
 	border-bottom: 1px solid var(--border-base);
 	box-shadow: var(--shadow-sm);
@@ -146,7 +146,7 @@ body {
 .search-bar input::placeholder,
 #navbar-search::placeholder {
 	color: var(--text-placeholder);
-}
+} */
 
 
 /* ===== GLASSMORPHISM SEARCH BAR ===== */
