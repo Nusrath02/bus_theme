@@ -83,7 +83,7 @@
 
 /* Brand text */
 .navbar-brand::after {
-    content: "ITChamps" !important;
+/*     content: "ITChamps" !important; */
     font-weight: 800 !important;
     font-size: 24px !important;
     color: var(--primary-600) !important;
