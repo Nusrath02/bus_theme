@@ -421,3 +421,39 @@ img[alt*="Frappe"] {
     height: 48px;
     display: inline-block;
 }
+
+/* Import Modern Accounting Theme */
+@import url('./modern_accounting_theme.css');
+
+/* Additional Modern Enhancements */
+/* Welcome Section for Accounting Page */
+.setup-wizard-slide, .onboarding-step {
+    text-align: center !important;
+    padding: 60px 20px !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.setup-wizard-slide .setup-wizard-slide-title,
+.onboarding-step h3 {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    color: #2c3e50 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Icon for setup sections */
+.setup-wizard-slide-icon::before,
+.onboarding-step .icon::before {
+    content: '📊';
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 32px;
+    color: white;
+}
