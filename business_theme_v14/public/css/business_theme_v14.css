@@ -80,7 +80,7 @@ body {
 }
 
 /* Modern Breadcrumbs */
-.breadcrumb,
+/* .breadcrumb,
 #navbar-breadcrumbs {
 	display: flex;
 	align-items: center;
@@ -146,7 +146,7 @@ body {
 .search-bar input::placeholder,
 #navbar-search::placeholder {
 	color: var(--text-placeholder);
-} */
+} */ */
 
 
 /* ===== GLASSMORPHISM SEARCH BAR ===== */
