@@ -392,3 +392,32 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #1e90ff;
 }
+
+/* ===== HIDE ERPNEXT BRANDING ===== */
+
+/* Hide ERPNext logos */
+.navbar-brand img[src*="erpnext"],
+.app-logo img[src*="erpnext"],
+img[alt*="ERPNext"],
+.navbar-brand img[src*="frappe"],
+img[alt*="Frappe"] {
+    display: none !important;
+}
+
+/* Hide any ERPNext branding text */
+.navbar-brand span:contains("ERPNext"),
+.app-title:contains("ERPNext") {
+    display: none !important;
+}
+
+/* Ensure your ITChamps logo is visible */
+.navbar-brand::before {
+    content: "";
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
