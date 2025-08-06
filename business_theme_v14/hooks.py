@@ -19,7 +19,7 @@ app_include_css = [
     "/assets/business_theme_v14/css/horizontal_navbar_modules.css",   # Horizontal module navbar
     "/assets/business_theme_v14/css/professional_friendly_ui.css",    # Card-based UI
     "/assets/business_theme_v14/css/modern_accounting_theme.css",     # Modern accounting theme
-    "/assets/business_theme_v14/css/glassmorphism_components.css"     # Glassmorphism UI components
+  
 ]
 
 # Include JS files - ALL JAVASCRIPT FILES
@@ -28,7 +28,7 @@ app_include_js = [
     "/assets/business_theme_v14/js/horizontal_navbar.js",             # Horizontal navbar logic
     "/assets/business_theme_v14/js/friendly_ui_interactions.js",      # Enhanced interactions
     "/assets/business_theme_v14/js/modern_accounting_interactions.js", # Modern accounting interactions
-    "/assets/business_theme_v14/js/glassmorphism_components.js"       # Glassmorphism auto-application
+   
 ]
 
 # Include CSS and JS in specific doctypes
