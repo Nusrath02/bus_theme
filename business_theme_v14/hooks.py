@@ -10,12 +10,12 @@ app_license = "MIT"
 # Include CSS and JS files
 app_include_css = [
     "/assets/business_theme_v14/css/business_theme_v14.css",
-    "/assets/business_theme_v14/css/itchamps_dashboard.css"
+    # "/assets/business_theme_v14/css/itchamps_dashboard.css"
 ]
 
 app_include_js = [
     "/assets/business_theme_v14/js/business_theme_v14.js",
-    "/assets/business_theme_v14/js/itchamps_dashboard.js"
+    # "/assets/business_theme_v14/js/itchamps_dashboard.js"
 ]
 
 # Website settings
@@ -30,10 +30,10 @@ website_route_rules = [
 ]
 
 # Set dashboard as home page
-home_page = "dashboard"
+# home_page = "dashboard"
 
 # Override home page for logged-in users
-override_home_page = "business_theme_v14.templates.pages.dashboard"
+# override_home_page = "business_theme_v14.templates.pages.dashboard"
 
 # Boot session to pass custom data
 boot_session = "business_theme_v14.boot.get_bootinfo"
