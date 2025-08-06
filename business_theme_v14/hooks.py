@@ -21,13 +21,13 @@ app_include_js = [
 # Website settings
 website_context = {
     "favicon": "/assets/business_theme_v14/images/itchamps_logo.png",
-    "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
+    # "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
 }
 
 # Add custom routes
-website_route_rules = [
-    {"from_route": "/dashboard", "to_route": "dashboard"},
-]
+# website_route_rules = [
+#     {"from_route": "/dashboard", "to_route": "dashboard"},
+# ]
 
 # Set dashboard as home page
 # home_page = "dashboard"
@@ -36,7 +36,7 @@ website_route_rules = [
 # override_home_page = "business_theme_v14.templates.pages.dashboard"
 
 # Boot session to pass custom data
-boot_session = "business_theme_v14.boot.get_bootinfo"
+# boot_session = "business_theme_v14.boot.get_bootinfo"
 
 # Website theme
-website_theme = "business_theme_v14"
+# website_theme = "business_theme_v14"
