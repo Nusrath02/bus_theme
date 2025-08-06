@@ -101,7 +101,7 @@
 }
 
 /* Modern Breadcrumbs */
-.breadcrumb,
+/* .breadcrumb,
 #navbar-breadcrumbs {
 	display: flex;
 	align-items: center;
@@ -139,7 +139,7 @@
 #navbar-breadcrumbs a:hover {
 	background: var(--primary-50);
 	color: var(--primary-600);
-}
+} */
 
 /* Professional Search Bar */
 .search-bar input,
