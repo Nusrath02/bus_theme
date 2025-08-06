@@ -16,7 +16,7 @@ app_license = "MIT"
 app_include_css = [
     "/assets/business_theme_v14/css/business_theme_v14.css",           # Base sky blue theme
     "/assets/business_theme_v14/css/glassmorphism_navbar.css",        # Glass effects  
-    "/assets/business_theme_v14/css/horizontal_navbar_modules.css",   # Horizontal module navbar
+    # "/assets/business_theme_v14/css/horizontal_navbar_modules.css",   # Horizontal module navbar
     # "/assets/business_theme_v14/css/professional_friendly_ui.css",    # Card-based UI
     # "/assets/business_theme_v14/css/modern_accounting_theme.css",     # Modern accounting theme
   
@@ -25,7 +25,7 @@ app_include_css = [
 # Include JS files - ALL JAVASCRIPT FILES
 app_include_js = [
     "/assets/business_theme_v14/js/business_theme_v14.js",            # Base functionality
-    "/assets/business_theme_v14/js/horizontal_navbar.js",             # Horizontal navbar logic
+    # "/assets/business_theme_v14/js/horizontal_navbar.js",             # Horizontal navbar logic
     # "/assets/business_theme_v14/js/friendly_ui_interactions.js",      # Enhanced interactions
     # "/assets/business_theme_v14/js/modern_accounting_interactions.js", # Modern accounting interactions
    
