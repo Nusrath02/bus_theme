@@ -11,4 +11,3 @@ app_include_css = [
 app_include_js = [
     "/assets/business_theme_v14/horizontal_navbar.js"
 ]
-EOF < /dev/null
