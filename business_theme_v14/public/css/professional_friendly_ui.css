@@ -69,7 +69,7 @@
 	--radius-lg: 16px;
 	--radius-xl: 20px;
 	--radius-2xl: 24px;
-	--radius-full: 9999px;
+	--radius-full: 8px;
 	
 	/* Shadows for Cards */
 	--shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
