@@ -76,7 +76,7 @@
 	margin-left: auto;
 }
 
-/* .navbar-nav .nav-link {
+.navbar-nav .nav-link {
 	color: var(--text-secondary) !important;
 	font-weight: var(--font-medium);
 	font-size: var(--text-sm);
@@ -98,10 +98,10 @@
 	background: var(--primary-100);
 	color: var(--primary-600) !important;
 	font-weight: var(--font-semibold);
-} */
+}
 
 /* Modern Breadcrumbs */
-.breadcrumb,
+/* .breadcrumb,
 #navbar-breadcrumbs {
 	display: flex;
 	align-items: center;
@@ -139,7 +139,7 @@
 #navbar-breadcrumbs a:hover {
 	background: var(--primary-50);
 	color: var(--primary-600);
-}
+} */
 
 /* Professional Search Bar */
 .search-bar input,
