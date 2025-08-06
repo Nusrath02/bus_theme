@@ -1,0 +1,165 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block head_include %}
+<link rel="stylesheet" href="/assets/business_theme_v14/css/itchamps_dashboard.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="itchamps-dashboard">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1 class="welcome-title">Welcome to ITChamps</h1>
+        <p class="welcome-subtitle">Hello, {{ user_fullname or "User" }}!</p>
+        <p class="welcome-description">Your Complete HR Management Solution - Streamline your human resources, payroll, and employee management with our comprehensive ERP system.</p>
+    </div>
+
+    <!-- HR Highlights -->
+    <div class="hr-highlights">
+        <div class="hr-highlight-card">
+            <div class="hr-highlight-number">{{ total_employees or 0 }}</div>
+            <div class="hr-highlight-label">Active Employees</div>
+        </div>
+        <div class="hr-highlight-card">
+            <div class="hr-highlight-number">{{ total_departments or 0 }}</div>
+            <div class="hr-highlight-label">Departments</div>
+        </div>
+        <div class="hr-highlight-card">
+            <div class="hr-highlight-number">{{ total_projects or 0 }}</div>
+            <div class="hr-highlight-label">Active Projects</div>
+        </div>
+        <div class="hr-highlight-card">
+            <div class="hr-highlight-number">98%</div>
+            <div class="hr-highlight-label">System Uptime</div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <div class="action-buttons">
+            <a href="/app/employee/new" class="action-btn">
+                <i class="fas fa-user-plus"></i>
+                Add Employee
+            </a>
+            <a href="/app/attendance" class="action-btn">
+                <i class="fas fa-calendar-check"></i>
+                View Attendance
+            </a>
+            <a href="/app/salary-slip" class="action-btn">
+                <i class="fas fa-file-invoice-dollar"></i>
+                Payroll
+            </a>
+            <a href="/app/leave-application/new" class="action-btn">
+                <i class="fas fa-calendar-alt"></i>
+                Apply Leave
+            </a>
+        </div>
+    </div>
+
+    <!-- Module Cards Grid -->
+    <div class="modules-grid">
+        <div class="module-card" data-module="hr" onclick="navigateToModule('hr')">
+            <div class="module-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="module-title">Human Resources</div>
+            <div class="module-description">Employee management, recruitment, performance tracking</div>
+            <div class="module-stats">
+                <span class="module-count">{{ total_employees or 0 }} Employees</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="payroll" onclick="navigateToModule('payroll')">
+            <div class="module-icon">
+                <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="module-title">Payroll</div>
+            <div class="module-description">Salary processing, tax calculations, payment management</div>
+            <div class="module-stats">
+                <span class="module-count">Monthly Processing</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="recruitment" onclick="navigateToModule('recruitment')">
+            <div class="module-icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <div class="module-title">Recruitment</div>
+            <div class="module-description">Job postings, candidate tracking, interview scheduling</div>
+            <div class="module-stats">
+                <span class="module-count">Open Positions</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="attendance" onclick="navigateToModule('attendance')">
+            <div class="module-icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="module-title">Attendance</div>
+            <div class="module-description">Time tracking, shift management, attendance reports</div>
+            <div class="module-stats">
+                <span class="module-count">Daily Tracking</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="leaves" onclick="navigateToModule('leaves')">
+            <div class="module-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="module-title">Leave Management</div>
+            <div class="module-description">Leave applications, approvals, balance tracking</div>
+            <div class="module-stats">
+                <span class="module-count">Manage Leaves</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="expenses" onclick="navigateToModule('expenses')">
+            <div class="module-icon">
+                <i class="fas fa-receipt"></i>
+            </div>
+            <div class="module-title">Expense Claims</div>
+            <div class="module-description">Employee expense submissions and reimbursements</div>
+            <div class="module-stats">
+                <span class="module-count">Track Expenses</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="accounting" onclick="navigateToModule('accounting')">
+            <div class="module-icon">
+                <i class="fas fa-calculator"></i>
+            </div>
+            <div class="module-title">Accounting</div>
+            <div class="module-description">Financial management, budgets, reporting</div>
+            <div class="module-stats">
+                <span class="module-count">Financial Overview</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <div class="module-card" data-module="projects" onclick="navigateToModule('projects')">
+            <div class="module-icon">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="module-title">Projects</div>
+            <div class="module-description">Project management, tasks, time tracking</div>
+            <div class="module-stats">
+                <span class="module-count">{{ total_projects or 0 }} Projects</span>
+                <i class="fas fa-arrow-right module-arrow"></i>
+            </div>
+        </div>
+
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+
+<script src="/assets/business_theme_v14/js/itchamps_dashboard.js"></script>
+{% endblock %}
