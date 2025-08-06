@@ -162,7 +162,7 @@
     .navbar,
     .sticky-top,
     .desk-nav,
-    .breadcrumb,
+    // .breadcrumb,
     .search-bar input {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
