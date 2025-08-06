@@ -30,6 +30,39 @@
 
 /* ===== GLASSMORPHISM NAVBAR ===== */
 
+/* ITChamps Logo - Single Implementation */
+.navbar-brand {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    padding: 8px 15px;
+}
+
+/* Hide all existing logos */
+.navbar-brand img,
+.navbar-brand svg {
+    display: none !important;
+}
+
+/* Show only ONE ITChamps logo via CSS */
+.navbar-brand.custom-logo::before {
+    content: "";
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Hover effects */
+.navbar-brand.custom-logo:hover::before {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
 /* ===== HEADER AND NAVIGATION ===== */
 
 .navbar {
