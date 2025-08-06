@@ -512,24 +512,24 @@ EOF < /dev/null
 EOF < /dev/null
 
 /* Hide Breadcrumb Navigation */
-.breadcrumb,
+/* .breadcrumb,
 #navbar-breadcrumbs,
 .navbar-breadcrumbs,
 .page-breadcrumbs,
 .breadcrumb-container,
 .nav-breadcrumbs {
     display: none \!important;
-}
+} */
 
 /* Hide any breadcrumb in page header */
-.page-head .breadcrumb,
+/* .page-head .breadcrumb,
 .page-header .breadcrumb {
     display: none \!important;
-}
+} */
 
 /* Hide breadcrumb wrapper containers */
-.breadcrumb-wrapper,
+/* .breadcrumb-wrapper,
 .breadcrumb-section {
     display: none \!important;
 }
-EOF < /dev/null
+EOF < /dev/null */
