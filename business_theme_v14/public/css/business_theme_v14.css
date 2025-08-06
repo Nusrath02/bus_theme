@@ -411,13 +411,31 @@ img[alt*="Frappe"] {
 }
 
 /* Ensure your ITChamps logo is visible */
-.navbar-brand::before {
-    content: "";
-    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 48px;
-    height: 48px;
-    display: inline-block;
+/* Single Logo Implementation - Remove Duplicates */
+.navbar-brand img,
+.navbar-brand svg,
+.navbar-brand::before,
+.navbar-brand::after {
+    display: none \!important;
 }
+
+/* Show ONLY the custom logo */
+.navbar-brand.custom-logo::before {
+    content: "";
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') \!important;
+    background-size: contain \!important;
+    background-repeat: no-repeat \!important;
+    background-position: center \!important;
+    width: 48px \!important;
+    height: 48px \!important;
+    display: inline-block \!important;
+    margin-right: 10px \!important;
+}
+
+/* Ensure only one logo container */
+.navbar-brand.custom-logo {
+    display: flex \!important;
+    align-items: center \!important;
+    padding: 8px 15px \!important;
+}
+EOF < /dev/null
