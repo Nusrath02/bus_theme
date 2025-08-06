@@ -439,3 +439,20 @@ img[alt*="Frappe"] {
     padding: 8px 15px \!important;
 }
 EOF < /dev/null
+
+/* Import Search Dropdown Square Styling */
+@import url('./search_dropdown_fix.css');
+
+/* Additional search styling overrides */
+.navbar-nav .dropdown-menu,
+.search-results-container {
+    border-radius: 8px \!important;
+    border: 1px solid #e9ecef \!important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) \!important;
+}
+
+/* Ensure search bar maintains square appearance */
+.navbar .form-control {
+    border-radius: 8px \!important;
+}
+EOF < /dev/null

@@ -1,0 +1,104 @@
+/* Search Dropdown - Square Shape Styling */
+
+/* Main search dropdown container */
+.search-dropdown,
+.awesomplete,
+.search-results,
+.global-search .dropdown-menu {
+    border-radius: 8px \!important; /* Square corners instead of circular */
+    background: white \!important;
+    border: 1px solid #e9ecef \!important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) \!important;
+    min-width: 300px \!important;
+    max-width: 500px \!important;
+}
+
+/* Search dropdown items */
+.search-dropdown .dropdown-item,
+.awesomplete li,
+.search-results .search-result-item {
+    padding: 12px 16px \!important;
+    border-radius: 4px \!important; /* Slightly rounded corners for items */
+    margin: 2px 4px \!important;
+    transition: all 0.2s ease \!important;
+    color: #2c3e50 \!important;
+    font-size: 14px \!important;
+}
+
+/* Hover effects for dropdown items */
+.search-dropdown .dropdown-item:hover,
+.awesomplete li:hover,
+.search-results .search-result-item:hover,
+.awesomplete li[aria-selected="true"] {
+    background-color: #f8f9fa \!important;
+    color: #4facfe \!important;
+    transform: none \!important; /* Remove any circular transform */
+}
+
+/* Search input field styling */
+.navbar .search-bar input,
+.global-search input,
+.search-field {
+    border-radius: 8px \!important; /* Square corners */
+    border: 2px solid #e9ecef \!important;
+    padding: 12px 20px 12px 45px \!important;
+    font-size: 14px \!important;
+    transition: all 0.3s ease \!important;
+}
+
+.navbar .search-bar input:focus,
+.global-search input:focus,
+.search-field:focus {
+    border-color: #4facfe \!important;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1) \!important;
+    border-radius: 8px \!important; /* Keep square on focus */
+}
+
+/* Remove any circular styling */
+.search-dropdown,
+.awesomplete,
+.search-results {
+    border-radius: 8px \!important;
+    -webkit-border-radius: 8px \!important;
+    -moz-border-radius: 8px \!important;
+}
+
+/* Workspace/Category headers in dropdown */
+.search-dropdown .dropdown-header,
+.search-category-header {
+    background-color: #4facfe \!important;
+    color: white \!important;
+    font-weight: 600 \!important;
+    padding: 10px 16px \!important;
+    margin: 0 \!important;
+    border-radius: 6px 6px 0 0 \!important;
+    font-size: 13px \!important;
+}
+
+/* Specific styling for workspace items */
+.workspace-item,
+.search-workspace-item {
+    color: #ff6b35 \!important; /* Orange color like in your image */
+    font-weight: 500 \!important;
+}
+
+/* Help/Communication items */
+.search-help-item,
+.communication-item {
+    color: #ff6b35 \!important;
+}
+
+/* Remove any rounded/circular effects */
+* {
+    border-radius: inherit \!important;
+}
+
+/* Ensure square corners for all search-related elements */
+.search-dropdown *,
+.awesomplete *,
+.global-search * {
+    border-radius: 4px \!important;
+    -webkit-border-radius: 4px \!important;
+    -moz-border-radius: 4px \!important;
+}
+EOF < /dev/null
