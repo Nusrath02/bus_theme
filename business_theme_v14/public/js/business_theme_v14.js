@@ -162,7 +162,7 @@
     .navbar,
     .sticky-top,
     .desk-nav,
-    .breadcrumb,
+    // .breadcrumb,
     .search-bar input {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -590,62 +590,62 @@ body {
 }
 
 /* ===== GLASSMORPHISM BREADCRUMBS ===== */
-.breadcrumb,
-#navbar-breadcrumbs {
-    background: var(--glass-bg) !important;
-    backdrop-filter: var(--blur-light) !important;
-    -webkit-backdrop-filter: var(--blur-light) !important;
-    border: 1px solid var(--glass-border) !important;
-    border-radius: var(--radius-lg) !important;
-    box-shadow: var(--shadow-sm) !important;
-    padding: var(--space-3) var(--space-4) !important;
-    margin: var(--space-2) 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: var(--space-2) !important;
-    font-size: var(--text-sm) !important;
-    list-style: none !important;
-    transition: var(--glass-transition) !important;
-}
+// .breadcrumb,
+// #navbar-breadcrumbs {
+//     background: var(--glass-bg) !important;
+//     backdrop-filter: var(--blur-light) !important;
+//     -webkit-backdrop-filter: var(--blur-light) !important;
+//     border: 1px solid var(--glass-border) !important;
+//     border-radius: var(--radius-lg) !important;
+//     box-shadow: var(--shadow-sm) !important;
+//     padding: var(--space-3) var(--space-4) !important;
+//     margin: var(--space-2) 0 !important;
+//     display: flex !important;
+//     align-items: center !important;
+//     gap: var(--space-2) !important;
+//     font-size: var(--text-sm) !important;
+//     list-style: none !important;
+//     transition: var(--glass-transition) !important;
+// }
 
-.breadcrumb:hover,
-#navbar-breadcrumbs:hover {
-    background: var(--glass-bg-hover) !important;
-    backdrop-filter: var(--blur-strong) !important;
-    -webkit-backdrop-filter: var(--blur-strong) !important;
-    box-shadow: var(--shadow-md) !important;
-}
+// .breadcrumb:hover,
+// #navbar-breadcrumbs:hover {
+//     background: var(--glass-bg-hover) !important;
+//     backdrop-filter: var(--blur-strong) !important;
+//     -webkit-backdrop-filter: var(--blur-strong) !important;
+//     box-shadow: var(--shadow-md) !important;
+// }
 
-.breadcrumb-item,
-#navbar-breadcrumbs li {
-    display: flex !important;
-    align-items: center !important;
-}
+// .breadcrumb-item,
+// #navbar-breadcrumbs li {
+//     display: flex !important;
+//     align-items: center !important;
+// }
 
-.breadcrumb-item:not(:first-child)::before,
-#navbar-breadcrumbs li:not(:first-child)::before {
-    content: "/" !important;
-    color: var(--text-muted) !important;
-    margin: 0 var(--space-2) !important;
-}
+// .breadcrumb-item:not(:first-child)::before,
+// #navbar-breadcrumbs li:not(:first-child)::before {
+//     content: "/" !important;
+//     color: var(--text-muted) !important;
+//     margin: 0 var(--space-2) !important;
+// }
 
-.breadcrumb-item a,
-#navbar-breadcrumbs a {
-    color: var(--text-primary) !important;
-    text-decoration: none !important;
-    padding: var(--space-1) var(--space-2) !important;
-    border-radius: var(--radius-sm) !important;
-    transition: var(--glass-transition) !important;
-    font-weight: var(--font-medium) !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-}
+// .breadcrumb-item a,
+// #navbar-breadcrumbs a {
+//     color: var(--text-primary) !important;
+//     text-decoration: none !important;
+//     padding: var(--space-1) var(--space-2) !important;
+//     border-radius: var(--radius-sm) !important;
+//     transition: var(--glass-transition) !important;
+//     font-weight: var(--font-medium) !important;
+//     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+// }
 
-.breadcrumb-item a:hover,
-#navbar-breadcrumbs a:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    color: var(--primary-600) !important;
-    transform: scale(1.02) !important;
-}
+// .breadcrumb-item a:hover,
+// #navbar-breadcrumbs a:hover {
+//     background: rgba(255, 255, 255, 0.15) !important;
+//     color: var(--primary-600) !important;
+//     transform: scale(1.02) !important;
+// }
 
 /* ===== SIDEBAR - BLUE GRADIENT ===== */
 .layout-side-section {
