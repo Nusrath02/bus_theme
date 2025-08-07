@@ -91,7 +91,7 @@ body::before {
 }
 
 /* ===== ULTRA-MODERN NAVBAR ===== */
-.navbar,
+/* .navbar,
 .sticky-top,
 .desk-nav {
     background: var(--glass-primary) !important;
@@ -115,10 +115,10 @@ body::before {
     -webkit-backdrop-filter: var(--blur-ultra) !important;
     box-shadow: var(--shadow-glass-hover) !important;
     transform: translateY(-1px) !important;
-}
+} */
 
 /* Navbar Container */
-.navbar-expand {
+/* .navbar-expand {
     padding: 0 2rem !important;
     height: 100% !important;
     display: flex !important;
@@ -149,7 +149,7 @@ body::before {
     transform: scale(1.05) translateY(-2px) !important;
     box-shadow: var(--shadow-glow) !important;
     border-color: var(--glass-border-strong) !important;
-}
+} */
 
 /* Logo Icon */
 .navbar-brand::before {
