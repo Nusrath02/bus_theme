@@ -1159,3 +1159,88 @@ ul.navbar-nav,
     color: var(--primary-600) \!important;
 }
 EOF < /dev/null
+
+/* ITChamps Logo Implementation */
+.navbar-brand {
+    background-image: url('/assets/business_theme_v14/images/itchamps_logo.png') \!important;
+    background-size: contain \!important;
+    background-repeat: no-repeat \!important;
+    background-position: left center \!important;
+    width: 180px \!important;
+    height: 60px \!important;
+    padding-left: 10px \!important;
+    display: flex \!important;
+    align-items: center \!important;
+    font-weight: var(--font-bold) \!important;
+    font-size: var(--text-xl) \!important;
+    color: var(--text-primary) \!important;
+    text-decoration: none \!important;
+    margin-right: var(--space-8) \!important;
+}
+
+/* Hide any existing logos */
+.navbar-brand img,
+.navbar-brand svg {
+    display: none \!important;
+}
+EOF < /dev/null
+
+/* Glassmorphism Variables */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-bg-hover: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+    --blur-light: blur(20px);
+    --blur-strong: blur(25px);
+    --glass-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glassmorphism Navbar */
+.navbar,
+.sticky-top {
+    background: var(--glass-bg) \!important;
+    backdrop-filter: var(--blur-light) \!important;
+    -webkit-backdrop-filter: var(--blur-light) \!important;
+    border-bottom: 1px solid var(--glass-border) \!important;
+    box-shadow: var(--glass-shadow) \!important;
+    transition: var(--glass-transition) \!important;
+}
+
+.navbar:hover,
+.sticky-top:hover {
+    background: var(--glass-bg-hover) \!important;
+    backdrop-filter: var(--blur-strong) \!important;
+    -webkit-backdrop-filter: var(--blur-strong) \!important;
+    box-shadow: var(--glass-shadow-hover) \!important;
+}
+
+/* Glassmorphism Search Bar */
+.search-bar input,
+.form-control.search-input,
+#navbar-search {
+    background: var(--glass-bg) \!important;
+    backdrop-filter: var(--blur-light) \!important;
+    -webkit-backdrop-filter: var(--blur-light) \!important;
+    border: 1px solid var(--glass-border) \!important;
+    color: var(--text-primary) \!important;
+    transition: var(--glass-transition) \!important;
+}
+
+.search-bar input:focus,
+#navbar-search:focus {
+    background: rgba(255, 255, 255, 0.15) \!important;
+    backdrop-filter: var(--blur-strong) \!important;
+    -webkit-backdrop-filter: var(--blur-strong) \!important;
+    border-color: var(--primary-500) \!important;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2) \!important;
+}
+
+/* Dark theme glass adjustments */
+[data-theme="dark"] {
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-bg-hover: rgba(15, 23, 42, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+EOF < /dev/null

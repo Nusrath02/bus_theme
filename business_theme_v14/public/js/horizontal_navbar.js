@@ -59,3 +59,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 EOF < /dev/null
+
+// ITChamps Logo Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    // Find navbar-brand element
+    const navbarBrand = document.querySelector('.navbar-brand');
+    if (navbarBrand) {
+        // Remove any existing images
+        const existingImages = navbarBrand.querySelectorAll('img, svg');
+        existingImages.forEach(img => img.remove());
+        
+        // Apply logo styling classes
+        navbarBrand.classList.add('itchamps-logo');
+        
+        // Ensure proper styling
+        navbarBrand.style.backgroundImage = "url('/assets/business_theme_v14/images/itchamps_logo.png')";
+        navbarBrand.style.backgroundSize = "contain";
+        navbarBrand.style.backgroundRepeat = "no-repeat";
+        navbarBrand.style.backgroundPosition = "left center";
+        navbarBrand.style.width = "180px";
+        navbarBrand.style.height = "60px";
+        navbarBrand.style.display = "flex";
+        navbarBrand.style.alignItems = "center";
+        
+        console.log('✓ ITChamps logo applied successfully');
+    }
+    
+    // Apply glassmorphism classes
+    const navbar = document.querySelector('.navbar, .sticky-top');
+    if (navbar) {
+        navbar.classList.add('glass-navbar');
+    }
+});
+EOF < /dev/null
