@@ -1244,3 +1244,40 @@ EOF < /dev/null
     --glass-border: rgba(255, 255, 255, 0.08);
 }
 EOF < /dev/null
+
+/* Remove Sidebar Item Background Colors */
+.layout-side-section .sidebar-label,
+.layout-side-section .sidebar-label a,
+.sidebar-item,
+.list-link,
+.desk-sidebar .sidebar-item {
+    background: transparent \!important;
+    background-color: transparent \!important;
+}
+
+/* Remove active/selected state backgrounds */
+.sidebar-item.active,
+.sidebar-item[aria-current="page"],
+.list-link.active,
+.sidebar-label.active,
+.layout-side-section .sidebar-label.active {
+    background: transparent \!important;
+    background-color: transparent \!important;
+}
+
+/* Remove hover backgrounds */
+.layout-side-section .sidebar-label:hover,
+.sidebar-item:hover,
+.list-link:hover {
+    background: transparent \!important;
+    background-color: transparent \!important;
+}
+
+/* Keep only text color changes for interaction */
+.sidebar-item:hover,
+.sidebar-label:hover {
+    color: white \!important;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+}
+EOF < /dev/null
