@@ -1,0 +1,839 @@
+/* ===== ENHANCED GLASSMORPHISM THEME V15 ===== */
+/* Modern HR Dashboard with Advanced Glass Effects */
+/* Add this as: /assets/business_theme_v14/business_theme_v15.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== ENHANCED VARIABLES ===== */
+:root {
+    /* Enhanced Glass Effects */
+    --glass-primary: rgba(255, 255, 255, 0.1);
+    --glass-secondary: rgba(255, 255, 255, 0.05);
+    --glass-hover: rgba(255, 255, 255, 0.15);
+    --glass-active: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-border-strong: rgba(255, 255, 255, 0.25);
+    
+    /* Advanced Blur Effects */
+    --blur-ultra: blur(40px);
+    --blur-heavy: blur(30px);
+    --blur-medium: blur(20px);
+    --blur-light: blur(15px);
+    --blur-subtle: blur(10px);
+    
+    /* Professional Shadows */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-glass-hover: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-glass-active: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 20px rgba(30, 144, 255, 0.3);
+    --shadow-glow-hover: 0 0 30px rgba(30, 144, 255, 0.4);
+    
+    /* Enhanced Color Palette */
+    --itchamps-primary: #1e90ff;
+    --itchamps-secondary: #87ceeb;
+    --itchamps-accent: #4facfe;
+    --itchamps-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --itchamps-gradient-alt: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --itchamps-gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    
+    /* Dynamic Background */
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --bg-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --bg-quaternary: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    
+    /* Spacing & Layout */
+    --container-padding: 2rem;
+    --card-padding: 1.5rem;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    
+    /* Animation */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== ENHANCED GLOBAL BACKGROUND ===== */
+body,
+.layout-main-section-wrapper,
+.page-container {
+    background: var(--bg-primary) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    position: relative !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Animated Background Particles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(135, 206, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(30, 144, 255, 0.1) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(120deg); }
+    66% { transform: translateY(10px) rotate(240deg); }
+}
+
+/* ===== ULTRA-MODERN NAVBAR ===== */
+/* .navbar,
+.sticky-top,
+.desk-nav {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-heavy) !important;
+    -webkit-backdrop-filter: var(--blur-heavy) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    box-shadow: var(--shadow-glass) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 2000 !important;
+    height: 70px !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.navbar:hover {
+    background: var(--glass-hover) !important;
+    backdrop-filter: var(--blur-ultra) !important;
+    -webkit-backdrop-filter: var(--blur-ultra) !important;
+    box-shadow: var(--shadow-glass-hover) !important;
+    transform: translateY(-1px) !important;
+} */
+
+/* Navbar Container */
+/* .navbar-expand {
+    padding: 0 2rem !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* ===== ENHANCED ITCHAMPS LOGO ===== */
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    padding: 0.5rem 1rem !important;
+    background: var(--glass-secondary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border-radius: var(--border-radius-lg) !important;
+    border: 1px solid var(--glass-border) !important;
+    transition: var(--transition-bounce) !important;
+    text-decoration: none !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+.navbar-brand:hover {
+    background: var(--glass-hover) !important;
+    transform: scale(1.05) translateY(-2px) !important;
+    box-shadow: var(--shadow-glow) !important;
+    border-color: var(--glass-border-strong) !important;
+} */
+
+/* Logo Icon */
+.navbar-brand::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: var(--itchamps-gradient-alt);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-brand::after {
+    content: 'IT';
+    position: absolute;
+    left: 0.5rem;
+    font-weight: 800;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Logo Text */
+.navbar-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    color: white !important;
+}
+
+.navbar-brand h1,
+.navbar-brand .logo-title {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    margin: 0 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    letter-spacing: -0.5px !important;
+}
+
+.navbar-brand .logo-subtitle {
+    font-size: 0.75rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* ===== ULTRA-MODERN SEARCH BAR ===== */
+.search-container,
+.search-bar,
+#navbar-search-container {
+    position: relative !important;
+    margin: 0 2rem !important;
+}
+
+.search-bar input,
+#navbar-search,
+.form-control.search-input {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 2rem 0.75rem 3rem !important;
+    color: white !important;
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+    width: 350px !important;
+    transition: var(--transition-smooth) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+.search-bar input::placeholder,
+#navbar-search::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 300 !important;
+}
+
+.search-bar input:focus,
+#navbar-search:focus {
+    background: var(--glass-hover) !important;
+    backdrop-filter: var(--blur-ultra) !important;
+    -webkit-backdrop-filter: var(--blur-ultra) !important;
+    border-color: var(--itchamps-accent) !important;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.3), var(--shadow-glow) !important;
+    transform: scale(1.02) !important;
+    outline: none !important;
+    width: 400px !important;
+}
+
+/* Search Icon */
+.search-bar::before,
+.search-container::before {
+    content: '🔍';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== ENHANCED USER MENU ===== */
+.navbar-user,
+.user-menu,
+.dropdown-toggle {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 50px !important;
+    padding: 0.5rem 1rem !important;
+    color: white !important;
+    transition: var(--transition-bounce) !important;
+    box-shadow: var(--shadow-glass) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-left: auto !important;
+}
+
+.navbar-user:hover {
+    background: var(--glass-hover) !important;
+    transform: scale(1.05) !important;
+    box-shadow: var(--shadow-glow) !important;
+    border-color: var(--glass-border-strong) !important;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--itchamps-gradient-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* ===== MODERN SIDEBAR INTEGRATION ===== */
+.layout-side-section {
+    background: var(--glass-secondary) !important;
+    backdrop-filter: var(--blur-heavy) !important;
+    -webkit-backdrop-filter: var(--blur-heavy) !important;
+    border-right: 1px solid var(--glass-border) !important;
+    margin-top: 70px !important;
+    box-shadow: var(--shadow-glass) !important;
+    position: fixed !important;
+    height: calc(100vh - 70px) !important;
+    overflow-y: auto !important;
+}
+
+.layout-side-section .sidebar-label {
+    background: var(--glass-secondary) !important;
+    backdrop-filter: var(--blur-subtle) !important;
+    -webkit-backdrop-filter: var(--blur-subtle) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-md) !important;
+    margin: 0.25rem !important;
+    transition: var(--transition-bounce) !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.layout-side-section .sidebar-label:hover {
+    background: var(--glass-hover) !important;
+    transform: translateX(8px) scale(1.02) !important;
+    box-shadow: var(--shadow-glass) !important;
+    border-color: var(--glass-border-strong) !important;
+}
+
+.layout-side-section .sidebar-label.active {
+    background: var(--glass-active) !important;
+    box-shadow: var(--shadow-glow) !important;
+    border-color: var(--itchamps-accent) !important;
+}
+
+/* ===== MAIN CONTENT AREA ENHANCEMENT ===== */
+.layout-main-section {
+    margin-left: 250px !important;
+    margin-top: 70px !important;
+    padding: var(--container-padding) !important;
+    background: transparent !important;
+    min-height: calc(100vh - 70px) !important;
+}
+
+/* ===== GLASS CARDS & WIDGETS ===== */
+.widget,
+.card,
+.list-row,
+.form-section {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-glass) !important;
+    margin-bottom: 1.5rem !important;
+    padding: var(--card-padding) !important;
+    transition: var(--transition-smooth) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.widget:hover,
+.card:hover,
+.list-row:hover {
+    background: var(--glass-hover) !important;
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: var(--shadow-glass-hover) !important;
+    border-color: var(--glass-border-strong) !important;
+}
+
+/* Card Headers */
+.card-header,
+.widget-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.card-title,
+.widget-title {
+    color: white !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 !important;
+}
+
+.card-subtitle {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.25rem !important;
+}
+
+/* ===== QUICK STATS CARDS ===== */
+.stats-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.stat-card {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-lg) !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    transition: var(--transition-bounce) !important;
+    box-shadow: var(--shadow-glass) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: var(--shadow-glass-hover) !important;
+    background: var(--glass-hover) !important;
+}
+
+.stat-number {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: white !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.stat-change {
+    font-size: 0.8rem !important;
+    margin-top: 0.5rem !important;
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 50px !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+}
+
+.stat-change.positive {
+    background: rgba(76, 217, 100, 0.2) !important;
+    color: #4cd964 !important;
+    border: 1px solid rgba(76, 217, 100, 0.4) !important;
+}
+
+.stat-change.negative {
+    background: rgba(255, 59, 48, 0.2) !important;
+    color: #ff3b30 !important;
+    border: 1px solid rgba(255, 59, 48, 0.4) !important;
+}
+
+/* ===== ENHANCED BUTTONS ===== */
+.btn {
+    border: none !important;
+    border-radius: var(--border-radius-md) !important;
+    font-weight: 600 !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: var(--transition-bounce) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-transform: none !important;
+    letter-spacing: 0.5px !important;
+}
+
+.btn-primary {
+    background: var(--itchamps-gradient-alt) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.6) !important;
+}
+
+.btn-secondary {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: white !important;
+}
+
+.btn-secondary:hover {
+    background: var(--glass-hover) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+/* ===== FORM ENHANCEMENTS ===== */
+.form-control {
+    background: var(--glass-secondary) !important;
+    backdrop-filter: var(--blur-subtle) !important;
+    -webkit-backdrop-filter: var(--blur-subtle) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-md) !important;
+    color: white !important;
+    padding: 0.75rem 1rem !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.form-control:focus {
+    background: var(--glass-primary) !important;
+    border-color: var(--itchamps-accent) !important;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2) !important;
+    outline: none !important;
+    transform: scale(1.02) !important;
+}
+
+.form-label {
+    color: white !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ===== ENHANCED TABLES ===== */
+.table {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border-radius: var(--border-radius-lg) !important;
+    overflow: hidden !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+.table thead th {
+    background: var(--itchamps-gradient-alt) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    border: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 0.9rem !important;
+}
+
+.table tbody td {
+    background: var(--glass-secondary) !important;
+    color: white !important;
+    padding: 1rem !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.table tbody tr:hover {
+    background: var(--glass-hover) !important;
+    transform: scale(1.01) !important;
+}
+
+/* ===== MODAL ENHANCEMENTS ===== */
+.modal-backdrop {
+    backdrop-filter: var(--blur-heavy) !important;
+    -webkit-backdrop-filter: var(--blur-heavy) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.modal-content {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-ultra) !important;
+    -webkit-backdrop-filter: var(--blur-ultra) !important;
+    border: 1px solid var(--glass-border-strong) !important;
+    border-radius: var(--border-radius-xl) !important;
+    box-shadow: var(--shadow-glass-hover) !important;
+    color: white !important;
+}
+
+.modal-header {
+    background: var(--itchamps-gradient-alt) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0 !important;
+}
+
+.modal-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* ===== NAVIGATION TABS ===== */
+.nav-tabs {
+    border: none !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.nav-tabs .nav-link {
+    background: var(--glass-secondary) !important;
+    backdrop-filter: var(--blur-subtle) !important;
+    -webkit-backdrop-filter: var(--blur-subtle) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-md) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: var(--transition-bounce) !important;
+    margin-right: 0 !important;
+}
+
+.nav-tabs .nav-link:hover {
+    background: var(--glass-hover) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--glass-border-strong) !important;
+}
+
+.nav-tabs .nav-link.active {
+    background: var(--itchamps-gradient-alt) !important;
+    color: white !important;
+    border-color: var(--itchamps-accent) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .navbar-expand {
+        padding: 0 1rem !important;
+    }
+    
+    .search-bar input,
+    #navbar-search {
+        width: 250px !important;
+    }
+    
+    .search-bar input:focus,
+    #navbar-search:focus {
+        width: 300px !important;
+    }
+    
+    .layout-main-section {
+        margin-left: 0 !important;
+        padding: 1rem !important;
+    }
+    
+    .layout-side-section {
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    .layout-side-section.show {
+        transform: translateX(0) !important;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .search-bar input {
+        width: 200px !important;
+    }
+    
+    .stat-number {
+        font-size: 2rem !important;
+    }
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.loading-shimmer {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.loading-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus indicators */
+*:focus-visible {
+    outline: 2px solid var(--itchamps-accent) !important;
+    outline-offset: 2px !important;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --glass-border: rgba(255, 255, 255, 0.8) !important;
+        --glass-border-strong: rgba(255, 255, 255, 1) !important;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.layout-main-section {
+    contain: layout style paint !important;
+}
+
+.widget,
+.card {
+    contain: layout style !important;
+}
+
+/* ===== HIDE EXISTING ELEMENTS ===== */
+.navbar-brand img,
+.navbar-brand svg {
+    display: none !important;
+}
+
+/* Remove conflicting backgrounds */
+.layout-side-section .sidebar-label a {
+    background: transparent !important;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.glass-card {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--border-radius-lg) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+.glass-button {
+    background: var(--glass-primary) !important;
+    backdrop-filter: var(--blur-medium) !important;
+    -webkit-backdrop-filter: var(--blur-medium) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: white !important;
+    transition: var(--transition-bounce) !important;
+}
+
+.glass-button:hover {
+    background: var(--glass-hover) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+/* ===== ITCHAMPS BRANDING ===== */
+.itchamps-logo-text::after {
+    content: 'ITCHAMPS';
+    color: white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
+}
+
+.itchamps-subtitle::after {
+    content: 'Human Resources Management';
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== FINAL POLISH ===== */
+/* Ensure all text is readable */
+.layout-main-section * {
+    color: white !important;
+}
+
+/* Link styling */
+a {
+    color: var(--itchamps-accent) !important;
+    text-decoration: none !important;
+    transition: var(--transition-smooth) !important;
+}
+
+a:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
+/* Selection styling */
+::selection {
+    background: rgba(79, 172, 254, 0.3) !important;
+    color: white !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--itchamps-gradient-alt) !important;
+    border-radius: 10px !important;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--itchamps-accent) !important;
+}
