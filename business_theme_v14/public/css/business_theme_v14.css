@@ -1316,3 +1316,13 @@ EOF < /dev/null
     background-color: transparent \!important;
 }
 EOF < /dev/null
+
+/* FORCED OVERRIDE - Maximum specificity for sidebar */
+.layout-side-section.layout-side-section .sidebar,
+.layout-side-section.layout-side-section .sidebar-label,
+.layout-side-section.layout-side-section .sidebar-item,
+.desk-sidebar.desk-sidebar {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+}
