@@ -690,7 +690,7 @@ body {
 
 /* ===== SIDEBAR - BLUE GRADIENT ===== */
 .layout-side-section {
-    background: linear-gradient(180deg, #4682b4 0%, #2e86ab 100%) !important;
+    // background: linear-gradient(180deg, #4682b4 0%, #2e86ab 100%) !important;
     border-right: 2px solid #1e90ff !important;
     /* Add subtle glass effect to sidebar */
     backdrop-filter: blur(10px) !important;
@@ -707,14 +707,14 @@ body {
     border-radius: 5px !important;
     margin: 2px 5px !important;
     transition: all 0.3s ease !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    // background: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .layout-side-section .sidebar-label:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
+    // background: rgba(255, 255, 255, 0.2) !important;
     transform: translateX(5px) !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
@@ -723,7 +723,7 @@ body {
 }
 
 .layout-side-section .sidebar-label.active {
-    background: rgba(30, 144, 255, 0.2) !important;
+    // background: rgba(30, 144, 255, 0.2) !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
     border-color: rgba(30, 144, 255, 0.4) !important;
