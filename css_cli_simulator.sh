@@ -316,3 +316,32 @@ case "$1" in
         ;;
 esac
 EOF < /dev/null
+
+remove_property() {
+    local selector="$1"
+    local property="$2"
+    
+    echo "=== REMOVING PROPERTY: $property FROM: $selector ==="
+    
+    # Generate CSS override based on selector and property
+    cat >> "$CSS_FILE" << PROP_EOF
+
+/* REMOVE PROPERTY - ${property} from ${selector} */
+${selector} {
+    ${property}: none \!important;
+    ${property}: transparent \!important;
+    ${property}: initial \!important;
+}
+PROP_EOF
+    
+    echo "✅ REMOVED: $property from $selector"
+    return 0
+}
+
+# Add to main dispatcher
+case "$1" in
+    "remove-property")
+        remove_property "$2" "$3"
+        ;;
+esac
+EOF < /dev/null

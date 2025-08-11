@@ -1447,3 +1447,95 @@ EOF < /dev/null
     background-image: none \!important;
     box-shadow: none \!important;
 }
+
+/* REMOVE PROPERTY - background-color from .sidebar */
+.sidebar {
+    background-color: none \!important;
+    background-color: transparent \!important;
+    background-color: initial \!important;
+}
+
+/* REMOVE PROPERTY - background-image from .sidebar */
+.sidebar {
+    background-image: none \!important;
+    background-image: transparent \!important;
+    background-image: initial \!important;
+}
+
+/* REMOVE PROPERTY - background from .sidebar */
+.sidebar {
+    background: none \!important;
+    background: transparent \!important;
+    background: initial \!important;
+}
+
+/* REMOVE PROPERTY - background from .sidebar::before, .sidebar::after */
+.sidebar::before, .sidebar::after {
+    background: none \!important;
+    background: transparent \!important;
+    background: initial \!important;
+}
+
+/* COMPREHENSIVE SIDEBAR BACKGROUND LAYER REMOVAL */
+/* Remove ALL background layers from ALL sidebar elements */
+
+/* Primary elements - remove all background properties */
+.layout-side-section,
+.desk-sidebar,
+.sidebar-section,
+.sidebar-menu,
+.sidebar-label,
+.sidebar-item,
+.list-link {
+    background-color: none \!important;
+    background-color: transparent \!important;
+    background-color: initial \!important;
+    background-image: none \!important;
+    background-image: transparent \!important;
+    background-image: initial \!important;
+    background: none \!important;
+    background: transparent \!important;
+    background: initial \!important;
+}
+
+/* Pseudo-elements - remove all background layers */
+.layout-side-section::before,
+.layout-side-section::after,
+.sidebar::before,
+.sidebar::after,
+.sidebar-label::before,
+.sidebar-label::after,
+.sidebar-item::before,
+.sidebar-item::after {
+    background-color: none \!important;
+    background-color: transparent \!important;
+    background-image: none \!important;
+    background: none \!important;
+    background: transparent \!important;
+}
+
+/* All states - remove background layers */
+.sidebar:hover,
+.layout-side-section:hover,
+.sidebar-label:hover,
+.sidebar-item:hover,
+.sidebar:active,
+.sidebar-label:active,
+.sidebar-item:active,
+.sidebar:focus,
+.sidebar-label:focus,
+.sidebar-item:focus {
+    background-color: none \!important;
+    background-color: transparent \!important;
+    background-image: none \!important;
+    background: none \!important;
+    background: transparent \!important;
+}
+
+/* Maximum specificity for layer removal */
+.layout-side-section.layout-side-section.layout-side-section.layout-side-section {
+    background-color: transparent \!important;
+    background-image: none \!important;
+    background: transparent \!important;
+}
+EOF < /dev/null
