@@ -1300,3 +1300,19 @@ EOF < /dev/null
     transition: all 0.2s ease;
 }
 EOF < /dev/null
+
+/* CLI-style CSS Modifications - Sidebar Background Removal */
+.sidebar,
+.layout-side-section,
+.desk-sidebar {
+    background-color: transparent \!important;
+    background: transparent \!important;
+}
+
+/* Remove any gradients or patterns from sidebar */
+.sidebar-section,
+.sidebar-menu {
+    background-image: none \!important;
+    background-color: transparent \!important;
+}
+EOF < /dev/null
