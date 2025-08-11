@@ -1,3 +1,11 @@
+/*\!
+ * Dashboard JavaScript
+ * ===================
+ * Frontend behavior file - affects UI functionality
+ * 
+ * Dashboard interactions and enhancements
+ * ===================
+ */
 // ITChamps Dashboard JavaScript
 frappe.ready(function() {
     // Check if we're on the dashboard page

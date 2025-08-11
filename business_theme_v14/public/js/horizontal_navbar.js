@@ -1,3 +1,19 @@
+/*!
+ * Horizontal Navbar JavaScript
+ * =============================
+ * Frontend behavior file - affects UI functionality
+ * 
+ * Purpose:
+ * - Clean logo implementation with duplicate removal
+ * - ITChamps logo positioning and styling
+ * - Glassmorphism navbar class application
+ * - Dynamic search dropdown behavior
+ * - Cross-browser compatibility enhancements
+ * 
+ * This file handles navbar interactions and logo display.
+ * =============================
+ */
+
 // Clean Logo Implementation - Remove Duplicates
 document.addEventListener('DOMContentLoaded', function() {
     

@@ -1,3 +1,22 @@
+/*!
+ * Business Theme v14 - Main Stylesheet
+ * ==============================================
+ * Frontend styling file - affects UI appearance
+ * 
+ * Features:
+ * - Sky blue color scheme with modern gradients
+ * - ITChamps logo implementation and positioning
+ * - Glassmorphism effects with blur and transparency
+ * - Square search dropdown styling (non-circular)
+ * - Hidden navbar-nav and breadcrumb elements
+ * - Clean sidebar with transparent backgrounds
+ * - White dropdown backgrounds for better readability
+ * - Responsive design and cross-browser compatibility
+ * 
+ * This file controls the complete visual appearance of the ERPNext theme.
+ * ==============================================
+ */
+
 /* Simple Sky Blue Theme - Just Color Changes */
 /* Add this to your existing business_theme_v14.css file */
 

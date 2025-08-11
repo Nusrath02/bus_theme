@@ -1,3 +1,11 @@
+/*\!
+ * Business Theme v14 - Core JavaScript
+ * ====================================
+ * Frontend behavior file - affects UI functionality
+ * 
+ * Core theme functionality and interactions
+ * ====================================
+ */
 .alert-info {
     background: rgba(30, 144, 255, 0.1) !important;
     border: 1px solid #87ceeb !important;
