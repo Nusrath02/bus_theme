@@ -128,3 +128,191 @@ case "$1" in
         ;;
 esac
 EOF < /dev/null
+
+remove_styles() {
+    local target="$1"
+    local properties="$2"
+    local force_flag="$3"
+    
+    echo "=== REMOVING STYLES FROM: $target ==="
+    echo "Properties to remove: $properties"
+    
+    if [[ "$target" == "sidebar" ]]; then
+        echo "Removing blue background and overlays from sidebar..."
+        
+        # Convert comma-separated properties to array
+        IFS=',' read -ra PROPS <<< "$properties"
+        
+        # Build CSS override
+        cat >> "$CSS_FILE" << 'REMOVE_EOF'
+
+/* REMOVE STYLES - Blue background and overlay removal */
+.sidebar,
+.layout-side-section,
+.desk-sidebar,
+.sidebar-section,
+.sidebar-menu,
+.sidebar-label,
+.sidebar-item,
+.list-link {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+    border: none \!important;
+    background-blend-mode: normal \!important;
+}
+
+/* Remove all sidebar state backgrounds */
+.sidebar:hover,
+.layout-side-section:hover,
+.sidebar-label:hover,
+.sidebar-item:hover,
+.sidebar-label:active,
+.sidebar-item:active,
+.sidebar-label.active,
+.sidebar-item.active,
+.sidebar-label:focus,
+.sidebar-item:focus {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* Override any blue gradients */
+.layout-side-section {
+    background: transparent \!important;
+    background-image: none \!important;
+    border-right: none \!important;
+}
+REMOVE_EOF
+        
+        echo "✅ REMOVED: All blue backgrounds, overlays, and shadows from sidebar"
+        return 0
+    fi
+    
+    echo "❌ Unknown target: $target"
+    return 1
+}
+
+modify_css_advanced() {
+    local selector="$1"
+    local action="$2"
+    local properties="$3"
+    local apply_flag="$4"
+    
+    echo "=== ADVANCED CSS MODIFICATION ==="
+    echo "Selector: $selector"
+    echo "Action: $action"
+    echo "Properties: $properties"
+    
+    if [[ "$selector" == ".sidebar" && "$action" == "remove" ]]; then
+        echo "Applying advanced sidebar modifications..."
+        
+        # Convert comma-separated properties to array
+        IFS=',' read -ra PROPS <<< "$properties"
+        
+        cat >> "$CSS_FILE" << 'ADVANCED_EOF'
+
+/* ADVANCED CSS MODIFICATION - Comprehensive sidebar cleanup */
+/* Remove all backgrounds, overlays, shadows from sidebar and all states */
+
+.sidebar,
+.layout-side-section,
+.desk-sidebar,
+.sidebar-content,
+.sidebar-wrapper,
+.sidebar-container {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    background-gradient: none \!important;
+    box-shadow: none \!important;
+    text-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+    filter: none \!important;
+    border-right: none \!important;
+    border-left: none \!important;
+    border-top: none \!important;
+    border-bottom: none \!important;
+}
+
+/* All sidebar items and labels */
+.sidebar-label,
+.sidebar-item,
+.list-link,
+.sidebar-menu-item,
+.desk-sidebar .sidebar-item,
+.layout-side-section .sidebar-label,
+.layout-side-section .sidebar-label a {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* All interactive states */
+.sidebar:hover,
+.sidebar:active,
+.sidebar:focus,
+.layout-side-section:hover,
+.layout-side-section:active,
+.layout-side-section:focus,
+.sidebar-label:hover,
+.sidebar-label:active,
+.sidebar-label:focus,
+.sidebar-label.active,
+.sidebar-item:hover,
+.sidebar-item:active,
+.sidebar-item:focus,
+.sidebar-item.active,
+.sidebar-item[aria-current="page"],
+.list-link:hover,
+.list-link:active,
+.list-link:focus,
+.list-link.active {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* Maximum specificity overrides */
+.layout-side-section.layout-side-section.layout-side-section {
+    background: transparent \!important;
+    background-color: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+}
+ADVANCED_EOF
+        
+        echo "✅ ADVANCED MODIFICATION: Applied comprehensive sidebar cleanup"
+        return 0
+    fi
+    
+    echo "❌ Unknown modification parameters"
+    return 1
+}
+
+EOF < /dev/null
+
+# Update main dispatcher
+case "$1" in
+    "remove-styles")
+        remove_styles "$2" "$3" "$4"
+        ;;
+    "modify-css-advanced")
+        modify_css_advanced "$2" "$3" "$4" "$5"
+        ;;
+esac
+EOF < /dev/null

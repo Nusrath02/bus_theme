@@ -1326,3 +1326,124 @@ EOF < /dev/null
     background: transparent \!important;
     background-image: none \!important;
 }
+
+/* REMOVE STYLES - Blue background and overlay removal */
+.sidebar,
+.layout-side-section,
+.desk-sidebar,
+.sidebar-section,
+.sidebar-menu,
+.sidebar-label,
+.sidebar-item,
+.list-link {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+    border: none \!important;
+    background-blend-mode: normal \!important;
+}
+
+/* Remove all sidebar state backgrounds */
+.sidebar:hover,
+.layout-side-section:hover,
+.sidebar-label:hover,
+.sidebar-item:hover,
+.sidebar-label:active,
+.sidebar-item:active,
+.sidebar-label.active,
+.sidebar-item.active,
+.sidebar-label:focus,
+.sidebar-item:focus {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* Override any blue gradients */
+.layout-side-section {
+    background: transparent \!important;
+    background-image: none \!important;
+    border-right: none \!important;
+}
+
+/* ADVANCED CSS MODIFICATION - Comprehensive sidebar cleanup */
+/* Remove all backgrounds, overlays, shadows from sidebar and all states */
+
+.sidebar,
+.layout-side-section,
+.desk-sidebar,
+.sidebar-content,
+.sidebar-wrapper,
+.sidebar-container {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    background-gradient: none \!important;
+    box-shadow: none \!important;
+    text-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+    filter: none \!important;
+    border-right: none \!important;
+    border-left: none \!important;
+    border-top: none \!important;
+    border-bottom: none \!important;
+}
+
+/* All sidebar items and labels */
+.sidebar-label,
+.sidebar-item,
+.list-link,
+.sidebar-menu-item,
+.desk-sidebar .sidebar-item,
+.layout-side-section .sidebar-label,
+.layout-side-section .sidebar-label a {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* All interactive states */
+.sidebar:hover,
+.sidebar:active,
+.sidebar:focus,
+.layout-side-section:hover,
+.layout-side-section:active,
+.layout-side-section:focus,
+.sidebar-label:hover,
+.sidebar-label:active,
+.sidebar-label:focus,
+.sidebar-label.active,
+.sidebar-item:hover,
+.sidebar-item:active,
+.sidebar-item:focus,
+.sidebar-item.active,
+.sidebar-item[aria-current="page"],
+.list-link:hover,
+.list-link:active,
+.list-link:focus,
+.list-link.active {
+    background-color: transparent \!important;
+    background: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+    backdrop-filter: none \!important;
+    -webkit-backdrop-filter: none \!important;
+}
+
+/* Maximum specificity overrides */
+.layout-side-section.layout-side-section.layout-side-section {
+    background: transparent \!important;
+    background-color: transparent \!important;
+    background-image: none \!important;
+    box-shadow: none \!important;
+}
