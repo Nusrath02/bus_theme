@@ -56,7 +56,7 @@
 
 /* Light theme variables */
 [data-theme="light"] {
-    --bg-color: #a0d9ef; /* Light background (sky blue shade) */
+    --bg-color: #62c1e5; /* Light background (sky blue shade) */
     --text-bold: 600;
     --control-bg : #fff; /* White input background */
     --control-bg-on-gray: #d4dcea;
