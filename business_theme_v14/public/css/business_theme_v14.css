@@ -131,6 +131,22 @@ h3.ellipsis.title-text,
 }
 
 /* -------------------- NAVBAR -------------------- */
+
+/* Hide ERPNext default logo */
+.navbar .app-logo {
+    display: none !important;
+}
+
+/* Show custom logo */
+.navbar .navbar-brand {
+    background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center;
+    background-size: contain;
+    width: 160px;   /* adjust size */
+    height: 40px;   /* adjust size */
+}
+
+/* -------end---- */
+
 .navbar{
     background: var(--background-color) !important; /* Navbar background (blue) */
     height: var(--navbar-height);
