@@ -93,7 +93,7 @@ h3.ellipsis.title-text,
 
 /* Colours */
 :root {
-    --background-color: #cfecf7; /* Navbar background (blue) */
+    --background-color: linear-gradient(to right, #a0d9ef, #62c1e5); /* Navbar background (blue) */
     --primary-color: #ffa00a;    /* Primary accent (orange) */
     --secondary-color: #7574ff;  /* Secondary accent (purple/blue) */
     --white-color: #ffffff;      /* White */
@@ -233,30 +233,31 @@ header .form-control:focus{
 /* sidebar card version testing */
 
 /* ==================== CARD-STYLE SIDEBAR ENHANCEMENT ==================== */
-/* Add this to your existing CSS file - it won't interfere with existing code */
+/* This stylesheet enhances the ERPNext/Frappe sidebar with card-like styling,
+   hover effects, shadows, transitions, and dark mode adjustments. */
 
-/* Main sidebar container with card styling */
+/* Main sidebar container with spacing and transparent background */
 .layout-side-section {
     padding: 15px 10px !important;
     background: transparent !important;
 }
 
-/* Individual sidebar items as cards */
+/* Individual sidebar items styled as cards */
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
     background: var(--white-color) !important;
-    border-radius: 8px !important;
-    margin-bottom: 10px !important;
+    border-radius: 8px !important; /* rounded corners */
+    margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* subtle shadow */
     border: 1px solid #e8ecf1 !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.3s ease !important; /* smooth hover animation */
     position: relative !important;
     overflow: hidden !important;
 }
 
-/* Card hover effects */
+/* Hover effect: lift card with stronger shadow + highlight border */
 .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
 .layout-side-section .sidebar-section:hover {
@@ -265,18 +266,18 @@ header .form-control:focus{
     border-color: var(--primary-color) !important;
 }
 
-/* Sidebar labels in cards */
+/* Sidebar labels inside cards */
 .layout-side-section .sidebar-label {
     color: var(--primary-color) !important;
     font-weight: 600 !important;
     font-size: 14px !important;
     margin-bottom: 8px !important;
-    display: flex !important;
+    display: flex !important; /* align label text with icons */
     align-items: center !important;
-    gap: 8px !important;
+    gap: 8px !important; /* space between icon and text */
 }
 
-/* Icons in sidebar cards */
+/* Icons within sidebar labels */
 .sidebar-label svg, 
 .layout-side-section .sidebar-label .icon {
     stroke: var(--primary-color) !important;
@@ -284,7 +285,7 @@ header .form-control:focus{
     height: 18px !important;
 }
 
-/* Sidebar buttons as cards */
+/* Sidebar buttons styled as mini cards */
 .list-sidebar-button {
     background-color: var(--white-color) !important;
     border-radius: 6px !important;
@@ -295,13 +296,14 @@ header .form-control:focus{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
 
+/* Hover effect for buttons */
 .list-sidebar-button:hover {
     background-color: rgba(255, 160, 10, 0.1) !important;
     border-color: var(--primary-color) !important;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* Card style for sidebar sections with lists */
+/* Sidebar section containers styled as cards */
 .layout-side-section .sidebar-menu,
 .layout-side-section .list-sidebar {
     background: var(--white-color) !important;
@@ -312,25 +314,27 @@ header .form-control:focus{
     border: 1px solid #e8ecf1 !important;
 }
 
-/* List items within cards */
+/* Sidebar list items with dividers */
 .layout-side-section .sidebar-menu li,
 .layout-side-section .list-sidebar li {
     padding: 6px 0 !important;
     border-bottom: 1px solid #f5f6fa !important;
 }
 
+/* Remove divider from last item */
 .layout-side-section .sidebar-menu li:last-child,
 .layout-side-section .list-sidebar li:last-child {
     border-bottom: none !important;
 }
 
-/* Links within sidebar cards */
+/* Links inside sidebar cards */
 .layout-side-section a {
     color: #333 !important;
     text-decoration: none !important;
     transition: color 0.2s ease !important;
 }
 
+/* Hovered links change to primary color */
 .layout-side-section a:hover {
     color: var(--primary-color) !important;
 }
@@ -344,6 +348,7 @@ header .form-control:focus{
     box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important;
 }
 
+/* Adjust label and icon colors in active state */
 .layout-side-section .sidebar-item.active .sidebar-label,
 .layout-side-section .standard-sidebar-item.active .sidebar-label {
     color: var(--white-color) !important;
@@ -354,7 +359,8 @@ header .form-control:focus{
     stroke: var(--white-color) !important;
 }
 
-/* Dark theme adjustments for cards */
+/* ==================== DARK THEME STYLING ==================== */
+/* Override sidebar card colors in dark mode */
 [data-theme="dark"] .layout-side-section .sidebar-item,
 [data-theme="dark"] .layout-side-section .standard-sidebar-item,
 [data-theme="dark"] .layout-side-section .sidebar-section,
@@ -365,6 +371,7 @@ header .form-control:focus{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
+/* Hover effect in dark mode */
 [data-theme="dark"] .layout-side-section .sidebar-item:hover,
 [data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
 [data-theme="dark"] .layout-side-section .sidebar-section:hover {
@@ -372,13 +379,15 @@ header .form-control:focus{
     border-color: var(--primary-color) !important;
 }
 
+/* Dark theme styling for buttons */
 [data-theme="dark"] .list-sidebar-button {
     background-color: var(--gray-900) !important;
     border-color: #2c3136 !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Responsive adjustments */
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Adjust spacing for mobile view */
 @media (max-width: 768px) {
     .layout-side-section {
         padding: 10px 5px !important;
@@ -392,7 +401,8 @@ header .form-control:focus{
     }
 }
 
-/* Animation for smooth card appearance */
+/* ==================== ANIMATIONS ==================== */
+/* Smooth fade-in animation for sidebar cards */
 @keyframes cardFadeIn {
     from {
         opacity: 0;
@@ -404,9 +414,11 @@ header .form-control:focus{
     }
 }
 
+/* Apply fade-in animation on load */
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
     animation: cardFadeIn 0.3s ease-out !important;
 }
+
 /* sidebar ended */
