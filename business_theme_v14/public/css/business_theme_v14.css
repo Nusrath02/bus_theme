@@ -95,7 +95,7 @@ h3.ellipsis.title-text,
 :root {
     --background: #62C1E5;
     --background-color: radial-gradient(circle,rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%); /* Navbar background (blue) */
-    --primary-color: #ffa00a;    /* Primary accent (orange) */
+    --primary-color: #000000;    /* Primary accent (orange) */
     --secondary-color: #7574ff;  /* Secondary accent (purple/blue) */
     --white-color: #ffffff;      /* White */
     --black-color: #000000;      /* Black */
