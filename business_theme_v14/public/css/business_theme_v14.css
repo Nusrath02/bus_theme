@@ -423,3 +423,238 @@ header .form-control:focus{
 }
 
 /* sidebar ended */
+
+
+
+
+
+
+
+
+/* main section color */
+/* ==================== COLORFUL SIDEBAR SECTIONS ENHANCEMENT ==================== */
+/* Add this to your existing CSS file - it will add colors to sidebar sections */
+
+/* Enhanced sidebar sections with colors */
+.layout-side-section .sidebar-section,
+.layout-side-section .widget-group,
+.layout-side-section .onboarding-widget-box {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Color schemes for different sidebar sections */
+
+/* Your Shortcuts section - Blue theme */
+.layout-side-section .sidebar-section:nth-child(1),
+.layout-side-section .widget-group:nth-child(1) {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(1) .sidebar-label,
+.layout-side-section .widget-group:nth-child(1) .widget-title,
+.layout-side-section .sidebar-section:nth-child(1) .widget-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(1) a,
+.layout-side-section .widget-group:nth-child(1) a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(1) a:hover,
+.layout-side-section .widget-group:nth-child(1) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Reports & Masters section - Green theme */
+.layout-side-section .sidebar-section:nth-child(2),
+.layout-side-section .widget-group:nth-child(2) {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(2) .sidebar-label,
+.layout-side-section .widget-group:nth-child(2) .widget-title,
+.layout-side-section .sidebar-section:nth-child(2) .widget-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(2) a,
+.layout-side-section .widget-group:nth-child(2) a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(2) a:hover,
+.layout-side-section .widget-group:nth-child(2) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Third section - Orange theme (using your primary color) */
+.layout-side-section .sidebar-section:nth-child(3),
+.layout-side-section .widget-group:nth-child(3) {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(3) .sidebar-label,
+.layout-side-section .widget-group:nth-child(3) .widget-title,
+.layout-side-section .sidebar-section:nth-child(3) .widget-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(3) a,
+.layout-side-section .widget-group:nth-child(3) a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(3) a:hover,
+.layout-side-section .widget-group:nth-child(3) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Fourth section - Purple theme */
+.layout-side-section .sidebar-section:nth-child(4),
+.layout-side-section .widget-group:nth-child(4) {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(4) .sidebar-label,
+.layout-side-section .widget-group:nth-child(4) .widget-title,
+.layout-side-section .sidebar-section:nth-child(4) .widget-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(4) a,
+.layout-side-section .widget-group:nth-child(4) a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(4) a:hover,
+.layout-side-section .widget-group:nth-child(4) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Fifth section - Red theme */
+.layout-side-section .sidebar-section:nth-child(5),
+.layout-side-section .widget-group:nth-child(5) {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(5) .sidebar-label,
+.layout-side-section .widget-group:nth-child(5) .widget-title,
+.layout-side-section .sidebar-section:nth-child(5) .widget-subtitle {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(5) a,
+.layout-side-section .widget-group:nth-child(5) a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-section:nth-child(5) a:hover,
+.layout-side-section .widget-group:nth-child(5) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+}
+
+/* Widget titles and subtitles enhancement */
+.layout-side-section .widget-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+}
+
+.layout-side-section .widget-subtitle {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    opacity: 0.8 !important;
+    margin-bottom: 12px !important;
+}
+
+/* List items in colored sections */
+.layout-side-section .sidebar-section li,
+.layout-side-section .widget-group li {
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+.layout-side-section .sidebar-section li:last-child,
+.layout-side-section .widget-group li:last-child {
+    border-bottom: none !important;
+}
+
+/* Enhanced hover effects for colored sections */
+.layout-side-section .sidebar-section:hover,
+.layout-side-section .widget-group:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Dark theme adjustments for colored sections */
+[data-theme="dark"] .layout-side-section .sidebar-section,
+[data-theme="dark"] .layout-side-section .widget-group {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .layout-side-section .sidebar-section:hover,
+[data-theme="dark"] .layout-side-section .widget-group:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Alternative color scheme (uncomment to use instead of the above) */
+/*
+.layout-side-section .sidebar-section:nth-child(1) { background: linear-gradient(135deg, #667eea, #764ba2) !important; }
+.layout-side-section .sidebar-section:nth-child(2) { background: linear-gradient(135deg, #f093fb, #f5576c) !important; }
+.layout-side-section .sidebar-section:nth-child(3) { background: linear-gradient(135deg, #4facfe, #00f2fe) !important; }
+.layout-side-section .sidebar-section:nth-child(4) { background: linear-gradient(135deg, #43e97b, #38f9d7) !important; }
+.layout-side-section .sidebar-section:nth-child(5) { background: linear-gradient(135deg, #fa709a, #fee140) !important; }
+*/
+
+/* Icons in colored sections */
+.layout-side-section .sidebar-section svg,
+.layout-side-section .widget-group svg {
+    stroke: rgba(255, 255, 255, 0.9) !important;
+    fill: none !important;
+}
+
+/* Special styling for section numbers/counts if they exist */
+.layout-side-section .sidebar-section .count,
+.layout-side-section .widget-group .count {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    float: right !important;
+}
+/* main section ended */
