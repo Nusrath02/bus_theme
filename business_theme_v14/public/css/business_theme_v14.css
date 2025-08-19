@@ -226,93 +226,164 @@ header .form-control:focus{
 
 
 
+
+
+
+
 /* sidebar card version testing */
 
-/* ==================== CARD-STYLE SIDEBAR ENHANCEMENT ==================== */
+/* ==================== DASHBOARD-STYLE HORIZONTAL SIDEBAR CARDS ==================== */
 /* Add this to your existing CSS file - it won't interfere with existing code */
 
-/* Main sidebar container with card styling */
+/* Main sidebar container - horizontal dashboard layout */
 .layout-side-section {
-    padding: 15px 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    padding: 20px 15px !important;
     background: transparent !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow-x: auto !important;
+    gap: 15px !important;
 }
 
-/* Individual sidebar items as cards */
+/* Adjust main layout to accommodate horizontal sidebar */
+.layout-main-section {
+    margin-top: 20px !important;
+}
+
+/* Dashboard-style sidebar cards */
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
     background: var(--white-color) !important;
-    border-radius: 8px !important;
-    margin-bottom: 10px !important;
-    padding: 12px 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid #e8ecf1 !important;
+    border-radius: 12px !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+    border: 1px solid #f0f2f5 !important;
     transition: all 0.3s ease !important;
     position: relative !important;
     overflow: hidden !important;
+    flex: 0 0 auto !important;
+    min-width: 200px !important;
+    min-height: 120px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    cursor: pointer !important;
 }
 
-/* Card hover effects */
+/* Dashboard card hover effects */
 .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
 .layout-side-section .sidebar-section:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-3px) !important;
     border-color: var(--primary-color) !important;
 }
 
-/* Sidebar labels in cards */
+/* Dashboard card headers (like "Total employees") */
 .layout-side-section .sidebar-label {
-    color: var(--primary-color) !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
     margin-bottom: 8px !important;
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
 }
 
-/* Icons in sidebar cards */
+/* Icons in dashboard cards */
 .sidebar-label svg, 
 .layout-side-section .sidebar-label .icon {
-    stroke: var(--primary-color) !important;
-    width: 18px !important;
-    height: 18px !important;
+    stroke: #64748b !important;
+    width: 16px !important;
+    height: 16px !important;
+    opacity: 0.7 !important;
 }
 
-/* Sidebar buttons as cards */
+/* Create dashboard-style numbers/metrics */
+.layout-side-section .sidebar-item::after,
+.layout-side-section .standard-sidebar-item::after,
+.layout-side-section .sidebar-section::after {
+    content: attr(data-count) !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 5px !important;
+    display: block !important;
+}
+
+/* Add percentage change indicator */
+.layout-side-section .sidebar-item::before,
+.layout-side-section .standard-sidebar-item::before,
+.layout-side-section .sidebar-section::before {
+    content: attr(data-change) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #10b981 !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    background: #f0fdf4 !important;
+    padding: 4px 8px !important;
+    border-radius: 12px !important;
+    border: 1px solid #bbf7d0 !important;
+}
+
+/* Dashboard-style sidebar buttons */
 .list-sidebar-button {
     background-color: var(--white-color) !important;
-    border-radius: 6px !important;
-    border: 1px solid #e8ecf1 !important;
-    margin: 5px 0 !important;
-    padding: 8px 12px !important;
-    transition: all 0.2s ease !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 10px !important;
+    border: 1px solid #f0f2f5 !important;
+    margin: 0 !important;
+    padding: 12px 18px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-weight: 500 !important;
+    min-width: 140px !important;
+    justify-content: center !important;
 }
 
 .list-sidebar-button:hover {
-    background-color: rgba(255, 160, 10, 0.1) !important;
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 4px 12px rgba(255, 160, 10, 0.25) !important;
+    transform: translateY(-2px) !important;
 }
 
-/* Card style for sidebar sections with lists */
+/* Dashboard-style menu cards */
 .layout-side-section .sidebar-menu,
 .layout-side-section .list-sidebar {
     background: var(--white-color) !important;
-    border-radius: 8px !important;
-    padding: 15px !important;
-    margin-bottom: 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid #e8ecf1 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+    border: 1px solid #f0f2f5 !important;
+    min-width: 250px !important;
+    max-height: 320px !important;
+    overflow-y: auto !important;
 }
 
-/* List items within cards */
+/* List items in dashboard cards */
 .layout-side-section .sidebar-menu li,
 .layout-side-section .list-sidebar li {
-    padding: 6px 0 !important;
-    border-bottom: 1px solid #f5f6fa !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #f8fafc !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 }
 
 .layout-side-section .sidebar-menu li:last-child,
@@ -320,79 +391,119 @@ header .form-control:focus{
     border-bottom: none !important;
 }
 
-/* Links within sidebar cards */
+/* Links in dashboard cards */
 .layout-side-section a {
-    color: #333 !important;
+    color: #334155 !important;
     text-decoration: none !important;
     transition: color 0.2s ease !important;
+    font-weight: 500 !important;
 }
 
 .layout-side-section a:hover {
     color: var(--primary-color) !important;
 }
 
-/* Active/selected state for sidebar items */
+/* Active/selected dashboard card */
 .layout-side-section .sidebar-item.active,
 .layout-side-section .standard-sidebar-item.active {
-    background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important;
+    background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.9)) !important;
     color: var(--white-color) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important;
+    box-shadow: 0 8px 25px rgba(255, 160, 10, 0.3) !important;
 }
 
 .layout-side-section .sidebar-item.active .sidebar-label,
 .layout-side-section .standard-sidebar-item.active .sidebar-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.layout-side-section .sidebar-item.active::after,
+.layout-side-section .standard-sidebar-item.active::after {
     color: var(--white-color) !important;
 }
 
-.layout-side-section .sidebar-item.active svg,
-.layout-side-section .standard-sidebar-item.active svg {
-    stroke: var(--white-color) !important;
+.layout-side-section .sidebar-item.active::before,
+.layout-side-section .standard-sidebar-item.active::before {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: var(--white-color) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Dark theme adjustments for cards */
+/* Dark theme adjustments */
 [data-theme="dark"] .layout-side-section .sidebar-item,
 [data-theme="dark"] .layout-side-section .standard-sidebar-item,
 [data-theme="dark"] .layout-side-section .sidebar-section,
 [data-theme="dark"] .layout-side-section .sidebar-menu,
 [data-theme="dark"] .layout-side-section .list-sidebar {
-    background: var(--gray-900) !important;
-    border-color: #2c3136 !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .layout-side-section .sidebar-label {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .layout-side-section .sidebar-item::after,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item::after {
+    color: #f8fafc !important;
 }
 
 [data-theme="dark"] .layout-side-section .sidebar-item:hover,
 [data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
 [data-theme="dark"] .layout-side-section .sidebar-section:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
     border-color: var(--primary-color) !important;
 }
 
 [data-theme="dark"] .list-sidebar-button {
-    background-color: var(--gray-900) !important;
-    border-color: #2c3136 !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
 }
 
-/* Responsive adjustments */
+/* Responsive design for dashboard cards */
 @media (max-width: 768px) {
     .layout-side-section {
-        padding: 10px 5px !important;
+        padding: 15px 10px !important;
+        overflow-x: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
     }
     
     .layout-side-section .sidebar-item,
     .layout-side-section .standard-sidebar-item,
     .layout-side-section .sidebar-section {
-        padding: 10px 12px !important;
-        margin-bottom: 8px !important;
+        min-width: 160px !important;
+        min-height: 100px !important;
+        padding: 15px !important;
+    }
+    
+    .layout-side-section .sidebar-menu,
+    .layout-side-section .list-sidebar {
+        min-width: 200px !important;
     }
 }
 
-/* Animation for smooth card appearance */
-@keyframes cardFadeIn {
+/* Custom scrollbar for horizontal dashboard */
+.layout-side-section::-webkit-scrollbar {
+    height: 6px !important;
+}
+
+.layout-side-section::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+    border-radius: 3px !important;
+}
+
+.layout-side-section::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1 !important;
+    border-radius: 3px !important;
+}
+
+/* Animation for dashboard cards */
+@keyframes dashboardCardFadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -403,6 +514,23 @@ header .form-control:focus{
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
-    animation: cardFadeIn 0.3s ease-out !important;
+    animation: dashboardCardFadeIn 0.4s ease-out !important;
+}
+
+/* Additional dashboard styling for better metrics display */
+.layout-side-section .sidebar-item .metric-container,
+.layout-side-section .standard-sidebar-item .metric-container {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+/* Style for additional content in cards */
+.layout-side-section .sidebar-content {
+    margin-top: auto !important;
+    padding-top: 10px !important;
+    border-top: 1px solid #f1f5f9 !important;
+    font-size: 12px !important;
+    color: #64748b !important;
 }
 /* sidebar ended */
