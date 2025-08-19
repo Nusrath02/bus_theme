@@ -223,3 +223,187 @@ header .form-control:focus{
 .datatable .dt-header .dt-cell--header .dt-cell__content{
     background-color: #f4f4f4; /* Report table header background */
 }
+
+
+
+/* sidebar card version testing */
+
+/* ==================== CARD-STYLE SIDEBAR ENHANCEMENT ==================== */
+/* Add this to your existing CSS file - it won't interfere with existing code */
+
+/* Main sidebar container with card styling */
+.layout-side-section {
+    padding: 15px 10px !important;
+    background: transparent !important;
+}
+
+/* Individual sidebar items as cards */
+.layout-side-section .sidebar-item,
+.layout-side-section .standard-sidebar-item,
+.layout-side-section .sidebar-section {
+    background: var(--white-color) !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
+    padding: 12px 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e8ecf1 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Card hover effects */
+.layout-side-section .sidebar-item:hover,
+.layout-side-section .standard-sidebar-item:hover,
+.layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Sidebar labels in cards */
+.layout-side-section .sidebar-label {
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Icons in sidebar cards */
+.sidebar-label svg, 
+.layout-side-section .sidebar-label .icon {
+    stroke: var(--primary-color) !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Sidebar buttons as cards */
+.list-sidebar-button {
+    background-color: var(--white-color) !important;
+    border-radius: 6px !important;
+    border: 1px solid #e8ecf1 !important;
+    margin: 5px 0 !important;
+    padding: 8px 12px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.list-sidebar-button:hover {
+    background-color: rgba(255, 160, 10, 0.1) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Card style for sidebar sections with lists */
+.layout-side-section .sidebar-menu,
+.layout-side-section .list-sidebar {
+    background: var(--white-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e8ecf1 !important;
+}
+
+/* List items within cards */
+.layout-side-section .sidebar-menu li,
+.layout-side-section .list-sidebar li {
+    padding: 6px 0 !important;
+    border-bottom: 1px solid #f5f6fa !important;
+}
+
+.layout-side-section .sidebar-menu li:last-child,
+.layout-side-section .list-sidebar li:last-child {
+    border-bottom: none !important;
+}
+
+/* Links within sidebar cards */
+.layout-side-section a {
+    color: #333 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.layout-side-section a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Active/selected state for sidebar items */
+.layout-side-section .sidebar-item.active,
+.layout-side-section .standard-sidebar-item.active {
+    background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important;
+    color: var(--white-color) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important;
+}
+
+.layout-side-section .sidebar-item.active .sidebar-label,
+.layout-side-section .standard-sidebar-item.active .sidebar-label {
+    color: var(--white-color) !important;
+}
+
+.layout-side-section .sidebar-item.active svg,
+.layout-side-section .standard-sidebar-item.active svg {
+    stroke: var(--white-color) !important;
+}
+
+/* Dark theme adjustments for cards */
+[data-theme="dark"] .layout-side-section .sidebar-item,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item,
+[data-theme="dark"] .layout-side-section .sidebar-section,
+[data-theme="dark"] .layout-side-section .sidebar-menu,
+[data-theme="dark"] .layout-side-section .list-sidebar {
+    background: var(--gray-900) !important;
+    border-color: #2c3136 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .layout-side-section .sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    border-color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .list-sidebar-button {
+    background-color: var(--gray-900) !important;
+    border-color: #2c3136 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .layout-side-section {
+        padding: 10px 5px !important;
+    }
+    
+    .layout-side-section .sidebar-item,
+    .layout-side-section .standard-sidebar-item,
+    .layout-side-section .sidebar-section {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* Animation for smooth card appearance */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.layout-side-section .sidebar-item,
+.layout-side-section .standard-sidebar-item,
+.layout-side-section .sidebar-section {
+    animation: cardFadeIn 0.3s ease-out !important;
+}
+
+/* sidebar ended */
