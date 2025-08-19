@@ -18,8 +18,11 @@ app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 
 # Favicon
-favicon = "/assets/business_theme_v14/images/favicon.png"
-
+# Website settings
+website_context = {
+    "favicon": "/assets/business_theme_v14/images/favicon.png",
+    # "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
+}
 
 # include js, css files in header of web template
 # web_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
