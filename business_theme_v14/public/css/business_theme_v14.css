@@ -432,197 +432,195 @@ header .form-control:focus{
 
 
 /* main section color */
-/* ==================== COLORFUL SIDEBAR SECTIONS - FIXED FOR ERPNEXT ==================== */
-/* Add this to your existing CSS file - targeting correct ERPNext containers */
 
-/* Target the main content sections in ERPNext sidebar */
+
+/* ==================== BEAUTIFUL COLOR SCHEME FOR ERPNEXT SECTIONS ==================== */
+/* Designed to complement your blue background theme */
+
+/* Base styling for all sections */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
-.layout-main-section [data-widget-name] {
+.layout-main-section .ce-block {
     position: relative !important;
     overflow: hidden !important;
-    border-radius: 12px !important;
-    margin-bottom: 20px !important;
-    transition: all 0.3s ease !important;
+    border-radius: 15px !important;
+    margin-bottom: 25px !important;
+    transition: all 0.4s ease !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Your Shortcuts section - Blue theme */
-.layout-main-section .widget:nth-of-type(1),
-.layout-main-section [data-widget-name]:nth-of-type(1) {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+/* Shortcuts section - Elegant Blue to complement background */
+.layout-main-section .widget:first-of-type,
+.layout-main-section .ce-block:first-of-type {
+    background: linear-gradient(145deg, #667eea, #764ba2) !important;
     border: none !important;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
 }
 
-.layout-main-section .widget:nth-of-type(1) .widget-head,
-.layout-main-section .widget:nth-of-type(1) .widget-title,
-.layout-main-section .widget:nth-of-type(1) .widget-subtitle,
-.layout-main-section [data-widget-name]:nth-of-type(1) h3,
-.layout-main-section [data-widget-name]:nth-of-type(1) .head-title {
+/* Reports & Masters section - Elegant Teal/Green */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section .ce-block:nth-of-type(2) {
+    background: linear-gradient(145deg, #11998e, #38ef7d) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(17, 153, 142, 0.3) !important;
+}
+
+/* Third section - Warm Orange/Coral */
+.layout-main-section .widget:nth-of-type(3),
+.layout-main-section .ce-block:nth-of-type(3) {
+    background: linear-gradient(145deg, #ff6b6b, #ffa726) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3) !important;
+}
+
+/* Fourth section - Purple/Magenta */
+.layout-main-section .widget:nth-of-type(4),
+.layout-main-section .ce-block:nth-of-type(4) {
+    background: linear-gradient(145deg, #a855f7, #ec4899) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3) !important;
+}
+
+/* Alternative targeting for sections with specific content */
+.layout-main-section div[data-widget-name*="shortcut"],
+.layout-main-section .widget-head:contains("Shortcuts") {
+    background: linear-gradient(145deg, #667eea, #764ba2) !important;
+}
+
+.layout-main-section div[data-widget-name*="reports"],
+.layout-main-section .widget-head:contains("Reports") {
+    background: linear-gradient(145deg, #11998e, #38ef7d) !important;
+}
+
+/* Text styling for all colored sections */
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.layout-main-section .widget h3,
+.layout-main-section .ce-block h3,
+.layout-main-section .widget-subtitle {
     color: white !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-.layout-main-section .widget:nth-of-type(1) .widget-body a,
-.layout-main-section [data-widget-name]:nth-of-type(1) a {
+/* Links and content styling */
+.layout-main-section .widget .widget-body a,
+.layout-main-section .ce-block a,
+.layout-main-section .widget a {
+    color: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+}
+
+.layout-main-section .widget .widget-body a:hover,
+.layout-main-section .ce-block a:hover,
+.layout-main-section .widget a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    transform: translateX(5px) !important;
+}
+
+/* Section headers inside widgets (Accounting Masters, Payments, etc.) */
+.layout-main-section .widget .widget-body h4,
+.layout-main-section .widget .widget-body h5,
+.layout-main-section .ce-block h4,
+.layout-main-section .ce-block h5 {
     color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* List items styling */
+.layout-main-section .widget .widget-body ul li,
+.layout-main-section .ce-block ul li {
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     transition: all 0.2s ease !important;
 }
 
-.layout-main-section .widget:nth-of-type(1) .widget-body a:hover,
-.layout-main-section [data-widget-name]:nth-of-type(1) a:hover {
-    color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-}
-
-/* Reports & Masters section - Green theme */
-.layout-main-section .widget:nth-of-type(2),
-.layout-main-section [data-widget-name]:nth-of-type(2) {
-    background: linear-gradient(135deg, #10b981, #059669) !important;
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
-}
-
-.layout-main-section .widget:nth-of-type(2) .widget-head,
-.layout-main-section .widget:nth-of-type(2) .widget-title,
-.layout-main-section .widget:nth-of-type(2) .widget-subtitle,
-.layout-main-section [data-widget-name]:nth-of-type(2) h3,
-.layout-main-section [data-widget-name]:nth-of-type(2) .head-title {
-    color: white !important;
-    font-weight: 600 !important;
-}
-
-.layout-main-section .widget:nth-of-type(2) .widget-body a,
-.layout-main-section [data-widget-name]:nth-of-type(2) a {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.layout-main-section .widget:nth-of-type(2) .widget-body a:hover,
-.layout-main-section [data-widget-name]:nth-of-type(2) a:hover {
-    color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-}
-
-/* Data Import and Settings section - Orange theme */
-.layout-main-section .widget:nth-of-type(3),
-.layout-main-section [data-widget-name]:nth-of-type(3) {
-    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
-}
-
-.layout-main-section .widget:nth-of-type(3) .widget-head,
-.layout-main-section .widget:nth-of-type(3) .widget-title,
-.layout-main-section .widget:nth-of-type(3) .widget-subtitle,
-.layout-main-section [data-widget-name]:nth-of-type(3) h3,
-.layout-main-section [data-widget-name]:nth-of-type(3) .head-title {
-    color: white !important;
-    font-weight: 600 !important;
-}
-
-.layout-main-section .widget:nth-of-type(3) .widget-body a,
-.layout-main-section [data-widget-name]:nth-of-type(3) a {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.layout-main-section .widget:nth-of-type(3) .widget-body a:hover,
-.layout-main-section [data-widget-name]:nth-of-type(3) a:hover {
-    color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-}
-
-/* Fourth section - Purple theme */
-.layout-main-section .widget:nth-of-type(4),
-.layout-main-section [data-widget-name]:nth-of-type(4) {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
-}
-
-.layout-main-section .widget:nth-of-type(4) .widget-head,
-.layout-main-section .widget:nth-of-type(4) .widget-title,
-.layout-main-section .widget:nth-of-type(4) .widget-subtitle,
-.layout-main-section [data-widget-name]:nth-of-type(4) h3,
-.layout-main-section [data-widget-name]:nth-of-type(4) .head-title {
-    color: white !important;
-    font-weight: 600 !important;
-}
-
-.layout-main-section .widget:nth-of-type(4) .widget-body a,
-.layout-main-section [data-widget-name]:nth-of-type(4) a {
-    color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.layout-main-section .widget:nth-of-type(4) .widget-body a:hover,
-.layout-main-section [data-widget-name]:nth-of-type(4) a:hover {
-    color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-}
-
-/* Enhanced hover effects for all colored sections */
-.layout-main-section .widget:hover,
-.layout-main-section [data-widget-name]:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Style the column headers (Accounting, Stock, CRM) */
-.layout-main-section .widget .widget-body h4,
-.layout-main-section .widget .widget-body h5,
-.layout-main-section .ce-block h3,
-.layout-main-section .form-section .section-head {
-    color: rgba(255, 255, 255, 0.95) !important;
-    font-weight: 700 !important;
-    font-size: 16px !important;
-    margin-bottom: 12px !important;
-    padding-bottom: 8px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-/* Style individual links and items */
-.layout-main-section .widget .widget-body ul li,
-.layout-main-section .widget .widget-body div a {
-    padding: 8px 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    display: block !important;
-}
-
-.layout-main-section .widget .widget-body ul li:last-child {
+.layout-main-section .widget .widget-body ul li:last-child,
+.layout-main-section .ce-block ul li:last-child {
     border-bottom: none !important;
+}
+
+.layout-main-section .widget .widget-body ul li:hover,
+.layout-main-section .ce-block ul li:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 6px !important;
+    padding: 10px 8px !important;
+}
+
+/* Enhanced hover effects */
+.layout-main-section .widget:hover,
+.layout-main-section .ce-block:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Specific color fixes for button-style shortcuts */
+.layout-main-section .widget .widget-body .btn,
+.layout-main-section .ce-block .btn {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    margin: 5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.layout-main-section .widget .widget-body .btn:hover,
+.layout-main-section .ce-block .btn:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Dark theme adjustments */
 [data-theme="dark"] .layout-main-section .widget:hover,
-[data-theme="dark"] .layout-main-section [data-widget-name]:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+[data-theme="dark"] .layout-main-section .ce-block:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6) !important;
 }
 
-/* Alternative approach - target by specific widget names if above doesn't work */
-.widget[data-widget-name="Your Shortcuts"],
-.onboarding-widget-box[onboarding_name="Home"] .widget {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+/* Fallback for different ERPNext versions */
+.page-container .widget,
+.main-section .widget,
+div[data-widget-name] {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    margin-bottom: 25px !important;
 }
 
-/* Fallback - target by content if structure is different */
-.layout-main-section div:contains("Your Shortcuts"),
-.layout-main-section div:contains("Reports & Masters"),
-.layout-main-section div:contains("Data Import and Settings") {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
-    color: white !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    margin-bottom: 20px !important;
+/* Special animation for sections */
+@keyframes sectionGlow {
+    0% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
+    50% { box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4); }
+    100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
+}
+
+.layout-main-section .widget:first-of-type {
+    animation: sectionGlow 3s ease-in-out infinite !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .layout-main-section .widget,
+    .layout-main-section .ce-block {
+        margin-bottom: 20px !important;
+        border-radius: 12px !important;
+    }
+    
+    .layout-main-section .widget .widget-body .btn,
+    .layout-main-section .ce-block .btn {
+        margin: 3px !important;
+        font-size: 14px !important;
+    }
 }
 /* main section ended */
