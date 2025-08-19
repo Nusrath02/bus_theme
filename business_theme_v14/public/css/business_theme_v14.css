@@ -434,130 +434,127 @@ header .form-control:focus{
 /* main section color */
 
 
-/* ==================== CLEAN PURPLE GRADIENT SECTIONS ==================== */
-/* Keep only the purple gradient, remove other colors and popup effects */
+/* ==================== BEAUTIFUL COLOR SCHEME FOR ERPNEXT SECTIONS ==================== */
+/* Designed to complement your blue background theme */
 
-/* Base styling for all sections - Better spacing */
+/* Base styling for all sections */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
 .layout-main-section .ce-block {
     position: relative !important;
     overflow: hidden !important;
     border-radius: 15px !important;
-    margin-bottom: 30px !important;
-    padding: 25px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 25px !important;
+    transition: all 0.4s ease !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* All sections - Purple gradient background (like your first image) */
+/* All sections - Clean white background */
 .layout-main-section .widget,
 .layout-main-section .ce-block {
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
+    background: var(--white-color) !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Text styling for purple sections - Better spacing */
+/* Remove alternative color schemes and special animations */
+.layout-main-section div[data-widget-name*="shortcut"],
+.layout-main-section .widget-head:contains("Shortcuts") {
+    background: var(--white-color) !important;
+}
+
+.layout-main-section div[data-widget-name*="reports"],
+.layout-main-section .widget-head:contains("Reports") {
+    background: var(--white-color) !important;
+}
+
+/* Text styling for all sections - dark text on white background */
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .layout-main-section .widget h3,
 .layout-main-section .ce-block h3,
 .layout-main-section .widget-subtitle {
-    color: white !important;
+    color: #1f2937 !important;
     font-weight: 700 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-    margin-bottom: 20px !important;
-    font-size: 18px !important;
 }
 
-/* Links and content styling - Better spacing */
+/* Links and content styling - no hover popup effects */
 .layout-main-section .widget .widget-body a,
 .layout-main-section .ce-block a,
 .layout-main-section .widget a {
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: #374151 !important;
     transition: color 0.2s ease !important;
     font-weight: 500 !important;
     text-decoration: none !important;
-    display: block !important;
-    padding: 8px 0 !important;
-    margin: 5px 0 !important;
 }
 
 .layout-main-section .widget .widget-body a:hover,
 .layout-main-section .ce-block a:hover,
 .layout-main-section .widget a:hover {
-    color: white !important;
-    /* NO background, padding, or transform effects */
+    color: var(--primary-color) !important;
 }
 
-/* Section headers inside widgets - Better spacing */
+/* Section headers inside widgets */
 .layout-main-section .widget .widget-body h4,
 .layout-main-section .widget .widget-body h5,
 .layout-main-section .ce-block h4,
 .layout-main-section .ce-block h5 {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: #1f2937 !important;
     font-weight: 600 !important;
     font-size: 16px !important;
-    margin-bottom: 20px !important;
-    margin-top: 25px !important;
-    padding-bottom: 12px !important;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #e5e7eb !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
 }
 
-/* List items styling - Better spacing */
+/* List items styling - no hover popup effects */
 .layout-main-section .widget .widget-body ul li,
 .layout-main-section .ce-block ul li {
-    padding: 12px 0 !important;
-    margin: 8px 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
     transition: color 0.2s ease !important;
 }
 
 .layout-main-section .widget .widget-body ul li:last-child,
 .layout-main-section .ce-block ul li:last-child {
     border-bottom: none !important;
-    margin-bottom: 0 !important;
 }
 
 .layout-main-section .widget .widget-body ul li:hover,
 .layout-main-section .ce-block ul li:hover {
-    /* NO background, border-radius, or padding changes */
-    color: rgba(255, 255, 255, 1) !important;
+    color: var(--primary-color) !important;
 }
 
-/* Simple hover effects - NO TRANSFORM/POPUP */
+/* Simple hover effects - no popup/transform effects */
 .layout-main-section .widget:hover,
 .layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3) !important;
-    /* NO transform effects */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Button styling for purple sections - Better spacing */
+/* Button styling - clean white background */
 .layout-main-section .widget .widget-body .btn,
 .layout-main-section .ce-block .btn {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
+    background: var(--white-color) !important;
+    border: 1px solid #d1d5db !important;
+    color: #374151 !important;
     font-weight: 600 !important;
-    margin: 8px 8px 8px 0 !important;
-    padding: 10px 15px !important;
-    transition: background 0.2s ease !important;
-    border-radius: 8px !important;
+    margin: 5px !important;
+    transition: all 0.2s ease !important;
 }
 
 .layout-main-section .widget .widget-body .btn:hover,
 .layout-main-section .ce-block .btn:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
-    /* NO transform or shadow effects */
+    background: #f9fafb !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
 }
 
-/* Dark theme adjustments */
+/* Dark theme adjustments - simple shadows only */
 [data-theme="dark"] .layout-main-section .widget:hover,
 [data-theme="dark"] .layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Fallback for different ERPNext versions */
@@ -567,22 +564,22 @@ div[data-widget-name] {
     border-radius: 15px !important;
     overflow: hidden !important;
     margin-bottom: 25px !important;
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
 }
 
-/* Responsive adjustments - Better mobile spacing */
+/* Remove special animations */
+/* Animation removed as requested */
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .layout-main-section .widget,
     .layout-main-section .ce-block {
-        margin-bottom: 25px !important;
-        padding: 20px !important;
+        margin-bottom: 20px !important;
         border-radius: 12px !important;
     }
     
     .layout-main-section .widget .widget-body .btn,
     .layout-main-section .ce-block .btn {
-        margin: 6px 6px 6px 0 !important;
-        padding: 8px 12px !important;
+        margin: 3px !important;
         font-size: 14px !important;
     }
 }
