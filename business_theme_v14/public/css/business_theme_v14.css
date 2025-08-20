@@ -1,148 +1,292 @@
-/* ======================== GLOBAL SCROLLBAR STYLES ======================== */
+/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 6px;
 }
 *::-webkit-scrollbar-track {
-    background: var(--scroll-bg);
+    background: var(--scroll-bg); /* Scrollbar track background */
 }
 *::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-color);
+    background-color: var(--scroll-color); /* Scrollbar thumb color */
     border-radius: 20px;
 }
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--scroll-color) var(--scroll-bg);
+    scrollbar-color: var(--scroll-color) var(--scroll-bg); /* Scrollbar colors (Firefox) */
+}
+.awesomplete .input-with-feedback {
+    border: 1px solid var(--border-color); /* Input field border */
+}
+.form-control {
+    border: 1px solid var(--border-color); /* General form field border */
+}
+.search-bar .awesomplete input {
+    background-color: var(--bg-color); /* Search bar input background */
+}
+.modal-backdrop{
+    background-color: #2c436b !important; /* Modal background overlay */
+}
+.widget .widget-head .widget-title {
+    font-size: var(--text-base); /* Widget title size */
+}
+.comment-box .comment-input-header, .form-dashboard-section .section-head, .form-section .section-head, .head-title {
+    font-size: var(--text-base);
+    font-weight: 600; /* Section headings & comment input header weight */
+}
+.comment-box .comment-input-container .ql-editor {
+    border: 1px solid var(--border-color); /* Comment box border */
+}
+.duration-picker .duration-input {
+    background-color: var(--bg-color); /* Duration picker background */
+    border: 1px solid var(--border-color);
+}
+.control-label {
+    font-weight: 500; /* Label text weight */
 }
 
-/* ======================== THEME VARIABLES ======================== */
-:root {
-    --primary-purple: #8B5CF6;
-    --secondary-purple: #A78BFA;
-    --purple-gradient: linear-gradient(135deg, #8B5CF6, #A78BFA);
-    
-    --bg-main: #F8FAFC;
-    --bg-white: #FFFFFF;
-    
-    --text-white: #FFFFFF;
-    --text-dark: #1F2937;
-    --text-gray: #6B7280;
-    
-    --accent-blue: #3B82F6;
-    --border-light: #E5E7EB;
-}
-
-/* LIGHT THEME */
-[data-theme="light"] {
-    --bg-color: #62c1e5;
-    --text-bold: 600;
-    --control-bg: #fff;
-    --control-bg-on-gray: #d4dcea;
-    --disabled-control-bg: #f2f5fa;
-    --heading-color: #333;
-    --border-color: #e3e8f1;
-    --avatar-frame-bg: #dde2ea;
-    --margin-lg: 15px;
-    --sidebar-select-color: #d4dcea;
-    --awesomplete-hover-bg: #d4dcea;
-    --scroll-bg: #eef1f5;
-    --scroll-color: #d9dfe6;
-}
-
-/* DARK THEME */
+/* Dark theme variables */
 [data-theme="dark"] {
     --bg-color: var(--gray-900);
     --disabled-control-bg: var(--gray-900);
     --border-color: #1c2126;
-    --margin-lg: 15px;
+    --margin-lg : 15px;
     --text-bold: 600;
-    --scroll-bg: #161a1f;
-    --scroll-color: #1c2126;
+    --scroll-bg: #161a1f;  /* Dark scrollbar track */
+    --scroll-color: #1c2126; /* Dark scrollbar thumb */
 }
 
-/* ======================== FORM + FIELD STYLING ======================== */
-.awesomplete .input-with-feedback,
-.form-control,
-.comment-box .comment-input-container .ql-editor,
-.duration-picker .duration-input {
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-color);
-}
-.form-control:focus {
-    border-color: var(--primary-color) !important;
-    background: rgba(255, 160, 10, 0.14) !important;
-}
-.control-label {
-    font-weight: 500;
+/* Light theme variables */
+[data-theme="light"] {
+    --bg-color: #62c1e5; /* Light background (sky blue shade) */
+    --text-bold: 600;
+    --control-bg : #fff; /* White input background */
+    --control-bg-on-gray: #d4dcea;
+    --disabled-control-bg: #f2f5fa;
+    --heading-color: #333; /* Heading text color */
+    --border-color:#e3e8f1; /* Light borders */
+    --avatar-frame-bg: #dde2ea;
+    --margin-lg: 15px;
+    --sidebar-select-color: #d4dcea; /* Sidebar highlight */
+    --awesomplete-hover-bg: #d4dcea; /* Autocomplete hover background */
+    --scroll-bg: #eef1f5; /* Light scrollbar track */
+    --scroll-color: #d9dfe6; /* Light scrollbar thumb */
 }
 
-/* ======================== NAVBAR ======================== */
-.navbar {
-    background: var(--background-color) !important;
-    height: var(--navbar-height);
+
+/*****  OVERRIDDEN CSS  *****/
+
+/* Heading Text Color (was overridden before) */
+/*
+.page-head{
+    background: #7C7BAD !important;
 }
+.page-container{
+    background: linear-gradient(to bottom, #7C7BAD, #c3c2cc) !important;
+}
+h3.ellipsis.title-text,
+.widget-group .widget-group-head .widget-group-title,
+.layout-side-section .sidebar-label{
+    color: white !important;
+}
+*/
+
+/* -------------------- GLOBAL CSS -------------------- */
+
+/* Colours */
+:root {
+    --background: #62C1E5;
+    --background-color: radial-gradient(circle,rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%); /* Navbar background (blue) */
+    --primary-color: #000000;    /* Primary accent (orange) */
+    --secondary-color: #7574ff;  /* Secondary accent (purple/blue) */
+    --white-color: #ffffff;      /* White */
+    --black-color: #000000;      /* Black */
+    --gray-color: #888;          /* Neutral gray */
+
+    --page-head-height: 50px;    /* Page header height */
+    --navbar-height: 50px;       /* Navbar height */
+}
+
+/* Buttons */
+.btn-primary:active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:focus{
+    box-shadow: none !important;
+}
+.btn-primary{
+    color: #fff !important; /* Primary button text color */
+    background-color: var(--primary-color) !important; /* Primary button background */
+    border-radius: 0 !important;
+}
+.btn-primary:hover{
+    background-color: rgba(255, 120, 10, 0.93) !important; /* Primary button hover */
+}
+
+/* Page Head */
+.page-head,
+.page-head .page-head-content{
+    height: var(--page-head-height);
+}
+.page-head,
+.page-head .page-head-content{
+    top: var(--page-head-height);
+}
+
+/* -------------------- NAVBAR -------------------- */
+
+/* Hide ERPNext default logo */
 .navbar .app-logo {
     display: none !important;
 }
+
+/* Show custom logo */
 .navbar .navbar-brand {
     background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center;
     background-size: contain;
-    width: 160px;
-    height: 40px;
-}
-.navbar-expand {
-    background-color: var(--background-color);
-}
-#navbar-breadcrumbs > li > a::before {
-    content: "\f105";
-    color: var(--white-color);
-}
-#navbar-breadcrumbs a,
-.navbar .navbar-nav a.nav-link {
-    color: var(--white-color);
-}
-header .form-control {
-    color: var(--white-color);
-    background-color: var(--white-color) !important;
+    width: 160px;   /* adjust size */
+    height: 40px;   /* adjust size */
 }
 
-/* ======================== SIDEBAR - CARD STYLE ======================== */
+/* -------end---- */
+
+.navbar{
+    background: var(--background-color) !important; /* Navbar background (blue) */
+    height: var(--navbar-height);
+}
+.navbar-expand{
+    background-color: var(--background-color); /* Navbar expand background */
+}
+#navbar-breadcrumbs > li > a::before{
+    content: "\f105"; /* Breadcrumb arrow icon */
+    color: var(--white-color); /* Breadcrumb icon color */
+}
+#navbar-breadcrumbs a{
+    color: var(--white-color); /* Breadcrumb link color */
+}
+header .form-control{
+    color: var(--white-color); /* Search bar text color in header */
+}
+header .form-control:focus{
+    border: 0;
+}
+header .form-control:focus{
+    background-color: var(--white-color) !important; /* Search bar focus background */
+}
+
+/* -------------------- SIDEBAR -------------------- */
+.layout-side-section .sidebar-label{
+    color: var(--primary-color); /* Sidebar label color (orange) */
+}
+.sidebar-label svg,
+.layout-side-section .sidebar-label .icon{
+    stroke: var(--primary-color); /* Sidebar icons color (orange) */
+}
+.list-sidebar-button{
+    background-color: #c8c4c4 !important; /* Sidebar button background */
+}
+
+/* -------------------- INPUT FIELDS -------------------- */
+.form-control{
+    background-color: #f2f2f2 !important; /* Input background */
+}
+.form-control:focus{
+    border: 1px solid var(--primary-color); /* Input border on focus (orange) */
+    background: rgba(255, 160, 10, 0.14) !important; /* Input focus background (light orange) */
+}
+.navbar .navbar-nav a.nav-link{
+    color: var(--white-color); /* Navbar link text color */
+}
+
+/* -------------------- TABLE -------------------- */
+.form-grid{
+    border: 1px solid #bbbbbb; /* Table border */
+}
+.form-grid .grid-heading-row{
+    background-color: #f4f4f4; /* Table header background */
+}
+.grid-heading-row{
+    border-bottom: 1px solid var(--primary-color); /* Table header bottom border (orange) */
+}
+.form-grid .grid-row:hover{
+    background: rgba(255, 152, 0, 0.15); /* Table row hover (light orange) */
+}
+
+/* -------------------- HEADINGS -------------------- */
+.head-title, .form-section .section-head, .form-dashboard-section .section-head, .comment-box .comment-input-header{
+    color: var(--primary-color); /* Heading text color (orange) */
+}
+
+/* -------------------- LISTS -------------------- */
+.list-subject a:hover{
+    color: var(--secondary-color); /* Link hover color (purple/blue) */
+}
+
+/* -------------------- REPORT TABLE -------------------- */
+.datatable .dt-header .dt-cell--header .dt-cell__content{
+    background-color: #f4f4f4; /* Report table header background */
+}
+
+
+
+
+
+
+
+/* sidebar card version testing */
+
+/* ==================== CARD-STYLE SIDEBAR ENHANCEMENT ==================== */
+/* This stylesheet enhances the ERPNext/Frappe sidebar with card-like styling,
+   hover effects, shadows, transitions, and dark mode adjustments. */
+
+/* Main sidebar container with spacing and transparent background */
 .layout-side-section {
     padding: 15px 10px !important;
     background: transparent !important;
 }
+
+/* Individual sidebar items styled as cards */
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
     background: var(--white-color) !important;
-    border-radius: 8px !important;
-    margin-bottom: 10px !important;
+    border-radius: 8px !important; /* rounded corners */
+    margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* subtle shadow */
     border: 1px solid #e8ecf1 !important;
-    transition: all 0.3s ease !important;
-    animation: cardFadeIn 0.3s ease-out !important;
+    transition: all 0.3s ease !important; /* smooth hover animation */
+    position: relative !important;
+    overflow: hidden !important;
 }
+
+/* Hover effect: lift card with stronger shadow + highlight border */
 .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
 .layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     transform: translateY(-2px) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
+
+/* Sidebar labels inside cards */
 .layout-side-section .sidebar-label {
     color: var(--primary-color) !important;
     font-weight: 600 !important;
     font-size: 14px !important;
-    display: flex !important;
+    margin-bottom: 8px !important;
+    display: flex !important; /* align label text with icons */
     align-items: center !important;
-    gap: 8px !important;
+    gap: 8px !important; /* space between icon and text */
 }
-.sidebar-label svg,
+
+/* Icons within sidebar labels */
+.sidebar-label svg, 
 .layout-side-section .sidebar-label .icon {
     stroke: var(--primary-color) !important;
     width: 18px !important;
     height: 18px !important;
 }
+
+/* Sidebar buttons styled as mini cards */
 .list-sidebar-button {
     background-color: var(--white-color) !important;
     border-radius: 6px !important;
@@ -152,17 +296,51 @@ header .form-control {
     transition: all 0.2s ease !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
+
+/* Hover effect for buttons */
 .list-sidebar-button:hover {
     background-color: rgba(255, 160, 10, 0.1) !important;
     border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
+
+/* Sidebar section containers styled as cards */
+.layout-side-section .sidebar-menu,
+.layout-side-section .list-sidebar {
+    background: var(--white-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e8ecf1 !important;
+}
+
+/* Sidebar list items with dividers */
+.layout-side-section .sidebar-menu li,
+.layout-side-section .list-sidebar li {
+    padding: 6px 0 !important;
+    border-bottom: 1px solid #f5f6fa !important;
+}
+
+/* Remove divider from last item */
+.layout-side-section .sidebar-menu li:last-child,
+.layout-side-section .list-sidebar li:last-child {
+    border-bottom: none !important;
+}
+
+/* Links inside sidebar cards */
 .layout-side-section a {
     color: #333 !important;
     text-decoration: none !important;
+    transition: color 0.2s ease !important;
 }
+
+/* Hovered links change to primary color */
 .layout-side-section a:hover {
     color: var(--primary-color) !important;
 }
+
+/* Active/selected state for sidebar items */
 .layout-side-section .sidebar-item.active,
 .layout-side-section .standard-sidebar-item.active {
     background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important;
@@ -170,32 +348,62 @@ header .form-control {
     border-color: var(--primary-color) !important;
     box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important;
 }
+
+/* Adjust label and icon colors in active state */
 .layout-side-section .sidebar-item.active .sidebar-label,
-.layout-side-section .standard-sidebar-item.active .sidebar-label,
+.layout-side-section .standard-sidebar-item.active .sidebar-label {
+    color: var(--white-color) !important;
+}
+
 .layout-side-section .sidebar-item.active svg,
 .layout-side-section .standard-sidebar-item.active svg {
-    color: var(--white-color) !important;
     stroke: var(--white-color) !important;
 }
 
-/* DARK MODE SIDEBAR */
+/* ==================== DARK THEME STYLING ==================== */
+/* Override sidebar card colors in dark mode */
 [data-theme="dark"] .layout-side-section .sidebar-item,
-[data-theme="dark"] .layout-side-section .sidebar-section {
+[data-theme="dark"] .layout-side-section .standard-sidebar-item,
+[data-theme="dark"] .layout-side-section .sidebar-section,
+[data-theme="dark"] .layout-side-section .sidebar-menu,
+[data-theme="dark"] .layout-side-section .list-sidebar {
     background: var(--gray-900) !important;
     border-color: #2c3136 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
-[data-theme="dark"] .layout-side-section .sidebar-item:hover {
-    border-color: var(--primary-color) !important;
+
+/* Hover effect in dark mode */
+[data-theme="dark"] .layout-side-section .sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .sidebar-section:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    border-color: var(--primary-color) !important;
 }
+
+/* Dark theme styling for buttons */
 [data-theme="dark"] .list-sidebar-button {
     background-color: var(--gray-900) !important;
     border-color: #2c3136 !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* SIDEBAR ANIMATION */
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Adjust spacing for mobile view */
+@media (max-width: 768px) {
+    .layout-side-section {
+        padding: 10px 5px !important;
+    }
+    
+    .layout-side-section .sidebar-item,
+    .layout-side-section .standard-sidebar-item,
+    .layout-side-section .sidebar-section {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+/* Smooth fade-in animation for sidebar cards */
 @keyframes cardFadeIn {
     from {
         opacity: 0;
@@ -207,106 +415,216 @@ header .form-control {
     }
 }
 
-/* ======================== MAIN SECTION - PURPLE WIDGETS ======================== */
+/* Apply fade-in animation on load */
+.layout-side-section .sidebar-item,
+.layout-side-section .standard-sidebar-item,
+.layout-side-section .sidebar-section {
+    animation: cardFadeIn 0.3s ease-out !important;
+}
+
+/* sidebar ended */
+
+
+
+
+
+
+
+
+/* main section color */
+
+
+/* ==================== COLORFUL SIDEBAR SECTIONS - FIXED FOR ERPNEXT ==================== */
+/* Add this to your existing CSS file - targeting correct ERPNext containers */
+
+/* Target the main content sections in ERPNext sidebar */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
-.layout-main-section .ce-block,
-.page-container .widget,
-.main-section .widget,
-div[data-widget-name] {
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
-    border-radius: 15px !important;
+.layout-main-section [data-widget-name] {
+    position: relative !important;
     overflow: hidden !important;
-    margin-bottom: 30px !important;
-    padding: 25px !important;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
+    border-radius: 12px !important;
+    margin-bottom: 20px !important;
+    transition: all 0.3s ease !important;
 }
 
-/* SECTION HEADINGS WITH ICONS */
-.layout-main-section .widget h3,
-.layout-main-section .ce-block h3,
-.layout-main-section .widget-title {
-    color: white !important;
-    font-weight: 700 !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-    font-size: 18px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
+/* Your Shortcuts section - Blue theme */
+.layout-main-section .widget:nth-of-type(1),
+.layout-main-section [data-widget-name]:nth-of-type(1) {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
-.layout-main-section .widget h3:before,
-.layout-main-section .ce-block h3:before,
-.layout-main-section .widget-title:before {
-    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", serif !important;
-    font-weight: 900 !important;
-    font-size: 16px !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    margin-right: 8px !important;
-    display: inline-block !important;
-    width: 20px !important;
-    text-align: center !important;
-    content: "📄" !important;
-}
-/* ICON OVERRIDES BY TITLE KEYWORDS */
-.layout-main-section .widget h3:contains("Jobs"):before { content: "💼" !important; }
-.layout-main-section .widget h3:contains("Employee"):before { content: "👤" !important; }
-.layout-main-section .widget h3:contains("Leaves"):before { content: "🏖️" !important; }
-.layout-main-section .widget h3:contains("Attendance"):before { content: "🕐" !important; }
-.layout-main-section .widget h3:contains("Reports"):before { content: "📊" !important; }
-.layout-main-section .widget h3:contains("Appointment"):before { content: "📅" !important; }
-.layout-main-section .widget h3:contains("Setup"):before,
-.layout-main-section .widget h3:contains("Settings"):before { content: "⚙️" !important; }
 
-/* PURPLE SECTION LINKS AND BUTTONS */
-.layout-main-section .widget a,
-.layout-main-section .ce-block a {
-    color: rgba(255, 255, 255, 0.95) !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 8px 0 !important;
-}
-.layout-main-section .widget a:before,
-.layout-main-section .ce-block a:before {
-    content: "▸" !important;
-    font-size: 12px !important;
-    color: rgba(255, 255, 255, 0.7) !important;
-    font-weight: bold !important;
-}
-.layout-main-section .widget .btn,
-.layout-main-section .ce-block .btn {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+.layout-main-section .widget:nth-of-type(1) .widget-head,
+.layout-main-section .widget:nth-of-type(1) .widget-title,
+.layout-main-section .widget:nth-of-type(1) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(1) h3,
+.layout-main-section [data-widget-name]:nth-of-type(1) .head-title {
     color: white !important;
     font-weight: 600 !important;
-    border-radius: 8px !important;
-    margin: 8px 8px 8px 0 !important;
-    padding: 10px 15px !important;
 }
 
-/* DARK MODE GRADIENT HOVER */
+.layout-main-section .widget:nth-of-type(1) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(1) a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.2s ease !important;
+}
+
+.layout-main-section .widget:nth-of-type(1) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(1) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* Reports & Masters section - Green theme */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section [data-widget-name]:nth-of-type(2) {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+.layout-main-section .widget:nth-of-type(2) .widget-head,
+.layout-main-section .widget:nth-of-type(2) .widget-title,
+.layout-main-section .widget:nth-of-type(2) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(2) h3,
+.layout-main-section [data-widget-name]:nth-of-type(2) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.layout-main-section .widget:nth-of-type(2) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(2) a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.layout-main-section .widget:nth-of-type(2) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(2) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* Data Import and Settings section - Orange theme */
+.layout-main-section .widget:nth-of-type(3),
+.layout-main-section [data-widget-name]:nth-of-type(3) {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
+}
+
+.layout-main-section .widget:nth-of-type(3) .widget-head,
+.layout-main-section .widget:nth-of-type(3) .widget-title,
+.layout-main-section .widget:nth-of-type(3) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(3) h3,
+.layout-main-section [data-widget-name]:nth-of-type(3) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.layout-main-section .widget:nth-of-type(3) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(3) a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.layout-main-section .widget:nth-of-type(3) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(3) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* Fourth section - Purple theme */
+.layout-main-section .widget:nth-of-type(4),
+.layout-main-section [data-widget-name]:nth-of-type(4) {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+}
+
+.layout-main-section .widget:nth-of-type(4) .widget-head,
+.layout-main-section .widget:nth-of-type(4) .widget-title,
+.layout-main-section .widget:nth-of-type(4) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(4) h3,
+.layout-main-section [data-widget-name]:nth-of-type(4) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.layout-main-section .widget:nth-of-type(4) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(4) a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.layout-main-section .widget:nth-of-type(4) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(4) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* Enhanced hover effects for all colored sections */
+.layout-main-section .widget:hover,
+.layout-main-section [data-widget-name]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Style the column headers (Accounting, Stock, CRM) */
+.layout-main-section .widget .widget-body h4,
+.layout-main-section .widget .widget-body h5,
+.layout-main-section .ce-block h3,
+.layout-main-section .form-section .section-head {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Style individual links and items */
+.layout-main-section .widget .widget-body ul li,
+.layout-main-section .widget .widget-body div a {
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: block !important;
+}
+
+.layout-main-section .widget .widget-body ul li:last-child {
+    border-bottom: none !important;
+}
+
+/* Dark theme adjustments */
 [data-theme="dark"] .layout-main-section .widget:hover,
-[data-theme="dark"] .layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4) !important;
+[data-theme="dark"] .layout-main-section [data-widget-name]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* ======================== RESPONSIVE ADJUSTMENTS ======================== */
-@media (max-width: 768px) {
-    .layout-side-section {
-        padding: 10px 5px !important;
-    }
-    .layout-side-section .sidebar-item,
-    .layout-side-section .standard-sidebar-item {
-        padding: 10px 12px !important;
-    }
-    .layout-main-section .widget {
-        padding: 20px !important;
-        margin-bottom: 25px !important;
-    }
-    .layout-main-section .widget .btn {
-        padding: 8px 12px !important;
-        font-size: 14px !important;
-    }
+/* Alternative approach - target by specific widget names if above doesn't work */
+.widget[data-widget-name="Your Shortcuts"],
+.onboarding-widget-box[onboarding_name="Home"] .widget {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
+
+/* Fallback - target by content if structure is different */
+.layout-main-section div:contains("Your Shortcuts"),
+.layout-main-section div:contains("Reports & Masters"),
+.layout-main-section div:contains("Data Import and Settings") {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+}
+/* main section ended */
