@@ -249,7 +249,7 @@ header .form-control:focus{
 .layout-side-section .sidebar-section {
 /*     background: var(--white-color) !important; */
 /*      background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */ */
-    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 35%, rgba(255, 255, 255, 1) 100%);
+   background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 35%, rgba(255, 255, 255, 1) 100%);
     border-radius: 8px !important; /* rounded corners */
     margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
@@ -261,13 +261,13 @@ header .form-control:focus{
 }
 
 /* Hover effect: lift card with stronger shadow + highlight border */
-.layout-side-section .sidebar-item:hover,
+/* .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
 .layout-side-section .sidebar-section:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     transform: translateY(-2px) !important;
     border-color: var(--primary-color) !important;
-}
+} */
 
 /* Sidebar labels inside cards */
 .layout-side-section .sidebar-label {
