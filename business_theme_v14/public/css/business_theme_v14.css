@@ -435,199 +435,234 @@ header .form-control:focus{
 /* main section color */
 
 
-/* ==================== CLEAN PURPLE GRADIENT SECTIONS ==================== */
-/* Keep only the purple gradient, remove other colors and popup effects */
+/* ==================== COLORFUL SIDEBAR SECTIONS - FIXED FOR ERPNEXT ==================== */
+/* Add this to your ERPNext custom CSS file to style sidebar widgets */
 
-/* Base styling for all sections - Improved layout like the image */
+/* --------------------------------------------------------
+   Base styling for ALL widgets in the ERPNext sidebar
+   - Rounded corners, spacing, hover transition
+--------------------------------------------------------- */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
-.layout-main-section .ce-block {
+.layout-main-section [data-widget-name] {
     position: relative !important;
     overflow: hidden !important;
     border-radius: 12px !important;
     margin-bottom: 20px !important;
-    padding: 20px !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* All sections - Purple gradient background with better spacing */
-.layout-main-section .widget,
-.layout-main-section .ce-block {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+/* --------------------------------------------------------
+   1. First Widget (Your Shortcuts) - Blue Theme
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(1),
+.layout-main-section [data-widget-name]:nth-of-type(1) {
+    background: #009fff !important;
     border: none !important;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2) !important;
-    margin-right: 15px !important;
-    margin-bottom: 15px !important;
-    display: inline-block !important;
-    vertical-align: top !important;
-    width: calc(25% - 15px) !important;
-    min-height: 180px !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
 
-/* Text styling for purple sections - Clean layout like the image */
-.layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title,
-.layout-main-section .widget h3,
-.layout-main-section .ce-block h3,
-.layout-main-section .widget-subtitle {
+/* Headings inside the first widget */
+.layout-main-section .widget:nth-of-type(1) .widget-head,
+.layout-main-section .widget:nth-of-type(1) .widget-title,
+.layout-main-section .widget:nth-of-type(1) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(1) h3,
+.layout-main-section [data-widget-name]:nth-of-type(1) .head-title {
     color: white !important;
     font-weight: 600 !important;
-    text-shadow: none !important;
-    margin-bottom: 15px !important;
-    font-size: 16px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
 }
 
-/* Add simple document icons before section titles */
-.layout-main-section .widget h3:before,
-.layout-main-section .ce-block h3:before,
-.layout-main-section .widget-title:before {
-    content: "📄" !important;
-    font-size: 14px !important;
+/* Links inside the first widget */
+.layout-main-section .widget:nth-of-type(1) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(1) a {
     color: rgba(255, 255, 255, 0.9) !important;
-    margin-right: 6px !important;
-    display: inline-block !important;
+    transition: all 0.2s ease !important;
 }
 
-/* Remove all specific icon overrides - keep simple document icon */
-/* All sections use the same document icon for consistency */
-
-/* Links and content styling - Clean like the image */
-.layout-main-section .widget .widget-body a,
-.layout-main-section .ce-block a,
-.layout-main-section .widget a {
-    color: rgba(255, 255, 255, 0.9) !important;
-    transition: color 0.2s ease !important;
-    font-weight: 400 !important;
-    text-decoration: none !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    padding: 4px 0 !important;
-    margin: 3px 0 !important;
-    font-size: 14px !important;
-}
-
-/* Simple bullet points for links */
-.layout-main-section .widget .widget-body a:before,
-.layout-main-section .ce-block a:before {
-    content: "•" !important;
-    color: rgba(255, 255, 255, 0.6) !important;
-    font-size: 10px !important;
-    font-weight: bold !important;
-}
-
-.layout-main-section .widget .widget-body a:hover,
-.layout-main-section .ce-block a:hover,
-.layout-main-section .widget a:hover {
+/* Link hover effect - highlights links */
+.layout-main-section .widget:nth-of-type(1) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(1) a:hover {
     color: white !important;
-    /* NO background, padding, or transform effects */
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
 }
 
-/* Section headers inside widgets - Better spacing */
+/* --------------------------------------------------------
+   2. Second Widget (Reports & Masters) - Green Theme
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section [data-widget-name]:nth-of-type(2) {
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Headings inside the second widget */
+.layout-main-section .widget:nth-of-type(2) .widget-head,
+.layout-main-section .widget:nth-of-type(2) .widget-title,
+.layout-main-section .widget:nth-of-type(2) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(2) h3,
+.layout-main-section [data-widget-name]:nth-of-type(2) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Links inside the second widget */
+.layout-main-section .widget:nth-of-type(2) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(2) a {
+/*     color: rgba(255, 255, 255, 0.9) !important; */
+     color: white !important;
+}
+
+/* Link hover effect */
+.layout-main-section .widget:nth-of-type(2) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(2) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* --------------------------------------------------------
+   3. Third Widget (Data Import & Settings) - Orange Theme
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(3),
+.layout-main-section [data-widget-name]:nth-of-type(3) {
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Headings inside the third widget */
+.layout-main-section .widget:nth-of-type(3) .widget-head,
+.layout-main-section .widget:nth-of-type(3) .widget-title,
+.layout-main-section .widget:nth-of-type(3) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(3) h3,
+.layout-main-section [data-widget-name]:nth-of-type(3) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Links inside the third widget */
+.layout-main-section .widget:nth-of-type(3) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(3) a {
+/*     color: rgba(255, 255, 255, 0.9) !important; */
+     color: white !important;
+}
+
+/* Link hover effect */
+.layout-main-section .widget:nth-of-type(3) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(3) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* --------------------------------------------------------
+   4. Fourth Widget (Other Section) - Purple Theme
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(4),
+.layout-main-section [data-widget-name]:nth-of-type(4) {
+    background: #009fff !important; /* Blue background - adjust if needed */
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Headings inside the fourth widget */
+.layout-main-section .widget:nth-of-type(4) .widget-head,
+.layout-main-section .widget:nth-of-type(4) .widget-title,
+.layout-main-section .widget:nth-of-type(4) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(4) h3,
+.layout-main-section [data-widget-name]:nth-of-type(4) .head-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Links inside the fourth widget */
+.layout-main-section .widget:nth-of-type(4) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(4) a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Link hover effect */
+.layout-main-section .widget:nth-of-type(4) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(4) a:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+}
+
+/* --------------------------------------------------------
+   Hover effect for ALL widgets (lift-up shadow)
+--------------------------------------------------------- */
+.layout-main-section .widget:hover,
+.layout-main-section [data-widget-name]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --------------------------------------------------------
+   Column Headers (Accounting, Stock, CRM, etc.)
+   - Bold, white, with underline separator
+--------------------------------------------------------- */
 .layout-main-section .widget .widget-body h4,
 .layout-main-section .widget .widget-body h5,
-.layout-main-section .ce-block h4,
-.layout-main-section .ce-block h5 {
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-weight: 600 !important;
+.layout-main-section .ce-block h3,
+.layout-main-section .form-section .section-head {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 700 !important;
     font-size: 16px !important;
-    margin-bottom: 20px !important;
-    margin-top: 25px !important;
-    padding-bottom: 12px !important;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
-/* List items styling - Better spacing */
+/* --------------------------------------------------------
+   Links inside widgets (spacing + separator lines)
+--------------------------------------------------------- */
 .layout-main-section .widget .widget-body ul li,
-.layout-main-section .ce-block ul li {
-    padding: 12px 0 !important;
-    margin: 8px 0 !important;
+.layout-main-section .widget .widget-body div a {
+    padding: 8px 0 !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    transition: color 0.2s ease !important;
+    display: block !important;
 }
 
-.layout-main-section .widget .widget-body ul li:last-child,
-.layout-main-section .ce-block ul li:last-child {
+/* Remove separator line from last link */
+.layout-main-section .widget .widget-body ul li:last-child {
     border-bottom: none !important;
-    margin-bottom: 0 !important;
 }
 
-.layout-main-section .widget .widget-body ul li:hover,
-.layout-main-section .ce-block ul li:hover {
-    /* NO background, border-radius, or padding changes */
-    color: rgba(255, 255, 255, 1) !important;
-}
-
-/* Simple hover effects - Clean shadow enhancement */
-.layout-main-section .widget:hover,
-.layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3) !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Button styling for purple sections - Better spacing */
-.layout-main-section .widget .widget-body .btn,
-.layout-main-section .ce-block .btn {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
-    font-weight: 600 !important;
-    margin: 8px 8px 8px 0 !important;
-    padding: 10px 15px !important;
-    transition: background 0.2s ease !important;
-    border-radius: 8px !important;
-}
-
-.layout-main-section .widget .widget-body .btn:hover,
-.layout-main-section .ce-block .btn:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
-    /* NO transform or shadow effects */
-}
-
-/* Dark theme adjustments */
+/* --------------------------------------------------------
+   Dark Theme adjustments (heavier shadow)
+--------------------------------------------------------- */
 [data-theme="dark"] .layout-main-section .widget:hover,
-[data-theme="dark"] .layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4) !important;
+[data-theme="dark"] .layout-main-section [data-widget-name]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Fallback for different ERPNext versions */
-.page-container .widget,
-.main-section .widget,
-div[data-widget-name] {
-    border-radius: 15px !important;
-    overflow: hidden !important;
-    margin-bottom: 25px !important;
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
+/* --------------------------------------------------------
+   Fallbacks in case nth-of-type selectors break
+   - Target by widget names or text content
+--------------------------------------------------------- */
+.widget[data-widget-name="Your Shortcuts"],
+.onboarding-widget-box[onboarding_name="Home"] .widget {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
 
-/* Responsive adjustments - Grid layout */
-@media (max-width: 1200px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        width: calc(33.33% - 15px) !important;
-    }
-}
-
-@media (max-width: 900px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        width: calc(50% - 15px) !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        width: calc(100% - 15px) !important;
-        margin-bottom: 15px !important;
-        padding: 15px !important;
-    }
+/* Fallback: if widget name not available, target by text */
+.layout-main-section div:contains("Your Shortcuts"),
+.layout-main-section div:contains("Reports & Masters"),
+.layout-main-section div:contains("Data Import and Settings") {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
 }
 /* ==================== MAIN SECTION STYLING ENDED ==================== */
 
