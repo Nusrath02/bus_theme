@@ -93,8 +93,8 @@ h3.ellipsis.title-text,
 
 /* Colours */
 :root {
-    --background: #62C1E5;
-    --background-color: radial-gradient(circle,rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%); /* Navbar background (blue) */
+    --background: #FFFF;
+/*     --background-color: radial-gradient(circle,rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%); /* Navbar background (blue) */ */
     --primary-color: #000000;    /* Primary accent (orange) */
     --secondary-color: #7574ff;  /* Secondary accent (purple/blue) */
     --white-color: #ffffff;      /* White */
@@ -248,7 +248,8 @@ header .form-control:focus{
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
 /*     background: var(--white-color) !important; */
-     background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */
+/*      background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */ */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 35%, rgba(255, 255, 255, 1) 100%);
     border-radius: 8px !important; /* rounded corners */
     margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
@@ -452,7 +453,9 @@ header .form-control:focus{
 /* Your Shortcuts section - Blue theme */
 .layout-main-section .widget:nth-of-type(1),
 .layout-main-section [data-widget-name]:nth-of-type(1) {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+/*     background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; */
+/*     background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */ */
+    background: #009fff;
     border: none !important;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
 }
@@ -483,7 +486,8 @@ header .form-control:focus{
 /* Reports & Masters section - Green theme */
 .layout-main-section .widget:nth-of-type(2),
 .layout-main-section [data-widget-name]:nth-of-type(2) {
-    background: linear-gradient(135deg, #10b981, #059669) !important;
+/*     background: linear-gradient(135deg, #10b981, #059669) !important; */
+    background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */
     border: none !important;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
 }
@@ -513,7 +517,7 @@ header .form-control:focus{
 /* Data Import and Settings section - Orange theme */
 .layout-main-section .widget:nth-of-type(3),
 .layout-main-section [data-widget-name]:nth-of-type(3) {
-    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+/*     background: linear-gradient(135deg, #f59e0b, #d97706) !important; */
     border: none !important;
     box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
 }
