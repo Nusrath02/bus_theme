@@ -293,7 +293,7 @@ header .form-control:focus{
     border-radius: 6px !important;
     border: 1px solid #e8ecf1 !important;
     margin: 5px 0 !important;
-    padding: 8px 12px !important;
+    padding: 8px 17px !important;
     transition: all 0.2s ease !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
@@ -306,7 +306,7 @@ header .form-control:focus{
 }
 
 /* Sidebar section containers styled as cards */
-.layout-side-section .sidebar-menu,
+/* .layout-side-section .sidebar-menu,
 .layout-side-section .list-sidebar {
     background: var(--white-color) !important;
     border-radius: 8px !important;
@@ -314,7 +314,7 @@ header .form-control:focus{
     margin-bottom: 15px !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     border: 1px solid #e8ecf1 !important;
-}
+} */
 
 /* Sidebar list items with dividers */
 .layout-side-section .sidebar-menu li,
