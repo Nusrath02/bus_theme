@@ -474,7 +474,7 @@ header .form-control:focus{
     gap: 10px !important;
 }
 
-/* Add icons before section titles */
+/* Add icons before section titles - Specific icons for each topic */
 .layout-main-section .widget h3:before,
 .layout-main-section .ce-block h3:before,
 .layout-main-section .widget-title:before {
@@ -482,87 +482,117 @@ header .form-control:focus{
     font-weight: 900 !important;
     font-size: 16px !important;
     color: rgba(255, 255, 255, 0.9) !important;
-    margin-right: 5px !important;
+    margin-right: 8px !important;
+    display: inline-block !important;
+    width: 20px !important;
+    text-align: center !important;
 }
 
-/* Specific icons for different sections */
-.layout-main-section .widget h3[title*="Accounting"]:before,
-.layout-main-section .ce-block h3:contains("Accounting"):before,
-.layout-main-section .widget-title:contains("Accounting"):before {
-    content: "🧮" !important; /* Calculator icon */
+/* Specific icons for each section/topic */
+
+/* HR Module Icons */
+.layout-main-section .widget h3:contains("Setup"):before,
+.layout-main-section .ce-block h3:contains("Setup"):before,
+.layout-main-section .widget-title:contains("Setup"):before {
+    content: "⚙️" !important; /* Setup/Settings gear */
 }
 
-.layout-main-section .widget h3[title*="Stock"]:before,
-.layout-main-section .ce-block h3:contains("Stock"):before,
-.layout-main-section .widget-title:contains("Stock"):before {
-    content: "📦" !important; /* Box icon */
+.layout-main-section .widget h3:contains("Employee"):before,
+.layout-main-section .ce-block h3:contains("Employee"):before,
+.layout-main-section .widget-title:contains("Employee"):before {
+    content: "👤" !important; /* Employee person icon */
 }
 
-.layout-main-section .widget h3[title*="CRM"]:before,
-.layout-main-section .ce-block h3:contains("CRM"):before,
-.layout-main-section .widget-title:contains("CRM"):before {
-    content: "👥" !important; /* Users icon */
+.layout-main-section .widget h3:contains("Leaves"):before,
+.layout-main-section .ce-block h3:contains("Leaves"):before,
+.layout-main-section .widget-title:contains("Leaves"):before {
+    content: "🏖️" !important; /* Leaves/vacation icon */
 }
 
-.layout-main-section .widget h3[title*="HR"]:before,
-.layout-main-section .ce-block h3:contains("HR"):before,
-.layout-main-section .widget-title:contains("HR"):before {
-    content: "👤" !important; /* Person icon */
-}
-
-.layout-main-section .widget h3[title*="Jobs"]:before,
-.layout-main-section .ce-block h3:contains("Jobs"):before,
-.layout-main-section .widget-title:contains("Jobs"):before {
-    content: "💼" !important; /* Briefcase icon */
-}
-
-.layout-main-section .widget h3[title*="Projects"]:before,
-.layout-main-section .ce-block h3:contains("Projects"):before,
-.layout-main-section .widget-title:contains("Projects"):before {
-    content: "📊" !important; /* Chart icon */
-}
-
-.layout-main-section .widget h3[title*="Buying"]:before,
-.layout-main-section .ce-block h3:contains("Buying"):before,
-.layout-main-section .widget-title:contains("Buying"):before {
-    content: "🛒" !important; /* Shopping cart icon */
-}
-
-.layout-main-section .widget h3[title*="Selling"]:before,
-.layout-main-section .ce-block h3:contains("Selling"):before,
-.layout-main-section .widget-title:contains("Selling"):before {
-    content: "💰" !important; /* Money bag icon */
-}
-
-.layout-main-section .widget h3[title*="Manufacturing"]:before,
-.layout-main-section .ce-block h3:contains("Manufacturing"):before,
-.layout-main-section .widget-title:contains("Manufacturing"):before {
-    content: "⚙️" !important; /* Gear icon */
-}
-
-.layout-main-section .widget h3[title*="Reports"]:before,
-.layout-main-section .ce-block h3:contains("Reports"):before,
-.layout-main-section .widget-title:contains("Reports"):before {
-    content: "📈" !important; /* Chart increasing icon */
-}
-
-.layout-main-section .widget h3[title*="Settings"]:before,
+.layout-main-section .widget h3:contains("Settings"):before,
 .layout-main-section .ce-block h3:contains("Settings"):before,
 .layout-main-section .widget-title:contains("Settings"):before {
-    content: "⚙️" !important; /* Settings icon */
+    content: "⚙️" !important; /* Settings gear */
 }
 
-.layout-main-section .widget h3[title*="Shortcuts"]:before,
+.layout-main-section .widget h3:contains("Attendance"):before,
+.layout-main-section .ce-block h3:contains("Attendance"):before,
+.layout-main-section .widget-title:contains("Attendance"):before {
+    content: "🕐" !important; /* Attendance clock */
+}
+
+.layout-main-section .widget h3:contains("Expense Claim"):before,
+.layout-main-section .ce-block h3:contains("Expense Claim"):before,
+.layout-main-section .widget-title:contains("Expense Claim"):before {
+    content: "💳" !important; /* Expense credit card */
+}
+
+.layout-main-section .widget h3:contains("Key Reports"):before,
+.layout-main-section .ce-block h3:contains("Key Reports"):before,
+.layout-main-section .widget-title:contains("Key Reports"):before {
+    content: "📊" !important; /* Key reports chart */
+}
+
+.layout-main-section .widget h3:contains("Other Reports"):before,
+.layout-main-section .ce-block h3:contains("Other Reports"):before,
+.layout-main-section .widget-title:contains("Other Reports"):before {
+    content: "📈" !important; /* Other reports trending chart */
+}
+
+.layout-main-section .widget h3:contains("Jobs"):before,
+.layout-main-section .ce-block h3:contains("Jobs"):before,
+.layout-main-section .widget-title:contains("Jobs"):before {
+    content: "💼" !important; /* Jobs briefcase */
+}
+
+.layout-main-section .widget h3:contains("Appointment"):before,
+.layout-main-section .ce-block h3:contains("Appointment"):before,
+.layout-main-section .widget-title:contains("Appointment"):before {
+    content: "📅" !important; /* Appointment calendar */
+}
+
+.layout-main-section .widget h3:contains("Reports"):before,
+.layout-main-section .ce-block h3:contains("Reports"):before,
+.layout-main-section .widget-title:contains("Reports"):before {
+    content: "📋" !important; /* Reports clipboard */
+}
+
+/* Core Module Icons */
+.layout-main-section .widget h3:contains("Accounting"):before,
+.layout-main-section .ce-block h3:contains("Accounting"):before,
+.layout-main-section .widget-title:contains("Accounting"):before {
+    content: "📊" !important; /* Accounting chart */
+}
+
+.layout-main-section .widget h3:contains("Stock"):before,
+.layout-main-section .ce-block h3:contains("Stock"):before,
+.layout-main-section .widget-title:contains("Stock"):before {
+    content: "📦" !important; /* Stock box */
+}
+
+.layout-main-section .widget h3:contains("CRM"):before,
+.layout-main-section .ce-block h3:contains("CRM"):before,
+.layout-main-section .widget-title:contains("CRM"):before {
+    content: "👥" !important; /* CRM users */
+}
+
+.layout-main-section .widget h3:contains("Data Import"):before,
+.layout-main-section .ce-block h3:contains("Data Import"):before,
+.layout-main-section .widget-title:contains("Data Import"):before {
+    content: "📥" !important; /* Data import inbox */
+}
+
+.layout-main-section .widget h3:contains("Shortcuts"):before,
 .layout-main-section .ce-block h3:contains("Shortcuts"):before,
 .layout-main-section .widget-title:contains("Shortcuts"):before {
-    content: "🔗" !important; /* Link icon */
+    content: "🔗" !important; /* Shortcuts link */
 }
 
-/* Default icon for sections without specific icons */
+/* Default icon for unmatched sections */
 .layout-main-section .widget h3:before,
 .layout-main-section .ce-block h3:before,
 .layout-main-section .widget-title:before {
-    content: "📋" !important; /* Default clipboard icon */
+    content: "📄" !important; /* Default document icon */
 }
 
 /* Links and content styling - Better spacing with optional icons */
