@@ -248,7 +248,7 @@ header .form-control:focus{
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
-   background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 35%, rgba(0, 159, 255, 1) 100%) !important;
+   background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
     border-radius: 8px !important; /* rounded corners */
     margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
