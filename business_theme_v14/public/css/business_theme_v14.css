@@ -458,7 +458,7 @@ header .form-control:focus{
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
 }
 
-/* Text styling for purple sections - Better spacing */
+/* Text styling for purple sections - Better spacing with icons */
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .layout-main-section .widget h3,
@@ -469,9 +469,103 @@ header .form-control:focus{
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
     margin-bottom: 20px !important;
     font-size: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
-/* Links and content styling - Better spacing */
+/* Add icons before section titles */
+.layout-main-section .widget h3:before,
+.layout-main-section .ce-block h3:before,
+.layout-main-section .widget-title:before {
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", serif !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-right: 5px !important;
+}
+
+/* Specific icons for different sections */
+.layout-main-section .widget h3[title*="Accounting"]:before,
+.layout-main-section .ce-block h3:contains("Accounting"):before,
+.layout-main-section .widget-title:contains("Accounting"):before {
+    content: "🧮" !important; /* Calculator icon */
+}
+
+.layout-main-section .widget h3[title*="Stock"]:before,
+.layout-main-section .ce-block h3:contains("Stock"):before,
+.layout-main-section .widget-title:contains("Stock"):before {
+    content: "📦" !important; /* Box icon */
+}
+
+.layout-main-section .widget h3[title*="CRM"]:before,
+.layout-main-section .ce-block h3:contains("CRM"):before,
+.layout-main-section .widget-title:contains("CRM"):before {
+    content: "👥" !important; /* Users icon */
+}
+
+.layout-main-section .widget h3[title*="HR"]:before,
+.layout-main-section .ce-block h3:contains("HR"):before,
+.layout-main-section .widget-title:contains("HR"):before {
+    content: "👤" !important; /* Person icon */
+}
+
+.layout-main-section .widget h3[title*="Jobs"]:before,
+.layout-main-section .ce-block h3:contains("Jobs"):before,
+.layout-main-section .widget-title:contains("Jobs"):before {
+    content: "💼" !important; /* Briefcase icon */
+}
+
+.layout-main-section .widget h3[title*="Projects"]:before,
+.layout-main-section .ce-block h3:contains("Projects"):before,
+.layout-main-section .widget-title:contains("Projects"):before {
+    content: "📊" !important; /* Chart icon */
+}
+
+.layout-main-section .widget h3[title*="Buying"]:before,
+.layout-main-section .ce-block h3:contains("Buying"):before,
+.layout-main-section .widget-title:contains("Buying"):before {
+    content: "🛒" !important; /* Shopping cart icon */
+}
+
+.layout-main-section .widget h3[title*="Selling"]:before,
+.layout-main-section .ce-block h3:contains("Selling"):before,
+.layout-main-section .widget-title:contains("Selling"):before {
+    content: "💰" !important; /* Money bag icon */
+}
+
+.layout-main-section .widget h3[title*="Manufacturing"]:before,
+.layout-main-section .ce-block h3:contains("Manufacturing"):before,
+.layout-main-section .widget-title:contains("Manufacturing"):before {
+    content: "⚙️" !important; /* Gear icon */
+}
+
+.layout-main-section .widget h3[title*="Reports"]:before,
+.layout-main-section .ce-block h3:contains("Reports"):before,
+.layout-main-section .widget-title:contains("Reports"):before {
+    content: "📈" !important; /* Chart increasing icon */
+}
+
+.layout-main-section .widget h3[title*="Settings"]:before,
+.layout-main-section .ce-block h3:contains("Settings"):before,
+.layout-main-section .widget-title:contains("Settings"):before {
+    content: "⚙️" !important; /* Settings icon */
+}
+
+.layout-main-section .widget h3[title*="Shortcuts"]:before,
+.layout-main-section .ce-block h3:contains("Shortcuts"):before,
+.layout-main-section .widget-title:contains("Shortcuts"):before {
+    content: "🔗" !important; /* Link icon */
+}
+
+/* Default icon for sections without specific icons */
+.layout-main-section .widget h3:before,
+.layout-main-section .ce-block h3:before,
+.layout-main-section .widget-title:before {
+    content: "📋" !important; /* Default clipboard icon */
+}
+
+/* Links and content styling - Better spacing with optional icons */
 .layout-main-section .widget .widget-body a,
 .layout-main-section .ce-block a,
 .layout-main-section .widget a {
@@ -479,9 +573,20 @@ header .form-control:focus{
     transition: color 0.2s ease !important;
     font-weight: 500 !important;
     text-decoration: none !important;
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
     padding: 8px 0 !important;
     margin: 5px 0 !important;
+}
+
+/* Add small icons to individual links */
+.layout-main-section .widget .widget-body a:before,
+.layout-main-section .ce-block a:before {
+    content: "▸" !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
 }
 
 .layout-main-section .widget .widget-body a:hover,
