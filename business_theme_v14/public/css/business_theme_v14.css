@@ -247,7 +247,8 @@ header .form-control:focus{
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
-    background: var(--white-color) !important;
+/*     background: var(--white-color) !important; */
+     background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important; /* Purple for first item */
     border-radius: 8px !important; /* rounded corners */
     margin-bottom: 10px !important; /* space between cards */
     padding: 12px 15px !important;
