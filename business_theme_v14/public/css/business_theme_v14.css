@@ -1,292 +1,143 @@
-/* Works on Chrome, Edge, and Safari */
+/* ======================== GLOBAL SCROLLBAR STYLES ======================== */
 *::-webkit-scrollbar {
     width: 6px;
 }
 *::-webkit-scrollbar-track {
-    background: var(--scroll-bg); /* Scrollbar track background */
+    background: var(--scroll-bg);
 }
 *::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-color); /* Scrollbar thumb color */
+    background-color: var(--scroll-color);
     border-radius: 20px;
 }
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--scroll-color) var(--scroll-bg); /* Scrollbar colors (Firefox) */
-}
-.awesomplete .input-with-feedback {
-    border: 1px solid var(--border-color); /* Input field border */
-}
-.form-control {
-    border: 1px solid var(--border-color); /* General form field border */
-}
-.search-bar .awesomplete input {
-    background-color: var(--bg-color); /* Search bar input background */
-}
-.modal-backdrop{
-    background-color: #2c436b !important; /* Modal background overlay */
-}
-.widget .widget-head .widget-title {
-    font-size: var(--text-base); /* Widget title size */
-}
-.comment-box .comment-input-header, .form-dashboard-section .section-head, .form-section .section-head, .head-title {
-    font-size: var(--text-base);
-    font-weight: 600; /* Section headings & comment input header weight */
-}
-.comment-box .comment-input-container .ql-editor {
-    border: 1px solid var(--border-color); /* Comment box border */
-}
-.duration-picker .duration-input {
-    background-color: var(--bg-color); /* Duration picker background */
-    border: 1px solid var(--border-color);
-}
-.control-label {
-    font-weight: 500; /* Label text weight */
+    scrollbar-color: var(--scroll-color) var(--scroll-bg);
 }
 
-/* Dark theme variables */
+/* ======================== THEME VARIABLES ======================== */
+:root {
+    --background-color: radial-gradient(circle, rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%);
+    --primary-color: #000000;
+    --secondary-color: #7574ff;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --gray-color: #888;
+    --page-head-height: 50px;
+    --navbar-height: 50px;
+}
+
+/* LIGHT THEME */
+[data-theme="light"] {
+    --bg-color: #62c1e5;
+    --text-bold: 600;
+    --control-bg: #fff;
+    --control-bg-on-gray: #d4dcea;
+    --disabled-control-bg: #f2f5fa;
+    --heading-color: #333;
+    --border-color: #e3e8f1;
+    --avatar-frame-bg: #dde2ea;
+    --margin-lg: 15px;
+    --sidebar-select-color: #d4dcea;
+    --awesomplete-hover-bg: #d4dcea;
+    --scroll-bg: #eef1f5;
+    --scroll-color: #d9dfe6;
+}
+
+/* DARK THEME */
 [data-theme="dark"] {
     --bg-color: var(--gray-900);
     --disabled-control-bg: var(--gray-900);
     --border-color: #1c2126;
-    --margin-lg : 15px;
-    --text-bold: 600;
-    --scroll-bg: #161a1f;  /* Dark scrollbar track */
-    --scroll-color: #1c2126; /* Dark scrollbar thumb */
-}
-
-/* Light theme variables */
-[data-theme="light"] {
-    --bg-color: #62c1e5; /* Light background (sky blue shade) */
-    --text-bold: 600;
-    --control-bg : #fff; /* White input background */
-    --control-bg-on-gray: #d4dcea;
-    --disabled-control-bg: #f2f5fa;
-    --heading-color: #333; /* Heading text color */
-    --border-color:#e3e8f1; /* Light borders */
-    --avatar-frame-bg: #dde2ea;
     --margin-lg: 15px;
-    --sidebar-select-color: #d4dcea; /* Sidebar highlight */
-    --awesomplete-hover-bg: #d4dcea; /* Autocomplete hover background */
-    --scroll-bg: #eef1f5; /* Light scrollbar track */
-    --scroll-color: #d9dfe6; /* Light scrollbar thumb */
+    --text-bold: 600;
+    --scroll-bg: #161a1f;
+    --scroll-color: #1c2126;
 }
 
-
-/*****  OVERRIDDEN CSS  *****/
-
-/* Heading Text Color (was overridden before) */
-/*
-.page-head{
-    background: #7C7BAD !important;
+/* ======================== FORM + FIELD STYLING ======================== */
+.awesomplete .input-with-feedback,
+.form-control,
+.comment-box .comment-input-container .ql-editor,
+.duration-picker .duration-input {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
 }
-.page-container{
-    background: linear-gradient(to bottom, #7C7BAD, #c3c2cc) !important;
+.form-control:focus {
+    border-color: var(--primary-color) !important;
+    background: rgba(255, 160, 10, 0.14) !important;
 }
-h3.ellipsis.title-text,
-.widget-group .widget-group-head .widget-group-title,
-.layout-side-section .sidebar-label{
-    color: white !important;
-}
-*/
-
-/* -------------------- GLOBAL CSS -------------------- */
-
-/* Colours */
-:root {
-    --background: #62C1E5;
-    --background-color: radial-gradient(circle,rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%); /* Navbar background (blue) */
-    --primary-color: #000000;    /* Primary accent (orange) */
-    --secondary-color: #7574ff;  /* Secondary accent (purple/blue) */
-    --white-color: #ffffff;      /* White */
-    --black-color: #000000;      /* Black */
-    --gray-color: #888;          /* Neutral gray */
-
-    --page-head-height: 50px;    /* Page header height */
-    --navbar-height: 50px;       /* Navbar height */
+.control-label {
+    font-weight: 500;
 }
 
-/* Buttons */
-.btn-primary:active,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary:focus{
-    box-shadow: none !important;
+/* ======================== NAVBAR ======================== */
+.navbar {
+    background: var(--background-color) !important;
+    height: var(--navbar-height);
 }
-.btn-primary{
-    color: #fff !important; /* Primary button text color */
-    background-color: var(--primary-color) !important; /* Primary button background */
-    border-radius: 0 !important;
-}
-.btn-primary:hover{
-    background-color: rgba(255, 120, 10, 0.93) !important; /* Primary button hover */
-}
-
-/* Page Head */
-.page-head,
-.page-head .page-head-content{
-    height: var(--page-head-height);
-}
-.page-head,
-.page-head .page-head-content{
-    top: var(--page-head-height);
-}
-
-/* -------------------- NAVBAR -------------------- */
-
-/* Hide ERPNext default logo */
 .navbar .app-logo {
     display: none !important;
 }
-
-/* Show custom logo */
 .navbar .navbar-brand {
     background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center;
     background-size: contain;
-    width: 160px;   /* adjust size */
-    height: 40px;   /* adjust size */
+    width: 160px;
+    height: 40px;
+}
+.navbar-expand {
+    background-color: var(--background-color);
+}
+#navbar-breadcrumbs > li > a::before {
+    content: "\f105";
+    color: var(--white-color);
+}
+#navbar-breadcrumbs a,
+.navbar .navbar-nav a.nav-link {
+    color: var(--white-color);
+}
+header .form-control {
+    color: var(--white-color);
+    background-color: var(--white-color) !important;
 }
 
-/* -------end---- */
-
-.navbar{
-    background: var(--background-color) !important; /* Navbar background (blue) */
-    height: var(--navbar-height);
-}
-.navbar-expand{
-    background-color: var(--background-color); /* Navbar expand background */
-}
-#navbar-breadcrumbs > li > a::before{
-    content: "\f105"; /* Breadcrumb arrow icon */
-    color: var(--white-color); /* Breadcrumb icon color */
-}
-#navbar-breadcrumbs a{
-    color: var(--white-color); /* Breadcrumb link color */
-}
-header .form-control{
-    color: var(--white-color); /* Search bar text color in header */
-}
-header .form-control:focus{
-    border: 0;
-}
-header .form-control:focus{
-    background-color: var(--white-color) !important; /* Search bar focus background */
-}
-
-/* -------------------- SIDEBAR -------------------- */
-.layout-side-section .sidebar-label{
-    color: var(--primary-color); /* Sidebar label color (orange) */
-}
-.sidebar-label svg,
-.layout-side-section .sidebar-label .icon{
-    stroke: var(--primary-color); /* Sidebar icons color (orange) */
-}
-.list-sidebar-button{
-    background-color: #c8c4c4 !important; /* Sidebar button background */
-}
-
-/* -------------------- INPUT FIELDS -------------------- */
-.form-control{
-    background-color: #f2f2f2 !important; /* Input background */
-}
-.form-control:focus{
-    border: 1px solid var(--primary-color); /* Input border on focus (orange) */
-    background: rgba(255, 160, 10, 0.14) !important; /* Input focus background (light orange) */
-}
-.navbar .navbar-nav a.nav-link{
-    color: var(--white-color); /* Navbar link text color */
-}
-
-/* -------------------- TABLE -------------------- */
-.form-grid{
-    border: 1px solid #bbbbbb; /* Table border */
-}
-.form-grid .grid-heading-row{
-    background-color: #f4f4f4; /* Table header background */
-}
-.grid-heading-row{
-    border-bottom: 1px solid var(--primary-color); /* Table header bottom border (orange) */
-}
-.form-grid .grid-row:hover{
-    background: rgba(255, 152, 0, 0.15); /* Table row hover (light orange) */
-}
-
-/* -------------------- HEADINGS -------------------- */
-.head-title, .form-section .section-head, .form-dashboard-section .section-head, .comment-box .comment-input-header{
-    color: var(--primary-color); /* Heading text color (orange) */
-}
-
-/* -------------------- LISTS -------------------- */
-.list-subject a:hover{
-    color: var(--secondary-color); /* Link hover color (purple/blue) */
-}
-
-/* -------------------- REPORT TABLE -------------------- */
-.datatable .dt-header .dt-cell--header .dt-cell__content{
-    background-color: #f4f4f4; /* Report table header background */
-}
-
-
-
-
-
-
-
-/* sidebar card version testing */
-
-/* ==================== CARD-STYLE SIDEBAR ENHANCEMENT ==================== */
-/* This stylesheet enhances the ERPNext/Frappe sidebar with card-like styling,
-   hover effects, shadows, transitions, and dark mode adjustments. */
-
-/* Main sidebar container with spacing and transparent background */
+/* ======================== SIDEBAR - CARD STYLE ======================== */
 .layout-side-section {
     padding: 15px 10px !important;
     background: transparent !important;
 }
-
-/* Individual sidebar items styled as cards */
 .layout-side-section .sidebar-item,
 .layout-side-section .standard-sidebar-item,
 .layout-side-section .sidebar-section {
     background: var(--white-color) !important;
-    border-radius: 8px !important; /* rounded corners */
-    margin-bottom: 10px !important; /* space between cards */
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
     padding: 12px 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     border: 1px solid #e8ecf1 !important;
-    transition: all 0.3s ease !important; /* smooth hover animation */
-    position: relative !important;
-    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    animation: cardFadeIn 0.3s ease-out !important;
 }
-
-/* Hover effect: lift card with stronger shadow + highlight border */
 .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
 .layout-side-section .sidebar-section:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     transform: translateY(-2px) !important;
     border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
-
-/* Sidebar labels inside cards */
 .layout-side-section .sidebar-label {
     color: var(--primary-color) !important;
     font-weight: 600 !important;
     font-size: 14px !important;
-    margin-bottom: 8px !important;
-    display: flex !important; /* align label text with icons */
+    display: flex !important;
     align-items: center !important;
-    gap: 8px !important; /* space between icon and text */
+    gap: 8px !important;
 }
-
-/* Icons within sidebar labels */
-.sidebar-label svg, 
+.sidebar-label svg,
 .layout-side-section .sidebar-label .icon {
     stroke: var(--primary-color) !important;
     width: 18px !important;
     height: 18px !important;
 }
-
-/* Sidebar buttons styled as mini cards */
 .list-sidebar-button {
     background-color: var(--white-color) !important;
     border-radius: 6px !important;
@@ -296,51 +147,17 @@ header .form-control:focus{
     transition: all 0.2s ease !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
-
-/* Hover effect for buttons */
 .list-sidebar-button:hover {
     background-color: rgba(255, 160, 10, 0.1) !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 }
-
-/* Sidebar section containers styled as cards */
-.layout-side-section .sidebar-menu,
-.layout-side-section .list-sidebar {
-    background: var(--white-color) !important;
-    border-radius: 8px !important;
-    padding: 15px !important;
-    margin-bottom: 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    border: 1px solid #e8ecf1 !important;
-}
-
-/* Sidebar list items with dividers */
-.layout-side-section .sidebar-menu li,
-.layout-side-section .list-sidebar li {
-    padding: 6px 0 !important;
-    border-bottom: 1px solid #f5f6fa !important;
-}
-
-/* Remove divider from last item */
-.layout-side-section .sidebar-menu li:last-child,
-.layout-side-section .list-sidebar li:last-child {
-    border-bottom: none !important;
-}
-
-/* Links inside sidebar cards */
 .layout-side-section a {
     color: #333 !important;
     text-decoration: none !important;
-    transition: color 0.2s ease !important;
 }
-
-/* Hovered links change to primary color */
 .layout-side-section a:hover {
     color: var(--primary-color) !important;
 }
-
-/* Active/selected state for sidebar items */
 .layout-side-section .sidebar-item.active,
 .layout-side-section .standard-sidebar-item.active {
     background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important;
@@ -348,62 +165,32 @@ header .form-control:focus{
     border-color: var(--primary-color) !important;
     box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important;
 }
-
-/* Adjust label and icon colors in active state */
 .layout-side-section .sidebar-item.active .sidebar-label,
-.layout-side-section .standard-sidebar-item.active .sidebar-label {
-    color: var(--white-color) !important;
-}
-
+.layout-side-section .standard-sidebar-item.active .sidebar-label,
 .layout-side-section .sidebar-item.active svg,
 .layout-side-section .standard-sidebar-item.active svg {
+    color: var(--white-color) !important;
     stroke: var(--white-color) !important;
 }
 
-/* ==================== DARK THEME STYLING ==================== */
-/* Override sidebar card colors in dark mode */
+/* DARK MODE SIDEBAR */
 [data-theme="dark"] .layout-side-section .sidebar-item,
-[data-theme="dark"] .layout-side-section .standard-sidebar-item,
-[data-theme="dark"] .layout-side-section .sidebar-section,
-[data-theme="dark"] .layout-side-section .sidebar-menu,
-[data-theme="dark"] .layout-side-section .list-sidebar {
+[data-theme="dark"] .layout-side-section .sidebar-section {
     background: var(--gray-900) !important;
     border-color: #2c3136 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
-
-/* Hover effect in dark mode */
-[data-theme="dark"] .layout-side-section .sidebar-item:hover,
-[data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
-[data-theme="dark"] .layout-side-section .sidebar-section:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+[data-theme="dark"] .layout-side-section .sidebar-item:hover {
     border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
-
-/* Dark theme styling for buttons */
 [data-theme="dark"] .list-sidebar-button {
     background-color: var(--gray-900) !important;
     border-color: #2c3136 !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
-/* Adjust spacing for mobile view */
-@media (max-width: 768px) {
-    .layout-side-section {
-        padding: 10px 5px !important;
-    }
-    
-    .layout-side-section .sidebar-item,
-    .layout-side-section .standard-sidebar-item,
-    .layout-side-section .sidebar-section {
-        padding: 10px 12px !important;
-        margin-bottom: 8px !important;
-    }
-}
-
-/* ==================== ANIMATIONS ==================== */
-/* Smooth fade-in animation for sidebar cards */
+/* SIDEBAR ANIMATION */
 @keyframes cardFadeIn {
     from {
         opacity: 0;
@@ -415,66 +202,33 @@ header .form-control:focus{
     }
 }
 
-/* Apply fade-in animation on load */
-.layout-side-section .sidebar-item,
-.layout-side-section .standard-sidebar-item,
-.layout-side-section .sidebar-section {
-    animation: cardFadeIn 0.3s ease-out !important;
-}
-
-/* sidebar ended */
-
-
-
-
-
-
-
-
-/* main section color */
-
-
-/* ==================== CLEAN PURPLE GRADIENT SECTIONS ==================== */
-/* Keep only the purple gradient, remove other colors and popup effects */
-
-/* Base styling for all sections - Better spacing */
+/* ======================== MAIN SECTION - PURPLE WIDGETS ======================== */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
-.layout-main-section .ce-block {
-    position: relative !important;
-    overflow: hidden !important;
+.layout-main-section .ce-block,
+.page-container .widget,
+.main-section .widget,
+div[data-widget-name] {
+    background: linear-gradient(145deg, #667eea, #764ba2) !important;
     border-radius: 15px !important;
+    overflow: hidden !important;
     margin-bottom: 30px !important;
     padding: 25px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* All sections - Purple gradient background (like your first image) */
-.layout-main-section .widget,
-.layout-main-section .ce-block {
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
-    border: none !important;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
 }
 
-/* Text styling for purple sections - Better spacing with icons */
-.layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title,
+/* SECTION HEADINGS WITH ICONS */
 .layout-main-section .widget h3,
 .layout-main-section .ce-block h3,
-.layout-main-section .widget-subtitle {
+.layout-main-section .widget-title {
     color: white !important;
     font-weight: 700 !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-    margin-bottom: 20px !important;
     font-size: 18px !important;
     display: flex !important;
     align-items: center !important;
     gap: 10px !important;
 }
-
-/* Add icons before section titles - Specific icons for each topic */
 .layout-main-section .widget h3:before,
 .layout-main-section .ce-block h3:before,
 .layout-main-section .widget-title:before {
@@ -486,239 +240,68 @@ header .form-control:focus{
     display: inline-block !important;
     width: 20px !important;
     text-align: center !important;
+    content: "📄" !important;
 }
-
-/* Specific icons for each section/topic */
-
-/* HR Module Icons */
+/* ICON OVERRIDES BY TITLE KEYWORDS */
+.layout-main-section .widget h3:contains("Jobs"):before { content: "💼" !important; }
+.layout-main-section .widget h3:contains("Employee"):before { content: "👤" !important; }
+.layout-main-section .widget h3:contains("Leaves"):before { content: "🏖️" !important; }
+.layout-main-section .widget h3:contains("Attendance"):before { content: "🕐" !important; }
+.layout-main-section .widget h3:contains("Reports"):before { content: "📊" !important; }
+.layout-main-section .widget h3:contains("Appointment"):before { content: "📅" !important; }
 .layout-main-section .widget h3:contains("Setup"):before,
-.layout-main-section .ce-block h3:contains("Setup"):before,
-.layout-main-section .widget-title:contains("Setup"):before {
-    content: "⚙️" !important; /* Setup/Settings gear */
-}
+.layout-main-section .widget h3:contains("Settings"):before { content: "⚙️" !important; }
 
-.layout-main-section .widget h3:contains("Employee"):before,
-.layout-main-section .ce-block h3:contains("Employee"):before,
-.layout-main-section .widget-title:contains("Employee"):before {
-    content: "👤" !important; /* Employee person icon */
-}
-
-.layout-main-section .widget h3:contains("Leaves"):before,
-.layout-main-section .ce-block h3:contains("Leaves"):before,
-.layout-main-section .widget-title:contains("Leaves"):before {
-    content: "🏖️" !important; /* Leaves/vacation icon */
-}
-
-.layout-main-section .widget h3:contains("Settings"):before,
-.layout-main-section .ce-block h3:contains("Settings"):before,
-.layout-main-section .widget-title:contains("Settings"):before {
-    content: "⚙️" !important; /* Settings gear */
-}
-
-.layout-main-section .widget h3:contains("Attendance"):before,
-.layout-main-section .ce-block h3:contains("Attendance"):before,
-.layout-main-section .widget-title:contains("Attendance"):before {
-    content: "🕐" !important; /* Attendance clock */
-}
-
-.layout-main-section .widget h3:contains("Expense Claim"):before,
-.layout-main-section .ce-block h3:contains("Expense Claim"):before,
-.layout-main-section .widget-title:contains("Expense Claim"):before {
-    content: "💳" !important; /* Expense credit card */
-}
-
-.layout-main-section .widget h3:contains("Key Reports"):before,
-.layout-main-section .ce-block h3:contains("Key Reports"):before,
-.layout-main-section .widget-title:contains("Key Reports"):before {
-    content: "📊" !important; /* Key reports chart */
-}
-
-.layout-main-section .widget h3:contains("Other Reports"):before,
-.layout-main-section .ce-block h3:contains("Other Reports"):before,
-.layout-main-section .widget-title:contains("Other Reports"):before {
-    content: "📈" !important; /* Other reports trending chart */
-}
-
-.layout-main-section .widget h3:contains("Jobs"):before,
-.layout-main-section .ce-block h3:contains("Jobs"):before,
-.layout-main-section .widget-title:contains("Jobs"):before {
-    content: "💼" !important; /* Jobs briefcase */
-}
-
-.layout-main-section .widget h3:contains("Appointment"):before,
-.layout-main-section .ce-block h3:contains("Appointment"):before,
-.layout-main-section .widget-title:contains("Appointment"):before {
-    content: "📅" !important; /* Appointment calendar */
-}
-
-.layout-main-section .widget h3:contains("Reports"):before,
-.layout-main-section .ce-block h3:contains("Reports"):before,
-.layout-main-section .widget-title:contains("Reports"):before {
-    content: "📋" !important; /* Reports clipboard */
-}
-
-/* Core Module Icons */
-.layout-main-section .widget h3:contains("Accounting"):before,
-.layout-main-section .ce-block h3:contains("Accounting"):before,
-.layout-main-section .widget-title:contains("Accounting"):before {
-    content: "📊" !important; /* Accounting chart */
-}
-
-.layout-main-section .widget h3:contains("Stock"):before,
-.layout-main-section .ce-block h3:contains("Stock"):before,
-.layout-main-section .widget-title:contains("Stock"):before {
-    content: "📦" !important; /* Stock box */
-}
-
-.layout-main-section .widget h3:contains("CRM"):before,
-.layout-main-section .ce-block h3:contains("CRM"):before,
-.layout-main-section .widget-title:contains("CRM"):before {
-    content: "👥" !important; /* CRM users */
-}
-
-.layout-main-section .widget h3:contains("Data Import"):before,
-.layout-main-section .ce-block h3:contains("Data Import"):before,
-.layout-main-section .widget-title:contains("Data Import"):before {
-    content: "📥" !important; /* Data import inbox */
-}
-
-.layout-main-section .widget h3:contains("Shortcuts"):before,
-.layout-main-section .ce-block h3:contains("Shortcuts"):before,
-.layout-main-section .widget-title:contains("Shortcuts"):before {
-    content: "🔗" !important; /* Shortcuts link */
-}
-
-/* Default icon for unmatched sections */
-.layout-main-section .widget h3:before,
-.layout-main-section .ce-block h3:before,
-.layout-main-section .widget-title:before {
-    content: "📄" !important; /* Default document icon */
-}
-
-/* Links and content styling - Better spacing with optional icons */
-.layout-main-section .widget .widget-body a,
-.layout-main-section .ce-block a,
-.layout-main-section .widget a {
+/* PURPLE SECTION LINKS AND BUTTONS */
+.layout-main-section .widget a,
+.layout-main-section .ce-block a {
     color: rgba(255, 255, 255, 0.95) !important;
-    transition: color 0.2s ease !important;
     font-weight: 500 !important;
     text-decoration: none !important;
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
     padding: 8px 0 !important;
-    margin: 5px 0 !important;
 }
-
-/* Add small icons to individual links */
-.layout-main-section .widget .widget-body a:before,
+.layout-main-section .widget a:before,
 .layout-main-section .ce-block a:before {
     content: "▸" !important;
-    color: rgba(255, 255, 255, 0.7) !important;
     font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     font-weight: bold !important;
 }
-
-.layout-main-section .widget .widget-body a:hover,
-.layout-main-section .ce-block a:hover,
-.layout-main-section .widget a:hover {
-    color: white !important;
-    /* NO background, padding, or transform effects */
-}
-
-/* Section headers inside widgets - Better spacing */
-.layout-main-section .widget .widget-body h4,
-.layout-main-section .widget .widget-body h5,
-.layout-main-section .ce-block h4,
-.layout-main-section .ce-block h5 {
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    margin-bottom: 20px !important;
-    margin-top: 25px !important;
-    padding-bottom: 12px !important;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-}
-
-/* List items styling - Better spacing */
-.layout-main-section .widget .widget-body ul li,
-.layout-main-section .ce-block ul li {
-    padding: 12px 0 !important;
-    margin: 8px 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    transition: color 0.2s ease !important;
-}
-
-.layout-main-section .widget .widget-body ul li:last-child,
-.layout-main-section .ce-block ul li:last-child {
-    border-bottom: none !important;
-    margin-bottom: 0 !important;
-}
-
-.layout-main-section .widget .widget-body ul li:hover,
-.layout-main-section .ce-block ul li:hover {
-    /* NO background, border-radius, or padding changes */
-    color: rgba(255, 255, 255, 1) !important;
-}
-
-/* Simple hover effects - NO TRANSFORM/POPUP */
-.layout-main-section .widget:hover,
-.layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3) !important;
-    /* NO transform effects */
-}
-
-/* Button styling for purple sections - Better spacing */
-.layout-main-section .widget .widget-body .btn,
+.layout-main-section .widget .btn,
 .layout-main-section .ce-block .btn {
     background: rgba(255, 255, 255, 0.2) !important;
     border: 1px solid rgba(255, 255, 255, 0.3) !important;
     color: white !important;
     font-weight: 600 !important;
+    border-radius: 8px !important;
     margin: 8px 8px 8px 0 !important;
     padding: 10px 15px !important;
-    transition: background 0.2s ease !important;
-    border-radius: 8px !important;
 }
 
-.layout-main-section .widget .widget-body .btn:hover,
-.layout-main-section .ce-block .btn:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
-    /* NO transform or shadow effects */
-}
-
-/* Dark theme adjustments */
+/* DARK MODE GRADIENT HOVER */
 [data-theme="dark"] .layout-main-section .widget:hover,
 [data-theme="dark"] .layout-main-section .ce-block:hover {
     box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4) !important;
 }
 
-/* Fallback for different ERPNext versions */
-.page-container .widget,
-.main-section .widget,
-div[data-widget-name] {
-    border-radius: 15px !important;
-    overflow: hidden !important;
-    margin-bottom: 25px !important;
-    background: linear-gradient(145deg, #667eea, #764ba2) !important;
-}
-
-/* Responsive adjustments - Better mobile spacing */
+/* ======================== RESPONSIVE ADJUSTMENTS ======================== */
 @media (max-width: 768px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        margin-bottom: 25px !important;
-        padding: 20px !important;
-        border-radius: 12px !important;
+    .layout-side-section {
+        padding: 10px 5px !important;
     }
-    
-    .layout-main-section .widget .widget-body .btn,
-    .layout-main-section .ce-block .btn {
-        margin: 6px 6px 6px 0 !important;
+    .layout-side-section .sidebar-item,
+    .layout-side-section .standard-sidebar-item {
+        padding: 10px 12px !important;
+    }
+    .layout-main-section .widget {
+        padding: 20px !important;
+        margin-bottom: 25px !important;
+    }
+    .layout-main-section .widget .btn {
         padding: 8px 12px !important;
         font-size: 14px !important;
     }
 }
-/* main section ended */
