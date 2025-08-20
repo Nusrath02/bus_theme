@@ -437,85 +437,185 @@ header .form-control:focus{
 /* ==================== CLEAN PURPLE GRADIENT SECTIONS ==================== */
 /* Keep only the purple gradient, remove other colors and popup effects */
 
-/* Base styling for all sections - Improved layout like the image */
+/* Base styling for all sections - Better spacing */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
 .layout-main-section .ce-block {
     position: relative !important;
     overflow: hidden !important;
-    border-radius: 12px !important;
-    margin-bottom: 20px !important;
-    padding: 20px !important;
+    border-radius: 15px !important;
+    margin-bottom: 30px !important;
+    padding: 25px !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* All sections - Purple gradient background with better spacing */
+/* All sections - Purple gradient background (like your first image) */
 .layout-main-section .widget,
 .layout-main-section .ce-block {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+    background: linear-gradient(145deg, #667eea, #764ba2) !important;
     border: none !important;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2) !important;
-    margin-right: 15px !important;
-    margin-bottom: 15px !important;
-    display: inline-block !important;
-    vertical-align: top !important;
-    width: calc(25% - 15px) !important;
-    min-height: 180px !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
 }
 
-/* Text styling for purple sections - Clean layout like the image */
+/* Text styling for purple sections - Better spacing with icons */
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .layout-main-section .widget h3,
 .layout-main-section .ce-block h3,
 .layout-main-section .widget-subtitle {
     color: white !important;
-    font-weight: 600 !important;
-    text-shadow: none !important;
-    margin-bottom: 15px !important;
-    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 20px !important;
+    font-size: 18px !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 10px !important;
 }
 
-/* Add simple document icons before section titles */
+/* Add icons before section titles - Specific icons for each topic */
 .layout-main-section .widget h3:before,
 .layout-main-section .ce-block h3:before,
 .layout-main-section .widget-title:before {
-    content: "📄" !important;
-    font-size: 14px !important;
+    font-family: "Font Awesome 5 Free", "Font Awesome 6 Free", serif !important;
+    font-weight: 900 !important;
+    font-size: 16px !important;
     color: rgba(255, 255, 255, 0.9) !important;
-    margin-right: 6px !important;
+    margin-right: 8px !important;
     display: inline-block !important;
+    width: 20px !important;
+    text-align: center !important;
 }
 
-/* Remove all specific icon overrides - keep simple document icon */
-/* All sections use the same document icon for consistency */
+/* Specific icons for each section/topic */
 
-/* Links and content styling - Clean like the image */
+/* HR Module Icons */
+.layout-main-section .widget h3:contains("Setup"):before,
+.layout-main-section .ce-block h3:contains("Setup"):before,
+.layout-main-section .widget-title:contains("Setup"):before {
+    content: "⚙️" !important; /* Setup/Settings gear */
+}
+
+.layout-main-section .widget h3:contains("Employee"):before,
+.layout-main-section .ce-block h3:contains("Employee"):before,
+.layout-main-section .widget-title:contains("Employee"):before {
+    content: "👤" !important; /* Employee person icon */
+}
+
+.layout-main-section .widget h3:contains("Leaves"):before,
+.layout-main-section .ce-block h3:contains("Leaves"):before,
+.layout-main-section .widget-title:contains("Leaves"):before {
+    content: "🏖️" !important; /* Leaves/vacation icon */
+}
+
+.layout-main-section .widget h3:contains("Settings"):before,
+.layout-main-section .ce-block h3:contains("Settings"):before,
+.layout-main-section .widget-title:contains("Settings"):before {
+    content: "⚙️" !important; /* Settings gear */
+}
+
+.layout-main-section .widget h3:contains("Attendance"):before,
+.layout-main-section .ce-block h3:contains("Attendance"):before,
+.layout-main-section .widget-title:contains("Attendance"):before {
+    content: "🕐" !important; /* Attendance clock */
+}
+
+.layout-main-section .widget h3:contains("Expense Claim"):before,
+.layout-main-section .ce-block h3:contains("Expense Claim"):before,
+.layout-main-section .widget-title:contains("Expense Claim"):before {
+    content: "💳" !important; /* Expense credit card */
+}
+
+.layout-main-section .widget h3:contains("Key Reports"):before,
+.layout-main-section .ce-block h3:contains("Key Reports"):before,
+.layout-main-section .widget-title:contains("Key Reports"):before {
+    content: "📊" !important; /* Key reports chart */
+}
+
+.layout-main-section .widget h3:contains("Other Reports"):before,
+.layout-main-section .ce-block h3:contains("Other Reports"):before,
+.layout-main-section .widget-title:contains("Other Reports"):before {
+    content: "📈" !important; /* Other reports trending chart */
+}
+
+.layout-main-section .widget h3:contains("Jobs"):before,
+.layout-main-section .ce-block h3:contains("Jobs"):before,
+.layout-main-section .widget-title:contains("Jobs"):before {
+    content: "💼" !important; /* Jobs briefcase */
+}
+
+.layout-main-section .widget h3:contains("Appointment"):before,
+.layout-main-section .ce-block h3:contains("Appointment"):before,
+.layout-main-section .widget-title:contains("Appointment"):before {
+    content: "📅" !important; /* Appointment calendar */
+}
+
+.layout-main-section .widget h3:contains("Reports"):before,
+.layout-main-section .ce-block h3:contains("Reports"):before,
+.layout-main-section .widget-title:contains("Reports"):before {
+    content: "📋" !important; /* Reports clipboard */
+}
+
+/* Core Module Icons */
+.layout-main-section .widget h3:contains("Accounting"):before,
+.layout-main-section .ce-block h3:contains("Accounting"):before,
+.layout-main-section .widget-title:contains("Accounting"):before {
+    content: "📊" !important; /* Accounting chart */
+}
+
+.layout-main-section .widget h3:contains("Stock"):before,
+.layout-main-section .ce-block h3:contains("Stock"):before,
+.layout-main-section .widget-title:contains("Stock"):before {
+    content: "📦" !important; /* Stock box */
+}
+
+.layout-main-section .widget h3:contains("CRM"):before,
+.layout-main-section .ce-block h3:contains("CRM"):before,
+.layout-main-section .widget-title:contains("CRM"):before {
+    content: "👥" !important; /* CRM users */
+}
+
+.layout-main-section .widget h3:contains("Data Import"):before,
+.layout-main-section .ce-block h3:contains("Data Import"):before,
+.layout-main-section .widget-title:contains("Data Import"):before {
+    content: "📥" !important; /* Data import inbox */
+}
+
+.layout-main-section .widget h3:contains("Shortcuts"):before,
+.layout-main-section .ce-block h3:contains("Shortcuts"):before,
+.layout-main-section .widget-title:contains("Shortcuts"):before {
+    content: "🔗" !important; /* Shortcuts link */
+}
+
+/* Default icon for unmatched sections */
+.layout-main-section .widget h3:before,
+.layout-main-section .ce-block h3:before,
+.layout-main-section .widget-title:before {
+    content: "📄" !important; /* Default document icon */
+}
+
+/* Links and content styling - Better spacing with optional icons */
 .layout-main-section .widget .widget-body a,
 .layout-main-section .ce-block a,
 .layout-main-section .widget a {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
     transition: color 0.2s ease !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     text-decoration: none !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 4px 0 !important;
-    margin: 3px 0 !important;
-    font-size: 14px !important;
+    gap: 8px !important;
+    padding: 8px 0 !important;
+    margin: 5px 0 !important;
 }
 
-/* Simple bullet points for links */
+/* Add small icons to individual links */
 .layout-main-section .widget .widget-body a:before,
 .layout-main-section .ce-block a:before {
-    content: "•" !important;
-    color: rgba(255, 255, 255, 0.6) !important;
-    font-size: 10px !important;
+    content: "▸" !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 12px !important;
     font-weight: bold !important;
 }
 
@@ -563,11 +663,11 @@ header .form-control:focus{
     color: rgba(255, 255, 255, 1) !important;
 }
 
-/* Simple hover effects - Clean shadow enhancement */
+/* Simple hover effects - NO TRANSFORM/POPUP */
 .layout-main-section .widget:hover,
 .layout-main-section .ce-block:hover {
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3) !important;
-    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3) !important;
+    /* NO transform effects */
 }
 
 /* Button styling for purple sections - Better spacing */
@@ -605,27 +705,20 @@ div[data-widget-name] {
     background: linear-gradient(145deg, #667eea, #764ba2) !important;
 }
 
-/* Responsive adjustments - Grid layout */
-@media (max-width: 1200px) {
+/* Responsive adjustments - Better mobile spacing */
+@media (max-width: 768px) {
     .layout-main-section .widget,
     .layout-main-section .ce-block {
-        width: calc(33.33% - 15px) !important;
+        margin-bottom: 25px !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
     }
-}
-
-@media (max-width: 900px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        width: calc(50% - 15px) !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .layout-main-section .widget,
-    .layout-main-section .ce-block {
-        width: calc(100% - 15px) !important;
-        margin-bottom: 15px !important;
-        padding: 15px !important;
+    
+    .layout-main-section .widget .widget-body .btn,
+    .layout-main-section .ce-block .btn {
+        margin: 6px 6px 6px 0 !important;
+        padding: 8px 12px !important;
+        font-size: 14px !important;
     }
 }
 /* main section ended */
