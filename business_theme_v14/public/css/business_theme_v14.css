@@ -16,14 +16,19 @@
 
 /* ======================== THEME VARIABLES ======================== */
 :root {
-    --background-color: radial-gradient(circle, rgba(98, 193, 229, 1) 0%, rgba(160, 217, 239, 1) 50%, rgba(32, 167, 219, 1) 100%);
-    --primary-color: #000000;
-    --secondary-color: #7574ff;
-    --white-color: #ffffff;
-    --black-color: #000000;
-    --gray-color: #888;
-    --page-head-height: 50px;
-    --navbar-height: 50px;
+    --primary-purple: #8B5CF6;
+    --secondary-purple: #A78BFA;
+    --purple-gradient: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    
+    --bg-main: #F8FAFC;
+    --bg-white: #FFFFFF;
+    
+    --text-white: #FFFFFF;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    
+    --accent-blue: #3B82F6;
+    --border-light: #E5E7EB;
 }
 
 /* LIGHT THEME */
