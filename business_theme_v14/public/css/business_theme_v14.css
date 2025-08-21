@@ -326,6 +326,28 @@ header .form-control:focus{
     overflow: hidden !important;        /* Hide overflow content */
 }
 
+.btn,
+button,
+.btn-primary,
+.btn-secondary,
+.btn-default,
+.primary-action,
+.icon-btn {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+
+
+
+
+
+
 /* HOVER EFFECTS - Currently commented out */
 /* .layout-side-section .sidebar-item:hover,
 .layout-side-section .standard-sidebar-item:hover,
