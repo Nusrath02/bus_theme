@@ -488,6 +488,11 @@ header .form-control:focus{
     animation: cardFadeIn 0.3s ease-out !important; /* 0.3 second smooth entrance */
 }
 
+
+
+
+
+
 /* ==================== MAIN SECTION WIDGET STYLING ==================== */
 /* Styling for the main content area widgets (dashboard cards) */
 
@@ -504,6 +509,22 @@ header .form-control:focus{
 .layout-main-section .widget:nth-of-type(3) {
     background: #009fff !important;
 }
+
+.layout-main-section .widget .btn,
+.layout-main-section .widget button,
+.layout-main-section .widget .widget-control,
+.layout-main-section .widget .onboarding-step {
+    background: transparent !important; /* No white background */
+    border: 1px solid white !important; /* White border */
+    color: white !important; /* White text */
+}
+
+.layout-main-section .widget .btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent on hover */
+}
+
+
+
 
 
 /* Base styling for ALL main section widgets */
