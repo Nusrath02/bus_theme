@@ -491,6 +491,21 @@ header .form-control:focus{
 /* ==================== MAIN SECTION WIDGET STYLING ==================== */
 /* Styling for the main content area widgets (dashboard cards) */
 
+/* Force ALL text elements inside widgets to be white */
+.layout-main-section .widget,
+.layout-main-section .widget *,
+.layout-main-section [data-widget-name] * {
+    color: white !important;
+}
+
+
+/* Widget #2 & #3 - Blue backgrounds */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section .widget:nth-of-type(3) {
+    background: #009fff !important;
+}
+
+
 /* Base styling for ALL main section widgets */
 .layout-main-section .widget,
 .layout-main-section .onboarding-widget-box,
@@ -730,50 +745,3 @@ header .form-control:focus{
 
 /* ==================== END OF MAIN SECTION STYLING ==================== */
 
-/* ========================================================================
-   SUMMARY OF COLOR SCHEME:
-   
-   SIDEBAR (Left Navigation):
-   - Background: Blue gradient (rgba(0,159,255) to rgba(98,196,255))
-   - Text: Black (#000000 via --primary-color)
-   - Buttons: White background with gray borders
-   - Hover: Orange accents (rgba(255,160,10))
-   
-   MAIN WIDGETS (Dashboard Cards):
-   - Widget 1 & 4: Blue background (#009fff) with WHITE text
-   - Widget 2 & 3: NO BACKGROUND (causing black text issue)
-   - All widgets: White text intended but inconsistent backgrounds
-   - Hover: Lift effect with enhanced shadows
-   
-   GLOBAL THEME:
-   - Primary Color: Black (#000000)
-   - Secondary Color: Purple (#7574ff) 
-   - Background: White (#FFFFFF)
-   - Borders: Light gray (#e3e8f1)
-   
-   NAVBAR:
-   - Background: Uses --background-color variable (currently undefined)
-   - Text: White (#ffffff)
-   - Logo: Custom ITChamps logo
-   
-   FORMS & INPUTS:
-   - Background: Light gray (#f2f2f2)
-   - Borders: Theme-aware via --border-color
-   - Focus: Black border with light orange background
-   
-   TABLES:
-   - Headers: Light gray background (#f4f4f4)
-   - Borders: Gray (#bbbbbb) and black (primary color)
-   - Hover: Light orange background (rgba(255,152,0,0.15))
-   
-   SCROLLBARS:
-   - Thin (6px) with theme-aware colors
-   - Light theme: Light gray track, medium gray thumb
-   - Dark theme: Dark gray track and thumb
-   
-   ISSUES IDENTIFIED:
-   1. Widgets 2 & 3 missing background colors
-   2. Inconsistent shadow colors (blue, green, orange, purple)
-   3. --background-color variable referenced but not defined
-   4. Some color values have typos (#FFFF should be #FFFFFF)
-======================================================================== */
