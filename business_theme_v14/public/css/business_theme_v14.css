@@ -214,6 +214,26 @@ header .form-control:focus{
     background-color: var(--white-color) !important; /* White background when focused */
 }
 
+/* Navbar white background - override transparent background */
+.navbar,
+.navbar-expand {
+    background: white !important;
+    background-color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==================== SIDEBAR STYLING ==================== */
 /* Left sidebar navigation appearance */
 
