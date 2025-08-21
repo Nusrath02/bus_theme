@@ -436,7 +436,19 @@ header .form-control:focus{
 }
 
 
+/* Force ALL text elements inside widgets to be white */
+.layout-main-section .widget,
+.layout-main-section .widget *,
+.layout-main-section [data-widget-name] * {
+    color: white !important;
+}
 
+
+/* Widget #2 & #3 - Blue backgrounds */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section .widget:nth-of-type(3) {
+    background: #009fff !important;
+}
 
 
 
