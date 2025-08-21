@@ -451,7 +451,11 @@ header .form-control:focus{
 }
 
 
-
+/* Widget link arrows - white color for ellipsis arrows */
+.layout-main-section .widget .link-item.ellipsis::after,
+.layout-main-section .widget .widget-body .ellipsis::after {
+    color: white !important;
+}
 
 
 
