@@ -394,6 +394,19 @@ header .form-control:focus{
     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
 }
 
+/* Modal buttons (Save and other modal actions) */
+.btn.btn-modal-primary,
+.btn.btn-modal-secondary {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn.btn-modal-primary:hover,
+.btn.btn-modal-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
 /* Exclude certain buttons from styling */
 /* Cancel buttons, close buttons, etc. keep their original styling */
 .btn-danger,
