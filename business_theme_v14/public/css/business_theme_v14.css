@@ -327,7 +327,830 @@ header .form-control:focus{
 }
 
 .btn,
-button,
+button,/* ==================== BROWSER SCROLLBAR CUSTOMIZATION ==================== */
+/* Custom scrollbar styling for Chrome, Edge, and Safari browsers */
+
+/* Scrollbar width - makes scrollbars thinner (6px instead of default ~15px) */
+*::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Scrollbar track (background behind the thumb) - uses CSS variable for theming */
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bg); /* Defined in theme variables below */
+}
+
+/* Scrollbar thumb (the draggable part) - rounded with theme colors */
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color); /* Uses theme-specific color */
+    border-radius: 20px; /* Makes scrollbar thumb rounded */
+}
+
+/* Firefox scrollbar styling - thinner scrollbar with theme colors */
+* {
+    scrollbar-width: thin; /* Makes scrollbar thinner in Firefox */
+    scrollbar-color: var(--scroll-color) var(--scroll-bg); /* thumb color, track color */
+}
+
+/* ==================== FORM INPUT STYLING ==================== */
+/* Consistent border styling for various input types */
+
+/* Awesomplete autocomplete input borders */
+.awesomplete .input-with-feedback {
+    border: 1px solid var(--border-color); /* Theme-aware border color */
+}
+
+/* General form control borders (inputs, textareas, selects) */
+.form-control {
+    border: 1px solid var(--border-color); /* Consistent with theme */
+}
+
+/* Search bar input background */
+.search-bar .awesomplete input {
+    background-color: var(--bg-color); /* Uses theme background color */
+}
+
+/* ==================== MODAL AND DIALOG STYLING ==================== */
+
+/* Modal backdrop overlay - dark blue background when modals open */
+.modal-backdrop{
+    background-color: #2c436b !important; /* Fixed dark blue color */
+}
+
+/* ==================== WIDGET AND CONTENT STYLING ==================== */
+
+/* Widget title text size - uses CSS variable for consistent sizing */
+.widget .widget-head .widget-title {
+    font-size: var(--text-base); /* Defined in theme variables */
+}
+
+/* Section headings throughout the application - consistent weight and size */
+.comment-box .comment-input-header, 
+.form-dashboard-section .section-head, 
+.form-section .section-head, 
+.head-title {
+    font-size: var(--text-base); /* Consistent with widget titles */
+    font-weight: 600; /* Semi-bold text for emphasis */
+}
+
+/* Comment box editor border */
+.comment-box .comment-input-container .ql-editor {
+    border: 1px solid var(--border-color); /* Theme-consistent border */
+}
+
+/* Duration picker styling */
+.duration-picker .duration-input {
+    background-color: var(--bg-color); /* Theme background */
+    border: 1px solid var(--border-color); /* Theme border */
+}
+
+/* Form label text weight - medium weight for readability */
+.control-label {
+    font-weight: 500; /* Medium weight between normal (400) and semi-bold (600) */
+}
+
+/* ==================== THEME VARIABLES ==================== */
+/* CSS variables that change based on dark/light theme selection */
+
+/* DARK THEME VARIABLES - Applied when [data-theme="dark"] is set */
+[data-theme="dark"] {
+    --bg-color: var(--gray-900);        /* Very dark gray background */
+    --disabled-control-bg: var(--gray-900); /* Same as bg for disabled inputs */
+    --border-color: #1c2126;            /* Dark gray borders */
+    --margin-lg: 15px;                  /* Large margin size */
+    --text-bold: 600;                   /* Bold text weight */
+    --scroll-bg: #161a1f;               /* Dark scrollbar track */
+    --scroll-color: #1c2126;            /* Dark scrollbar thumb */
+}
+
+/* LIGHT THEME VARIABLES - Applied when [data-theme="light"] is set */
+[data-theme="light"] {
+    --bg-color: #FFFF;                  /* White background (note: should be #FFFFFF) */
+    --text-bold: 600;                   /* Bold text weight */
+    --control-bg: #fff;                 /* White input backgrounds */
+    --control-bg-on-gray: #d4dcea;      /* Light blue-gray for inputs on gray backgrounds */
+    --disabled-control-bg: #f2f5fa;     /* Very light gray for disabled inputs */
+    --heading-color: #333;              /* Dark gray for headings */
+    --border-color: #e3e8f1;            /* Light gray borders */
+    --avatar-frame-bg: #dde2ea;         /* Light blue-gray for avatar frames */
+    --margin-lg: 15px;                  /* Large margin size */
+    --sidebar-select-color: #d4dcea;    /* Light blue-gray for selected sidebar items */
+    --awesomplete-hover-bg: #d4dcea;    /* Light blue-gray for autocomplete hover */
+    --scroll-bg: #eef1f5;               /* Light gray scrollbar track */
+    --scroll-color: #d9dfe6;            /* Medium gray scrollbar thumb */
+}
+
+/* ==================== GLOBAL COLOR VARIABLES ==================== */
+/* Root CSS variables used throughout the application */
+
+:root {
+    --background: #FFFF;                /* Main background color (should be #FFFFFF) */
+    /* --background-color: [COMMENTED OUT] radial gradient for navbar was here */
+    --primary-color: #000000;           /* Primary accent color - BLACK */
+    --secondary-color: #7574ff;         /* Secondary accent - PURPLE/BLUE */
+    --white-color: #ffffff;             /* Pure white */
+    --black-color: #000000;             /* Pure black */
+    --gray-color: #888;                 /* Medium gray for various elements */
+    
+    /* Layout sizing variables */
+    --page-head-height: 50px;           /* Fixed height for page header */
+    --navbar-height: 50px;              /* Fixed height for navigation bar */
+}
+
+/* ==================== BUTTON STYLING ==================== */
+/* Primary and secondary button appearance and behavior */
+
+/* Remove default button shadows on focus/active states */
+.btn-primary:active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:focus{
+    box-shadow: none !important; /* Clean button appearance */
+}
+
+/* Primary button styling - black background with white text */
+.btn-primary{
+    color: #ffff !important;                        /* White text (should be #ffffff) */
+    background-color: var(--primary-color) !important; /* Black background */
+    border-radius: 0 !important;                   /* Square corners */
+}
+
+/* PRIMARY BUTTON HOVER - Currently commented out */
+/* .btn-primary:hover{
+    background-color: rgba(255, 120, 10, 0.93) !important; 
+} */
+
+/* ==================== PAGE LAYOUT SIZING ==================== */
+/* Fixed heights for page header elements */
+
+.page-head,
+.page-head .page-head-content{
+    height: var(--page-head-height); /* 50px height */
+}
+
+.page-head,
+.page-head .page-head-content{
+    top: var(--page-head-height); /* Position from top */
+}
+
+/* ==================== NAVIGATION BAR STYLING ==================== */
+/* Top navigation bar appearance and logo handling */
+
+/* Hide the default ERPNext logo */
+.navbar .app-logo {
+    display: none !important; /* Completely removes default logo */
+}
+
+/* Custom logo replacement - ITChamps logo */
+.navbar .navbar-brand {
+    background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center;
+    background-size: contain; /* Scales logo to fit container */
+    width: 160px;   /* Logo container width */
+    height: 40px;   /* Logo container height */
+}
+
+/* Navbar background and sizing */
+.navbar{
+    background: var(--background-color) !important; /* Uses background color variable */
+    height: var(--navbar-height); /* 50px height */
+}
+
+/* Navbar expansion background */
+.navbar-expand{
+    background-color: var(--background-color); /* Matches navbar background */
+}
+
+/* Breadcrumb styling in navbar */
+#navbar-breadcrumbs > li > a::before{
+    content: "\f105";           /* Font Awesome right arrow icon */
+    color: var(--white-color);  /* White arrow color */
+}
+
+#navbar-breadcrumbs a{
+    color: var(--white-color);  /* White text for breadcrumb links */
+}
+
+/* Search bar in header */
+header .form-control{
+    color: var(--white-color);  /* White text in search input */
+}
+
+header .form-control:focus{
+    border: 0;                  /* Remove border on focus */
+}
+
+header .form-control:focus{
+    background-color: var(--white-color) !important; /* White background when focused */
+}
+
+/* ==================== SIDEBAR STYLING ==================== */
+/* Left sidebar navigation appearance */
+
+/* Sidebar label text color */
+.layout-side-section .sidebar-label{
+    color: var(--primary-color); /* Black text (matches primary color) */
+}
+
+/* Sidebar icon colors */
+.sidebar-label svg,
+.layout-side-section .sidebar-label .icon{
+    stroke: var(--primary-color); /* Black stroke color for icons */
+    width: 18px !important;       /* Icon width */
+    height: 18px !important;      /* Icon height */
+}
+
+/* Sidebar button background */
+.list-sidebar-button{
+    background-color: #c8c4c4 !important; /* Light gray background */
+}
+
+/* ==================== INPUT FIELD STYLING ==================== */
+/* Form input appearance and focus states */
+
+/* General input background */
+.form-control{
+    background-color: #f2f2f2 !important; /* Light gray background */
+}
+
+/* Input focus state */
+.form-control:focus{
+    border: 1px solid var(--primary-color); /* Black border on focus */
+    background: rgba(255, 160, 10, 0.14) !important; /* Light orange background on focus */
+}
+
+/* Navbar link text color */
+.navbar .navbar-nav a.nav-link{
+    color: var(--white-color); /* White text for navbar links */
+}
+
+/* ==================== TABLE STYLING ==================== */
+/* Data table appearance and hover effects */
+
+/* Form grid border */
+.form-grid{
+    border: 1px solid #bbbbbb; /* Gray border around tables */
+}
+
+/* Table header background */
+.form-grid .grid-heading-row{
+    background-color: #f4f4f4; /* Light gray header background */
+}
+
+/* Table header bottom border */
+.grid-heading-row{
+    border-bottom: 1px solid var(--primary-color); /* Black bottom border */
+}
+
+/* Table row hover effect */
+.form-grid .grid-row:hover{
+    background: rgba(255, 152, 0, 0.15); /* Light orange background on hover */
+}
+
+/* ==================== HEADING STYLING ==================== */
+/* Various heading elements throughout the application */
+
+.head-title, 
+.form-section .section-head, 
+.form-dashboard-section .section-head, 
+.comment-box .comment-input-header{
+    color: var(--primary-color); /* Black text for headings */
+}
+
+/* ==================== LINK STYLING ==================== */
+/* Link hover effects */
+
+.list-subject a:hover{
+    color: var(--secondary-color); /* Purple/blue color on hover */
+}
+
+/* ==================== REPORT TABLE STYLING ==================== */
+/* Data table headers in reports */
+
+.datatable .dt-header .dt-cell--header .dt-cell__content{
+    background-color: #f4f4f4; /* Light gray background for report headers */
+}
+
+/* ==================== SIDEBAR CARD ENHANCEMENT ==================== */
+/* Enhanced styling for sidebar navigation items */
+
+/* Main sidebar container */
+.layout-side-section {
+    padding: 15px 10px !important;    /* Internal spacing */
+    background: transparent !important; /* No background color */
+}
+
+/* Individual sidebar items with gradient background */
+.layout-side-section .sidebar-item,
+.layout-side-section .standard-sidebar-item,
+.layout-side-section .sidebar-section {
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;      /* Rounded corners */
+    margin-bottom: 10px !important;     /* Space between cards */
+    padding: 12px 15px !important;      /* Internal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    transition: all 0.3s ease !important; /* Smooth hover animation */
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+}
+
+/* HOVER EFFECTS - Currently commented out */
+/* .layout-side-section .sidebar-item:hover,
+.layout-side-section .standard-sidebar-item:hover,
+.layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--primary-color) !important;
+} */
+
+/* Sidebar labels inside cards */
+.layout-side-section .sidebar-label {
+    color: var(--primary-color) !important; /* Black text */
+    font-weight: 600 !important;           /* Semi-bold text */
+    font-size: 14px !important;            /* Medium font size */
+    margin-bottom: 8px !important;         /* Space below label */
+    display: flex !important;              /* Flexbox for icon alignment */
+    align-items: center !important;        /* Center items vertically */
+    gap: 8px !important;                   /* Space between icon and text */
+}
+
+/* Sidebar buttons styled as mini cards */
+.list-sidebar-button {
+    background-color: var(--white-color) !important; /* White background */
+    border-radius: 6px !important;        /* Rounded corners */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    margin: 5px 0 !important;             /* Vertical margin */
+    padding: 8px 17px !important;         /* Internal padding (increased from 12px to 17px) */
+    transition: all 0.2s ease !important; /* Smooth hover transition */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important; /* Subtle shadow */
+}
+
+/* Sidebar button hover effect */
+.list-sidebar-button:hover {
+    background-color: rgba(255, 160, 10, 0.1) !important; /* Light orange background */
+    border-color: var(--primary-color) !important;        /* Black border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important; /* Enhanced shadow */
+}
+
+/* SIDEBAR SECTION CONTAINERS - Currently commented out */
+/* .layout-side-section .sidebar-menu,
+.layout-side-section .list-sidebar {
+    background: var(--white-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e8ecf1 !important;
+} */
+
+/* Sidebar list items with dividers */
+.layout-side-section .sidebar-menu li,
+.layout-side-section .list-sidebar li {
+    padding: 6px 0 !important;                      /* Vertical padding */
+    border-bottom: 1px solid #f5f6fa !important;    /* Light gray separator line */
+}
+
+/* Remove divider from last item */
+.layout-side-section .sidebar-menu li:last-child,
+.layout-side-section .list-sidebar li:last-child {
+    border-bottom: none !important; /* No border on last item */
+}
+
+/* Links inside sidebar cards */
+.layout-side-section a {
+    color: #333 !important;                    /* Dark gray text */
+    text-decoration: none !important;          /* No underline */
+    transition: color 0.2s ease !important;    /* Smooth color change */
+}
+
+/* Sidebar link hover effect */
+.layout-side-section a:hover {
+    color: var(--primary-color) !important; /* Black text on hover */
+}
+
+/* Active/selected state for sidebar items */
+.layout-side-section .sidebar-item.active,
+.layout-side-section .standard-sidebar-item.active {
+    background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important; /* Black to orange gradient */
+    color: var(--white-color) !important;                    /* White text */
+    border-color: var(--primary-color) !important;           /* Black border */
+    box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important; /* Orange shadow */
+}
+
+/* Active sidebar item text colors */
+.layout-side-section .sidebar-item.active .sidebar-label,
+.layout-side-section .standard-sidebar-item.active .sidebar-label {
+    color: var(--white-color) !important; /* White text in active state */
+}
+
+/* Active sidebar item icon colors */
+.layout-side-section .sidebar-item.active svg,
+.layout-side-section .standard-sidebar-item.active svg {
+    stroke: var(--white-color) !important; /* White icon stroke in active state */
+}
+
+/* ==================== DARK THEME OVERRIDES ==================== */
+/* Sidebar appearance in dark mode */
+
+[data-theme="dark"] .layout-side-section .sidebar-item,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item,
+[data-theme="dark"] .layout-side-section .sidebar-section,
+[data-theme="dark"] .layout-side-section .sidebar-menu,
+[data-theme="dark"] .layout-side-section .list-sidebar {
+    background: var(--gray-900) !important;              /* Dark gray background */
+    border-color: #2c3136 !important;                    /* Darker border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow */
+}
+
+/* Dark theme hover effects */
+[data-theme="dark"] .layout-side-section .sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important; /* Enhanced shadow */
+    border-color: var(--primary-color) !important;        /* Black border on hover */
+}
+
+/* Dark theme button styling */
+[data-theme="dark"] .list-sidebar-button {
+    background-color: var(--gray-900) !important;        /* Dark background */
+    border-color: #2c3136 !important;                    /* Dark border */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; /* Dark shadow */
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Mobile and tablet adjustments */
+
+@media (max-width: 768px) {
+    /* Sidebar container on mobile */
+    .layout-side-section {
+        padding: 10px 5px !important; /* Reduced padding for mobile */
+    }
+    
+    /* Sidebar items on mobile */
+    .layout-side-section .sidebar-item,
+    .layout-side-section .standard-sidebar-item,
+    .layout-side-section .sidebar-section {
+        padding: 10px 12px !important;   /* Reduced padding */
+        margin-bottom: 8px !important;   /* Reduced margin */
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+/* Smooth entrance animation for sidebar cards */
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;                    /* Start invisible */
+        transform: translateY(10px);   /* Start 10px below final position */
+    }
+    to {
+        opacity: 1;                    /* End fully visible */
+        transform: translateY(0);      /* End at final position */
+    }
+}
+
+/* Apply fade-in animation to sidebar items */
+.layout-side-section .sidebar-item,
+.layout-side-section .standard-sidebar-item,
+.layout-side-section .sidebar-section {
+    animation: cardFadeIn 0.3s ease-out !important; /* 0.3 second smooth entrance */
+}
+
+/* ==================== MAIN SECTION WIDGET STYLING ==================== */
+/* Styling for the main content area widgets (dashboard cards) */
+
+/* Base styling for ALL main section widgets */
+.layout-main-section .widget,
+.layout-main-section .onboarding-widget-box,
+.layout-main-section [data-widget-name] {
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+    border-radius: 12px !important;     /* Rounded corners */
+    margin-bottom: 20px !important;     /* Space between widgets */
+    transition: all 0.3s ease !important; /* Smooth hover effects */
+}
+
+/* --------------------------------------------------------
+   WIDGET #1 - First Widget (Your Shortcuts) - BLUE THEME
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(1),
+.layout-main-section [data-widget-name]:nth-of-type(1) {
+    background: #009fff !important;                        /* Bright blue background */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* First widget headings - WHITE TEXT */
+.layout-main-section .widget:nth-of-type(1) .widget-head,
+.layout-main-section .widget:nth-of-type(1) .widget-title,
+.layout-main-section .widget:nth-of-type(1) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(1) h3,
+.layout-main-section [data-widget-name]:nth-of-type(1) .head-title {
+    color: white !important;         /* White text for contrast against blue */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* First widget links - WHITE TEXT with transparency */
+.layout-main-section .widget:nth-of-type(1) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(1) a {
+    color: rgba(255, 255, 255, 0.9) !important; /* 90% opacity white */
+    transition: all 0.2s ease !important;       /* Smooth hover transition */
+}
+
+/* First widget link hover effect */
+.layout-main-section .widget:nth-of-type(1) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(1) a:hover {
+    color: white !important;                           /* Full opacity white */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   FORCE ALL TEXT IN WIDGETS TO BE WHITE
+   This ensures ALL text elements are white regardless of background
+--------------------------------------------------------- */
+
+/* Force ALL text elements inside widgets to be white */
+.layout-main-section .widget,
+.layout-main-section .widget *,
+.layout-main-section [data-widget-name],
+.layout-main-section [data-widget-name] *,
+.layout-main-section .ce-block,
+.layout-main-section .ce-block * {
+    color: white !important; /* Force white text for all content */
+}
+
+/* Specific targeting for widget titles that might be black */
+.layout-main-section .widget .widget-title,
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget h1,
+.layout-main-section .widget h2,
+.layout-main-section .widget h3,
+.layout-main-section .widget h4,
+.layout-main-section .widget h5,
+.layout-main-section .widget h6 {
+    color: white !important; /* Force white for all headings */
+}
+
+/* Force white text for all links inside widgets */
+.layout-main-section .widget a,
+.layout-main-section .widget .widget-body a,
+.layout-main-section [data-widget-name] a {
+    color: white !important; /* Force white for all links */
+}
+
+/* Force white text for all spans, divs, and text elements */
+.layout-main-section .widget span,
+.layout-main-section .widget div,
+.layout-main-section .widget p,
+.layout-main-section .widget li {
+    color: white !important; /* Force white for all text elements */
+}
+
+/* --------------------------------------------------------
+   ADD MISSING BACKGROUND COLORS FOR WIDGETS 2 & 3
+   This fixes the root cause of black text
+--------------------------------------------------------- */
+
+/* Widget #2 - Add blue background */
+.layout-main-section .widget:nth-of-type(2),
+.layout-main-section [data-widget-name]:nth-of-type(2) {
+    background: #009fff !important; /* Blue background for white text contrast */
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 159, 255, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* Widget #3 - Add blue background */
+.layout-main-section .widget:nth-of-type(3),
+.layout-main-section [data-widget-name]:nth-of-type(3) {
+    background: #009fff !important; /* Blue background for white text contrast */
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 159, 255, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* Second widget headings - WHITE TEXT (may appear black without background) */
+.layout-main-section .widget:nth-of-type(2) .widget-head,
+.layout-main-section .widget:nth-of-type(2) .widget-title,
+.layout-main-section .widget:nth-of-type(2) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(2) h3,
+.layout-main-section [data-widget-name]:nth-of-type(2) .head-title {
+    color: white !important;         /* White text (but may appear black on white background) */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* Second widget links - WHITE TEXT */
+.layout-main-section .widget:nth-of-type(2) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(2) a {
+    color: white !important; /* Forced white text */
+}
+
+/* Second widget link hover effect */
+.layout-main-section .widget:nth-of-type(2) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(2) a:hover {
+    color: white !important;                           /* White text */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   WIDGET #3 - Already fixed above with blue background
+--------------------------------------------------------- */
+
+/* Third widget headings - WHITE TEXT (may appear black without background) */
+.layout-main-section .widget:nth-of-type(3) .widget-head,
+.layout-main-section .widget:nth-of-type(3) .widget-title,
+.layout-main-section .widget:nth-of-type(3) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(3) h3,
+.layout-main-section [data-widget-name]:nth-of-type(3) .head-title {
+    color: white !important;         /* White text */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* Third widget links - WHITE TEXT */
+.layout-main-section .widget:nth-of-type(3) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(3) a {
+    color: white !important; /* Forced white text */
+}
+
+/* Third widget link hover effect */
+.layout-main-section .widget:nth-of-type(3) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(3) a:hover {
+    color: white !important;                           /* White text */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   WIDGET #4 - Fourth Widget (Other Section) - BLUE THEME
+--------------------------------------------------------- */
+.layout-main-section .widget:nth-of-type(4),
+.layout-main-section [data-widget-name]:nth-of-type(4) {
+    background: #009fff !important;                        /* Bright blue background */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important; /* Purple-tinted shadow (inconsistent with blue background) */
+}
+
+/* Fourth widget headings - WHITE TEXT */
+.layout-main-section .widget:nth-of-type(4) .widget-head,
+.layout-main-section .widget:nth-of-type(4) .widget-title,
+.layout-main-section .widget:nth-of-type(4) .widget-subtitle,
+.layout-main-section [data-widget-name]:nth-of-type(4) h3,
+.layout-main-section [data-widget-name]:nth-of-type(4) .head-title {
+    color: white !important;         /* White text for contrast */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* Fourth widget links - WHITE TEXT with transparency */
+.layout-main-section .widget:nth-of-type(4) .widget-body a,
+.layout-main-section [data-widget-name]:nth-of-type(4) a {
+    color: rgba(255, 255, 255, 0.9) !important; /* 90% opacity white */
+}
+
+/* Fourth widget link hover effect */
+.layout-main-section .widget:nth-of-type(4) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(4) a:hover {
+    color: white !important;                           /* Full opacity white */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   GLOBAL WIDGET HOVER EFFECTS
+   Applied to ALL widgets when hovered
+--------------------------------------------------------- */
+.layout-main-section .widget:hover,
+.layout-main-section [data-widget-name]:hover {
+    transform: translateY(-3px) !important;            /* Lift widget 3px up */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow */
+}
+
+/* --------------------------------------------------------
+   WIDGET CONTENT STYLING
+   Headers and sections within widgets
+--------------------------------------------------------- */
+
+/* Column headers inside widgets (Accounting, Stock, CRM, etc.) */
+.layout-main-section .widget .widget-body h4,
+.layout-main-section .widget .widget-body h5,
+.layout-main-section .ce-block h3,
+.layout-main-section .form-section .section-head {
+    color: rgba(255, 255, 255, 0.95) !important;       /* Nearly opaque white text */
+    font-weight: 700 !important;                       /* Bold text for emphasis */
+    font-size: 16px !important;                        /* Medium font size */
+    margin-bottom: 12px !important;                    /* Space below header */
+    padding-bottom: 8px !important;                    /* Space above bottom border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Semi-transparent white underline */
+}
+
+/* --------------------------------------------------------
+   WIDGET LINK STYLING
+   Individual links and list items within widgets
+--------------------------------------------------------- */
+
+/* Links and list items with separator lines */
+.layout-main-section .widget .widget-body ul li,
+.layout-main-section .widget .widget-body div a {
+    padding: 8px 0 !important;                         /* Vertical padding for clickable area */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Very light separator line */
+    display: block !important;                         /* Full width clickable area */
+}
+
+/* Remove separator line from the last item in lists */
+.layout-main-section .widget .widget-body ul li:last-child {
+    border-bottom: none !important; /* No border on last item to avoid double line */
+}
+
+/* --------------------------------------------------------
+   DARK THEME ADJUSTMENTS FOR MAIN WIDGETS
+   Enhanced shadows and effects for dark mode
+--------------------------------------------------------- */
+
+[data-theme="dark"] .layout-main-section .widget:hover,
+[data-theme="dark"] .layout-main-section [data-widget-name]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important; /* Darker, stronger shadow in dark mode */
+}
+
+/* --------------------------------------------------------
+   FALLBACK SELECTORS
+   Alternative targeting methods in case nth-of-type fails
+   These target widgets by their data attributes or content
+--------------------------------------------------------- */
+
+/* Target widgets by data attribute names */
+.widget[data-widget-name="Your Shortcuts"],
+.onboarding-widget-box[onboarding_name="Home"] .widget {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; /* Blue gradient fallback */
+    color: white !important;                               /* White text */
+    border: none !important;                               /* No border */
+    border-radius: 12px !important;                        /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* Target widgets by text content (CSS :contains pseudo-selector) */
+.layout-main-section div:contains("Your Shortcuts"),
+.layout-main-section div:contains("Reports & Masters"),
+.layout-main-section div:contains("Data Import and Settings") {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; /* Blue gradient fallback */
+    color: white !important;                               /* White text */
+    border-radius: 12px !important;                        /* Rounded corners */
+    padding: 20px !important;                              /* Internal spacing */
+    margin-bottom: 20px !important;                        /* Space between widgets */
+}
+
+/* ==================== END OF MAIN SECTION STYLING ==================== */
+
+/* ========================================================================
+   SUMMARY OF COLOR SCHEME:
+   
+   SIDEBAR (Left Navigation):
+   - Background: Blue gradient (rgba(0,159,255) to rgba(98,196,255))
+   - Text: Black (#000000 via --primary-color)
+   - Buttons: White background with gray borders
+   - Hover: Orange accents (rgba(255,160,10))
+   
+   MAIN WIDGETS (Dashboard Cards):
+   - Widget 1 & 4: Blue background (#009fff) with WHITE text
+   - Widget 2 & 3: NO BACKGROUND (causing black text issue)
+   - All widgets: White text intended but inconsistent backgrounds
+   - Hover: Lift effect with enhanced shadows
+   
+   GLOBAL THEME:
+   - Primary Color: Black (#000000)
+   - Secondary Color: Purple (#7574ff) 
+   - Background: White (#FFFFFF)
+   - Borders: Light gray (#e3e8f1)
+   
+   NAVBAR:
+   - Background: Uses --background-color variable (currently undefined)
+   - Text: White (#ffffff)
+   - Logo: Custom ITChamps logo
+   
+   FORMS & INPUTS:
+   - Background: Light gray (#f2f2f2)
+   - Borders: Theme-aware via --border-color
+   - Focus: Black border with light orange background
+   
+   TABLES:
+   - Headers: Light gray background (#f4f4f4)
+   - Borders: Gray (#bbbbbb) and black (primary color)
+   - Hover: Light orange background (rgba(255,152,0,0.15))
+   
+   SCROLLBARS:
+   - Thin (6px) with theme-aware colors
+   - Light theme: Light gray track, medium gray thumb
+   - Dark theme: Dark gray track and thumb
+   
+   ISSUES IDENTIFIED:
+   1. Widgets 2 & 3 missing background colors
+   2. Inconsistent shadow colors (blue, green, orange, purple)
+   3. --background-color variable referenced but not defined
+   4. Some color values have typos (#FFFF should be #FFFFFF)
+======================================================================== */
 .btn-primary,
 .btn-secondary,
 .btn-default,
