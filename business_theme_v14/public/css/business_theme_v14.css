@@ -491,6 +491,22 @@ header .form-control:focus{
     stroke: white !important;
 }
 
+.layout-main-section .widget.shortcut-widget-box,
+.layout-main-section .widget[data-widget-name*="Employee"],
+.layout-main-section .widget[data-widget-name*="shortcut"],
+.layout-main-section .shortcut-widget-box {
+    background: #009fff !important;
+}
+
+.layout-main-section .widget svg.es-icon {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+
+
+
 
 
 
