@@ -592,6 +592,17 @@ header .form-control:focus{
     height: 16px !important;
 }
 
+/* Widget footer buttons - make them blue instead of white */
+.widget-footer .see-all.btn,
+.widget-footer .btn.btn-xs,
+.layout-main-section .widget .widget-footer .btn {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+
+
 
 
 
