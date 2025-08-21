@@ -615,33 +615,45 @@ header .form-control:focus{
 /* ==================== MAIN SECTION WIDGET STYLING ==================== */
 /* Styling for the main content area widgets (dashboard cards) */
 
-/* Force ALL text elements inside widgets to be white */
-.layout-main-section .widget,
-.layout-main-section .widget *,
-.layout-main-section [data-widget-name] * {
+/* ==================== ONBOARDING STEPS STYLING ==================== */
+/* Target only onboarding steps specifically */
+
+/* Onboarding step containers - better spacing and borders */
+.onboarding-steps-wrapper .onboarding-step {
+    background: transparent !important;
+    border: 1px solid white !important;
     color: white !important;
+    margin-bottom: 15px !important; /* Better vertical spacing */
+    padding: 15px 20px !important; /* Better horizontal spacing */
+    border-radius: 8px !important; /* Rounded corners */
 }
 
-
-/* Widget #2 & #3 - Blue backgrounds */
-.layout-main-section .widget:nth-of-type(2),
-.layout-main-section .widget:nth-of-type(3) {
-    background: #009fff !important;
+.onboarding-steps-wrapper .onboarding-step:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
 
-.layout-main-section .widget .btn,
-.layout-main-section .widget button,
-.layout-main-section .widget .widget-control,
-.layout-main-section .widget .onboarding-step {
-    background: transparent !important; /* No white background */
-    border: 1px solid white !important; /* White border */
-    color: white !important; /* White text */
+/* Onboarding step icons - white color for checkmarks */
+.onboarding-steps-wrapper .step-icon,
+.onboarding-steps-wrapper .step-icon svg,
+.onboarding-steps-wrapper .es-icon {
+    color: white !important;
+    stroke: white !important;
+    fill: white !important;
 }
 
-.layout-main-section .widget .btn:hover {
-    background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent on hover */
+/* Onboarding step text */
+.onboarding-steps-wrapper .step-text {
+    color: white !important;
+    margin-left: 15px !important; /* Better spacing from icon */
 }
 
+/* Skip buttons in onboarding */
+.onboarding-steps-wrapper .step-skip {
+    color: rgba(255, 255, 255, 0.8) !important;
+    border: none !important;
+    background: transparent !important;
+}
 
 
 
