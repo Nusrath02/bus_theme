@@ -451,10 +451,44 @@ header .form-control:focus{
 }
 
 
-/* Widget link arrows - white color for ellipsis arrows */
+/* Widget link arrows - white color for all arrow types */
 .layout-main-section .widget .link-item.ellipsis::after,
 .layout-main-section .widget .widget-body .ellipsis::after {
     color: white !important;
+}
+
+/* Widget arrows - target actual arrow icons/SVG elements */
+.layout-main-section .widget .widget-body .link-item svg,
+.layout-main-section .widget .widget-body a svg,
+.layout-main-section .widget .widget-body .arrow-icon,
+.layout-main-section .widget .widget-body [class*="arrow"],
+.layout-main-section .widget .widget-body .icon {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* Target specific arrow classes that might be used */
+.layout-main-section .widget .widget-body .fa-arrow-right,
+.layout-main-section .widget .widget-body .fa-chevron-right,
+.layout-main-section .widget .widget-body .octicon-arrow-right {
+    color: white !important;
+}
+
+/* If arrows are using Font Awesome or other icon fonts */
+.layout-main-section .widget .widget-body i[class*="arrow"],
+.layout-main-section .widget .widget-body i[class*="chevron"],
+.layout-main-section .widget .widget-body span[class*="arrow"],
+.layout-main-section .widget .widget-body span[class*="icon"] {
+    color: white !important;
+}
+
+/* Force all icons in widget links to be white */
+.layout-main-section .widget .widget-body a *,
+.layout-main-section .widget .widget-body .link-item * {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
 }
 
 
