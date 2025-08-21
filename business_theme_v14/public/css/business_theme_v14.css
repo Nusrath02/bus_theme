@@ -454,6 +454,19 @@ header .form-control:focus{
     border: initial !important;
 }
 
+
+
+/* Make buttons rounded corners - same as curved buttons */
+.btn,
+button,
+.btn-primary,
+.btn-secondary,
+.btn-default,
+.primary-action,
+.icon-btn {
+    border-radius: 6px !important; /* Rounded corners like the curved button */
+}
+
 /* Keep dropdown toggles and navigation buttons unchanged */
 .dropdown-toggle,
 .nav-link,
