@@ -1,12 +1,11 @@
 /* ==================== BROWSER SCROLLBAR CUSTOMIZATION ==================== */
 /* Custom scrollbar styling for Chrome, Edge, and Safari browsers */
 
+
 /* Add left spacing to sidebar - move content slightly to the right */
 .layout-side-section {
-    margin-left: 19px !important; /* Add 15px space on the left */
+    margin-left: 15px !important; /* Add 15px space on the left */
 }
-
-
 
 
 
