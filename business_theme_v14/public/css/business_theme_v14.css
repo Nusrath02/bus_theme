@@ -624,6 +624,16 @@ button,
     border: none !important;
 }
 
+/* Fix specific default buttons - make them blue instead of white */
+.btn.btn-default.btn-sm,
+.onboarding-step-footer .btn.btn-default {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+
+
 
 
 
