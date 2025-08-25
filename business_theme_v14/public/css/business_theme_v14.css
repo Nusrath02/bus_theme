@@ -1385,7 +1385,7 @@ a.onboarding-step,
     color: white !important;                   /* White text color */
 }
 
-/* Step title text styling - ensure proper alignment */
+/* Step title text styling - center aligned text */
 .onboarding-step .step-title,
 .step-title {
     color: white !important;                   /* White text */
@@ -1393,7 +1393,7 @@ a.onboarding-step,
     font-size: 16px !important;                /* Consistent font size */
     line-height: 1.4 !important;              /* Better line spacing */
     margin: 0 !important;                      /* Remove default margins */
-    text-align: left !important;              /* Left align text */
+    text-align: center !important;            /* Center align text */
 }
 
 /* Skip button styling within onboarding steps */
