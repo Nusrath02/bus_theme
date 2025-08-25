@@ -499,6 +499,265 @@ button,             /* All HTML button elements */
      background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
 }
 
+
+
+
+
+/* borders for thr box */
+
+/* ==================== ONBOARDING STEP BOXES WITH COMPLETE BORDERS ==================== */
+/* Enhanced styling for onboarding step containers */
+
+/* Main onboarding step items - the individual step boxes */
+.onboarding-step.pending,
+.onboarding-step,
+a.onboarding-step.pending,
+a.onboarding-step {
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;              /* Rounded corners */
+    margin-bottom: 10px !important;             /* Space between boxes */
+    padding: 15px 20px !important;              /* Internal padding for better text spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* Complete white border with transparency */
+    transition: all 0.3s ease !important;      /* Smooth hover animation */
+    position: relative !important;             /* For absolute positioned children */
+    overflow: hidden !important;               /* Hide overflow content */
+    display: block !important;                 /* Ensure proper block display */
+    text-decoration: none !important;          /* Remove link underline */
+    color: white !important;                   /* White text color */
+}
+
+/* Step title text styling - ensure proper alignment */
+.onboarding-step .step-title,
+.step-title {
+    color: white !important;                   /* White text */
+    font-weight: 500 !important;               /* Medium font weight */
+    font-size: 16px !important;                /* Consistent font size */
+    line-height: 1.4 !important;              /* Better line spacing */
+    margin: 0 !important;                      /* Remove default margins */
+    text-align: left !important;              /* Left align text */
+}
+
+/* Skip button styling within onboarding steps */
+.onboarding-step .step-skip,
+.step-skip {
+    color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+    font-size: 12px !important;                 /* Smaller font size */
+    text-decoration: none !important;           /* No underline */
+    float: right !important;                    /* Align to right */
+    margin-top: 2px !important;                 /* Slight top margin */
+}
+
+/* Hover effects for onboarding step boxes */
+.onboarding-step.pending:hover,
+.onboarding-step:hover,
+a.onboarding-step.pending:hover,
+a.onboarding-step:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important; /* Brighter border on hover */
+    transform: translateY(-1px) !important;     /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow on hover */
+}
+
+/* Ensure checkmark icons maintain visibility */
+.onboarding-step::before,
+.onboarding-step .step-icon {
+    color: white !important;                   /* White icon color */
+    opacity: 1 !important;                     /* Full opacity */
+}
+
+/* ==================== EXISTING STYLES MAINTAINED ==================== */
+/* All your existing sidebar and button styles remain unchanged */
+
+/* Main sidebar container - left navigation panel */
+.layout-side-section {
+    padding: 15px 10px !important;    /* Internal spacing */
+    background: transparent !important; /* No background color */
+}
+
+/* Individual sidebar items with gradient background - module cards like Accounting, Stock, CRM */
+.layout-side-section .sidebar-item,        /* Individual module items */
+.layout-side-section .standard-sidebar-item,  /* Standard navigation items */
+.layout-side-section .sidebar-section {    /* Section containers */
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;      /* Rounded corners */
+    margin-bottom: 10px !important;     /* Space between cards */
+    padding: 12px 15px !important;      /* Internal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    transition: all 0.3s ease !important; /* Smooth hover animation */
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+}
+
+/* ==================== TARGETED BUTTON STYLING ==================== */
+/* Only style specific buttons - not all buttons globally */
+
+/* PRIMARY ACTION BUTTONS - Save, Submit, Create, Update buttons in forms */
+.btn.btn-primary.primary-action,        /* Primary action buttons with specific class */
+.btn.btn-primary[data-label="Save"],    /* Save buttons identified by data attribute */
+.primary-action {                       /* Any element with primary-action class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PRIMARY ACTION BUTTONS HOVER - Save, Submit, Create, Update button hover effects */
+.btn.btn-primary.primary-action:hover,
+.btn.btn-primary[data-label="Save"]:hover,
+.primary-action:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ICON BUTTONS - Small buttons with icons in toolbars, action bars */
+.icon-btn,              /* Icon button class */
+.btn.icon-btn {         /* Button elements with icon-btn class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ICON BUTTONS HOVER - Toolbar icon button hover effects */
+.icon-btn:hover,
+.btn.icon-btn:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS - Cancel, Close, Back buttons with specific classes */
+.btn.btn-secondary.btn-default {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS HOVER - Cancel, Close, Back button hover effects */
+.btn.btn-secondary.btn-default:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* PAGE ACTION BUTTONS - Buttons in page header action area (New, Duplicate, Email, etc.) */
+.page-actions .btn.btn-primary,     /* Primary buttons in page actions */
+.page-actions .btn.btn-secondary {  /* Secondary buttons in page actions */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PAGE ACTION BUTTONS HOVER - Page header button hover effects */
+.page-actions .btn.btn-primary:hover,
+.page-actions .btn.btn-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* FORM ACTION BUTTONS - Create, Update, Delete buttons in form sections */
+.form-actions .btn.btn-primary {    /* Primary buttons in form action areas */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* FORM ACTION BUTTONS HOVER - Form action button hover effects */
+.form-actions .btn.btn-primary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* MODAL BUTTONS - Save, OK, Confirm buttons in popup dialogs */
+.btn.btn-modal-primary,     /* Primary modal buttons */
+.btn.btn-modal-secondary {  /* Secondary modal buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* MODAL BUTTONS HOVER - Popup dialog button hover effects */
+.btn.btn-modal-primary:hover,
+.btn.btn-modal-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* EXCLUDED BUTTONS - Keep original styling for these button types */
+.btn-danger,        /* Delete, Remove buttons (red) */
+.btn-warning,       /* Warning action buttons (yellow/orange) */
+.btn-info,          /* Info buttons (light blue) */
+.btn-light,         /* Light themed buttons */
+.btn-dark,          /* Dark themed buttons */
+.btn-link,          /* Link-styled buttons */
+.btn-outline-primary,   /* Outlined primary buttons */
+.btn-outline-secondary, /* Outlined secondary buttons */
+.close,             /* Close buttons (X) */
+.btn-close {        /* Close buttons */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* ROUNDED CORNERS - Apply to all buttons for consistent curved appearance */
+.btn,               /* All button elements */
+button,             /* All HTML button elements */
+.btn-primary,       /* Primary styled buttons */
+.btn-secondary,     /* Secondary styled buttons */
+.btn-default,       /* Default styled buttons */
+.primary-action,    /* Primary action class buttons */
+.icon-btn {         /* Icon buttons */
+    border-radius: 6px !important; /* Rounded corners like the curved button */
+}
+
+/* EXCLUDED FROM STYLING - Keep these navigation elements unchanged */
+.dropdown-toggle,       /* Dropdown arrow buttons */
+.nav-link,             /* Navigation links */
+.navbar-toggler,       /* Mobile menu toggle button */
+.carousel-control-prev, /* Image carousel previous button */
+.carousel-control-next { /* Image carousel next button */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* SMALL SECONDARY BUTTONS - Dismiss, Close, Small action buttons */
+.btn.btn-secondary.btn-default,     /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small {   /* Small secondary buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SMALL SECONDARY BUTTONS HOVER - Dismiss, Close button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ONBOARDING BUTTONS - Explore, Next, Skip buttons in setup wizards */
+.btn.btn-secondary.btn-default,         /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small,        /* Small secondary buttons */
+.onboarding-step-footer .btn.btn-default.btn-sm { /* Onboarding footer buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;;
+    color: white !important;
+    border: none !important;
+}
+
+/* ONBOARDING BUTTONS HOVER - Setup wizard button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover,
+.onboarding-step-footer .btn.btn-default.btn-sm:hover {
+     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+
+
+/* borders for the box  */
+
+
+
+
+
+
+
+
+
+
 /* ==================== DASHBOARD WIDGET STYLING ==================== */
 /* Main dashboard widget appearance and text colors */
 
