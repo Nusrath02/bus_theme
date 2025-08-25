@@ -1072,6 +1072,9 @@ button,             /* All HTML button elements */
 /* ==================== MAIN SECTION WIDGET STYLING ==================== */
 /* Styling for the main content area widgets (dashboard cards) */
 
+
+
+
 /* ==================== ONBOARDING STEPS STYLING ==================== */
 /* Target only onboarding steps specifically */
 
@@ -1104,6 +1107,7 @@ button,             /* All HTML button elements */
 .onboarding-steps-wrapper .step-text {
     color: white !important;
     margin-left: 15px !important; /* Better spacing from icon */
+     margin-bottom: 15px !important; /* Better vertical spacing */
 }
 
 /* ONBOARDING SKIP BUTTONS - Skip and dismiss buttons in setup wizards */
@@ -1395,6 +1399,7 @@ a.onboarding-step,
     font-size: 16px !important;                /* Consistent font size */
     line-height: 1.4 !important;              /* Better line spacing */
     margin: 0 !important;                      /* Remove default margins */
+     margin-bottom: 15px !important; /* Better vertical spacing */
     text-align: center !important;            /* Center align text */
     flex: 1 !important;                        /* Take available space */
 }
