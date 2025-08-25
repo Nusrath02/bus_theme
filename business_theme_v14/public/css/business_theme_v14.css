@@ -1357,3 +1357,70 @@ button,             /* All HTML button elements */
 }
 
 /* ==================== END OF STYLING ==================== */
+
+
+
+
+/* ==================== FINAL ONBOARDING STEP BORDER FIX ==================== */
+/* Add this at the very end of your CSS file to override all conflicting rules */
+
+/* PRIORITY OVERRIDE - Onboarding step boxes with complete visible borders */
+.onboarding-step.pending,
+.onboarding-step,
+a.onboarding-step.pending,
+a.onboarding-step,
+.onboarding-steps-wrapper .onboarding-step {
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;              /* Rounded corners */
+    margin-bottom: 15px !important;             /* Space between boxes */
+    padding: 15px 20px !important;              /* Internal padding for better text spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 2px solid rgba(255, 255, 255, 0.6) !important; /* VISIBLE white border - increased opacity */
+    transition: all 0.3s ease !important;      /* Smooth hover animation */
+    position: relative !important;             /* For absolute positioned children */
+    overflow: hidden !important;               /* Hide overflow content */
+    display: block !important;                 /* Ensure proper block display */
+    text-decoration: none !important;          /* Remove link underline */
+    color: white !important;                   /* White text color */
+}
+
+/* Step title text styling - ensure proper alignment */
+.onboarding-step .step-title,
+.step-title {
+    color: white !important;                   /* White text */
+    font-weight: 500 !important;               /* Medium font weight */
+    font-size: 16px !important;                /* Consistent font size */
+    line-height: 1.4 !important;              /* Better line spacing */
+    margin: 0 !important;                      /* Remove default margins */
+    text-align: left !important;              /* Left align text */
+}
+
+/* Skip button styling within onboarding steps */
+.onboarding-step .step-skip,
+.step-skip {
+    color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+    font-size: 12px !important;                 /* Smaller font size */
+    text-decoration: none !important;           /* No underline */
+    float: right !important;                    /* Align to right */
+    margin-top: 2px !important;                 /* Slight top margin */
+}
+
+/* Hover effects for onboarding step boxes */
+.onboarding-step.pending:hover,
+.onboarding-step:hover,
+a.onboarding-step.pending:hover,
+a.onboarding-step:hover,
+.onboarding-steps-wrapper .onboarding-step:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important; /* BRIGHTER border on hover */
+    transform: translateY(-1px) !important;     /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow on hover */
+}
+
+/* Ensure checkmark icons maintain visibility */
+.onboarding-step::before,
+.onboarding-step .step-icon {
+    color: white !important;                   /* White icon color */
+    opacity: 1 !important;                     /* Full opacity */
+}
