@@ -477,7 +477,7 @@ button,
     border: initial !important;
 }
 
-/* Secondary buttons (only when they have specific classes) */
+/* Secondary buttons (only when they have specific classes) Dissmis button */
 .btn.btn-secondary.btn-default,
 .btn.btn-sm.btn-secondary.small {
     background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
@@ -490,6 +490,21 @@ button,
     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
 }
 
+
+/* Secondary buttons (only when they have specific classes) explore button */
+.btn.btn-secondary.btn-default,
+.btn.btn-sm.btn-secondary.small,
+.onboarding-step-footer .btn.btn-default.btn-sm {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover,
+.onboarding-step-footer .btn.btn-default.btn-sm:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
 
 
 
