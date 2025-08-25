@@ -1380,7 +1380,9 @@ a.onboarding-step,
     transition: all 0.3s ease !important;      /* Smooth hover animation */
     position: relative !important;             /* For absolute positioned children */
     overflow: hidden !important;               /* Hide overflow content */
-    display: block !important;                 /* Ensure proper block display */
+    display: flex !important;                  /* Use flexbox for centering */
+    align-items: center !important;            /* Center vertically */
+    justify-content: center !important;        /* Center horizontally */
     text-decoration: none !important;          /* Remove link underline */
     color: white !important;                   /* White text color */
 }
@@ -1394,6 +1396,7 @@ a.onboarding-step,
     line-height: 1.4 !important;              /* Better line spacing */
     margin: 0 !important;                      /* Remove default margins */
     text-align: center !important;            /* Center align text */
+    flex: 1 !important;                        /* Take available space */
 }
 
 /* Skip button styling within onboarding steps */
