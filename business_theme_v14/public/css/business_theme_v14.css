@@ -487,7 +487,7 @@ button,             /* All HTML button elements */
 .btn.btn-secondary.btn-default,         /* Default secondary buttons */
 .btn.btn-sm.btn-secondary.small,        /* Small secondary buttons */
 .onboarding-step-footer .btn.btn-default.btn-sm { /* Onboarding footer buttons */
-    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;;
     color: white !important;
     border: none !important;
 }
@@ -496,7 +496,7 @@ button,             /* All HTML button elements */
 .btn.btn-secondary.btn-default:hover,
 .btn.btn-sm.btn-secondary.small:hover,
 .onboarding-step-footer .btn.btn-default.btn-sm:hover {
-    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
 }
 
 /* ==================== DASHBOARD WIDGET STYLING ==================== */
