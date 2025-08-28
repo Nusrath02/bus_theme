@@ -30,21 +30,27 @@ div[data-doctype="Module Onboarding"] {
 
 /* STEP 3: CREATE INTEGRATED NAVIGATION CONTAINER */
 .horizontal-nav-container {
-    position: relative !important; /* Changed from fixed to relative */
+    position: relative !important; /* Part of document flow */
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     background: #f8fafc !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    z-index: 100 !important; /* Lower z-index */
+    z-index: 1 !important; /* Low z-index to be part of content */
     padding: 20px !important;
-    margin: 0 !important;
+    margin: 0 0 20px 0 !important; /* Add bottom margin for spacing */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 20px !important;
     justify-content: center !important;
+}
+
+/* Ensure the navigation cards are first inside layout-main-section */
+.layout-main-section .horizontal-nav-container:first-child {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
 }
 
 /* STEP 4: GRID NAVIGATION CARDS */
