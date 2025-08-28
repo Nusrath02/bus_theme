@@ -137,23 +137,35 @@
     });
     
     function insertNavigation(navContainer) {
-        // Try to insert after page-head for better integration
-        const pageHead = document.querySelector('.page-head');
-        const pageContainer = document.querySelector('.page-container');
-        const mainSection = document.querySelector('.main-section');
+        // Target the main content area directly from your HTML structure
+        const layoutMainSection = document.querySelector('.layout-main-section');
+        const deskPageContent = document.querySelector('.desk-page.page-main-content');
+        const pageMainContent = document.querySelector('.page-main-content');
         
-        if (pageHead) {
-            // Insert after page-head if it exists
-            pageHead.parentNode.insertBefore(navContainer, pageHead.nextSibling);
-        } else if (pageContainer) {
-            // Insert at the beginning of page-container
-            pageContainer.insertBefore(navContainer, pageContainer.firstChild);
-        } else if (mainSection) {
-            // Insert at the beginning of main-section
-            mainSection.insertBefore(navContainer, mainSection.firstChild);
+        if (layoutMainSection) {
+            // Insert at the very beginning of layout-main-section
+            layoutMainSection.insertBefore(navContainer, layoutMainSection.firstChild);
+        } else if (deskPageContent) {
+            // Insert at the beginning of desk-page content
+            deskPageContent.insertBefore(navContainer, deskPageContent.firstChild);
+        } else if (pageMainContent) {
+            // Insert at the beginning of page-main-content
+            pageMainContent.insertBefore(navContainer, pageMainContent.firstChild);
         } else {
-            // Fallback: append to body
-            document.body.appendChild(navContainer);
+            // Fallback: try other selectors
+            const pageHead = document.querySelector('.page-head');
+            const pageContainer = document.querySelector('.page-container');
+            const mainSection = document.querySelector('.main-section');
+            
+            if (pageHead) {
+                pageHead.parentNode.insertBefore(navContainer, pageHead.nextSibling);
+            } else if (pageContainer) {
+                pageContainer.insertBefore(navContainer, pageContainer.firstChild);
+            } else if (mainSection) {
+                mainSection.insertBefore(navContainer, mainSection.firstChild);
+            } else {
+                document.body.appendChild(navContainer);
+            }
         }
     }
     
