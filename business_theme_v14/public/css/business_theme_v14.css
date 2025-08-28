@@ -17,21 +17,19 @@
     width: 100% !important;
 }
 
-/* STEP 3: CREATE GRID NAVIGATION CONTAINER */
+/* STEP 3: CREATE INTEGRATED NAVIGATION CONTAINER */
 .horizontal-nav-container {
-    position: fixed !important;
-    top: 50px !important; /* Below navbar */
+    position: relative !important; /* Changed from fixed to relative */
+    top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    height: auto !important;
-    max-height: 300px !important;
+    width: 100% !important;
     background: #f8fafc !important;
-    border-bottom: 2px solid #e2e8f0 !important;
-    z-index: 1000 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    z-index: 100 !important; /* Lower z-index */
     padding: 20px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    margin: 0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 20px !important;
@@ -104,9 +102,16 @@
     overflow: hidden !important;
 }
 
-/* STEP 8: ADJUST MAIN CONTENT SPACING */
+/* STEP 8: REMOVE EXCESSIVE BODY PADDING */
 body {
-    padding-top: 170px !important; /* Account for navbar + horizontal nav */
+    padding-top: 50px !important; /* Only account for navbar */
+}
+
+/* STEP 8a: INTEGRATE WITH PAGE STRUCTURE */
+.page-wrapper,
+.page-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 .layout-main-section-wrapper,
@@ -153,67 +158,70 @@ body {
     color: var(--white-color) !important;
 }
 
-/* STEP 10: MOBILE RESPONSIVE */
-@media (max-width: 1024px) {
+/* STEP 10: RESPONSIVE GRID LAYOUT */
+@media (max-width: 1200px) {
     .horizontal-nav-container {
-        padding: 10px 15px !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 15px !important;
-    }
-    
-    .nav-card-item {
-        min-width: 240px !important;
-        height: 80px !important;
         padding: 15px !important;
-    }
-    
-    .nav-card-image {
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 20px !important;
-        margin-bottom: 10px !important;
-    }
-    
-    .nav-card-title {
-        font-size: 15px !important;
-    }
-    
-    .nav-card-description {
-        font-size: 12px !important;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .horizontal-nav-container {
-        height: 100px !important;
-        padding: 8px 12px !important;
-        gap: 12px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+        padding: 15px !important;
     }
     
     .nav-card-item {
-        min-width: 200px !important;
-        height: 70px !important;
-        padding: 12px !important;
+        height: 130px !important;
+        padding: 15px !important;
     }
     
     .nav-card-image {
         width: 40px !important;
         height: 40px !important;
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .nav-card-title {
+        font-size: 13px !important;
+    }
+    
+    .nav-card-description {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .horizontal-nav-container {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 12px !important;
+    }
+    
+    .nav-card-item {
+        height: 110px !important;
+        padding: 12px !important;
+    }
+    
+    .nav-card-image {
+        width: 35px !important;
+        height: 35px !important;
         font-size: 16px !important;
         margin-bottom: 8px !important;
     }
     
     .nav-card-title {
-        font-size: 14px !important;
+        font-size: 12px !important;
         margin-bottom: 4px !important;
     }
     
     .nav-card-description {
-        font-size: 11px !important;
-        max-width: 180px !important;
-    }
-    
-    body {
-        padding-top: 150px !important;
+        font-size: 9px !important;
+        -webkit-line-clamp: 2 !important;
     }
 }
 
