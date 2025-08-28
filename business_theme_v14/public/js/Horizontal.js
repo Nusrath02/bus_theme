@@ -11,6 +11,14 @@
             existingNav.remove();
         }
         
+        // Hide original Frappe onboarding content
+        const onboardingElements = document.querySelectorAll(
+            '.onboarding-step, .onboarding-widget-box, .setup-wizard-slide, ' +
+            '.onboarding-step.pending, .module-onboarding, .onboarding-steps-wrapper, ' +
+            'div[data-doctype="Module Onboarding"]'
+        );
+        onboardingElements.forEach(el => el.style.display = 'none');
+        
         // Create horizontal navigation container
         const navContainer = document.createElement('div');
         navContainer.className = 'horizontal-nav-container';
