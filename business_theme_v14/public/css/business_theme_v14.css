@@ -251,3 +251,228 @@ body {
 .layout-side-section .sidebar-section {
     all: unset !important;
 }
+
+
+
+
+
+
+
+/* ==================== FRAPPE HORIZONTAL NAVIGATION - CORRECT APPROACH ==================== */
+/* Target the actual Frappe navigation structure */
+
+/* STEP 1: CREATE HORIZONTAL NAVIGATION BAR */
+/* Add horizontal navigation below the page header */
+.page-head::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 50px; /* Below navbar */
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* STEP 2: CREATE ACTUAL NAVIGATION CONTENT */
+/* Insert navigation HTML dynamically */
+.page-head::before {
+    content: '';
+    display: flex;
+    position: fixed;
+    top: 60px; /* Inside the navigation bar */
+    left: 20px;
+    right: 20px;
+    height: 80px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* STEP 3: MANUALLY CREATE HR NAVIGATION CARDS */
+/* Since we can't dynamically get the menu items, create them manually */
+body.frappe-hr::after {
+    content: '';
+    display: flex;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    right: 20px;
+    height: 80px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 15px;
+    padding: 10px 0;
+    background-image: 
+        /* HR Card */
+        linear-gradient(#009fff, #009fff),
+        /* Recruitment Card */
+        linear-gradient(#009fff, #009fff),
+        /* Employee Lifecycle Card */
+        linear-gradient(#009fff, #009fff),
+        /* Performance Card */
+        linear-gradient(#009fff, #009fff),
+        /* Shift & Attendance Card */
+        linear-gradient(#009fff, #009fff),
+        /* Expense Claims Card */
+        linear-gradient(#009fff, #009fff),
+        /* Leaves Card */
+        linear-gradient(#009fff, #009fff);
+    background-size: 
+        100px 70px,
+        120px 70px,
+        140px 70px,
+        110px 70px,
+        150px 70px,
+        130px 70px,
+        100px 70px;
+    background-position: 
+        0px center,
+        115px center,
+        250px center,
+        405px center,
+        530px center,
+        695px center,
+        840px center;
+    background-repeat: no-repeat;
+}
+
+/* STEP 4: ALTERNATIVE APPROACH - CREATE ACTUAL HTML ELEMENTS */
+/* Create a JavaScript-based approach */
+.horizontal-nav-container {
+    position: fixed !important;
+    top: 50px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100px !important;
+    background: #f8fafc !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 10px 20px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 15px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-card-item {
+    background: #009fff !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    text-decoration: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100px !important;
+    height: 70px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.nav-card-item:hover {
+    transform: translateY(-2px) !important;
+    background: linear-gradient(135deg, #009fff 0%, #0066cc 100%) !important;
+    box-shadow: 0 4px 12px rgba(0, 159, 255, 0.3) !important;
+}
+
+.nav-card-icon {
+    width: 20px !important;
+    height: 20px !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+    margin-bottom: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+}
+
+/* STEP 5: ADJUST PAGE LAYOUT */
+body {
+    padding-top: 150px !important;
+}
+
+.layout-main-section-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+}
+
+.layout-main-section {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+/* STEP 6: HIDE ORIGINAL SIDEBAR */
+.layout-side-section {
+    display: none !important;
+}
+
+/* STEP 7: PRESERVE NAVBAR */
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1100 !important;
+    background: var(--background-color) !important;
+    height: var(--navbar-height) !important;
+}
+
+.navbar .app-logo {
+    display: none !important;
+}
+
+.navbar .navbar-brand {
+    background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center !important;
+    background-size: contain !important;
+    width: 160px !important;
+    height: 40px !important;
+}
+
+/* STEP 8: MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .horizontal-nav-container {
+        height: 80px !important;
+        padding: 8px 15px !important;
+        gap: 10px !important;
+    }
+    
+    .nav-card-item {
+        min-width: 80px !important;
+        height: 60px !important;
+        padding: 8px 12px !important;
+        font-size: 11px !important;
+    }
+    
+    .nav-card-icon {
+        width: 16px !important;
+        height: 16px !important;
+        margin-bottom: 4px !important;
+        font-size: 10px !important;
+    }
+    
+    body {
+        padding-top: 130px !important;
+    }
+}
