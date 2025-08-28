@@ -1,8 +1,19 @@
 /* ==================== FRAPPE HORIZONTAL NAVIGATION CARDS ==================== */
 /* Create modern HR dashboard cards like the reference image */
 
-/* STEP 1: HIDE ORIGINAL SIDEBAR */
+/* STEP 1: HIDE ORIGINAL SIDEBAR AND SETUP CONTENT */
 .layout-side-section {
+    display: none !important;
+}
+
+/* Hide the original Frappe setup/onboarding content */
+.onboarding-step,
+.onboarding-widget-box,
+.setup-wizard-slide,
+.onboarding-step.pending,
+.module-onboarding,
+.onboarding-steps-wrapper,
+div[data-doctype="Module Onboarding"] {
     display: none !important;
 }
 
@@ -102,14 +113,15 @@
     overflow: hidden !important;
 }
 
-/* STEP 8: REMOVE EXCESSIVE BODY PADDING */
+/* STEP 8: REMOVE EXCESSIVE BODY PADDING AND BETTER CONTENT INTEGRATION */
 body {
     padding-top: 50px !important; /* Only account for navbar */
 }
 
 /* STEP 8a: INTEGRATE WITH PAGE STRUCTURE */
 .page-wrapper,
-.page-container {
+.page-container,
+.container.page-body {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
@@ -117,7 +129,20 @@ body {
 .layout-main-section-wrapper,
 .layout-main-section {
     margin-top: 0 !important;
-    padding-top: 20px !important;
+    padding-top: 0 !important;
+}
+
+/* Hide the content that appears after cards */
+.page-body .container,
+.layout-main-section .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ensure the Reports & Masters section appears properly */
+.widget,
+.layout-main-section .widget {
+    margin-top: 20px !important;
 }
 
 /* STEP 9: PRESERVE NAVBAR STYLING */
