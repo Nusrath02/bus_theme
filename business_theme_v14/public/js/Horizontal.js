@@ -105,8 +105,8 @@
             navContainer.appendChild(navItem);
         });
         
-        // Insert navigation into page
-        document.body.appendChild(navContainer);
+        // Insert navigation into page using better positioning
+        insertNavigation(navContainer);
     }
     
     // Initialize when DOM is ready
@@ -127,5 +127,26 @@
     window.addEventListener('hashchange', function() {
         setTimeout(initHorizontalNav, 100);
     });
+    
+    function insertNavigation(navContainer) {
+        // Try to insert after page-head for better integration
+        const pageHead = document.querySelector('.page-head');
+        const pageContainer = document.querySelector('.page-container');
+        const mainSection = document.querySelector('.main-section');
+        
+        if (pageHead) {
+            // Insert after page-head if it exists
+            pageHead.parentNode.insertBefore(navContainer, pageHead.nextSibling);
+        } else if (pageContainer) {
+            // Insert at the beginning of page-container
+            pageContainer.insertBefore(navContainer, pageContainer.firstChild);
+        } else if (mainSection) {
+            // Insert at the beginning of main-section
+            mainSection.insertBefore(navContainer, mainSection.firstChild);
+        } else {
+            // Fallback: append to body
+            document.body.appendChild(navContainer);
+        }
+    }
     
 })();
