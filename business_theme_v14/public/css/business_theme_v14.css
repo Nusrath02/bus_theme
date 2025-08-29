@@ -1,285 +1,1433 @@
-/* ==================== FRAPPE HORIZONTAL NAVIGATION CARDS ==================== */
-/* Create modern HR dashboard cards like the reference image */
+/* ==================== BROWSER SCROLLBAR CUSTOMIZATION ==================== */
+/* Custom scrollbar styling for Chrome, Edge, and Safari browsers */
 
-/* STEP 1: HIDE ORIGINAL SIDEBAR AND SETUP CONTENT */
+/* Add left spacing to sidebar - move content slightly to the right */
 .layout-side-section {
-    display: none !important;
+    margin-left: 15px !important; /* Add 15px space on the left */
 }
 
-/* Hide ALL Frappe onboarding content - comprehensive targeting */
-.onboarding-step,
-.onboarding-widget-box,
-.setup-wizard-slide,
-.onboarding-step.pending,
-.onboarding-step.pending.active,
-.module-onboarding,
-.onboarding-steps-wrapper,
-.onboarding-step-preview,
-.widget.onboarding-widget-box,
-div[data-doctype="Module Onboarding"],
-div[onboarding_name="Human Resource"],
-div[onboarding_name],
-.ce-block[onboarding_name],
-.widget[data-widget-name*="onboarding"] {
-    display: none !important;
+/* Scrollbar width - makes scrollbars thinner (6px instead of default ~15px) */
+*::-webkit-scrollbar {
+    width: 6px;
 }
 
-/* STEP 2: EXPAND MAIN CONTENT TO FULL WIDTH */
-.layout-main-section-wrapper {
-    margin-left: 0 !important;
-    width: 100% !important;
+/* Scrollbar track (background behind the thumb) - uses CSS variable for theming */
+*::-webkit-scrollbar-track {
+    background: var(--scroll-bg); /* Defined in theme variables below */
 }
 
-.layout-main-section {
-    margin-left: 0 !important;
-    width: 100% !important;
+/* Scrollbar thumb (the draggable part) - rounded with theme colors */
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color); /* Uses theme-specific color */
+    border-radius: 20px; /* Makes scrollbar thumb rounded */
 }
 
-/* STEP 3: CREATE INTEGRATED NAVIGATION CONTAINER */
-.horizontal-nav-container {
-    position: relative !important; /* Part of document flow */
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    background: #f8fafc !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    z-index: 1 !important; /* Low z-index to be part of content */
-    padding: 20px !important;
-    margin: 0 0 20px 0 !important; /* Add bottom margin for spacing */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 20px !important;
-    justify-content: center !important;
+/* Firefox scrollbar styling - thinner scrollbar with theme colors */
+* {
+    scrollbar-width: thin; /* Makes scrollbar thinner in Firefox */
+    scrollbar-color: var(--scroll-color) var(--scroll-bg); /* thumb color, track color */
 }
 
-/* Ensure the navigation cards are first inside layout-main-section */
-.layout-main-section .horizontal-nav-container:first-child {
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
+/* ==================== FORM INPUT STYLING ==================== */
+/* Consistent border styling for various input types */
+
+/* Awesomplete autocomplete input borders - search suggestions dropdown */
+.awesomplete .input-with-feedback {
+    border: 1px solid var(--border-color); /* Theme-aware border color */
 }
 
-/* STEP 4: GRID NAVIGATION CARDS */
-.nav-card-item {
-    background: white !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    color: #374151 !important;
-    text-decoration: none !important;
-    border: 1px solid #e5e7eb !important;
-    transition: all 0.3s ease !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 150px !important;
-    text-align: center !important;
-    cursor: pointer !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
-    position: relative !important;
-    overflow: hidden !important;
+/* General form control borders - text inputs, textareas, select dropdowns */
+.form-control {
+    border: 1px solid var(--border-color); /* Consistent with theme */
 }
 
-/* STEP 5: CARD HOVER EFFECTS */
-.nav-card-item:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
-    border-color: #009fff !important;
+/* Search bar input background - top navigation search field */
+.search-bar .awesomplete input {
+    background-color: var(--bg-color); /* Uses theme background color */
 }
 
-/* STEP 6: CARD IMAGE AREA */
-.nav-card-image {
-    width: 50px !important;
-    height: 50px !important;
-    background: #009fff !important;
-    border-radius: 8px !important;
-    margin-bottom: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: white !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
+/* ==================== MODAL AND DIALOG STYLING ==================== */
+
+/* Modal backdrop overlay - dark blue background when popup modals are open */
+.modal-backdrop{
+    background-color: #2c436b !important; /* Fixed dark blue color */
 }
 
-/* STEP 7: CARD CONTENT */
-.nav-card-title {
-    color: #111827 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    line-height: 1.3 !important;
-    margin: 0 0 6px 0 !important;
-    text-align: center !important;
+/* ==================== WIDGET AND CONTENT STYLING ==================== */
+
+/* Widget title text size - dashboard widget headers (like "Your Shortcuts") */
+.widget .widget-head .widget-title {
+    font-size: var(--text-base); /* Defined in theme variables */
 }
 
-.nav-card-description {
-    color: #6b7280 !important;
-    font-size: 11px !important;
-    font-weight: 400 !important;
-    line-height: 1.4 !important;
-    margin: 0 !important;
-    text-align: center !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
+/* Section headings throughout the application - form sections, comments, dashboard sections */
+.comment-box .comment-input-header, /* Comment form headers */
+.form-dashboard-section .section-head, /* Dashboard section titles */
+.form-section .section-head, /* Form section titles like "Customer Details" */
+.head-title { /* Main page titles */
+    font-size: var(--text-base); /* Consistent with widget titles */
+    font-weight: 600; /* Semi-bold text for emphasis */
 }
 
-/* STEP 8: REMOVE EXCESSIVE BODY PADDING AND BETTER CONTENT INTEGRATION */
-body {
-    padding-top: 50px !important; /* Only account for navbar */
+/* Comment box editor border - rich text editor for comments */
+.comment-box .comment-input-container .ql-editor {
+    border: 1px solid var(--border-color); /* Theme-consistent border */
 }
 
-/* STEP 8a: INTEGRATE WITH PAGE STRUCTURE */
-.page-wrapper,
-.page-container,
-.container.page-body {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* Duration picker styling - time duration input fields */
+.duration-picker .duration-input {
+    background-color: var(--bg-color); /* Theme background */
+    border: 1px solid var(--border-color); /* Theme border */
 }
 
-.layout-main-section-wrapper,
-.layout-main-section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* Form label text weight - field labels like "Customer Name", "Date", etc. */
+.control-label {
+    font-weight: 500; /* Medium weight between normal (400) and semi-bold (600) */
 }
 
-/* Hide the content that appears after cards */
-.page-body .container,
-.layout-main-section .container {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* ==================== THEME VARIABLES ==================== */
+/* CSS variables that change based on dark/light theme selection */
+
+/* DARK THEME VARIABLES - Applied when [data-theme="dark"] is set */
+[data-theme="dark"] {
+    --bg-color: var(--gray-900);        /* Very dark gray background */
+    --disabled-control-bg: var(--gray-900); /* Same as bg for disabled inputs */
+    --border-color: #1c2126;            /* Dark gray borders */
+    --margin-lg: 15px;                  /* Large margin size */
+    --text-bold: 600;                   /* Bold text weight */
+    --scroll-bg: #161a1f;               /* Dark scrollbar track */
+    --scroll-color: #1c2126;            /* Dark scrollbar thumb */
 }
 
-/* Ensure the Reports & Masters section appears properly */
-.widget,
-.layout-main-section .widget {
-    margin-top: 20px !important;
+/* LIGHT THEME VARIABLES - Applied when [data-theme="light"] is set */
+[data-theme="light"] {
+    --bg-color: #FFFF;                  /* White background (note: should be #FFFFFF) */
+    --text-bold: 600;                   /* Bold text weight */
+    --control-bg: #fff;                 /* White input backgrounds */
+    --control-bg-on-gray: #d4dcea;      /* Light blue-gray for inputs on gray backgrounds */
+    --disabled-control-bg: #f2f5fa;     /* Very light gray for disabled inputs */
+    --heading-color: #333;              /* Dark gray for headings */
+    --border-color: #e3e8f1;            /* Light gray borders */
+    --avatar-frame-bg: #dde2ea;         /* Light blue-gray for avatar frames */
+    --margin-lg: 15px;                  /* Large margin size */
+    --sidebar-select-color: #d4dcea;    /* Light blue-gray for selected sidebar items */
+    --awesomplete-hover-bg: #d4dcea;    /* Light blue-gray for autocomplete hover */
+    --scroll-bg: #eef1f5;               /* Light gray scrollbar track */
+    --scroll-color: #d9dfe6;            /* Medium gray scrollbar thumb */
 }
 
-/* STEP 9: PRESERVE NAVBAR STYLING */
-.navbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1100 !important;
-    background: var(--background-color) !important;
-    height: var(--navbar-height) !important;
+/* ==================== GLOBAL COLOR VARIABLES ==================== */
+/* Root CSS variables used throughout the application */
+
+:root {
+    --background: #FFFF;                /* Main background color (should be #FFFFFF) */
+    /* --background-color: [COMMENTED OUT] radial gradient for navbar was here */
+    --primary-color: #000000;           /* Primary accent color - BLACK */
+    --secondary-color: #7574ff;         /* Secondary accent - PURPLE/BLUE */
+    --white-color: #ffffff;             /* Pure white */
+    --black-color: #000000;             /* Pure black */
+    --gray-color: #888;                 /* Medium gray for various elements */
+    
+    /* Layout sizing variables */
+    --page-head-height: 50px;           /* Fixed height for page header */
+    --navbar-height: 50px;              /* Fixed height for navigation bar */
 }
 
-.navbar-expand {
-    background-color: var(--background-color) !important;
+/* ==================== BUTTON STYLING ==================== */
+/* Primary and secondary button appearance and behavior */
+
+/* Remove default button shadows on focus/active states - ALL BUTTONS */
+.btn-primary:active,    /* Primary buttons when clicked */
+.btn-secondary:focus,   /* Secondary buttons when focused */
+.btn-secondary:active,  /* Secondary buttons when clicked */
+.btn-secondary:focus{   /* Secondary buttons when focused (duplicate) */
+    box-shadow: none !important; /* Clean button appearance */
 }
 
-/* HIDE DEFAULT ERPNEXT LOGO */
+/* Primary button styling - SAVE, SUBMIT, CREATE, UPDATE buttons */
+.btn-primary{
+    color: #ffff !important;                        /* White text (should be #ffffff) */
+    background-color: var(--primary-color) !important; /* Black background */
+    border-radius: 0 !important;                   /* Square corners */
+}
+
+/* PRIMARY BUTTON HOVER - Currently commented out for SAVE, SUBMIT buttons */
+/* .btn-primary:hover{
+    background-color: rgba(255, 120, 10, 0.93) !important; 
+} */
+
+/* ==================== PAGE LAYOUT SIZING ==================== */
+/* Fixed heights for page header elements */
+
+/* Page header height - top section with page title */
+.page-head,
+.page-head .page-head-content{
+    height: var(--page-head-height); /* 50px height */
+}
+
+/* Page header positioning - distance from top */
+.page-head,
+.page-head .page-head-content{
+    top: var(--page-head-height); /* Position from top */
+}
+
+/* ==================== NAVIGATION BAR STYLING ==================== */
+/* Top navigation bar appearance and logo handling */
+
+/* Hide the default ERPNext logo - company branding replacement */
 .navbar .app-logo {
-    display: none !important;
+    display: none !important; /* Completely removes default logo */
 }
 
-/* PRESERVE ITCHAMPS LOGO */
+/* Custom logo replacement - ITChamps company logo */
 .navbar .navbar-brand {
-    background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center !important;
-    background-size: contain !important;
-    width: 160px !important;
-    height: 40px !important;
+    background: url("/assets/business_theme_v14/images/itchamps.png") no-repeat left center;
+    background-size: contain; /* Scales logo to fit container */
+    width: 160px;   /* Logo container width */
+    height: 40px;   /* Logo container height */
 }
 
-/* BREADCRUMB STYLING */
-#navbar-breadcrumbs > li > a::before {
-    content: "\f105" !important;
-    color: var(--white-color) !important;
+/* Navbar background and sizing - top navigation bar */
+.navbar{
+    background: var(--background-color) !important; /* Uses background color variable */
+    height: var(--navbar-height); /* 50px height */
 }
 
-#navbar-breadcrumbs a {
-    color: var(--white-color) !important;
+/* Navbar expansion background - when mobile menu is expanded */
+.navbar-expand{
+    background-color: var(--background-color); /* Matches navbar background */
 }
 
-/* STEP 10: RESPONSIVE GRID LAYOUT */
-@media (max-width: 1200px) {
-    .horizontal-nav-container {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 15px !important;
-        padding: 15px !important;
-    }
+/* Breadcrumb styling in navbar - Home > Customer > Customer Details navigation */
+#navbar-breadcrumbs > li > a::before{
+    content: "\f105";           /* Font Awesome right arrow icon */
+    color: var(--white-color);  /* White arrow color */
 }
 
-@media (max-width: 900px) {
-    .horizontal-nav-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
-        padding: 15px !important;
-    }
-    
-    .nav-card-item {
-        height: 130px !important;
-        padding: 15px !important;
-    }
-    
-    .nav-card-image {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 18px !important;
-        margin-bottom: 10px !important;
-    }
-    
-    .nav-card-title {
-        font-size: 13px !important;
-    }
-    
-    .nav-card-description {
-        font-size: 10px !important;
-    }
+/* Breadcrumb link text - navigation path text */
+#navbar-breadcrumbs a{
+    color: var(--white-color);  /* White text for breadcrumb links */
 }
 
-@media (max-width: 600px) {
-    .horizontal-nav-container {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        padding: 12px !important;
-    }
-    
-    .nav-card-item {
-        height: 110px !important;
-        padding: 12px !important;
-    }
-    
-    .nav-card-image {
-        width: 35px !important;
-        height: 35px !important;
-        font-size: 16px !important;
-        margin-bottom: 8px !important;
-    }
-    
-    .nav-card-title {
-        font-size: 12px !important;
-        margin-bottom: 4px !important;
-    }
-    
-    .nav-card-description {
-        font-size: 9px !important;
-        -webkit-line-clamp: 2 !important;
-    }
+/* Search bar in header - top navigation search input */
+header .form-control{
+    color: var(--white-color);  /* White text in search input */
 }
 
-/* STEP 11: SCROLLBAR STYLING */
-.horizontal-nav-container::-webkit-scrollbar {
-    height: 4px !important;
+/* Search bar focus state - when user clicks in search field */
+header .form-control:focus{
+    border: 0;                  /* Remove border on focus */
 }
 
-.horizontal-nav-container::-webkit-scrollbar-track {
-    background: #f1f5f9 !important;
+/* Search bar focused background - active search field */
+header .form-control:focus{
+    background-color: var(--white-color) !important; /* White background when focused */
 }
 
-.horizontal-nav-container::-webkit-scrollbar-thumb {
-    background: #cbd5e1 !important;
-    border-radius: 2px !important;
+/* Navbar white background override - force white instead of transparent */
+.navbar,
+.navbar-expand {
+    background: white !important;
+    background-color: white !important;
 }
 
-/* STEP 12: ENSURE PAGE CONTAINERS ARE FULL WIDTH */
-.page-container,
-.form-container {
-    margin-left: 0 !important;
+/* ==================== SIDEBAR STYLING ==================== */
+/* Left sidebar navigation appearance */
+
+/* Sidebar label text color - module names like "Accounting", "Stock", "CRM" */
+.layout-side-section .sidebar-label{
+    color: var(--primary-color); /* Black text (matches primary color) */
+}
+
+/* Sidebar icon colors - module icons next to text */
+.sidebar-label svg,
+.layout-side-section .sidebar-label .icon{
+    stroke: var(--primary-color); /* Black stroke color for icons */
+    width: 18px !important;       /* Icon width */
+    height: 18px !important;      /* Icon height */
+}
+
+/* Sidebar button background - filter and action buttons in sidebar lists */
+.list-sidebar-button{
+    background-color: #c8c4c4 !important; /* Light gray background */
+}
+
+/* ==================== INPUT FIELD STYLING ==================== */
+/* Form input appearance and focus states */
+
+/* General input background - text fields, dropdowns, textareas */
+.form-control{
+    background-color: #f2f2f2 !important; /* Light gray background */
+}
+
+/* Input focus state - when user clicks in any form field */
+.form-control:focus{
+    border: 1px solid var(--primary-color); /* Black border on focus */
+    background: rgba(255, 160, 10, 0.14) !important; /* Light orange background on focus */
+}
+
+/* Navbar link text color - user menu, notifications, help links in top bar */
+.navbar .navbar-nav a.nav-link{
+    color: var(--white-color); /* White text for navbar links */
+}
+
+/* ==================== TABLE STYLING ==================== */
+/* Data table appearance and hover effects */
+
+/* Form grid border - tables in forms like item tables, tax tables */
+.form-grid{
+    border: 1px solid #bbbbbb; /* Gray border around tables */
+}
+
+/* Table header background - column headers in data tables */
+.form-grid .grid-heading-row{
+    background-color: #f4f4f4; /* Light gray header background */
+}
+
+/* Table header bottom border - line under column headers */
+.grid-heading-row{
+    border-bottom: 1px solid var(--primary-color); /* Black bottom border */
+}
+
+/* Table row hover effect - highlight when mouse over data rows */
+.form-grid .grid-row:hover{
+    background: rgba(255, 152, 0, 0.15); /* Light orange background on hover */
+}
+
+/* ==================== HEADING STYLING ==================== */
+/* Various heading elements throughout the application */
+
+/* Main headings - page titles, section headers, form titles, comment headers */
+.head-title,                            /* Main page titles like "Customer", "Sales Invoice" */
+.form-section .section-head,            /* Form section titles like "Customer Details", "Address Details" */
+.form-dashboard-section .section-head,  /* Dashboard section headers */
+.comment-box .comment-input-header{     /* Comment form headers */
+    color: var(--primary-color); /* Black text for headings */
+}
+
+/* ==================== LINK STYLING ==================== */
+/* Link hover effects */
+
+/* List item links hover - links in list views, document links */
+.list-subject a:hover{
+    color: var(--secondary-color); /* Purple/blue color on hover */
+}
+
+/* ==================== REPORT TABLE STYLING ==================== */
+/* Data table headers in reports */
+
+/* Report table headers - column headers in report views */
+.datatable .dt-header .dt-cell--header .dt-cell__content{
+    background-color: #f4f4f4; /* Light gray background for report headers */
+}
+
+/* ==================== SIDEBAR CARD ENHANCEMENT ==================== */
+/* Enhanced styling for sidebar navigation items */
+
+/* Main sidebar container - left navigation panel */
+.layout-side-section {
+    padding: 15px 10px !important;    /* Internal spacing */
+    background: transparent !important; /* No background color */
+}
+
+/* Individual sidebar items with gradient background - module cards like Accounting, Stock, CRM */
+.layout-side-section .sidebar-item,        /* Individual module items */
+.layout-side-section .standard-sidebar-item,  /* Standard navigation items */
+.layout-side-section .sidebar-section {    /* Section containers */
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;      /* Rounded corners */
+    margin-bottom: 10px !important;     /* Space between cards */
+    padding: 12px 15px !important;      /* Internal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    transition: all 0.3s ease !important; /* Smooth hover animation */
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+}
+
+/* ==================== TARGETED BUTTON STYLING ==================== */
+/* Only style specific buttons - not all buttons globally */
+
+/* PRIMARY ACTION BUTTONS - Save, Submit, Create, Update buttons in forms */
+.btn.btn-primary.primary-action,        /* Primary action buttons with specific class */
+.btn.btn-primary[data-label="Save"],    /* Save buttons identified by data attribute */
+.primary-action {                       /* Any element with primary-action class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PRIMARY ACTION BUTTONS HOVER - Save, Submit, Create, Update button hover effects */
+.btn.btn-primary.primary-action:hover,
+.btn.btn-primary[data-label="Save"]:hover,
+.primary-action:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ICON BUTTONS - Small buttons with icons in toolbars, action bars */
+.icon-btn,              /* Icon button class */
+.btn.icon-btn {         /* Button elements with icon-btn class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ICON BUTTONS HOVER - Toolbar icon button hover effects */
+.icon-btn:hover,
+.btn.icon-btn:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS - Cancel, Close, Back buttons with specific classes */
+.btn.btn-secondary.btn-default {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS HOVER - Cancel, Close, Back button hover effects */
+.btn.btn-secondary.btn-default:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* PAGE ACTION BUTTONS - Buttons in page header action area (New, Duplicate, Email, etc.) */
+.page-actions .btn.btn-primary,     /* Primary buttons in page actions */
+.page-actions .btn.btn-secondary {  /* Secondary buttons in page actions */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PAGE ACTION BUTTONS HOVER - Page header button hover effects */
+.page-actions .btn.btn-primary:hover,
+.page-actions .btn.btn-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* FORM ACTION BUTTONS - Create, Update, Delete buttons in form sections */
+.form-actions .btn.btn-primary {    /* Primary buttons in form action areas */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* FORM ACTION BUTTONS HOVER - Form action button hover effects */
+.form-actions .btn.btn-primary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* MODAL BUTTONS - Save, OK, Confirm buttons in popup dialogs */
+.btn.btn-modal-primary,     /* Primary modal buttons */
+.btn.btn-modal-secondary {  /* Secondary modal buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* MODAL BUTTONS HOVER - Popup dialog button hover effects */
+.btn.btn-modal-primary:hover,
+.btn.btn-modal-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* EXCLUDED BUTTONS - Keep original styling for these button types */
+.btn-danger,        /* Delete, Remove buttons (red) */
+.btn-warning,       /* Warning action buttons (yellow/orange) */
+.btn-info,          /* Info buttons (light blue) */
+.btn-light,         /* Light themed buttons */
+.btn-dark,          /* Dark themed buttons */
+.btn-link,          /* Link-styled buttons */
+.btn-outline-primary,   /* Outlined primary buttons */
+.btn-outline-secondary, /* Outlined secondary buttons */
+.close,             /* Close buttons (X) */
+.btn-close {        /* Close buttons */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* ROUNDED CORNERS - Apply to all buttons for consistent curved appearance */
+.btn,               /* All button elements */
+button,             /* All HTML button elements */
+.btn-primary,       /* Primary styled buttons */
+.btn-secondary,     /* Secondary styled buttons */
+.btn-default,       /* Default styled buttons */
+.primary-action,    /* Primary action class buttons */
+.icon-btn {         /* Icon buttons */
+    border-radius: 6px !important; /* Rounded corners like the curved button */
+}
+
+/* EXCLUDED FROM STYLING - Keep these navigation elements unchanged */
+.dropdown-toggle,       /* Dropdown arrow buttons */
+.nav-link,             /* Navigation links */
+.navbar-toggler,       /* Mobile menu toggle button */
+.carousel-control-prev, /* Image carousel previous button */
+.carousel-control-next { /* Image carousel next button */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* SMALL SECONDARY BUTTONS - Dismiss, Close, Small action buttons */
+.btn.btn-secondary.btn-default,     /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small {   /* Small secondary buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SMALL SECONDARY BUTTONS HOVER - Dismiss, Close button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ONBOARDING BUTTONS - Explore, Next, Skip buttons in setup wizards */
+.btn.btn-secondary.btn-default,         /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small,        /* Small secondary buttons */
+.onboarding-step-footer .btn.btn-default.btn-sm { /* Onboarding footer buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;;
+    color: white !important;
+    border: none !important;
+}
+
+/* ONBOARDING BUTTONS HOVER - Setup wizard button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover,
+.onboarding-step-footer .btn.btn-default.btn-sm:hover {
+     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+
+
+
+
+/* borders for thr box */
+
+/* ==================== ONBOARDING STEP BOXES WITH COMPLETE BORDERS ==================== */
+/* Enhanced styling for onboarding step containers */
+
+/* Main onboarding step items - the individual step boxes */
+.onboarding-step.pending,
+.onboarding-step,
+a.onboarding-step.pending,
+a.onboarding-step {
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;              /* Rounded corners */
+    margin-bottom: 10px !important;             /* Space between boxes */
+    padding: 15px 20px !important;              /* Internal padding for better text spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 2px solid rgba(255, 255, 255, 0.3) !important; /* Complete white border with transparency */
+    transition: all 0.3s ease !important;      /* Smooth hover animation */
+    position: relative !important;             /* For absolute positioned children */
+    overflow: hidden !important;               /* Hide overflow content */
+    display: block !important;                 /* Ensure proper block display */
+    text-decoration: none !important;          /* Remove link underline */
+    color: white !important;                   /* White text color */
+}
+
+/* Step title text styling - ensure proper alignment */
+.onboarding-step .step-title,
+.step-title {
+    color: white !important;                   /* White text */
+    font-weight: 500 !important;               /* Medium font weight */
+    font-size: 16px !important;                /* Consistent font size */
+    line-height: 1.4 !important;              /* Better line spacing */
+    margin: 0 !important;                      /* Remove default margins */
+    text-align: left !important;              /* Left align text */
+}
+
+/* Skip button styling within onboarding steps */
+.onboarding-step .step-skip,
+.step-skip {
+    color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+    font-size: 12px !important;                 /* Smaller font size */
+    text-decoration: none !important;           /* No underline */
+    float: right !important;                    /* Align to right */
+    margin-top: 2px !important;                 /* Slight top margin */
+}
+
+/* Hover effects for onboarding step boxes */
+.onboarding-step.pending:hover,
+.onboarding-step:hover,
+a.onboarding-step.pending:hover,
+a.onboarding-step:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important; /* Brighter border on hover */
+    transform: translateY(-1px) !important;     /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow on hover */
+}
+
+/* Ensure checkmark icons maintain visibility */
+.onboarding-step::before,
+.onboarding-step .step-icon {
+    color: white !important;                   /* White icon color */
+    opacity: 1 !important;                     /* Full opacity */
+}
+
+/* ==================== EXISTING STYLES MAINTAINED ==================== */
+/* All your existing sidebar and button styles remain unchanged */
+
+/* Main sidebar container - left navigation panel */
+.layout-side-section {
+    padding: 15px 10px !important;    /* Internal spacing */
+    background: transparent !important; /* No background color */
+}
+
+/* Individual sidebar items with gradient background - module cards like Accounting, Stock, CRM */
+.layout-side-section .sidebar-item,        /* Individual module items */
+.layout-side-section .standard-sidebar-item,  /* Standard navigation items */
+.layout-side-section .sidebar-section {    /* Section containers */
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;      /* Rounded corners */
+    margin-bottom: 10px !important;     /* Space between cards */
+    padding: 12px 15px !important;      /* Internal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    transition: all 0.3s ease !important; /* Smooth hover animation */
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+}
+
+/* ==================== TARGETED BUTTON STYLING ==================== */
+/* Only style specific buttons - not all buttons globally */
+
+/* PRIMARY ACTION BUTTONS - Save, Submit, Create, Update buttons in forms */
+.btn.btn-primary.primary-action,        /* Primary action buttons with specific class */
+.btn.btn-primary[data-label="Save"],    /* Save buttons identified by data attribute */
+.primary-action {                       /* Any element with primary-action class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PRIMARY ACTION BUTTONS HOVER - Save, Submit, Create, Update button hover effects */
+.btn.btn-primary.primary-action:hover,
+.btn.btn-primary[data-label="Save"]:hover,
+.primary-action:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ICON BUTTONS - Small buttons with icons in toolbars, action bars */
+.icon-btn,              /* Icon button class */
+.btn.icon-btn {         /* Button elements with icon-btn class */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ICON BUTTONS HOVER - Toolbar icon button hover effects */
+.icon-btn:hover,
+.btn.icon-btn:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS - Cancel, Close, Back buttons with specific classes */
+.btn.btn-secondary.btn-default {
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SECONDARY DEFAULT BUTTONS HOVER - Cancel, Close, Back button hover effects */
+.btn.btn-secondary.btn-default:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* PAGE ACTION BUTTONS - Buttons in page header action area (New, Duplicate, Email, etc.) */
+.page-actions .btn.btn-primary,     /* Primary buttons in page actions */
+.page-actions .btn.btn-secondary {  /* Secondary buttons in page actions */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* PAGE ACTION BUTTONS HOVER - Page header button hover effects */
+.page-actions .btn.btn-primary:hover,
+.page-actions .btn.btn-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* FORM ACTION BUTTONS - Create, Update, Delete buttons in form sections */
+.form-actions .btn.btn-primary {    /* Primary buttons in form action areas */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* FORM ACTION BUTTONS HOVER - Form action button hover effects */
+.form-actions .btn.btn-primary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* MODAL BUTTONS - Save, OK, Confirm buttons in popup dialogs */
+.btn.btn-modal-primary,     /* Primary modal buttons */
+.btn.btn-modal-secondary {  /* Secondary modal buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* MODAL BUTTONS HOVER - Popup dialog button hover effects */
+.btn.btn-modal-primary:hover,
+.btn.btn-modal-secondary:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* EXCLUDED BUTTONS - Keep original styling for these button types */
+.btn-danger,        /* Delete, Remove buttons (red) */
+.btn-warning,       /* Warning action buttons (yellow/orange) */
+.btn-info,          /* Info buttons (light blue) */
+.btn-light,         /* Light themed buttons */
+.btn-dark,          /* Dark themed buttons */
+.btn-link,          /* Link-styled buttons */
+.btn-outline-primary,   /* Outlined primary buttons */
+.btn-outline-secondary, /* Outlined secondary buttons */
+.close,             /* Close buttons (X) */
+.btn-close {        /* Close buttons */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* ROUNDED CORNERS - Apply to all buttons for consistent curved appearance */
+.btn,               /* All button elements */
+button,             /* All HTML button elements */
+.btn-primary,       /* Primary styled buttons */
+.btn-secondary,     /* Secondary styled buttons */
+.btn-default,       /* Default styled buttons */
+.primary-action,    /* Primary action class buttons */
+.icon-btn {         /* Icon buttons */
+    border-radius: 6px !important; /* Rounded corners like the curved button */
+}
+
+/* EXCLUDED FROM STYLING - Keep these navigation elements unchanged */
+.dropdown-toggle,       /* Dropdown arrow buttons */
+.nav-link,             /* Navigation links */
+.navbar-toggler,       /* Mobile menu toggle button */
+.carousel-control-prev, /* Image carousel previous button */
+.carousel-control-next { /* Image carousel next button */
+    background: initial !important;
+    color: initial !important;
+    border: initial !important;
+}
+
+/* SMALL SECONDARY BUTTONS - Dismiss, Close, Small action buttons */
+.btn.btn-secondary.btn-default,     /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small {   /* Small secondary buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* SMALL SECONDARY BUTTONS HOVER - Dismiss, Close button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+/* ONBOARDING BUTTONS - Explore, Next, Skip buttons in setup wizards */
+.btn.btn-secondary.btn-default,         /* Default secondary buttons */
+.btn.btn-sm.btn-secondary.small,        /* Small secondary buttons */
+.onboarding-step-footer .btn.btn-default.btn-sm { /* Onboarding footer buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;;
+    color: white !important;
+    border: none !important;
+}
+
+/* ONBOARDING BUTTONS HOVER - Setup wizard button hover effects */
+.btn.btn-secondary.btn-default:hover,
+.btn.btn-sm.btn-secondary.small:hover,
+.onboarding-step-footer .btn.btn-default.btn-sm:hover {
+     background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+}
+
+
+
+/* borders for the box  */
+
+
+
+
+
+
+
+
+
+
+/* ==================== DASHBOARD WIDGET STYLING ==================== */
+/* Main dashboard widget appearance and text colors */
+
+/* FORCE WHITE TEXT - All text elements inside dashboard widgets */
+.layout-main-section .widget,           /* Widget containers */
+.layout-main-section .widget *,         /* All elements inside widgets */
+.layout-main-section [data-widget-name] * { /* All elements in named widgets */
+    color: white !important;
+}
+
+/* WIDGET #2 & #3 BACKGROUNDS - "Reports & Masters" and "Data Import" widgets */
+.layout-main-section .widget:nth-of-type(2),   /* Second widget */
+.layout-main-section .widget:nth-of-type(3) {  /* Third widget */
+    background: #009fff !important;
+}
+
+/* WIDGET LINK ARROWS - Arrow icons in widget links, white colored */
+.layout-main-section .widget .link-item.ellipsis::after,
+.layout-main-section .widget .widget-body .ellipsis::after {
+    color: white !important;
+}
+
+/* WIDGET SVG ARROWS - Vector arrow icons in widgets */
+.layout-main-section .widget .widget-body .link-item svg,    /* Link item arrows */
+.layout-main-section .widget .widget-body a svg,            /* Link arrows */
+.layout-main-section .widget .widget-body .arrow-icon,      /* Arrow icon class */
+.layout-main-section .widget .widget-body [class*="arrow"], /* Any arrow class */
+.layout-main-section .widget .widget-body .icon {           /* Icon elements */
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* FONT AWESOME ARROWS - Font Awesome arrow icons in widgets */
+.layout-main-section .widget .widget-body .fa-arrow-right,     /* Right arrows */
+.layout-main-section .widget .widget-body .fa-chevron-right,   /* Right chevrons */
+.layout-main-section .widget .widget-body .octicon-arrow-right { /* GitHub Octicon arrows */
+    color: white !important;
+}
+
+/* ICON FONT ARROWS - Generic icon font arrows and chevrons */
+.layout-main-section .widget .widget-body i[class*="arrow"],    /* Arrow icon fonts */
+.layout-main-section .widget .widget-body i[class*="chevron"],  /* Chevron icon fonts */
+.layout-main-section .widget .widget-body span[class*="arrow"], /* Arrow spans */
+.layout-main-section .widget .widget-body span[class*="icon"] { /* Icon spans */
+    color: white !important;
+}
+
+/* WIDGET LINK ICONS - All icons inside widget links, forced white */
+.layout-main-section .widget .widget-body a *,         /* All elements in widget links */
+.layout-main-section .widget .widget-body .link-item * { /* All elements in link items */
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* SHORTCUT WIDGETS - Employee shortcuts and quick action widgets */
+.layout-main-section .widget.shortcut-widget-box,          /* Shortcut widget containers */
+.layout-main-section .widget[data-widget-name*="Employee"], /* Employee-related widgets */
+.layout-main-section .widget[data-widget-name*="shortcut"], /* Shortcut widgets by name */
+.layout-main-section .shortcut-widget-box {                /* Shortcut widget class */
+    background: #009fff !important;
+}
+
+/* SHORTCUT WIDGET ICONS - ES icons in shortcut widgets */
+.layout-main-section .widget svg.es-icon {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
+
+/* SHORTCUT WIDGET LAYOUT - Center content and fix alignment */
+.layout-main-section .widget.shortcut-widget-box,
+.layout-main-section .widget[data-widget-name*="Employee"],
+.layout-main-section .widget[data-widget-name*="shortcut"],
+.layout-main-section .shortcut-widget-box {
+    background: #009fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 15px !important; /* Better padding */
+    min-height: 80px !important; /* Minimum height for proper centering */
+}
+
+/* PENDING INDICATORS - Count badges showing pending items in widgets */
+.layout-main-section .widget .indicator-pill,                  /* Indicator pill elements */
+.layout-main-section .widget .widget-control .indicator-pill { /* Widget control indicators */
+    background: #009fff !important; /* Same blue as widget background */
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Subtle white border */
+    padding: 2px 8px !important; /* Compact padding */
+    border-radius: 12px !important; /* More rounded */
+    font-size: 11px !important; /* Smaller font */
+    white-space: nowrap !important; /* Prevent text wrapping */
+    position: absolute !important;
+    top: 8px !important; /* Position from top */
+    right: 8px !important; /* Position from right */
+    z-index: 10 !important; /* Above other content */
+}
+
+/* WIDGET CONTROLS - Widget control positioning (settings, refresh buttons) */
+.layout-main-section .widget .widget-control {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    z-index: 5 !important;
+}
+
+/* SHORTCUT WIDGET HEADERS - Center widget titles and labels */
+.layout-main-section .widget.shortcut-widget-box .widget-head,
+.layout-main-section .shortcut-widget-box .widget-head {
+    text-align: center !important;
+    margin: 0 !important;
     width: 100% !important;
+}
+
+/* SHORTCUT WIDGET LABELS - Center widget text labels */
+.layout-main-section .widget.shortcut-widget-box .widget-label,
+.layout-main-section .shortcut-widget-box .widget-label {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* SHORTCUT WIDGET ARROWS - Position arrows in bottom-right of centered widgets */
+.layout-main-section .widget.shortcut-widget-box svg.es-icon,
+.layout-main-section .shortcut-widget-box svg.es-icon {
+    position: absolute !important;
+    bottom: 12px !important;
+    right: 12px !important;
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* WIDGET FOOTER BUTTONS - "See All", "View More" buttons at bottom of widgets */
+.widget-footer .see-all.btn,                    /* "See All" buttons */
+.widget-footer .btn.btn-xs,                     /* Extra small buttons */
+.layout-main-section .widget .widget-footer .btn { /* Footer action buttons */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ==================== SIDEBAR CARD HOVER EFFECTS ==================== */
+/* HOVER EFFECTS - Currently commented out for sidebar navigation cards */
+/* .layout-side-section .sidebar-item:hover,        // Module cards on hover
+.layout-side-section .standard-sidebar-item:hover,  // Standard items on hover
+.layout-side-section .sidebar-section:hover {       // Section containers on hover
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--primary-color) !important;
+} */
+
+/* SIDEBAR LABELS - Module names and navigation labels inside cards */
+.layout-side-section .sidebar-label {
+    color: var(--primary-color) !important; /* Black text */
+    font-weight: 600 !important;           /* Semi-bold text */
+    font-size: 14px !important;            /* Medium font size */
+    margin-bottom: 8px !important;         /* Space below label */
+    display: flex !important;              /* Flexbox for icon alignment */
+    align-items: center !important;        /* Center items vertically */
+    gap: 8px !important;                   /* Space between icon and text */
+}
+
+/* SIDEBAR FILTER BUTTONS - Filter and action buttons styled as mini cards */
+.list-sidebar-button { /* Filter buttons, "New" buttons, action buttons in sidebar */
+    background-color: var(--white-color) !important; /* White background */
+    border-radius: 6px !important;        /* Rounded corners */
+    border: 1px solid #e8ecf1 !important; /* Light gray border */
+    margin: 5px 0 !important;             /* Vertical margin */
+    padding: 8px 17px !important;         /* Internal padding (increased from 12px to 17px) */
+    transition: all 0.2s ease !important; /* Smooth hover transition */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important; /* Subtle shadow */
+}
+
+/* SIDEBAR FILTER BUTTONS HOVER - Hover effect for sidebar action buttons */
+.list-sidebar-button:hover {
+    background-color: rgba(255, 160, 10, 0.1) !important; /* Light orange background */
+    border-color: var(--primary-color) !important;        /* Black border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important; /* Enhanced shadow */
+}
+
+/* SIDEBAR SECTION CONTAINERS - Currently commented out */
+/* .layout-side-section .sidebar-menu,     // Sidebar menu containers
+.layout-side-section .list-sidebar {       // List sidebar containers
+    background: var(--white-color) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #e8ecf1 !important;
+} */
+
+/* SIDEBAR LIST ITEMS - Individual items in sidebar lists with dividers */
+.layout-side-section .sidebar-menu li,    /* Menu list items */
+.layout-side-section .list-sidebar li {   /* Sidebar list items */
+    padding: 6px 0 !important;                      /* Vertical padding */
+    border-bottom: 1px solid #f5f6fa !important;    /* Light gray separator line */
+}
+
+/* SIDEBAR LIST ITEMS LAST CHILD - Remove divider from last item */
+.layout-side-section .sidebar-menu li:last-child,
+.layout-side-section .list-sidebar li:last-child {
+    border-bottom: none !important; /* No border on last item */
+}
+
+/* SIDEBAR LINKS - Links inside sidebar cards and lists */
+.layout-side-section a { /* All sidebar navigation links */
+    color: #333 !important;                    /* Dark gray text */
+    text-decoration: none !important;          /* No underline */
+    transition: color 0.2s ease !important;    /* Smooth color change */
+}
+
+/* SIDEBAR LINKS HOVER - Sidebar link hover effect */
+.layout-side-section a:hover {
+    color: var(--primary-color) !important; /* Black text on hover */
+}
+
+/* ACTIVE SIDEBAR ITEMS - Selected/active state for sidebar navigation */
+.layout-side-section .sidebar-item.active,         /* Active sidebar items */
+.layout-side-section .standard-sidebar-item.active { /* Active standard items */
+    background: linear-gradient(135deg, var(--primary-color), rgba(255, 160, 10, 0.8)) !important; /* Black to orange gradient */
+    color: var(--white-color) !important;                    /* White text */
+    border-color: var(--primary-color) !important;           /* Black border */
+    box-shadow: 0 4px 15px rgba(255, 160, 10, 0.3) !important; /* Orange shadow */
+}
+
+/* ACTIVE SIDEBAR LABELS - Text colors for active sidebar items */
+.layout-side-section .sidebar-item.active .sidebar-label,
+.layout-side-section .standard-sidebar-item.active .sidebar-label {
+    color: var(--white-color) !important; /* White text in active state */
+}
+
+/* ACTIVE SIDEBAR ICONS - Icon colors for active sidebar items */
+.layout-side-section .sidebar-item.active svg,
+.layout-side-section .standard-sidebar-item.active svg {
+    stroke: var(--white-color) !important; /* White icon stroke in active state */
+}
+
+/* ==================== DARK THEME SIDEBAR OVERRIDES ==================== */
+/* Sidebar appearance in dark mode */
+
+/* DARK THEME SIDEBAR CONTAINERS - Dark mode styling for sidebar elements */
+[data-theme="dark"] .layout-side-section .sidebar-item,      /* Sidebar items in dark mode */
+[data-theme="dark"] .layout-side-section .standard-sidebar-item, /* Standard items in dark mode */
+[data-theme="dark"] .layout-side-section .sidebar-section,   /* Sidebar sections in dark mode */
+[data-theme="dark"] .layout-side-section .sidebar-menu,      /* Sidebar menus in dark mode */
+[data-theme="dark"] .layout-side-section .list-sidebar {     /* List sidebars in dark mode */
+    background: var(--gray-900) !important;              /* Dark gray background */
+    border-color: #2c3136 !important;                    /* Darker border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow */
+}
+
+/* DARK THEME HOVER EFFECTS - Enhanced hover effects in dark mode */
+[data-theme="dark"] .layout-side-section .sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .standard-sidebar-item:hover,
+[data-theme="dark"] .layout-side-section .sidebar-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important; /* Enhanced shadow */
+    border-color: var(--primary-color) !important;        /* Black border on hover */
+}
+
+/* DARK THEME SIDEBAR BUTTONS - Filter and action buttons in dark mode */
+[data-theme="dark"] .list-sidebar-button {
+    background-color: var(--gray-900) !important;        /* Dark background */
+    border-color: #2c3136 !important;                    /* Dark border */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important; /* Dark shadow */
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Mobile and tablet adjustments */
+
+/* MOBILE SIDEBAR CONTAINER - Sidebar spacing on mobile devices */
+@media (max-width: 768px) {
+    .layout-side-section {
+        padding: 10px 5px !important; /* Reduced padding for mobile */
+    }
+    
+    /* MOBILE SIDEBAR ITEMS - Reduced spacing for mobile sidebar cards */
+    .layout-side-section .sidebar-item,        /* Sidebar items on mobile */
+    .layout-side-section .standard-sidebar-item, /* Standard items on mobile */
+    .layout-side-section .sidebar-section {    /* Sidebar sections on mobile */
+        padding: 10px 12px !important;   /* Reduced padding */
+        margin-bottom: 8px !important;   /* Reduced margin */
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+/* Smooth entrance animation for sidebar cards */
+
+/* CARD FADE-IN ANIMATION - Keyframe definition for entrance animation */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;                    /* Start invisible */
+        transform: translateY(10px);   /* Start 10px below final position */
+    }
+    to {
+        opacity: 1;                    /* End fully visible */
+        transform: translateY(0);      /* End at final position */
+    }
+}
+
+/* APPLY FADE-IN ANIMATION - Apply entrance animation to sidebar items */
+.layout-side-section .sidebar-item,        /* Animated sidebar items */
+.layout-side-section .standard-sidebar-item, /* Animated standard items */
+.layout-side-section .sidebar-section {    /* Animated sidebar sections */
+    animation: cardFadeIn 0.3s ease-out !important; /* 0.3 second smooth entrance */
+}
+
+/* ==================== MAIN SECTION WIDGET STYLING ==================== */
+/* Styling for the main content area widgets (dashboard cards) */
+
+
+
+
+/* ==================== ONBOARDING STEPS STYLING ==================== */
+/* Target only onboarding steps specifically */
+
+/* ONBOARDING STEP CONTAINERS - Setup wizard step cards, better spacing and borders */
+.onboarding-steps-wrapper .onboarding-step { /* Individual setup steps */
+    background: transparent !important;
+    border: 1px solid white !important;
+    color: white !important;
+    margin-bottom: 15px !important; /* Better vertical spacing */
+    padding: 15px 20px !important; /* Better horizontal spacing */
+    border-radius: 8px !important; /* Rounded corners */
+}
+
+/* ONBOARDING STEP HOVER - Hover effect for setup wizard steps */
+.onboarding-steps-wrapper .onboarding-step:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ONBOARDING STEP ICONS - Checkmark and step icons in setup wizard, white color */
+.onboarding-steps-wrapper .step-icon,      /* Step icons */
+.onboarding-steps-wrapper .step-icon svg,  /* SVG step icons */
+.onboarding-steps-wrapper .es-icon {       /* ES step icons */
+    color: white !important;
+    stroke: white !important;
+    fill: white !important;
+}
+
+/* ONBOARDING STEP TEXT - Text labels in setup wizard steps */
+.onboarding-steps-wrapper .step-text {
+    color: white !important;
+    margin-left: 15px !important; /* Better spacing from icon */
+     
+}
+
+/* ONBOARDING SKIP BUTTONS - Skip and dismiss buttons in setup wizards */
+.onboarding-steps-wrapper .step-skip { /* Skip buttons */
+    color: rgba(255, 255, 255, 0.8) !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* ==================== BASE WIDGET STYLING ==================== */
+/* Base styling for ALL main section widgets */
+
+/* ALL MAIN SECTION WIDGETS - Base styling for dashboard widgets */
+.layout-main-section .widget,              /* Standard widget containers */
+.layout-main-section .onboarding-widget-box, /* Onboarding widget containers */
+.layout-main-section [data-widget-name] {  /* Named widget containers */
+    position: relative !important;      /* For absolute positioned children */
+    overflow: hidden !important;        /* Hide overflow content */
+    border-radius: 12px !important;     /* Rounded corners */
+    margin-bottom: 20px !important;     /* Space between widgets */
+    transition: all 0.3s ease !important; /* Smooth hover effects */
+}
+
+/* ==================== INDIVIDUAL WIDGET STYLING ==================== */
+
+/* --------------------------------------------------------
+   WIDGET #1 - First Widget ("Your Shortcuts") - BLUE THEME
+--------------------------------------------------------- */
+
+/* FIRST WIDGET BACKGROUND - "Your Shortcuts" widget styling */
+.layout-main-section .widget:nth-of-type(1),       /* First widget by position */
+.layout-main-section [data-widget-name]:nth-of-type(1) { /* First named widget */
+    background: #009fff !important;                        /* Bright blue background */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* FIRST WIDGET HEADINGS - White text for "Your Shortcuts" headings */
+.layout-main-section .widget:nth-of-type(1) .widget-head,      /* Widget header */
+.layout-main-section .widget:nth-of-type(1) .widget-title,     /* Widget title */
+.layout-main-section .widget:nth-of-type(1) .widget-subtitle,  /* Widget subtitle */
+.layout-main-section [data-widget-name]:nth-of-type(1) h3,     /* H3 headings */
+.layout-main-section [data-widget-name]:nth-of-type(1) .head-title { /* Head titles */
+    color: white !important;         /* White text for contrast against blue */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* FIRST WIDGET LINKS - White text with transparency for "Your Shortcuts" links */
+.layout-main-section .widget:nth-of-type(1) .widget-body a,    /* Widget body links */
+.layout-main-section [data-widget-name]:nth-of-type(1) a {     /* Named widget links */
+    color: rgba(255, 255, 255, 0.9) !important; /* 90% opacity white */
+    transition: all 0.2s ease !important;       /* Smooth hover transition */
+}
+
+/* FIRST WIDGET LINK HOVER - Hover effect for "Your Shortcuts" links */
+.layout-main-section .widget:nth-of-type(1) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(1) a:hover {
+    color: white !important;                           /* Full opacity white */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   WIDGET #2 - Second Widget ("Reports & Masters") - MISSING BACKGROUND
+   NOTE: This section is missing background color - causing black text
+--------------------------------------------------------- */
+
+/* SECOND WIDGET BACKGROUND - "Reports & Masters" widget (MISSING BACKGROUND COLOR) */
+.layout-main-section .widget:nth-of-type(2),       /* Second widget by position */
+.layout-main-section [data-widget-name]:nth-of-type(2) { /* Second named widget */
+    /* MISSING: background color declaration - should have background: #009fff !important; */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important; /* Green-tinted shadow (inconsistent) */
+}
+
+/* SECOND WIDGET HEADINGS - White text for "Reports & Masters" (may appear black without background) */
+.layout-main-section .widget:nth-of-type(2) .widget-head,      /* Widget header */
+.layout-main-section .widget:nth-of-type(2) .widget-title,     /* Widget title */
+.layout-main-section .widget:nth-of-type(2) .widget-subtitle,  /* Widget subtitle */
+.layout-main-section [data-widget-name]:nth-of-type(2) h3,     /* H3 headings */
+.layout-main-section [data-widget-name]:nth-of-type(2) .head-title { /* Head titles */
+    color: white !important;         /* White text (but may appear black on white background) */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* SECOND WIDGET LINKS - White text for "Reports & Masters" links */
+.layout-main-section .widget:nth-of-type(2) .widget-body a,    /* Widget body links */
+.layout-main-section [data-widget-name]:nth-of-type(2) a {     /* Named widget links */
+    color: white !important; /* Forced white text */
+}
+
+/* SECOND WIDGET LINK HOVER - Hover effect for "Reports & Masters" links */
+.layout-main-section .widget:nth-of-type(2) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(2) a:hover {
+    color: white !important;                           /* White text */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   WIDGET #3 - Third Widget ("Data Import & Settings") - MISSING BACKGROUND
+   NOTE: This section is also missing background color
+--------------------------------------------------------- */
+
+/* THIRD WIDGET BACKGROUND - "Data Import & Settings" widget (MISSING BACKGROUND COLOR) */
+.layout-main-section .widget:nth-of-type(3),       /* Third widget by position */
+.layout-main-section [data-widget-name]:nth-of-type(3) { /* Third named widget */
+    /* MISSING: background color declaration - should have background: #009fff !important; */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important; /* Orange-tinted shadow (inconsistent) */
+}
+
+/* THIRD WIDGET HEADINGS - White text for "Data Import & Settings" (may appear black without background) */
+.layout-main-section .widget:nth-of-type(3) .widget-head,      /* Widget header */
+.layout-main-section .widget:nth-of-type(3) .widget-title,     /* Widget title */
+.layout-main-section .widget:nth-of-type(3) .widget-subtitle,  /* Widget subtitle */
+.layout-main-section [data-widget-name]:nth-of-type(3) h3,     /* H3 headings */
+.layout-main-section [data-widget-name]:nth-of-type(3) .head-title { /* Head titles */
+    color: white !important;         /* White text */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* THIRD WIDGET LINKS - White text for "Data Import & Settings" links */
+.layout-main-section .widget:nth-of-type(3) .widget-body a,    /* Widget body links */
+.layout-main-section [data-widget-name]:nth-of-type(3) a {     /* Named widget links */
+    color: white !important; /* Forced white text */
+}
+
+/* THIRD WIDGET LINK HOVER - Hover effect for "Data Import & Settings" links */
+.layout-main-section .widget:nth-of-type(3) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(3) a:hover {
+    color: white !important;                           /* White text */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* --------------------------------------------------------
+   WIDGET #4 - Fourth Widget ("Other Section") - WHITE BACKGROUND
+--------------------------------------------------------- */
+
+/* FOURTH WIDGET BACKGROUND - "Other Section" widget with white background */
+.layout-main-section .widget:nth-of-type(4),       /* Fourth widget by position */
+.layout-main-section [data-widget-name]:nth-of-type(4) { /* Fourth named widget */
+    background: white !important;                        /* White background */
+    border: none !important;                               /* No border */
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important; /* Purple-tinted shadow (inconsistent with white background) */
+}
+
+/* FOURTH WIDGET HEADINGS - White text for "Other Section" headings */
+.layout-main-section .widget:nth-of-type(4) .widget-head,      /* Widget header */
+.layout-main-section .widget:nth-of-type(4) .widget-title,     /* Widget title */
+.layout-main-section .widget:nth-of-type(4) .widget-subtitle,  /* Widget subtitle */
+.layout-main-section [data-widget-name]:nth-of-type(4) h3,     /* H3 headings */
+.layout-main-section [data-widget-name]:nth-of-type(4) .head-title { /* Head titles */
+    color: white !important;         /* White text for contrast */
+    font-weight: 600 !important;     /* Semi-bold text */
+}
+
+/* FOURTH WIDGET LINKS - White text with transparency for "Other Section" links */
+.layout-main-section .widget:nth-of-type(4) .widget-body a,    /* Widget body links */
+.layout-main-section [data-widget-name]:nth-of-type(4) a {     /* Named widget links */
+    color: rgba(255, 255, 255, 0.9) !important; /* 90% opacity white */
+}
+
+/* FOURTH WIDGET LINK HOVER - Hover effect for "Other Section" links */
+.layout-main-section .widget:nth-of-type(4) .widget-body a:hover,
+.layout-main-section [data-widget-name]:nth-of-type(4) a:hover {
+    color: white !important;                           /* Full opacity white */
+    background: rgba(255, 255, 255, 0.1) !important;   /* Light white background */
+    border-radius: 6px !important;                     /* Rounded hover area */
+    padding: 6px 10px !important;                      /* Padding around hover area */
+}
+
+/* ==================== GLOBAL WIDGET HOVER EFFECTS ==================== */
+/* Applied to ALL widgets when hovered */
+
+/* ALL WIDGET HOVER EFFECTS - Lift and shadow enhancement for all dashboard widgets */
+.layout-main-section .widget:hover,            /* Standard widgets on hover */
+.layout-main-section [data-widget-name]:hover { /* Named widgets on hover */
+    transform: translateY(-3px) !important;            /* Lift widget 3px up */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow */
+}
+
+/* ==================== WIDGET CONTENT STYLING ==================== */
+/* Headers and sections within widgets */
+
+/* WIDGET COLUMN HEADERS - Section headers inside widgets (Accounting, Stock, CRM, etc.) */
+.layout-main-section .widget .widget-body h4,      /* H4 headers in widget body */
+.layout-main-section .widget .widget-body h5,      /* H5 headers in widget body */
+.layout-main-section .ce-block h3,                 /* CE block H3 headers */
+.layout-main-section .form-section .section-head { /* Form section headers */
+    color: rgba(255, 255, 255, 0.95) !important;       /* Nearly opaque white text */
+    font-weight: 700 !important;                       /* Bold text for emphasis */
+    font-size: 16px !important;                        /* Medium font size */
+    margin-bottom: 12px !important;                    /* Space below header */
+    padding-bottom: 8px !important;                    /* Space above bottom border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Semi-transparent white underline */
+}
+
+/* ==================== WIDGET LINK STYLING ==================== */
+/* Individual links and list items within widgets */
+
+/* WIDGET LINK LIST ITEMS - Links and list items with separator lines */
+.layout-main-section .widget .widget-body ul li,   /* Unordered list items */
+.layout-main-section .widget .widget-body div a {  /* Division anchor links */
+    padding: 8px 0 !important;                         /* Vertical padding for clickable area */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Very light separator line */
+    display: block !important;                         /* Full width clickable area */
+}
+
+/* WIDGET LINK LAST ITEM - Remove separator line from the last item in lists */
+.layout-main-section .widget .widget-body ul li:last-child {
+    border-bottom: none !important; /* No border on last item to avoid double line */
+}
+
+/* ==================== DARK THEME WIDGET ADJUSTMENTS ==================== */
+/* Enhanced shadows and effects for dark mode */
+
+/* DARK THEME WIDGET HOVER - Enhanced hover effects for dashboard widgets in dark mode */
+[data-theme="dark"] .layout-main-section .widget:hover,
+[data-theme="dark"] .layout-main-section [data-widget-name]:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important; /* Darker, stronger shadow in dark mode */
+}
+
+/* ==================== FALLBACK SELECTORS ==================== */
+/* Alternative targeting methods in case nth-of-type fails */
+/* These target widgets by their data attributes or content */
+
+/* FALLBACK WIDGET BY ATTRIBUTE - Target widgets by data attribute names */
+.widget[data-widget-name="Your Shortcuts"],    /* "Your Shortcuts" widget by attribute */
+.onboarding-widget-box[onboarding_name="Home"] .widget { /* Home onboarding widget */
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; /* Blue gradient fallback */
+    color: white !important;                               /* White text */
+    border: none !important;                               /* No border */
+    border-radius: 12px !important;                        /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important; /* Blue-tinted shadow */
+}
+
+/* FALLBACK WIDGET BY CONTENT - Target widgets by text content (CSS :contains pseudo-selector) */
+.layout-main-section div:contains("Your Shortcuts"),           /* Widgets containing "Your Shortcuts" text */
+.layout-main-section div:contains("Reports & Masters"),        /* Widgets containing "Reports & Masters" text */
+.layout-main-section div:contains("Data Import and Settings") { /* Widgets containing "Data Import and Settings" text */
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important; /* Blue gradient fallback */
+    color: white !important;                               /* White text */
+    border-radius: 12px !important;                        /* Rounded corners */
+    padding: 20px !important;                              /* Internal spacing */
+    margin-bottom: 20px !important;                        /* Space between widgets */
+}
+
+/* ==================== END OF STYLING ==================== */
+
+
+
+
+/* ==================== FINAL ONBOARDING STEP BORDER FIX ==================== */
+/* Add this at the very end of your CSS file to override all conflicting rules */
+
+/* PRIORITY OVERRIDE - Onboarding step boxes with complete visible borders */
+.onboarding-step.pending,
+.onboarding-step,
+a.onboarding-step.pending,
+a.onboarding-step,
+.onboarding-steps-wrapper .onboarding-step {
+    /* GRADIENT: Blue to light blue horizontal gradient */
+    background: linear-gradient(90deg,rgba(0, 159, 255, 1) 0%, rgba(98, 196, 255, 1) 33%, rgba(98, 196, 255, 1) 100%) !important;
+    border-radius: 8px !important;              /* Rounded corners */
+    margin-bottom: 15px !important;             /* Space between boxes */
+    padding: 15px 20px !important;              /* Internal padding for better text spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow */
+    border: 2px solid rgba(255, 255, 255, 0.6) !important; /* VISIBLE white border - increased opacity */
+    transition: all 0.3s ease !important;      /* Smooth hover animation */
+    position: relative !important;             /* For absolute positioned children */
+    overflow: hidden !important;               /* Hide overflow content */
+    display: flex !important;                  /* Use flexbox for centering */
+    align-items: center !important;            /* Center vertically */
+    justify-content: center !important;        /* Center horizontally */
+    text-decoration: none !important;          /* Remove link underline */
+    color: white !important;                   /* White text color */
+}
+
+/* Step title text styling - center aligned text */
+.onboarding-step .step-title,
+.step-title {
+    color: white !important;                   /* White text */
+    font-weight: 500 !important;               /* Medium font weight */
+    font-size: 16px !important;                /* Consistent font size */
+    line-height: 1.4 !important;              /* Better line spacing */
+    margin: 0 !important;                      /* Remove default margins */
+    text-align: center !important;            /* Center align text */
+    flex: 1 !important;                        /* Take available space */
+}
+
+/* Skip button styling within onboarding steps */
+.onboarding-step .step-skip,
+.step-skip {
+    color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+    font-size: 12px !important;                 /* Smaller font size */
+    text-decoration: none !important;           /* No underline */
+    float: right !important;                    /* Align to right */
+    margin-top: 2px !important;                 /* Slight top margin */
+}
+
+/* Hover effects for onboarding step boxes */
+.onboarding-step.pending:hover,
+.onboarding-step:hover,
+a.onboarding-step.pending:hover,
+a.onboarding-step:hover,
+.onboarding-steps-wrapper .onboarding-step:hover {
+    background: linear-gradient(90deg,rgba(0, 139, 235, 1) 0%, rgba(78, 176, 235, 1) 33%, rgba(78, 176, 235, 1) 100%) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important; /* BRIGHTER border on hover */
+    transform: translateY(-1px) !important;     /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important; /* Enhanced shadow on hover */
+}
+
+/* Ensure checkmark icons maintain visibility */
+.onboarding-step::before,
+.onboarding-step .step-icon {
+    color: white !important;                   /* White icon color */
+    opacity: 1 !important;                     /* Full opacity */
 }
