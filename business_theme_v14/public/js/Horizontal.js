@@ -43,35 +43,35 @@
                 title: 'Employee Lifecycle',
                 description: 'Manage employee records, profiles, and career progression.',
                 icon: '👤',
-                href: '/app/employee',
+                href: '/app/employee-lifecycle',
                 background: '#8b5cf6'
             },
             {
                 title: 'Performance',
                 description: 'Track performance reviews and employee appraisals.',
                 icon: '⭐',
-                href: '/app/appraisal',
+                href: '/app/performance',
                 background: '#ef4444'
             },
             {
                 title: 'Shift & Attendance',
                 description: 'Monitor shift schedules and attendance tracking.',
                 icon: '⏰',
-                href: '/app/attendance',
+                href: '/app/shift-%26-attendance',
                 background: '#06b6d4'
             },
             {
                 title: 'Expense Claims',
                 description: 'Process employee expense claims and reimbursements.',
                 icon: '💰',
-                href: '/app/expense-claim',
+                href: '/app/expense-claims',
                 background: '#f97316'
             },
             {
                 title: 'Leaves',
                 description: 'Handle leave applications, approvals, and balance tracking.',
                 icon: '🏖️',
-                href: '/app/leave-application',
+                href: '/app/leaves',
                 background: '#84cc16'
             }
         ];
