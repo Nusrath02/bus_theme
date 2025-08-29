@@ -23,11 +23,11 @@
         const navContainer = document.createElement('div');
         navContainer.className = 'horizontal-nav-container';
         
-        // Define HR menu items based on your sidebar structure
+        // Define HR menu items based on your actual sidebar structure
         const hrMenuItems = [
             {
-                title: 'Employee Onboarding',
-                description: 'Execute Employee Onboarding smoothly by standardizing process flow.',
+                title: 'HR',
+                description: 'Human Resource management dashboard and overview.',
                 icon: '👥',
                 href: '/app/hr',
                 background: '#3b82f6'
@@ -38,13 +38,6 @@
                 icon: '🎯',
                 href: '/app/recruitment',
                 background: '#10b981'
-            },
-            {
-                title: 'Job Postings',
-                description: 'Track the job posts to be filled and monitor their progress.',
-                icon: '📋',
-                href: '/app/job-opening',
-                background: '#f59e0b'
             },
             {
                 title: 'Employee Lifecycle',
@@ -61,18 +54,11 @@
                 background: '#ef4444'
             },
             {
-                title: 'Attendance',
+                title: 'Shift & Attendance',
                 description: 'Monitor shift schedules and attendance tracking.',
                 icon: '⏰',
                 href: '/app/attendance',
                 background: '#06b6d4'
-            },
-            {
-                title: 'Leave Management',
-                description: 'Handle leave applications, approvals, and balance tracking.',
-                icon: '🏖️',
-                href: '/app/leave-application',
-                background: '#84cc16'
             },
             {
                 title: 'Expense Claims',
@@ -80,6 +66,13 @@
                 icon: '💰',
                 href: '/app/expense-claim',
                 background: '#f97316'
+            },
+            {
+                title: 'Leaves',
+                description: 'Handle leave applications, approvals, and balance tracking.',
+                icon: '🏖️',
+                href: '/app/leave-application',
+                background: '#84cc16'
             }
         ];
         
