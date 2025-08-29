@@ -11,13 +11,18 @@
             existingNav.remove();
         }
         
-        // Hide original Frappe onboarding content
+        // Hide original Frappe onboarding content - comprehensive targeting
         const onboardingElements = document.querySelectorAll(
             '.onboarding-step, .onboarding-widget-box, .setup-wizard-slide, ' +
-            '.onboarding-step.pending, .module-onboarding, .onboarding-steps-wrapper, ' +
-            'div[data-doctype="Module Onboarding"]'
+            '.onboarding-step.pending, .onboarding-step.pending.active, .module-onboarding, .onboarding-steps-wrapper, ' +
+            '.onboarding-step-preview, .widget.onboarding-widget-box, ' +
+            'div[data-doctype="Module Onboarding"], div[onboarding_name="Human Resource"], ' +
+            'div[onboarding_name], .ce-block[onboarding_name], .widget[data-widget-name*="onboarding"]'
         );
-        onboardingElements.forEach(el => el.style.display = 'none');
+        onboardingElements.forEach(el => {
+            el.style.display = 'none';
+            el.style.visibility = 'hidden';
+        });
         
         // Create horizontal navigation container
         const navContainer = document.createElement('div');
@@ -43,35 +48,35 @@
                 title: 'Employee Lifecycle',
                 description: 'Manage employee records, profiles, and career progression.',
                 icon: '👤',
-                href: '/app/employee-lifecycle',
+                href: '/app/employee',
                 background: '#8b5cf6'
             },
             {
                 title: 'Performance',
                 description: 'Track performance reviews and employee appraisals.',
                 icon: '⭐',
-                href: '/app/performance',
+                href: '/app/appraisal',
                 background: '#ef4444'
             },
             {
                 title: 'Shift & Attendance',
                 description: 'Monitor shift schedules and attendance tracking.',
                 icon: '⏰',
-                href: '/app/shift-%26-attendance',
+                href: '/app/attendance',
                 background: '#06b6d4'
             },
             {
                 title: 'Expense Claims',
                 description: 'Process employee expense claims and reimbursements.',
                 icon: '💰',
-                href: '/app/expense-claims',
+                href: '/app/expense-claim',
                 background: '#f97316'
             },
             {
                 title: 'Leaves',
                 description: 'Handle leave applications, approvals, and balance tracking.',
                 icon: '🏖️',
-                href: '/app/leaves',
+                href: '/app/leave-application',
                 background: '#84cc16'
             }
         ];
