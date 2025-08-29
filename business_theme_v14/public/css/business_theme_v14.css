@@ -6,14 +6,21 @@
     display: none !important;
 }
 
-/* Hide the original Frappe setup/onboarding content */
+/* Hide ALL Frappe onboarding content - comprehensive targeting */
 .onboarding-step,
 .onboarding-widget-box,
 .setup-wizard-slide,
 .onboarding-step.pending,
+.onboarding-step.pending.active,
 .module-onboarding,
 .onboarding-steps-wrapper,
-div[data-doctype="Module Onboarding"] {
+.onboarding-step-preview,
+.widget.onboarding-widget-box,
+div[data-doctype="Module Onboarding"],
+div[onboarding_name="Human Resource"],
+div[onboarding_name],
+.ce-block[onboarding_name],
+.widget[data-widget-name*="onboarding"] {
     display: none !important;
 }
 
