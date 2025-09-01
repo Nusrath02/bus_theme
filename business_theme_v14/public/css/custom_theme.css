@@ -1431,3 +1431,31 @@ a.onboarding-step:hover,
     color: white !important;                   /* White icon color */
     opacity: 1 !important;                     /* Full opacity */
 }
+
+
+
+
+
+
+
+/* Universal sidebar blue theme */
+[class*="sidebar"],
+[class*="side-"] {
+    background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%) !important;
+    border-radius: 12px !important;
+    padding: 15px 10px !important;
+}
+
+[class*="sidebar"] *,
+[class*="side-"] * {
+    color: white !important;
+}
+
+[class*="sidebar"] svg,
+[class*="sidebar"] i,
+[class*="side-"] svg,
+[class*="side-"] i {
+    stroke: white !important;
+    fill: white !important;
+    color: white !important;
+}
