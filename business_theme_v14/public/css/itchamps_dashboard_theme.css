@@ -60,90 +60,148 @@ header .form-control:focus {
 /* ==================== SIDEBAR STYLING ==================== */
 /* Left sidebar with blue gradient and white text modules */
 
-/* Main sidebar container */
-.layout-side-section {
+/* Main sidebar container - target the actual sidebar structure */
+.layout-side-section,
+.sidebar-section,
+.desk-sidebar {
     background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%) !important;
     padding: 20px 15px !important;
     border-radius: 0 !important;
     margin-left: 0 !important;
-    min-height: 100vh;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Modules header styling */
+/* Target the specific sidebar menu structure from your image */
+.layout-side-section .sidebar-menu,
+.layout-side-section .standard-sidebar,
+.desk-sidebar .standard-sidebar {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* PUBLIC header styling */
 .layout-side-section .sidebar-label,
-.layout-side-section .standard-sidebar-item .sidebar-label {
+.sidebar-group-label,
+.standard-sidebar .sidebar-label {
     color: white !important;
     font-weight: 600 !important;
-    font-size: 16px !important;
-    margin-bottom: 15px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
+    font-size: 14px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 1px !important;
+    margin: 20px 0 15px 0 !important;
+    padding: 0 5px !important;
+    opacity: 0.9 !important;
 }
 
-/* Individual module items */
-.layout-side-section .sidebar-item,
-.layout-side-section .standard-sidebar-item,
-.layout-side-section .sidebar-section {
+/* Individual navigation items like Home, Accounting, etc. */
+.layout-side-section .sidebar-menu li,
+.layout-side-section .standard-sidebar li,
+.layout-side-section .sidebar-menu li a,
+.layout-side-section .standard-sidebar li a,
+.standard-sidebar-item {
     background: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px !important;
-    margin-bottom: 12px !important;
-    padding: 15px !important;
+    margin-bottom: 8px !important;
+    padding: 12px 15px !important;
     transition: all 0.3s ease !important;
-    backdrop-filter: blur(10px) !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
-/* Module item hover effects */
-.layout-side-section .sidebar-item:hover,
-.layout-side-section .standard-sidebar-item:hover,
-.layout-side-section .sidebar-section:hover {
+/* Hover effects for navigation items */
+.layout-side-section .sidebar-menu li:hover,
+.layout-side-section .standard-sidebar li:hover,
+.layout-side-section .sidebar-menu li a:hover,
+.layout-side-section .standard-sidebar li a:hover,
+.standard-sidebar-item:hover {
     background: rgba(255, 255, 255, 0.2) !important;
     border-color: rgba(255, 255, 255, 0.4) !important;
-    transform: translateX(5px) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    transform: translateX(3px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Module text styling */
-.layout-side-section .sidebar-item .sidebar-label,
-.layout-side-section .standard-sidebar-item .sidebar-label,
-.layout-side-section a {
+/* Navigation text styling */
+.layout-side-section .sidebar-menu li a,
+.layout-side-section .standard-sidebar li a,
+.layout-side-section a,
+.standard-sidebar-item a,
+.sidebar-menu a {
     color: white !important;
     text-decoration: none !important;
     font-weight: 500 !important;
+    font-size: 14px !important;
 }
 
-/* Module icons */
-.layout-side-section .sidebar-label svg,
-.layout-side-section .sidebar-label .icon,
-.layout-side-section svg {
+/* Navigation icons */
+.layout-side-section .sidebar-menu li .sidebar-item-icon,
+.layout-side-section .standard-sidebar li .icon,
+.layout-side-section svg,
+.sidebar-item-icon,
+.octicon {
+    color: white !important;
     stroke: white !important;
     fill: white !important;
-    color: white !important;
-    width: 20px !important;
-    height: 20px !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 8px !important;
 }
 
-/* Active module styling */
-.layout-side-section .sidebar-item.active,
-.layout-side-section .standard-sidebar-item.active {
+/* Active navigation item */
+.layout-side-section .sidebar-menu li.active,
+.layout-side-section .standard-sidebar li.active,
+.layout-side-section .sidebar-menu li.active a,
+.standard-sidebar-item.active {
     background: white !important;
     color: #1d4ed8 !important;
     border-color: white !important;
+    font-weight: 600 !important;
 }
 
-.layout-side-section .sidebar-item.active .sidebar-label,
-.layout-side-section .standard-sidebar-item.active .sidebar-label,
-.layout-side-section .sidebar-item.active a {
+.layout-side-section .sidebar-menu li.active .sidebar-item-icon,
+.layout-side-section .standard-sidebar li.active .icon,
+.layout-side-section .sidebar-menu li.active svg {
     color: #1d4ed8 !important;
-}
-
-.layout-side-section .sidebar-item.active svg {
     stroke: #1d4ed8 !important;
     fill: #1d4ed8 !important;
+}
+
+/* Fix for nested menu items (like HR submenu) */
+.layout-side-section .sidebar-menu li ul,
+.layout-side-section .standard-sidebar li ul {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 6px !important;
+    margin: 8px 0 0 0 !important;
+    padding: 8px !important;
+}
+
+.layout-side-section .sidebar-menu li ul li,
+.layout-side-section .standard-sidebar li ul li {
+    background: rgba(255, 255, 255, 0.08) !important;
+    margin-bottom: 4px !important;
+    padding: 8px 12px !important;
+}
+
+/* Expand/collapse arrows for submenus */
+.layout-side-section .sidebar-menu .drop-down,
+.layout-side-section .standard-sidebar .drop-down {
+    color: white !important;
+}
+
+/* Remove default styling that might conflict */
+.layout-side-section * {
+    border: none;
+}
+
+.layout-side-section .list-sidebar {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* ==================== MAIN CONTENT AREA ==================== */
