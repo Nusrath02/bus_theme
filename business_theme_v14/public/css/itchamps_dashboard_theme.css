@@ -445,15 +445,48 @@ header .form-control:focus {
 /* ==================== RESPONSIVE DESIGN ==================== */
 /* Mobile and tablet adjustments */
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+    /* Mobile sidebar - hidden by default, overlay when visible */
     .layout-side-section {
-        padding: 15px 10px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 280px !important;
+        height: 100vh !important;
+        z-index: 1050 !important;
+        transition: left 0.3s ease !important;
+        padding: 80px 15px 20px 15px !important; /* Extra top padding for navbar */
     }
     
+    /* When sidebar is open on mobile */
+    .layout-side-section.show,
+    .layout-side-section.sidebar-open {
+        left: 0 !important;
+    }
+    
+    /* Main content takes full width on mobile */
     .layout-main-section {
+        margin-left: 0 !important;
+        width: 100% !important;
         padding: 20px 15px !important;
     }
     
+    /* Add overlay when sidebar is open */
+    .layout-side-section.show::before,
+    .layout-side-section.sidebar-open::before {
+        content: "" !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 280px !important;
+        width: calc(100vw - 280px) !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: -1 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Tablet adjustments */
     .layout-main-section .widget {
         padding: 20px !important;
         margin-bottom: 20px !important;
@@ -462,21 +495,96 @@ header .form-control:focus {
     .layout-main-section h1 {
         font-size: 24px !important;
     }
+    
+    /* Sidebar items on tablet */
+    .layout-side-section .sidebar-menu li,
+    .layout-side-section .standard-sidebar li,
+    .standard-sidebar-item {
+        padding: 10px 12px !important;
+        margin-bottom: 6px !important;
+        font-size: 13px !important;
+    }
 }
 
 @media (max-width: 480px) {
+    /* Phone adjustments */
     .navbar .navbar-brand {
-        width: 120px;
-        height: 30px;
+        width: 120px !important;
+        height: 30px !important;
     }
     
-    .layout-side-section .sidebar-item {
-        padding: 12px !important;
-        margin-bottom: 10px !important;
+    /* Reduce sidebar width on very small screens */
+    .layout-side-section {
+        width: 260px !important;
     }
     
+    .layout-side-section.show::before,
+    .layout-side-section.sidebar-open::before {
+        left: 260px !important;
+        width: calc(100vw - 260px) !important;
+    }
+    
+    /* Smaller sidebar items */
+    .layout-side-section .sidebar-menu li,
+    .layout-side-section .standard-sidebar li,
+    .standard-sidebar-item {
+        padding: 8px 10px !important;
+        margin-bottom: 4px !important;
+        font-size: 12px !important;
+    }
+    
+    /* Smaller navigation icons */
+    .layout-side-section svg,
+    .sidebar-item-icon,
+    .octicon {
+        width: 16px !important;
+        height: 16px !important;
+        margin-right: 6px !important;
+    }
+    
+    /* Main content padding */
+    .layout-main-section {
+        padding: 15px 10px !important;
+    }
+    
+    /* Widget adjustments */
+    .layout-main-section .widget {
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Revenue numbers smaller on phone */
     .layout-main-section .widget .widget-body .number {
         font-size: 24px !important;
+    }
+    
+    /* Widget headers smaller */
+    .layout-main-section .widget .widget-head,
+    .layout-main-section .widget .widget-title {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+/* ==================== MOBILE SIDEBAR TOGGLE ==================== */
+/* Ensure mobile sidebar toggle button works properly */
+
+@media (max-width: 991px) {
+    /* Mobile hamburger menu button */
+    .navbar-toggler,
+    .sidebar-toggle-btn {
+        display: block !important;
+        color: #374151 !important;
+        border: none !important;
+        background: transparent !important;
+        font-size: 18px !important;
+        padding: 5px 8px !important;
+    }
+    
+    /* Hide desktop sidebar toggle when not needed */
+    .layout-side-section .sidebar-toggle {
+        display: none !important;
     }
 }
 
