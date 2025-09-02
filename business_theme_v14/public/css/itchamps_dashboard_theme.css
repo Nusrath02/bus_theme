@@ -49,12 +49,26 @@ header .form-control {
     background-color: #f9fafb !important;
     border: 1px solid #d1d5db !important;
     color: #374151 !important;
+    z-index: 10 !important;
+    position: relative !important;
 }
 
 header .form-control:focus {
     background-color: white !important;
     border-color: #3b82f6 !important;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    z-index: 15 !important;
+}
+
+/* Fix search dropdown layering */
+.awesomplete {
+    z-index: 20 !important;
+}
+
+.awesomplete > ul {
+    background: white !important;
+    z-index: 25 !important;
+    position: absolute !important;
 }
 
 /* ==================== SIDEBAR STYLING ==================== */
