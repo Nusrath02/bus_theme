@@ -124,6 +124,8 @@ header .form-control:focus {
     margin-left: 0 !important;
     min-height: 100vh !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+     scrollbar-width: thin !important; /* Firefox - makes scrollbar thinner */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent !important; /* Firefox - thumb color and track color (transparent removes line) */
 }
 
 /* Target the specific sidebar menu structure from your image */
