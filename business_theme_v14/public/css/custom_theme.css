@@ -753,18 +753,20 @@ header .form-control:focus {
 
 
 /* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
+/* Sidebar container smaller */
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 80vh !important;  /* adjust 60px for header size */
+    max-height: 70vh !important;   /* reduced from 80vh → 70vh */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
+    padding: 8px !important;       /* added padding for spacing */
     padding-bottom: 0 !important;
 }
 
@@ -808,23 +810,33 @@ header .form-control:focus {
 
 /* Sidebar items compact size */
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
-.list-sidebar.overlay-sidebar .sidebar-item {
-    padding: 6px 10px !important;
-    font-size: 13px !important;
+.list-sidebar.overlay-sidebar .sidebar-item,
+.list-sidebar .module-sidebar-item {
+    font-size: 13px !important;        /* smaller text */
+    padding: 6px 10px !important;      /* smaller button size */
+    margin: 4px 0 !important;          /* spacing between buttons */
     line-height: 1.2 !important;
-    border-radius: 4px !important;
+    border-radius: 8px !important;     /* rounded corners */
+    transition: all 0.2s ease-in-out;
 }
 
+/* Sidebar icons smaller */
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
 .list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
     font-size: 14px !important;
     margin-right: 6px !important;
 }
 
+/* Hover effect */
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
-.list-sidebar.overlay-sidebar .sidebar-item:hover {
-    background: rgba(0,0,0,0.05) !important;
+.list-sidebar.overlay-sidebar .sidebar-item:hover,
+.list-sidebar .module-sidebar-item:hover {
+    background: #2563eb !important;    /* brighter hover color */
+    color: #fff !important;
+    transform: scale(1.02);
+    border-radius: 10px !important;
 }
+
 
 */
 
