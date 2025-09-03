@@ -42,6 +42,21 @@
     gap: 6px !important;
 }
 
+/* Add slash separator between breadcrumb items */
+#navbar-breadcrumbs > li:not(:last-child)::after {
+    content: "/";
+    color: #6b7280 !important;
+    margin: 0 8px !important;
+    font-weight: normal !important;
+}
+
+/* Make current page (last breadcrumb) bold */
+#navbar-breadcrumbs > li:last-child,
+#navbar-breadcrumbs > li:last-child > a {
+    font-weight: bold !important;
+    color: #374151 !important;
+}
+
 #navbar-breadcrumbs > li > a::before {
     content: "\f105";
     color: #6b7280;
@@ -298,27 +313,54 @@
     margin-right: 4px;
 }
 
-/* Remove arrow separator for items with icons */
-#navbar-breadcrumbs li a[href="/app"]::after,
-#navbar-breadcrumbs li a[href*="stock"]::after,
-#navbar-breadcrumbs li a[href*="item"]::after,
-#navbar-breadcrumbs li a[href*="accounting"]::after,
-#navbar-breadcrumbs li a[href*="hr"]::after,
-#navbar-breadcrumbs li a[href*="job-opening"]::after,
-#navbar-breadcrumbs li a[href*="employee"]::after,
-#navbar-breadcrumbs li a[href*="company"]::after,
-#navbar-breadcrumbs li a[href*="buying"]::after,
-#navbar-breadcrumbs li a[href*="selling"]::after,
-#navbar-breadcrumbs li a[href*="manufacturing"]::after,
-#navbar-breadcrumbs li a[href*="projects"]::after,
-#navbar-breadcrumbs li a[href*="crm"]::after,
-#navbar-breadcrumbs li a[href*="assets"]::after,
-#navbar-breadcrumbs li a[href*="quality"]::after,
-#navbar-breadcrumbs li a[href*="support"]::after,
-#navbar-breadcrumbs li a[href*="website"]::after,
-#navbar-breadcrumbs li a[href*="settings"]::after,
-#navbar-breadcrumbs li a[href*="users"]::after,
-#navbar-breadcrumbs li a[href*="reports"]::after {
+/* NEW DOCUMENT CREATION ICONS */
+/* Generic "New" documents */
+#navbar-breadcrumbs li a[href*="/new-"]::before,
+#navbar-breadcrumbs li a[href*="New "]::before {
+    content: "➕";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Specific "New" document types */
+#navbar-breadcrumbs li a[href*="new-job-opening"]::before,
+#navbar-breadcrumbs li a[href*="New Job Opening"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-staffing-plan"]::before,
+#navbar-breadcrumbs li a[href*="New Staffing Plan"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-interview"]::before,
+#navbar-breadcrumbs li a[href*="New Interview"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-job-applicant"]::before,
+#navbar-breadcrumbs li a[href*="New Job Applicant"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-company"]::before,
+#navbar-breadcrumbs li a[href*="New Company"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Remove arrow separator for new documents */
+#navbar-breadcrumbs li a[href*="new-"]::after,
+#navbar-breadcrumbs li a[href*="New "]::after {
     content: none;
 }
 
