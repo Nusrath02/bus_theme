@@ -749,3 +749,69 @@ header .form-control:focus {
 }
 
 /* ==================== END OF STYLING ==================== */
+
+
+
+
+/* Target the sidebar specifically */
+.layout-side-section,
+.sidebar-section,
+.desk-sidebar {
+    /* Remove scrollbar track/line and make scrollbar smaller */
+    scrollbar-width: thin !important; /* Firefox - makes scrollbar thinner */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent !important; /* Firefox - thumb color and track color (transparent removes line) */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) - Sidebar specific */
+.layout-side-section::-webkit-scrollbar,
+.sidebar-section::-webkit-scrollbar,
+.desk-sidebar::-webkit-scrollbar {
+    width: 4px !important; /* Make scrollbar thinner - reduced from 6px to 4px */
+    height: 4px !important;
+}
+
+.layout-side-section::-webkit-scrollbar-track,
+.sidebar-section::-webkit-scrollbar-track,
+.desk-sidebar::-webkit-scrollbar-track {
+    background: transparent !important; /* Remove the track/line completely */
+    border-radius: 0 !important;
+}
+
+.layout-side-section::-webkit-scrollbar-thumb,
+.sidebar-section::-webkit-scrollbar-thumb,
+.desk-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important; /* Semi-transparent white thumb */
+    border-radius: 2px !important;
+    border: none !important;
+}
+
+.layout-side-section::-webkit-scrollbar-thumb:hover,
+.sidebar-section::-webkit-scrollbar-thumb:hover,
+.desk-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5) !important; /* Slightly more visible on hover */
+}
+
+/* Alternative: If you want to completely hide the scrollbar but keep scrolling functionality */
+/*
+.layout-side-section,
+.sidebar-section,
+.desk-sidebar {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.layout-side-section::-webkit-scrollbar,
+.sidebar-section::-webkit-scrollbar,
+.desk-sidebar::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera */
+}
+*/
+
+/* If you want even smaller scrollbar (2px) */
+/*
+.layout-side-section::-webkit-scrollbar,
+.sidebar-section::-webkit-scrollbar,
+.desk-sidebar::-webkit-scrollbar {
+    width: 2px !important;
+    height: 2px !important;
+}
