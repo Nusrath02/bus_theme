@@ -758,12 +758,13 @@ header .form-control:focus {
 /* 1) Shrink the sidebar height and clip overflow (no scrollbar visible) */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
-    max-height: 65vh !important;        /* keeps sidebar shorter than full height */
-    overflow-y: auto !important;        /* allow scrolling */
-    overflow-x: hidden !important;      /* no horizontal scroll */
-    -webkit-overflow-scrolling: touch !important; /* smooth scroll on touch devices */
-    -ms-overflow-style: none !important; /* IE & Edge */
-    scrollbar-width: none !important;    /* Firefox */
+    height: auto !important;               /* fit to content */
+    max-height: calc(100vh - 60px) !important; /* allow scroll only if too tall */
+    overflow-y: auto !important;           /* enable scrolling */
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;   /* hide scrollbar IE */
+    scrollbar-width: none !important;      /* hide scrollbar Firefox */
 }
 
 .col-lg-2.layout-side-section::-webkit-scrollbar,
@@ -801,7 +802,7 @@ header .form-control:focus {
     scrollbar-width: none !important;
 }
 .col-lg-2.layout-side-section::-webkit-scrollbar,
-.col-lg-2.layout-side-section *::-webkit-scrollbar {
+.list-sidebar.overlay-sidebar::-webkit-scrollbar {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
