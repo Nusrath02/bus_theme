@@ -758,7 +758,7 @@ header .form-control:focus {
 /* 1) Shrink the sidebar height and clip overflow (no scrollbar visible) */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
-    max-height: 85vh !important;        /* keeps sidebar shorter than full height */
+    max-height: 65vh !important;        /* keeps sidebar shorter than full height */
     overflow-y: auto !important;        /* allow scrolling */
     overflow-x: hidden !important;      /* no horizontal scroll */
     -webkit-overflow-scrolling: touch !important; /* smooth scroll on touch devices */
@@ -805,6 +805,26 @@ header .form-control:focus {
     display: none !important;
     width: 0 !important;
     height: 0 !important;
+}
+
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .sidebar-item {
+    padding: 6px 10px !important;  /* reduce vertical & horizontal padding */
+    font-size: 13px !important;    /* smaller text */
+    line-height: 1.2 !important;   /* tighter spacing */
+    border-radius: 4px !important; /* optional: make them look compact */
+}
+
+.list-sidebar.overlay-sidebar .sidebar-item .icon,
+.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
+    font-size: 14px !important;   /* smaller icons */
+    margin-right: 6px !important;
+}
+
+/* Hover/active state compact style */
+.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
+.list-sidebar.overlay-sidebar .sidebar-item:hover {
+    background: rgba(0,0,0,0.05) !important; /* subtle hover */
 }
 
 /* ========== OPTIONAL: If you WANT to keep scrolling working (no visible bar) ========== */
