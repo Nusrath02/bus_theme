@@ -47,7 +47,40 @@
     color: #6b7280;
 }
 
-/* Add icons to specific breadcrumb items */
+/* Dynamic icons for all ERPNext modules */
+/* Home/App */
+#navbar-breadcrumbs li a[href="/app"]::before,
+#navbar-breadcrumbs li a[href*="Home"]::before {
+    content: "🏠";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Stock Management */
+#navbar-breadcrumbs li a[href*="/app/stock"]::before,
+#navbar-breadcrumbs li a[href*="Stock"]::before {
+    content: "📦";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Item */
+#navbar-breadcrumbs li a[href*="/app/item"]::before,
+#navbar-breadcrumbs li a[href*="Item"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Accounting */
+#navbar-breadcrumbs li a[href*="/app/accounting"]::before,
+#navbar-breadcrumbs li a[href*="Accounting"]::before {
+    content: "💰";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* HR */
 #navbar-breadcrumbs li a[href*="/app/hr"]::before,
 #navbar-breadcrumbs li a[href*="HR"]::before {
     content: "👥";
@@ -55,32 +88,120 @@
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="staffing-plan"]::before,
-#navbar-breadcrumbs li a[href*="Staffing Plan"]::before {
-    content: "📋";
+/* Buying */
+#navbar-breadcrumbs li a[href*="/app/buying"]::before,
+#navbar-breadcrumbs li a[href*="Buying"]::before {
+    content: "🛒";
     font-size: 16px;
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="accounting"]::before,
-#navbar-breadcrumbs li a[href*="Accounting"]::before {
-    content: "💰";
+/* Selling */
+#navbar-breadcrumbs li a[href*="/app/selling"]::before,
+#navbar-breadcrumbs li a[href*="Selling"]::before {
+    content: "🏪";
     font-size: 16px;
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="/app"]::before,
-#navbar-breadcrumbs li a[href*="Home"]::before {
-    content: "🏠";
+/* Manufacturing */
+#navbar-breadcrumbs li a[href*="/app/manufacturing"]::before,
+#navbar-breadcrumbs li a[href*="Manufacturing"]::before {
+    content: "🏭";
     font-size: 16px;
     margin-right: 4px;
 }
 
-/* Remove the arrow for items with icons */
-#navbar-breadcrumbs li a[href*="/app/hr"]::after,
-#navbar-breadcrumbs li a[href*="staffing-plan"]::after,
+/* Projects */
+#navbar-breadcrumbs li a[href*="/app/projects"]::before,
+#navbar-breadcrumbs li a[href*="Projects"]::before {
+    content: "📊";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* CRM */
+#navbar-breadcrumbs li a[href*="/app/crm"]::before,
+#navbar-breadcrumbs li a[href*="CRM"]::before {
+    content: "🤝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Assets */
+#navbar-breadcrumbs li a[href*="/app/assets"]::before,
+#navbar-breadcrumbs li a[href*="Assets"]::before {
+    content: "🏢";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Quality */
+#navbar-breadcrumbs li a[href*="/app/quality"]::before,
+#navbar-breadcrumbs li a[href*="Quality"]::before {
+    content: "✅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Support */
+#navbar-breadcrumbs li a[href*="/app/support"]::before,
+#navbar-breadcrumbs li a[href*="Support"]::before {
+    content: "🎧";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Website */
+#navbar-breadcrumbs li a[href*="/app/website"]::before,
+#navbar-breadcrumbs li a[href*="Website"]::before {
+    content: "🌐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Settings */
+#navbar-breadcrumbs li a[href*="settings"]::before,
+#navbar-breadcrumbs li a[href*="Settings"]::before {
+    content: "⚙️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Users */
+#navbar-breadcrumbs li a[href*="/app/users"]::before,
+#navbar-breadcrumbs li a[href*="Users"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Reports */
+#navbar-breadcrumbs li a[href*="reports"]::before,
+#navbar-breadcrumbs li a[href*="Reports"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Remove arrow separator for items with icons */
+#navbar-breadcrumbs li a[href="/app"]::after,
+#navbar-breadcrumbs li a[href*="stock"]::after,
+#navbar-breadcrumbs li a[href*="item"]::after,
 #navbar-breadcrumbs li a[href*="accounting"]::after,
-#navbar-breadcrumbs li a[href*="/app"]::after {
+#navbar-breadcrumbs li a[href*="hr"]::after,
+#navbar-breadcrumbs li a[href*="buying"]::after,
+#navbar-breadcrumbs li a[href*="selling"]::after,
+#navbar-breadcrumbs li a[href*="manufacturing"]::after,
+#navbar-breadcrumbs li a[href*="projects"]::after,
+#navbar-breadcrumbs li a[href*="crm"]::after,
+#navbar-breadcrumbs li a[href*="assets"]::after,
+#navbar-breadcrumbs li a[href*="quality"]::after,
+#navbar-breadcrumbs li a[href*="support"]::after,
+#navbar-breadcrumbs li a[href*="website"]::after,
+#navbar-breadcrumbs li a[href*="settings"]::after,
+#navbar-breadcrumbs li a[href*="users"]::after,
+#navbar-breadcrumbs li a[href*="reports"]::after {
     content: none;
 }
 
