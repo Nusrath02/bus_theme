@@ -757,23 +757,21 @@ header .form-control:focus {
 
 /* 1) Shrink the sidebar height and clip overflow (no scrollbar visible) */
 .col-lg-2.layout-side-section,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
-    max-height: 95vh !important;        /* reduce height (adjust 85vh -> 80vh/75vh if you want shorter) */
-    overflow-y: hidden !important;      /* hide vertical scroll and remove rail */
-    overflow-x: hidden !important;
-    -ms-overflow-style: none !important; /* IE / legacy Edge */
+    max-height: 85vh !important;        /* keeps sidebar shorter than full height */
+    overflow-y: auto !important;        /* allow scrolling */
+    overflow-x: hidden !important;      /* no horizontal scroll */
+    -webkit-overflow-scrolling: touch !important; /* smooth scroll on touch devices */
+    -ms-overflow-style: none !important; /* IE & Edge */
     scrollbar-width: none !important;    /* Firefox */
 }
 
-/* 2) Make sure no webkit scrollbar shows up */
 .col-lg-2.layout-side-section::-webkit-scrollbar,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar::-webkit-scrollbar,
 .list-sidebar.overlay-sidebar::-webkit-scrollbar,
 .list-sidebar.overlay-sidebar *::-webkit-scrollbar {
+    display: none !important;
     width: 0 !important;
     height: 0 !important;
-    display: none !important;
     background: transparent !important;
 }
 
@@ -794,6 +792,7 @@ header .form-control:focus {
     opacity: 0 !important;
     pointer-events: none !important;
 }
+
 
 /* 4) Extra-specific fallback in case the scroll host is the parent column */
 .col-lg-2.layout-side-section,
