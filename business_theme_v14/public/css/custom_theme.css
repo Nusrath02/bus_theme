@@ -752,30 +752,14 @@ header .form-control:focus {
 /* ==================== END OF STYLING ==================== */
 
 
-/* Remove scrollbar completely from sidebar */
+/* ==================== REMOVE SIDEBAR SCROLLBAR ==================== */
 .list-sidebar.overlay-sidebar {
     -ms-overflow-style: none !important;  /* IE & Edge */
     scrollbar-width: none !important;     /* Firefox */
-    overflow-y: auto !important;          /* still allows scrolling, just hides bar */
-    width: 220px !important;              /* decrease sidebar width */
 }
 
-/* Chrome, Safari & Opera */
 .list-sidebar.overlay-sidebar::-webkit-scrollbar {
-    display: none !important;
-}
-
-/* Also shrink main sidebar wrapper */
-.layout-side-section,
-.sidebar-section,
-.desk-sidebar {
-    width: 220px !important;   /* same as above */
-    min-width: 220px !important;
-}
-
-/* Shift main content to match new sidebar size */
-.layout-main-section {
-    margin-left: 220px !important;
+    display: none !important; /* Chrome, Safari, Edge */
 }
 
 
