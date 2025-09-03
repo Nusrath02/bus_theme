@@ -752,44 +752,42 @@ header .form-control:focus {
 /* ==================== END OF STYLING ==================== */
 
 
-/* ==================== FORCE-HIDE SIDEBAR SCROLLBAR (native + common JS rails) ==================== */
-/* Paste this at the VERY END of your CSS file */
+/* ==================== FORCE: reduce sidebar height & REMOVE scrollbar ==================== */
+/* Paste at VERY END of your CSS */
 
-/* 1) Hide native browser scrollbars for the sidebar and ALL descendants */
-.list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar * ,
-.list-sidebar.overlay-sidebar[scroll],
-.list-sidebar.overlay-sidebar[scroll] * {
-  -ms-overflow-style: none !important;    /* IE / old Edge */
-  scrollbar-width: none !important;       /* Firefox */
-  scrollbar-color: transparent transparent !important;
+/* 1) Shrink the sidebar height and clip overflow (no scrollbar visible) */
+.col-lg-2.layout-side-section,
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar {
+    max-height: 85vh !important;        /* reduce height (adjust 85vh -> 80vh/75vh if you want shorter) */
+    overflow-y: hidden !important;      /* hide vertical scroll and remove rail */
+    overflow-x: hidden !important;
+    -ms-overflow-style: none !important; /* IE / legacy Edge */
+    scrollbar-width: none !important;    /* Firefox */
 }
 
-/* WebKit-based browsers (Chrome, Edge Chromium, Safari) */
+/* 2) Make sure no webkit scrollbar shows up */
+.col-lg-2.layout-side-section::-webkit-scrollbar,
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar::-webkit-scrollbar,
 .list-sidebar.overlay-sidebar::-webkit-scrollbar,
-.list-sidebar.overlay-sidebar *::-webkit-scrollbar,
-.list-sidebar.overlay-sidebar[scroll]::-webkit-scrollbar,
-.list-sidebar.overlay-sidebar[scroll] *::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
+.list-sidebar.overlay-sidebar *::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
 }
 
-/* 2) Hide common custom scrollbar rails/thumbs injected by JS libraries (PerfectScrollbar, SimpleBar, Nano, OverlayScrollbars, etc.) */
+/* 3) Hide common JS-injected scrollbar rails/thumbs (PerfectScrollbar, SimpleBar, OverlayScrollbars, NanoScroller, etc.) */
 .list-sidebar.overlay-sidebar .ps__rail-y,
 .list-sidebar.overlay-sidebar .ps__rail-y .ps__thumb-y,
-.list-sidebar.overlay-sidebar .ps__rail-x,
-.list-sidebar.overlay-sidebar .ps__rail-x .ps__thumb-x,
-.list-sidebar.overlay-sidebar .simplebar-scrollbar,
 .list-sidebar.overlay-sidebar .simplebar-track,
-.list-sidebar.overlay-sidebar .nano-scrollbar,
+.list-sidebar.overlay-sidebar .simplebar-scrollbar,
 .list-sidebar.overlay-sidebar .os-scrollbar-vertical,
 .list-sidebar.overlay-sidebar .os-scrollbar-track,
 .list-sidebar.overlay-sidebar .os-scrollbar-handle,
+.list-sidebar.overlay-sidebar .nano-scrollbar,
 .list-sidebar.overlay-sidebar .scrollbar-track,
 .list-sidebar.overlay-sidebar .scrollbar-thumb,
-.list-sidebar.overlay-sidebar .scrollbar,
-.list-sidebar.overlay-sidebar .scrollbar-rail,
 .list-sidebar.overlay-sidebar .mCSB_scrollTools {
     display: none !important;
     visibility: hidden !important;
@@ -797,27 +795,29 @@ header .form-control:focus {
     pointer-events: none !important;
 }
 
-/* 3) Ensure the sidebar still scrolls by wheel/touch (do not disable overflow) */
+/* 4) Extra-specific fallback in case the scroll host is the parent column */
+.col-lg-2.layout-side-section,
+.col-lg-2.layout-side-section * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+.col-lg-2.layout-side-section::-webkit-scrollbar,
+.col-lg-2.layout-side-section *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* ========== OPTIONAL: If you WANT to keep scrolling working (no visible bar) ========== */
+/* Uncomment this block instead of overflow-y:hidden above if you prefer "scrollable but hidden scrollbar" */
+/*
 .list-sidebar.overlay-sidebar {
     overflow-y: auto !important;
-    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
 }
-
-/* 4) Extremely specific fallback (if parent container is the scroll host) */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar * {
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
+.list-sidebar.overlay-sidebar::-webkit-scrollbar,
+.list-sidebar.overlay-sidebar *::-webkit-scrollbar {
+    display: none !important;
 }
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar::-webkit-scrollbar,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar *::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;
-}
-
-
-
-
-
+*/
 
