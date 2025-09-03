@@ -759,7 +759,7 @@ header .form-control:focus {
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
-    max-height: 85vh !important;        /* reduce height (adjust 85vh -> 80vh/75vh if you want shorter) */
+    max-height: 95vh !important;        /* reduce height (adjust 85vh -> 80vh/75vh if you want shorter) */
     overflow-y: hidden !important;      /* hide vertical scroll and remove rail */
     overflow-x: hidden !important;
     -ms-overflow-style: none !important; /* IE / legacy Edge */
