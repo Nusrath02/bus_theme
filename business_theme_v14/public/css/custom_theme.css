@@ -759,7 +759,7 @@ header .form-control:focus {
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
     height: auto !important;               /* fit to content */
-    max-height: calc(100vh - 60px) !important; /* allow scroll only if too tall */
+    max-height: calc(50vh - 35px) !important; /* allow scroll only if too tall */
     overflow-y: auto !important;           /* enable scrolling */
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
