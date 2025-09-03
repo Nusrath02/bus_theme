@@ -35,24 +35,38 @@
 }
 
 /* Breadcrumbs styling */
+#navbar-breadcrumbs {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+#navbar-breadcrumbs > li {
+    display: flex !important;
+    align-items: center !important;
+}
+
 #navbar-breadcrumbs > li > a {
     color: #6b7280 !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
+    text-decoration: none !important;
 }
 
-/* Add slash separator between breadcrumb items */
-#navbar-breadcrumbs > li:not(:last-child)::after {
-    content: "/";
+/* Add slash separator between breadcrumb items - more specific targeting */
+#navbar-breadcrumbs li:not(:last-child)::after {
+    content: " / " !important;
     color: #6b7280 !important;
-    margin: 0 8px !important;
+    margin: 0 4px !important;
     font-weight: normal !important;
+    display: inline !important;
+    white-space: nowrap !important;
 }
 
 /* Make current page (last breadcrumb) bold */
-#navbar-breadcrumbs > li:last-child,
-#navbar-breadcrumbs > li:last-child > a {
+#navbar-breadcrumbs > li:last-child > a,
+#navbar-breadcrumbs > li:last-child {
     font-weight: bold !important;
     color: #374151 !important;
 }
