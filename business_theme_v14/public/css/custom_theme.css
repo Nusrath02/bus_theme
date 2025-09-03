@@ -755,48 +755,59 @@ header .form-control:focus {
 /* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
 /* Sidebar container smaller */
 /* Sidebar container stays full height */
+/* Sidebar container: full height, no scroll */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
     height: 100% !important;
     max-height: 100% !important;
     overflow: hidden !important;   /* no scrollbar */
-    padding: 6px !important;
+    padding: 4px !important;
+    background: #2563eb !important;  /* keep blue background */
+    border-radius: 8px !important;
 }
 
-/* Sidebar section title (like PUBLIC) smaller */
+/* Sidebar section label (e.g. PUBLIC) */
 .list-sidebar .standard-sidebar-label {
     font-size: 11px !important;
-    padding: 3px 6px !important;
-    margin-bottom: 4px !important;
-    letter-spacing: 0.5px !important;
+    padding: 2px 6px !important;
+    margin-bottom: 2px !important;
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    color: #fff !important;
 }
 
-/* Sidebar buttons compact */
+/* Sidebar items (buttons) compact + clean */
 .list-sidebar .module-sidebar-item,
 .list-sidebar .standard-sidebar-item {
-    font-size: 12px !important;        /* smaller text */
-    padding: 4px 8px !important;       /* smaller height */
-    margin: 2px 0 !important;          /* tighter gap */
-    border-radius: 6px !important;     /* rounded corners */
-    line-height: 1.2 !important;
+    font-size: 12px !important;          /* smaller text */
+    padding: 4px 6px !important;         /* less vertical height */
+    margin: 1px 0 !important;            /* tighter gap */
+    border-radius: 6px !important;       /* rounded corners */
+    line-height: 1.1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    color: #fff !important;
 }
 
-/* Icons smaller */
+/* Smaller icons */
 .list-sidebar .module-sidebar-item .icon,
 .list-sidebar .standard-sidebar-item .icon {
-    font-size: 13px !important;
+    font-size: 12px !important;
     margin-right: 4px !important;
+    min-width: 14px !important;
+    text-align: center !important;
 }
 
-/* Hover + active style */
+/* Hover + active state */
 .list-sidebar .module-sidebar-item:hover,
 .list-sidebar .standard-sidebar-item:hover,
 .list-sidebar .module-sidebar-item.active,
 .list-sidebar .standard-sidebar-item.active {
-    background: #2563eb !important;   /* blue highlight */
-    color: #fff !important;
+    background: rgba(255,255,255,0.15) !important;
     border-radius: 6px !important;
 }
+
 
 
 
