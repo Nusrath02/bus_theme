@@ -752,21 +752,32 @@ header .form-control:focus {
 /* ==================== END OF STYLING ==================== */
 
 
-/* ==================== FORCE: reduce sidebar height & REMOVE scrollbar ==================== */
-/* Paste at VERY END of your CSS */
-
-/* 1) Shrink the sidebar height and clip overflow (no scrollbar visible) */
+/* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
 .col-lg-2.layout-side-section,
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
-    height: auto !important;               /* fit to content */
-    max-height: calc(50vh - 35px) !important; /* allow scroll only if too tall */
-    overflow-y: auto !important;           /* enable scrolling */
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: calc(100vh - 60px) !important; /* adjust 60px for header size */
+    overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
-    -ms-overflow-style: none !important;   /* hide scrollbar IE */
-    scrollbar-width: none !important;      /* hide scrollbar Firefox */
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding-bottom: 0 !important;
 }
 
+/* Remove bottom margin/padding from inner elements */
+.list-sidebar.overlay-sidebar .sidebar-menu,
+.list-sidebar.overlay-sidebar .standard-sidebar,
+.list-sidebar.overlay-sidebar .sidebar-label,
+.list-sidebar.overlay-sidebar .standard-sidebar-item {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Hide webkit scrollbars */
 .col-lg-2.layout-side-section::-webkit-scrollbar,
 .list-sidebar.overlay-sidebar::-webkit-scrollbar,
 .list-sidebar.overlay-sidebar *::-webkit-scrollbar {
@@ -776,7 +787,7 @@ header .form-control:focus {
     background: transparent !important;
 }
 
-/* 3) Hide common JS-injected scrollbar rails/thumbs (PerfectScrollbar, SimpleBar, OverlayScrollbars, NanoScroller, etc.) */
+/* Hide JS-injected rails/thumbs */
 .list-sidebar.overlay-sidebar .ps__rail-y,
 .list-sidebar.overlay-sidebar .ps__rail-y .ps__thumb-y,
 .list-sidebar.overlay-sidebar .simplebar-track,
@@ -787,57 +798,33 @@ header .form-control:focus {
 .list-sidebar.overlay-sidebar .nano-scrollbar,
 .list-sidebar.overlay-sidebar .scrollbar-track,
 .list-sidebar.overlay-sidebar .scrollbar-thumb,
-.list-sidebar.overlay-sidebar .mCSB_scrollTools {
+.list-sidebar.overlay-sidebar .mCSB_scrollTools,
+.list-sidebar.overlay-sidebar .close-sidebar {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
 }
 
-
-/* 4) Extra-specific fallback in case the scroll host is the parent column */
-.col-lg-2.layout-side-section,
-.col-lg-2.layout-side-section * {
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-}
-.col-lg-2.layout-side-section::-webkit-scrollbar,
-.list-sidebar.overlay-sidebar::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-}
-
+/* Sidebar items compact size */
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
 .list-sidebar.overlay-sidebar .sidebar-item {
-    padding: 6px 10px !important;  /* reduce vertical & horizontal padding */
-    font-size: 13px !important;    /* smaller text */
-    line-height: 1.2 !important;   /* tighter spacing */
-    border-radius: 4px !important; /* optional: make them look compact */
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    border-radius: 4px !important;
 }
 
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
 .list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 14px !important;   /* smaller icons */
+    font-size: 14px !important;
     margin-right: 6px !important;
 }
 
-/* Hover/active state compact style */
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
 .list-sidebar.overlay-sidebar .sidebar-item:hover {
-    background: rgba(0,0,0,0.05) !important; /* subtle hover */
+    background: rgba(0,0,0,0.05) !important;
 }
 
-/* ========== OPTIONAL: If you WANT to keep scrolling working (no visible bar) ========== */
-/* Uncomment this block instead of overflow-y:hidden above if you prefer "scrollable but hidden scrollbar" */
-/*
-.list-sidebar.overlay-sidebar {
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-}
-.list-sidebar.overlay-sidebar::-webkit-scrollbar,
-.list-sidebar.overlay-sidebar *::-webkit-scrollbar {
-    display: none !important;
-}
 */
 
