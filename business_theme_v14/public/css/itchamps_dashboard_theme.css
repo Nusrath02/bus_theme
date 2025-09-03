@@ -88,6 +88,36 @@
     margin-right: 4px;
 }
 
+/* HR Sub-modules - ADD THESE */
+#navbar-breadcrumbs li a[href*="job-opening"]::before,
+#navbar-breadcrumbs li a[href*="Job Opening"]::before {
+    content: "💼";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee"]::before,
+#navbar-breadcrumbs li a[href*="Employee"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="payroll"]::before,
+#navbar-breadcrumbs li a[href*="Payroll"]::before {
+    content: "💵";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Company */
+#navbar-breadcrumbs li a[href*="/app/company"]::before,
+#navbar-breadcrumbs li a[href*="Company"]::before {
+    content: "🏛️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
 /* Buying */
 #navbar-breadcrumbs li a[href*="/app/buying"]::before,
 #navbar-breadcrumbs li a[href*="Buying"]::before {
@@ -190,6 +220,9 @@
 #navbar-breadcrumbs li a[href*="item"]::after,
 #navbar-breadcrumbs li a[href*="accounting"]::after,
 #navbar-breadcrumbs li a[href*="hr"]::after,
+#navbar-breadcrumbs li a[href*="job-opening"]::after,
+#navbar-breadcrumbs li a[href*="employee"]::after,
+#navbar-breadcrumbs li a[href*="company"]::after,
 #navbar-breadcrumbs li a[href*="buying"]::after,
 #navbar-breadcrumbs li a[href*="selling"]::after,
 #navbar-breadcrumbs li a[href*="manufacturing"]::after,
