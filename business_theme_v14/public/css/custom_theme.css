@@ -809,24 +809,25 @@ header .form-control:focus {
 }
 
 /* Sidebar items compact size */
+/* Ultra-compact sidebar items */
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
 .list-sidebar.overlay-sidebar .sidebar-item,
 .list-sidebar .module-sidebar-item {
-    font-size: 11px !important;        /* smaller text */
-    padding: 4px 8px !important;       /* reduce button height */
-    margin: 2px 0 !important;          /* tighter spacing */
-    line-height: 1.1 !important;       /* less vertical height */
-    border-radius: 6px !important;     /* smaller radius */
-
+    font-size: 8px !important;       /* very small text */
+    padding: 2px 5px !important;      /* minimal padding */
+    margin: 1px 0 !important;         /* tight spacing */
+    line-height: 1 !important;        /* no extra vertical space */
+    border-radius: 4px !important;    /* smaller rounded corners */
 }
 
-/* Sidebar icons smaller */
+/* Ultra-compact icons */
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
 .list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 12px !important;        /* smaller icons */
-    margin-right: 4px !important;      /* reduce space between icon & text */
-    min-width: 14px !important;        /* compact width */
+    font-size: 8px !important;       /* shrink icons */
+    margin-right: 3px !important;     /* tighter icon gap */
+    min-width: 10px !important;       /* very narrow */
 }
+
 
 
 /* Hover effect */
