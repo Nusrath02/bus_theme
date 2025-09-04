@@ -812,20 +812,22 @@ header .form-control:focus {
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
 .list-sidebar.overlay-sidebar .sidebar-item,
 .list-sidebar .module-sidebar-item {
-    font-size: 13px !important;        /* smaller text */
-    padding: 6px 10px !important;      /* smaller button size */
-    margin: 4px 0 !important;          /* spacing between buttons */
-    line-height: 1.2 !important;
-    border-radius: 8px !important;     /* rounded corners */
-    transition: all 0.2s ease-in-out;
+    font-size: 11px !important;        /* smaller text */
+    padding: 4px 8px !important;       /* reduce button height */
+    margin: 2px 0 !important;          /* tighter spacing */
+    line-height: 1.1 !important;       /* less vertical height */
+    border-radius: 6px !important;     /* smaller radius */
+
 }
 
 /* Sidebar icons smaller */
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
 .list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 14px !important;
-    margin-right: 6px !important;
+    font-size: 12px !important;        /* smaller icons */
+    margin-right: 4px !important;      /* reduce space between icon & text */
+    min-width: 14px !important;        /* compact width */
 }
+
 
 /* Hover effect */
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
