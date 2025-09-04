@@ -847,58 +847,61 @@ header .form-control:focus {
 
 
 
-/* ==================== FILTER SIDEBAR STYLING ==================== */
-/* Target only the filter sidebar section */
+/* ==================== FILTER SIDEBAR - GLASS BLUE THEME ==================== */
 .sidebar-section.filter-section {
-    background: #fff !important;             /* keep current white background */
-    color: #374151 !important;               /* keep dark text */
-    border-radius: 12px !important;          /* rounded corners */
-    padding: 20px 15px !important;           /* inner spacing */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; /* subtle shadow */
-    min-height: auto !important;
-    max-height: 75vh !important;             /* prevents overflow */
-    overflow-y: auto !important;             /* scroll if needed */
+    background: rgba(17, 25, 40, 0.75) !important; /* glass effect */
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 16px 14px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+
+    /* Sidebar width reduced */
+    max-width: 240px !important;
+    min-width: 220px !important;
+    overflow-y: auto !important;
 }
 
-/* Sidebar labels (Filter By, Edit Filters, etc.) */
+/* Sidebar Labels (Filter By, Tags, etc.) */
 .sidebar-section.filter-section .sidebar-label {
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 600 !important;
-    color: #6b7280 !important;
+    color: #60a5fa !important; /* glowing blue */
     margin-bottom: 8px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 0.6px !important;
 }
 
-/* Dropdowns and input boxes */
+/* Dropdowns and Input Fields */
 .sidebar-section.filter-section .form-control,
 .sidebar-section.filter-section select {
-    background: #f9fafb !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 8px !important;
-    padding: 10px 12px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 8px 10px !important;
     font-size: 13px !important;
-    color: #374151 !important;
+    color: #e5e7eb !important;
 }
 
 .sidebar-section.filter-section .form-control:focus,
 .sidebar-section.filter-section select:focus {
     border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.5) !important;
     outline: none !important;
 }
 
-/* Sidebar buttons (like Edit Filters, Show Tags) */
+/* Buttons (Edit Filters, Show Tags, Apply) */
 .sidebar-section.filter-section .btn,
 .sidebar-section.filter-section button {
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 7px 12px !important;
     font-size: 13px !important;
-    color: #374151 !important;
+    color: #e5e7eb !important;
     font-weight: 500 !important;
-    transition: all 0.2s ease-in-out !important;
+    transition: all 0.25s ease-in-out !important;
 }
 
 .sidebar-section.filter-section .btn:hover,
@@ -906,29 +909,24 @@ header .form-control:focus {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.7) !important;
 }
 
-/* Scrollbar hidden (like your main sidebar) */
+/* Save Filter input */
+.sidebar-section.filter-section input[type="text"] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 7px 10px !important;
+    font-size: 13px !important;
+    color: #e5e7eb !important;
+}
+
+/* Hide scrollbar */
 .sidebar-section.filter-section::-webkit-scrollbar {
     display: none !important;
 }
 .sidebar-section.filter-section {
     scrollbar-width: none !important;
 }
-
-/* Save Filter input (at bottom) */
-.sidebar-section.filter-section input[type="text"] {
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 8px !important;
-    padding: 8px 10px !important;
-    font-size: 13px !important;
-    color: #374151 !important;
-}
-
-
-
-
-
-
