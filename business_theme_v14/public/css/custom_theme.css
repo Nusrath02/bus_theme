@@ -755,25 +755,26 @@ header .form-control:focus {
 /* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
 /* Sidebar container smaller */
 /* Sidebar container: full height, auto-fit content, no scrollbar */
+/* Sidebar container */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
-    height: 100vh !important;              /* fill screen height */
+    height: 100vh !important;              /* full screen height */
     max-height: 100vh !important;
-    overflow: hidden !important;           /* hide scrollbar */
-    display: flex !important;
-    flex-direction: column !important;
+    overflow-y: auto !important;           /* allow scroll */
+    overflow-x: hidden !important;         /* prevent sideways scroll */
     padding: 4px !important;
-    background: #2563eb !important;        /* keep blue background */
+    background: #2563eb !important;        /* blue background */
     border-radius: 8px !important;
+    -ms-overflow-style: none !important;   /* hide scrollbar (IE/Edge) */
+    scrollbar-width: none !important;      /* hide scrollbar (Firefox) */
 }
 
-/* Scale all items dynamically so everything always fits */
-.list-sidebar.overlay-sidebar {
-    transform: scale(0.85);                /* shrink everything inside */
-    transform-origin: top left;            /* keep aligned top */
+/* Hide scrollbar (Chrome, Safari, Edge) */
+.list-sidebar.overlay-sidebar::-webkit-scrollbar {
+    display: none !important;
 }
 
-/* Sidebar section label (e.g. PUBLIC) */
+/* Sidebar section label */
 .list-sidebar .standard-sidebar-label {
     font-size: 11px !important;
     padding: 2px 6px !important;
@@ -783,12 +784,12 @@ header .form-control:focus {
     color: #fff !important;
 }
 
-/* Sidebar items (buttons) compact + extra small + clean */
+/* Sidebar items compact + clean */
 .list-sidebar .module-sidebar-item,
 .list-sidebar .standard-sidebar-item {
-    font-size: 11px !important;          /* smaller text */
-    padding: 2px 4px !important;         /* very compact */
-    margin: 0 !important;                /* no gap */
+    font-size: 11px !important;          
+    padding: 2px 4px !important;         
+    margin: 0 !important;
     border-radius: 6px !important;       
     line-height: 1 !important;
     display: flex !important;
@@ -800,13 +801,13 @@ header .form-control:focus {
 /* Tiny icons */
 .list-sidebar .module-sidebar-item .icon,
 .list-sidebar .standard-sidebar-item .icon {
-    font-size: 11px !important;          /* smaller icons */
+    font-size: 11px !important;
     margin-right: 3px !important;
     min-width: 12px !important;
     text-align: center !important;
 }
 
-/* Hover + active state */
+/* Hover + active */
 .list-sidebar .module-sidebar-item:hover,
 .list-sidebar .standard-sidebar-item:hover,
 .list-sidebar .module-sidebar-item.active,
