@@ -816,6 +816,12 @@ header .form-control:focus {
     border-radius: 6px !important;
 }
 
+/* Smooth scrolling for sidebar */
+.list-sidebar.overlay-sidebar {
+    scroll-behavior: smooth !important;  /* smooth animation */
+    -webkit-overflow-scrolling: touch !important; /* better on touch devices */
+}
+
 
 
 
