@@ -854,21 +854,22 @@ header .form-control:focus {
 /* ==================== SIDEBAR WRAPPER ==================== */
 /* ==================== SIDEBAR WRAPPER ==================== */
 /* ================== COMMON SIDEBAR BOX STYLE ================== */
+/* ================== CLEAN MINIMAL SIDEBAR ================== */
+
+/* Sidebar wrapper */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
-    background: rgba(37, 99, 235, 0.9) !important; /* same blue theme */
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    border-radius: 10px !important;
-    padding: 14px 12px !important;
-    width: 240px !important;       /* keep compact */
-    max-height: 50vh !important;   /* reduce height like you asked */
+    background: transparent !important;   /* remove heavy blue box */
+    border: none !important;
+    padding: 0 0 12px 0 !important;
+    width: 220px !important;             /* compact width */
+    max-height: 50vh !important;         /* smaller height */
     overflow-y: auto !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
-    margin-bottom: 12px !important; /* spacing between sections */
+    box-shadow: none !important;
+    margin-bottom: 16px !important;
 }
 
-/* Hide scrollbar for both */
+/* Hide scrollbar */
 .sidebar-section.filter-section::-webkit-scrollbar,
 .sidebar-section.save-filter-section::-webkit-scrollbar {
     display: none !important;
@@ -878,30 +879,30 @@ header .form-control:focus {
     scrollbar-width: none !important;
 }
 
-/* ================== LABELS ================== */
+/* Labels */
 .sidebar-section.filter-section .sidebar-label,
 .sidebar-section.save-filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #f9fafb !important;
+    color: #374151 !important;  /* dark gray text */
     margin-bottom: 6px !important;
-    text-transform: uppercase !important;
+    text-transform: none !important;
 }
 
-/* ================== INPUTS & SELECTS ================== */
+/* Inputs & selects */
 .sidebar-section.filter-section .form-control,
 .sidebar-section.save-filter-section .form-control,
 .sidebar-section.filter-section select,
 .sidebar-section.save-filter-section select,
 .sidebar-section.filter-section input[type="text"],
 .sidebar-section.save-filter-section input[type="text"] {
-    background: #f9fafb !important;
+    background: #f3f4f6 !important;  /* light gray background */
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
     padding: 7px 10px !important;
     font-size: 13px !important;
     color: #111827 !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
 }
 
 /* Focus */
@@ -909,10 +910,10 @@ header .form-control:focus {
 .sidebar-section.save-filter-section .form-control:focus {
     border-color: #2563eb !important;
     box-shadow: 0 0 0 2px rgba(37,99,235,0.2) !important;
-    outline: none !important;
+    background: #fff !important;   /* white on focus */
 }
 
-/* ================== BUTTONS ================== */
+/* Buttons */
 .sidebar-section.filter-section .btn,
 .sidebar-section.save-filter-section .btn,
 .sidebar-section.filter-section button,
@@ -924,26 +925,22 @@ header .form-control:focus {
     font-size: 13px !important;
     font-weight: 500 !important;
     color: #111827 !important;
-    margin-bottom: 6px !important;
-    transition: all 0.2s ease-in-out !important;
+    margin-bottom: 8px !important;
+    width: 100% !important; /* uniform buttons */
 }
 .sidebar-section.filter-section .btn:hover,
-.sidebar-section.save-filter-section .btn:hover,
-.sidebar-section.filter-section button:hover,
-.sidebar-section.save-filter-section button:hover {
+.sidebar-section.save-filter-section .btn:hover {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
-    transform: scale(1.02);
 }
 
-/* ================== DROPDOWNS ================== */
+/* Dropdowns */
 .dropdown-menu {
     background: #fff !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
-    padding: 4px 0 !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08) !important;
 }
 .dropdown-menu .dropdown-item {
     font-size: 13px !important;
