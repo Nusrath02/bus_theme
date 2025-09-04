@@ -854,26 +854,26 @@ header .form-control:focus {
 /* ==================== SIDEBAR WRAPPER ==================== */
 .list-sidebar.overlay-sidebar {
     display: flex;
-    justify-content: flex-start;   /* align sidebar at top */
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 12px !important;
-    background: transparent !important; /* keep main wrapper clean */
+    background: transparent !important; /* keep wrapper clean */
 }
 
-/* ==================== FILTER SIDEBAR BOX ==================== */
+/* ==================== SIDEBAR CONTAINER ==================== */
 .sidebar-section.filter-section {
-    background: rgba(37, 99, 235, 0.85) !important; /* keep your blue theme */
+    background: rgba(37, 99, 235, 0.9) !important; /* blue glass */
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     border-radius: 12px !important;
     padding: 16px 14px !important;
-    width: 260px !important;          /* compact width */
-    max-height: 75vh !important;      /* prevent it from being too tall */
-    overflow-y: auto !important;      /* scroll only inside this box */
+    width: 260px !important;
+    max-height: 75vh !important;
+    overflow-y: auto !important;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Hide scrollbar for a clean look */
+/* Hide scrollbar */
 .sidebar-section.filter-section::-webkit-scrollbar {
     display: none !important;
 }
@@ -885,39 +885,41 @@ header .form-control:focus {
 .sidebar-section.filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #e0e7ff !important;
-    margin-bottom: 8px !important;
-    text-transform: uppercase !important;
+    color: #111827 !important;   /* dark gray like screenshot */
+    margin-bottom: 6px !important;
+    text-transform: none !important;
 }
 
 /* ==================== INPUTS & SELECTS ==================== */
 .sidebar-section.filter-section .form-control,
-.sidebar-section.filter-section select {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 8px !important;
-    padding: 8px 10px !important;
+.sidebar-section.filter-section select,
+.sidebar-section.filter-section input[type="text"] {
+    background: #f9fafb !important;   /* clean light gray */
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 7px 10px !important;
     font-size: 13px !important;
-    color: #fff !important;
+    color: #111827 !important;
     margin-bottom: 10px !important;
 }
 .sidebar-section.filter-section .form-control:focus,
-.sidebar-section.filter-section select:focus {
-    border-color: #93c5fd !important;
-    box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.3) !important;
+.sidebar-section.filter-section select:focus,
+.sidebar-section.filter-section input[type="text"]:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
     outline: none !important;
 }
 
 /* ==================== BUTTONS ==================== */
 .sidebar-section.filter-section .btn,
 .sidebar-section.filter-section button {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 8px !important;
-    padding: 8px 12px !important;
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 7px 10px !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-    color: #fff !important;
+    color: #111827 !important;
     margin-bottom: 8px !important;
     transition: all 0.2s ease-in-out !important;
 }
@@ -926,16 +928,15 @@ header .form-control:focus {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
-    transform: scale(1.02);
 }
 
-/* ==================== CLEAN DROPDOWNS ==================== */
+/* ==================== DROPDOWN MENU ==================== */
 .dropdown-menu {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-radius: 8px !important;
+    background: #fff !important;
     border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
-    padding: 6px 0 !important;
+    padding: 4px 0 !important;
 }
 .dropdown-menu .dropdown-item {
     font-size: 13px !important;
