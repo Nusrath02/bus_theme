@@ -853,98 +853,101 @@ header .form-control:focus {
 
 /* ==================== SIDEBAR WRAPPER ==================== */
 /* ==================== SIDEBAR WRAPPER ==================== */
-.list-sidebar.overlay-sidebar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10px !important;
-    background: transparent !important;
-}
-
-/* ==================== SIDEBAR CONTAINER ==================== */
-.sidebar-section.filter-section {
-    background: rgba(37, 99, 235, 0.9) !important; /* blue glass */
+/* ================== COMMON SIDEBAR BOX STYLE ================== */
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    background: rgba(37, 99, 235, 0.9) !important; /* same blue theme */
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
     border-radius: 10px !important;
-    padding: 12px !important;
-    width: 90px !important;        /* narrower width */
-    max-height: 30vh !important;    /* reduced height */
-    overflow-y: auto !important;    /* scroll inside */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    padding: 14px 12px !important;
+    width: 240px !important;       /* keep compact */
+    max-height: 50vh !important;   /* reduce height like you asked */
+    overflow-y: auto !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+    margin-bottom: 12px !important; /* spacing between sections */
 }
 
-/* Hide scrollbar */
-.sidebar-section.filter-section::-webkit-scrollbar {
+/* Hide scrollbar for both */
+.sidebar-section.filter-section::-webkit-scrollbar,
+.sidebar-section.save-filter-section::-webkit-scrollbar {
     display: none !important;
 }
-.sidebar-section.filter-section {
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
     scrollbar-width: none !important;
 }
 
-/* ==================== LABELS ==================== */
-.sidebar-section.filter-section .sidebar-label {
-    font-size: 11px !important;
+/* ================== LABELS ================== */
+.sidebar-section.filter-section .sidebar-label,
+.sidebar-section.save-filter-section .sidebar-label {
+    font-size: 12px !important;
     font-weight: 600 !important;
-    color: #111827 !important;
-    margin-bottom: 4px !important;
-    text-transform: none !important;
+    color: #f9fafb !important;
+    margin-bottom: 6px !important;
+    text-transform: uppercase !important;
 }
 
-/* ==================== INPUTS & SELECTS ==================== */
+/* ================== INPUTS & SELECTS ================== */
 .sidebar-section.filter-section .form-control,
+.sidebar-section.save-filter-section .form-control,
 .sidebar-section.filter-section select,
-.sidebar-section.filter-section input[type="text"] {
+.sidebar-section.save-filter-section select,
+.sidebar-section.filter-section input[type="text"],
+.sidebar-section.save-filter-section input[type="text"] {
     background: #f9fafb !important;
     border: 1px solid #d1d5db !important;
-    border-radius: 5px !important;
-    padding: 5px 8px !important;    /* smaller padding */
-    font-size: 12px !important;
+    border-radius: 6px !important;
+    padding: 7px 10px !important;
+    font-size: 13px !important;
     color: #111827 !important;
     margin-bottom: 8px !important;
-    height: 28px !important;        /* compact height */
 }
+
+/* Focus */
 .sidebar-section.filter-section .form-control:focus,
-.sidebar-section.filter-section select:focus,
-.sidebar-section.filter-section input[type="text"]:focus {
+.sidebar-section.save-filter-section .form-control:focus {
     border-color: #2563eb !important;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2) !important;
     outline: none !important;
 }
 
-/* ==================== BUTTONS ==================== */
+/* ================== BUTTONS ================== */
 .sidebar-section.filter-section .btn,
-.sidebar-section.filter-section button {
+.sidebar-section.save-filter-section .btn,
+.sidebar-section.filter-section button,
+.sidebar-section.save-filter-section button {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
-    border-radius: 5px !important;
-    padding: 5px 8px !important;    /* smaller padding */
-    font-size: 12px !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 13px !important;
     font-weight: 500 !important;
     color: #111827 !important;
     margin-bottom: 6px !important;
     transition: all 0.2s ease-in-out !important;
-    height: 28px !important;        /* compact height */
 }
 .sidebar-section.filter-section .btn:hover,
-.sidebar-section.filter-section button:hover {
+.sidebar-section.save-filter-section .btn:hover,
+.sidebar-section.filter-section button:hover,
+.sidebar-section.save-filter-section button:hover {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
+    transform: scale(1.02);
 }
 
-/* ==================== DROPDOWN MENU ==================== */
+/* ================== DROPDOWNS ================== */
 .dropdown-menu {
     background: #fff !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
     padding: 4px 0 !important;
-    z-index: 1050 !important;        /* ensure visible above */
 }
 .dropdown-menu .dropdown-item {
-    font-size: 6px !important;
-    padding: 5px 10px !important;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
     color: #374151 !important;
 }
 .dropdown-menu .dropdown-item:hover {
