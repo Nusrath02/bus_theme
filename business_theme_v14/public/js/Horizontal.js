@@ -172,15 +172,29 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   const sidebar = document.querySelector(".list-sidebar.overlay-sidebar");
-  if (sidebar) {
-    sidebar.addEventListener("wheel", function(e) {
-      e.preventDefault();
-      // Adjust scroll speed (lower = smoother & slower)
-      sidebar.scrollBy({
-        top: e.deltaY * 0.3,  // 0.3 makes it smoother, adjust between 0.2–0.5
-        behavior: "smooth"
-      });
-    }, { passive: false });
+  if (!sidebar) return;
+
+  let scrollTarget = sidebar.scrollTop;
+  let isScrolling = false;
+
+  sidebar.addEventListener("wheel", function(e) {
+    e.preventDefault();
+    scrollTarget += e.deltaY; // Add scroll amount
+    if (!isScrolling) smoothScroll();
+  }, { passive: false });
+
+  function smoothScroll() {
+    isScrolling = true;
+    let current = sidebar.scrollTop;
+    let distance = scrollTarget - current;
+
+    // Ease out scrolling (adjust factor for softness)
+    sidebar.scrollTop = current + distance * 0.1;
+
+    if (Math.abs(distance) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isScrolling = false;
+    }
   }
 });
-
