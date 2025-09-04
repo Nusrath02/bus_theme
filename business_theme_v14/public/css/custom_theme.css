@@ -851,28 +851,37 @@ header .form-control:focus {
 
 
 
-/* ==================== FILTER SIDEBAR (SECOND IMAGE LAYOUT) ==================== */
+/* ==================== SIDEBAR WRAPPER ==================== */
+.list-sidebar.overlay-sidebar {
+    display: flex;
+    justify-content: flex-start;   /* align sidebar at top */
+    align-items: flex-start;
+    padding: 12px !important;
+    background: transparent !important; /* keep main wrapper clean */
+}
+
+/* ==================== FILTER SIDEBAR BOX ==================== */
 .sidebar-section.filter-section {
-    position: relative !important;
     background: rgba(37, 99, 235, 0.85) !important; /* keep your blue theme */
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     border-radius: 12px !important;
     padding: 16px 14px !important;
-    width: 260px !important;       /* compact width like second image */
-    min-height: auto !important;
-    max-height: 80vh !important;   /* keeps height neat */
-    overflow-y: auto !important;
+    width: 260px !important;          /* compact width */
+    max-height: 75vh !important;      /* prevent it from being too tall */
+    overflow-y: auto !important;      /* scroll only inside this box */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* Remove extra margin so it hugs layout like second image */
-.layout-side-section {
-    padding: 0 !important;
-    margin: 0 !important;
+/* Hide scrollbar for a clean look */
+.sidebar-section.filter-section::-webkit-scrollbar {
+    display: none !important;
+}
+.sidebar-section.filter-section {
+    scrollbar-width: none !important;
 }
 
-/* Sidebar section title */
+/* ==================== LABELS ==================== */
 .sidebar-section.filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
@@ -881,7 +890,7 @@ header .form-control:focus {
     text-transform: uppercase !important;
 }
 
-/* Inputs & selects */
+/* ==================== INPUTS & SELECTS ==================== */
 .sidebar-section.filter-section .form-control,
 .sidebar-section.filter-section select {
     background: rgba(255, 255, 255, 0.2) !important;
@@ -890,6 +899,7 @@ header .form-control:focus {
     padding: 8px 10px !important;
     font-size: 13px !important;
     color: #fff !important;
+    margin-bottom: 10px !important;
 }
 .sidebar-section.filter-section .form-control:focus,
 .sidebar-section.filter-section select:focus {
@@ -898,7 +908,7 @@ header .form-control:focus {
     outline: none !important;
 }
 
-/* Buttons */
+/* ==================== BUTTONS ==================== */
 .sidebar-section.filter-section .btn,
 .sidebar-section.filter-section button {
     background: rgba(255, 255, 255, 0.15) !important;
@@ -908,6 +918,7 @@ header .form-control:focus {
     font-size: 13px !important;
     font-weight: 500 !important;
     color: #fff !important;
+    margin-bottom: 8px !important;
     transition: all 0.2s ease-in-out !important;
 }
 .sidebar-section.filter-section .btn:hover,
@@ -918,21 +929,20 @@ header .form-control:focus {
     transform: scale(1.02);
 }
 
-/* Save Filter input (bottom) */
-.sidebar-section.filter-section input[type="text"] {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+/* ==================== CLEAN DROPDOWNS ==================== */
+.dropdown-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
     border-radius: 8px !important;
-    padding: 8px 10px !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
+    padding: 6px 0 !important;
+}
+.dropdown-menu .dropdown-item {
     font-size: 13px !important;
+    padding: 6px 12px !important;
+    color: #374151 !important;
+}
+.dropdown-menu .dropdown-item:hover {
+    background: #2563eb !important;
     color: #fff !important;
 }
-
-/* Hide scrollbar for cleaner look */
-.sidebar-section.filter-section::-webkit-scrollbar {
-    display: none !important;
-}
-.sidebar-section.filter-section {
-    scrollbar-width: none !important;
-}
-
