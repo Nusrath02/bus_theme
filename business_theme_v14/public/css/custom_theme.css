@@ -760,7 +760,7 @@ header .form-control:focus {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 90vh !important;   /* reduced from 80vh → 70vh */
+    max-height: 65vh !important;   /* reduced from 80vh → 70vh */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
@@ -768,6 +768,7 @@ header .form-control:focus {
     scrollbar-width: none !important;
     padding: 8px !important;       /* added padding for spacing */
     padding-bottom: 0 !important;
+    border-radius: 10px !important;
 }
 
 /* Remove bottom margin/padding from inner elements */
