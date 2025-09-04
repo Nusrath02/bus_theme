@@ -768,9 +768,8 @@ header .form-control:focus {
     background: #2563eb !important;        
     border-radius: 8px !important;
 
-    /* Smooth scrolling */
-    scroll-behavior: smooth !important;
-    -webkit-overflow-scrolling: touch !important; /* momentum scroll for touch */
+    /* Momentum scrolling for touch devices */
+    -webkit-overflow-scrolling: touch !important; 
 
     /* Hide scrollbar (Firefox + IE/Edge) */
     -ms-overflow-style: none !important;  
@@ -781,6 +780,7 @@ header .form-control:focus {
 .list-sidebar.overlay-sidebar::-webkit-scrollbar {
     display: none !important;
 }
+
 
 /* Sidebar section label */
 .list-sidebar .standard-sidebar-label {
@@ -824,21 +824,6 @@ header .form-control:focus {
     border-radius: 6px !important;
 }
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const sidebar = document.querySelector(".list-sidebar.overlay-sidebar");
-  if (sidebar) {
-    sidebar.addEventListener("wheel", function(e) {
-      e.preventDefault();
-      // Adjust scroll speed (lower = smoother & slower)
-      sidebar.scrollBy({
-        top: e.deltaY * 0.3,  // 0.3 makes it smoother, adjust between 0.2–0.5
-        behavior: "smooth"
-      });
-    }, { passive: false });
-  }
-});
-</script>
 
 
 
