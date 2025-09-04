@@ -170,31 +170,12 @@
 // })();
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const sidebar = document.querySelector(".list-sidebar.overlay-sidebar");
-  if (!sidebar) return;
-
-  let scrollTarget = sidebar.scrollTop;
-  let isScrolling = false;
-
-  sidebar.addEventListener("wheel", function(e) {
-    e.preventDefault();
-    scrollTarget += e.deltaY; // Add scroll amount
-    if (!isScrolling) smoothScroll();
-  }, { passive: false });
-
-  function smoothScroll() {
-    isScrolling = true;
-    let current = sidebar.scrollTop;
-    let distance = scrollTarget - current;
-
-    // Ease out scrolling (adjust factor for softness)
-    sidebar.scrollTop = current + distance * 0.1;
-
-    if (Math.abs(distance) > 0.5) {
-      requestAnimationFrame(smoothScroll);
-    } else {
-      isScrolling = false;
-    }
-  }
+document.querySelectorAll('.list-sidebar.overlay-sidebar').forEach(el => {
+    el.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        el.scrollBy({
+            top: e.deltaY < 0 ? -60 : 60, // adjust step (smaller = smoother, larger = faster)
+            behavior: 'smooth'
+        });
+    }, { passive: false });
 });
