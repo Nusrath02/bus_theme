@@ -756,17 +756,23 @@ header .form-control:focus {
 /* Sidebar container smaller */
 /* Sidebar container: full height, auto-fit content, no scrollbar */
 /* Sidebar container */
+/* Sidebar full height + smooth scroll */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar {
     height: 100vh !important;              /* full screen height */
     max-height: 100vh !important;
-    overflow-y: auto !important;           /* allow scroll */
+    overflow-y: auto !important;           /* allow vertical scroll */
     overflow-x: hidden !important;         /* prevent sideways scroll */
     padding: 4px !important;
     background: #2563eb !important;        /* blue background */
     border-radius: 8px !important;
     -ms-overflow-style: none !important;   /* hide scrollbar (IE/Edge) */
     scrollbar-width: none !important;      /* hide scrollbar (Firefox) */
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth !important;  
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important; 
 }
 
 /* Hide scrollbar (Chrome, Safari, Edge) */
