@@ -851,71 +851,22 @@ header .form-control:focus {
 
 
 
-/* Sidebar container */
-.col-lg-2.layout-side-section,
-.list-sidebar.overlay-sidebar {
-    min-height: 0 !important;
-    height: auto !important;
-    max-height: 85vh !important;    /* fits screen but scrollable */
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    padding: 15px !important;       /* proper breathing space */
-    border-radius: 12px !important;
-    background: linear-gradient(180deg, #3b82f6, #1d4ed8) !important;
-    box-shadow: 2px 0 12px rgba(0,0,0,0.15) !important;
+/* ==================== FILTER SIDEBAR ALIGNMENT FIX ==================== */
+.sidebar-section.filter-section {
+    width: 240px !important;        /* compact width like second image */
+    padding: 15px 12px !important;  /* balanced compact padding */
+    margin: 10px auto !important;   /* centers nicely */
+    border-radius: 12px !important; /* keep smooth corners */
+    max-height: 75vh !important;    /* prevent extra long sidebar */
+    overflow-y: auto !important;    /* allow scroll if content is long */
+    scrollbar-width: none !important;
+}
+.sidebar-section.filter-section::-webkit-scrollbar {
+    display: none !important;
 }
 
-/* Sidebar labels (Filter By, Tags, etc.) */
+/* Compact sidebar labels */
 .sidebar-section.filter-section .sidebar-label {
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    color: #fff !important;
-    margin: 15px 0 10px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    opacity: 0.9 !important;
+    font-size: 12px !important;
+    margin-bottom: 6px !important;
 }
-
-/* Sidebar items */
-.list-sidebar.overlay-sidebar .standard-sidebar-item,
-.list-sidebar.overlay-sidebar .sidebar-item,
-.list-sidebar .module-sidebar-item {
-    font-size: 13px !important;
-    padding: 8px 12px !important;
-    margin: 5px 0 !important;
-    line-height: 1.4 !important;
-    border-radius: 6px !important;
-    background: rgba(255,255,255,0.08) !important;
-    color: #fff !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    transition: all 0.2s ease-in-out !important;
-}
-
-/* Sidebar item hover */
-.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
-.list-sidebar.overlay-sidebar .sidebar-item:hover {
-    background: rgba(255,255,255,0.2) !important;
-    transform: translateX(4px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
-}
-
-/* Icons */
-.list-sidebar.overlay-sidebar .sidebar-item .icon,
-.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 14px !important;
-    margin-right: 6px !important;
-    min-width: 16px !important;
-    color: #fff !important;
-}
-
-/* Scrollbar hidden (but smooth scrolling enabled) */
-.list-sidebar.overlay-sidebar::-webkit-scrollbar {
-    width: 6px;
-}
-.list-sidebar.overlay-sidebar::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.4);
-    border-radius: 10px;
-}
-
