@@ -848,76 +848,74 @@ header .form-control:focus {
 
 
 /* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
-.sidebar-section.filter-section {
-    background: rgba(255, 255, 255, 0.85) !important; /* glass effect */
-    backdrop-filter: blur(12px) !important;           /* frosted glass blur */
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-radius: 14px !important;                   /* smooth corners */
-    padding: 15px 12px !important;                    /* compact padding */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
-    width: 240px !important;                          /* compact width */
-    max-height: 75vh !important;
-    overflow-y: auto !important;                      /* scroll only if needed */
-    scrollbar-width: none !important;
-}
-.sidebar-section.filter-section::-webkit-scrollbar {
-    display: none !important;
+
+
+
+/* Sidebar container */
+.col-lg-2.layout-side-section,
+.list-sidebar.overlay-sidebar {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: 85vh !important;    /* fits screen but scrollable */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 15px !important;       /* proper breathing space */
+    border-radius: 12px !important;
+    background: linear-gradient(180deg, #3b82f6, #1d4ed8) !important;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15) !important;
 }
 
-/* Sidebar labels (Filter By, Edit Filters, etc.) */
+/* Sidebar labels (Filter By, Tags, etc.) */
 .sidebar-section.filter-section .sidebar-label {
-    font-size: 12px !important;
+    font-size: 13px !important;
     font-weight: 600 !important;
-    color: #374151 !important;
-    margin-bottom: 6px !important;
+    color: #fff !important;
+    margin: 15px 0 10px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
+    opacity: 0.9 !important;
 }
 
-/* Dropdowns and input boxes */
-.sidebar-section.filter-section .form-control,
-.sidebar-section.filter-section select {
-    background: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(209, 213, 219, 0.6) !important;
-    border-radius: 10px !important;
-    padding: 8px 10px !important;
+/* Sidebar items */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .sidebar-item,
+.list-sidebar .module-sidebar-item {
     font-size: 13px !important;
-    color: #111827 !important;
-    transition: all 0.2s ease-in-out !important;
-}
-.sidebar-section.filter-section .form-control:focus,
-.sidebar-section.filter-section select:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
-    outline: none !important;
-}
-
-/* Buttons */
-.sidebar-section.filter-section .btn,
-.sidebar-section.filter-section button {
-    background: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(209, 213, 219, 0.7) !important;
-    border-radius: 10px !important;
-    padding: 8px 10px !important;
-    font-size: 13px !important;
-    color: #111827 !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease-in-out !important;
-}
-.sidebar-section.filter-section .btn:hover,
-.sidebar-section.filter-section button:hover {
-    background: #2563eb !important;
+    padding: 8px 12px !important;
+    margin: 5px 0 !important;
+    line-height: 1.4 !important;
+    border-radius: 6px !important;
+    background: rgba(255,255,255,0.08) !important;
     color: #fff !important;
-    border-color: #2563eb !important;
-    transform: scale(1.02);
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.2s ease-in-out !important;
 }
 
-/* Save Filter input */
-.sidebar-section.filter-section input[type="text"] {
-    background: rgba(255, 255, 255, 0.6) !important;
-    border: 1px solid rgba(209, 213, 219, 0.7) !important;
-    border-radius: 10px !important;
-    padding: 8px 10px !important;
-    font-size: 13px !important;
-    color: #111827 !important;
+/* Sidebar item hover */
+.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
+.list-sidebar.overlay-sidebar .sidebar-item:hover {
+    background: rgba(255,255,255,0.2) !important;
+    transform: translateX(4px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
 }
+
+/* Icons */
+.list-sidebar.overlay-sidebar .sidebar-item .icon,
+.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
+    font-size: 14px !important;
+    margin-right: 6px !important;
+    min-width: 16px !important;
+    color: #fff !important;
+}
+
+/* Scrollbar hidden (but smooth scrolling enabled) */
+.list-sidebar.overlay-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.list-sidebar.overlay-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+}
+
