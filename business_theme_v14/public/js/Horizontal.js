@@ -170,7 +170,6 @@
 // })();
 
 
-<script>
 document.addEventListener("DOMContentLoaded", function() {
   const sidebar = document.querySelector(".list-sidebar.overlay-sidebar");
   if (sidebar) {
@@ -184,4 +183,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }, { passive: false });
   }
 });
-</script>
+
