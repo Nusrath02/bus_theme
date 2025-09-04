@@ -847,86 +847,77 @@ header .form-control:focus {
 
 
 
-/* ==================== FILTER SIDEBAR - GLASS BLUE THEME ==================== */
+/* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
 .sidebar-section.filter-section {
-    background: rgba(17, 25, 40, 0.75) !important; /* glass effect */
-    backdrop-filter: blur(12px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    padding: 16px 14px !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
-
-    /* Sidebar width reduced */
-    max-width: 240px !important;
-    min-width: 220px !important;
-    overflow-y: auto !important;
+    background: rgba(255, 255, 255, 0.85) !important; /* glass effect */
+    backdrop-filter: blur(12px) !important;           /* frosted glass blur */
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 14px !important;                   /* smooth corners */
+    padding: 15px 12px !important;                    /* compact padding */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+    width: 240px !important;                          /* compact width */
+    max-height: 75vh !important;
+    overflow-y: auto !important;                      /* scroll only if needed */
+    scrollbar-width: none !important;
+}
+.sidebar-section.filter-section::-webkit-scrollbar {
+    display: none !important;
 }
 
-/* Sidebar Labels (Filter By, Tags, etc.) */
+/* Sidebar labels (Filter By, Edit Filters, etc.) */
 .sidebar-section.filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #60a5fa !important; /* glowing blue */
-    margin-bottom: 8px !important;
+    color: #374151 !important;
+    margin-bottom: 6px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.6px !important;
+    letter-spacing: 0.5px !important;
 }
 
-/* Dropdowns and Input Fields */
+/* Dropdowns and input boxes */
 .sidebar-section.filter-section .form-control,
 .sidebar-section.filter-section select {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(209, 213, 219, 0.6) !important;
     border-radius: 10px !important;
     padding: 8px 10px !important;
     font-size: 13px !important;
-    color: #e5e7eb !important;
+    color: #111827 !important;
+    transition: all 0.2s ease-in-out !important;
 }
-
 .sidebar-section.filter-section .form-control:focus,
 .sidebar-section.filter-section select:focus {
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 6px rgba(59, 130, 246, 0.5) !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
     outline: none !important;
 }
 
-/* Buttons (Edit Filters, Show Tags, Apply) */
+/* Buttons */
 .sidebar-section.filter-section .btn,
 .sidebar-section.filter-section button {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(209, 213, 219, 0.7) !important;
     border-radius: 10px !important;
-    padding: 7px 12px !important;
+    padding: 8px 10px !important;
     font-size: 13px !important;
-    color: #e5e7eb !important;
+    color: #111827 !important;
     font-weight: 500 !important;
-    transition: all 0.25s ease-in-out !important;
+    transition: all 0.2s ease-in-out !important;
 }
-
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
     background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(37, 99, 235, 0.7) !important;
+    transform: scale(1.02);
 }
 
 /* Save Filter input */
 .sidebar-section.filter-section input[type="text"] {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(209, 213, 219, 0.7) !important;
     border-radius: 10px !important;
-    padding: 7px 10px !important;
+    padding: 8px 10px !important;
     font-size: 13px !important;
-    color: #e5e7eb !important;
-}
-
-/* Hide scrollbar */
-.sidebar-section.filter-section::-webkit-scrollbar {
-    display: none !important;
-}
-.sidebar-section.filter-section {
-    scrollbar-width: none !important;
+    color: #111827 !important;
 }
