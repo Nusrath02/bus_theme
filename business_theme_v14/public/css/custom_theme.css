@@ -868,8 +868,8 @@ header .form-control:focus {
     -webkit-backdrop-filter: blur(8px) !important;
     border-radius: 10px !important;
     padding: 12px !important;
-    width: 230px !important;        /* narrower width */
-    max-height: 50vh !important;    /* reduced height */
+    width: 90px !important;        /* narrower width */
+    max-height: 30vh !important;    /* reduced height */
     overflow-y: auto !important;    /* scroll inside */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
@@ -943,7 +943,7 @@ header .form-control:focus {
     z-index: 1050 !important;        /* ensure visible above */
 }
 .dropdown-menu .dropdown-item {
-    font-size: 12px !important;
+    font-size: 6px !important;
     padding: 5px 10px !important;
     color: #374151 !important;
 }
