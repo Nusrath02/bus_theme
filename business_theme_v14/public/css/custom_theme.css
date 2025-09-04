@@ -840,3 +840,95 @@ header .form-control:focus {
     transform: scale(1.02);
     border-radius: 10px !important;
 }
+
+
+
+
+
+
+
+/* ==================== FILTER SIDEBAR STYLING ==================== */
+/* Target only the filter sidebar section */
+.sidebar-section.filter-section {
+    background: #fff !important;             /* keep current white background */
+    color: #374151 !important;               /* keep dark text */
+    border-radius: 12px !important;          /* rounded corners */
+    padding: 20px 15px !important;           /* inner spacing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; /* subtle shadow */
+    min-height: auto !important;
+    max-height: 75vh !important;             /* prevents overflow */
+    overflow-y: auto !important;             /* scroll if needed */
+}
+
+/* Sidebar labels (Filter By, Edit Filters, etc.) */
+.sidebar-section.filter-section .sidebar-label {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Dropdowns and input boxes */
+.sidebar-section.filter-section .form-control,
+.sidebar-section.filter-section select {
+    background: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    color: #374151 !important;
+}
+
+.sidebar-section.filter-section .form-control:focus,
+.sidebar-section.filter-section select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    outline: none !important;
+}
+
+/* Sidebar buttons (like Edit Filters, Show Tags) */
+.sidebar-section.filter-section .btn,
+.sidebar-section.filter-section button {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    color: #374151 !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.sidebar-section.filter-section .btn:hover,
+.sidebar-section.filter-section button:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    border-color: #2563eb !important;
+    transform: scale(1.02);
+}
+
+/* Scrollbar hidden (like your main sidebar) */
+.sidebar-section.filter-section::-webkit-scrollbar {
+    display: none !important;
+}
+.sidebar-section.filter-section {
+    scrollbar-width: none !important;
+}
+
+/* Save Filter input (at bottom) */
+.sidebar-section.filter-section input[type="text"] {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+    color: #374151 !important;
+}
+
+
+
+
+
+
