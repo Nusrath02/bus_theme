@@ -852,25 +852,26 @@ header .form-control:focus {
 
 
 /* ==================== SIDEBAR WRAPPER ==================== */
+/* ==================== SIDEBAR WRAPPER ==================== */
 .list-sidebar.overlay-sidebar {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 12px !important;
-    background: transparent !important; /* keep wrapper clean */
+    padding: 10px !important;
+    background: transparent !important;
 }
 
 /* ==================== SIDEBAR CONTAINER ==================== */
 .sidebar-section.filter-section {
     background: rgba(37, 99, 235, 0.9) !important; /* blue glass */
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    border-radius: 12px !important;
-    padding: 16px 14px !important;
-    width: 260px !important;
-    max-height: 75vh !important;
-    overflow-y: auto !important;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    width: 230px !important;        /* narrower width */
+    max-height: 50vh !important;    /* reduced height */
+    overflow-y: auto !important;    /* scroll inside */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Hide scrollbar */
@@ -883,10 +884,10 @@ header .form-control:focus {
 
 /* ==================== LABELS ==================== */
 .sidebar-section.filter-section .sidebar-label {
-    font-size: 12px !important;
+    font-size: 11px !important;
     font-weight: 600 !important;
-    color: #111827 !important;   /* dark gray like screenshot */
-    margin-bottom: 6px !important;
+    color: #111827 !important;
+    margin-bottom: 4px !important;
     text-transform: none !important;
 }
 
@@ -894,13 +895,14 @@ header .form-control:focus {
 .sidebar-section.filter-section .form-control,
 .sidebar-section.filter-section select,
 .sidebar-section.filter-section input[type="text"] {
-    background: #f9fafb !important;   /* clean light gray */
+    background: #f9fafb !important;
     border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 7px 10px !important;
-    font-size: 13px !important;
+    border-radius: 5px !important;
+    padding: 5px 8px !important;    /* smaller padding */
+    font-size: 12px !important;
     color: #111827 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
+    height: 28px !important;        /* compact height */
 }
 .sidebar-section.filter-section .form-control:focus,
 .sidebar-section.filter-section select:focus,
@@ -915,13 +917,14 @@ header .form-control:focus {
 .sidebar-section.filter-section button {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 7px 10px !important;
-    font-size: 13px !important;
+    border-radius: 5px !important;
+    padding: 5px 8px !important;    /* smaller padding */
+    font-size: 12px !important;
     font-weight: 500 !important;
     color: #111827 !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
     transition: all 0.2s ease-in-out !important;
+    height: 28px !important;        /* compact height */
 }
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
@@ -935,12 +938,13 @@ header .form-control:focus {
     background: #fff !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
     padding: 4px 0 !important;
+    z-index: 1050 !important;        /* ensure visible above */
 }
 .dropdown-menu .dropdown-item {
-    font-size: 13px !important;
-    padding: 6px 12px !important;
+    font-size: 12px !important;
+    padding: 5px 10px !important;
     color: #374151 !important;
 }
 .dropdown-menu .dropdown-item:hover {
