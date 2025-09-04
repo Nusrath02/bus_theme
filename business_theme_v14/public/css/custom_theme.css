@@ -817,10 +817,14 @@ header .form-control:focus {
 }
 
 /* Smooth scrolling for sidebar */
+/* Make sidebar scroll faster */
 .list-sidebar.overlay-sidebar {
-    scroll-behavior: smooth !important;  /* smooth animation */
-    -webkit-overflow-scrolling: touch !important; /* better on touch devices */
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: y proximity !important;  /* optional snap-to-items */
+    overscroll-behavior: contain !important;   /* prevent body from catching scroll */
 }
+
 
 
 
