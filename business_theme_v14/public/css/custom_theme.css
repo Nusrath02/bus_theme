@@ -824,6 +824,21 @@ header .form-control:focus {
     border-radius: 6px !important;
 }
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sidebar = document.querySelector(".list-sidebar.overlay-sidebar");
+  if (sidebar) {
+    sidebar.addEventListener("wheel", function(e) {
+      e.preventDefault();
+      // Adjust scroll speed (lower = smoother & slower)
+      sidebar.scrollBy({
+        top: e.deltaY * 0.3,  // 0.3 makes it smoother, adjust between 0.2–0.5
+        behavior: "smooth"
+      });
+    }, { passive: false });
+  }
+});
+</script>
 
 
 
