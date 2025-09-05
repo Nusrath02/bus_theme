@@ -624,8 +624,229 @@ header .form-control:focus {
     margin-right: 4px;
 }
 /* employee lifecycle end */
+/* ------------------------------------------------------------------------------ */
 
+/* Performance */
 
+/* HR Sub-modules - EXPANDED RECRUITMENT COVERAGE */
+#navbar-breadcrumbs li a[href*="job-opening"]::before,
+#navbar-breadcrumbs li a[href*="Job Opening"]::before {
+    content: "💼";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="job-applicant"]::before,
+#navbar-breadcrumbs li a[href*="Job Applicant"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="job-offer"]::before,
+#navbar-breadcrumbs li a[href*="Job Offer"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="staffing-plan"]::before,
+#navbar-breadcrumbs li a[href*="Staffing Plan"]::before {
+    content: "📊";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="job-requisition"]::before,
+#navbar-breadcrumbs li a[href*="Job Requisition"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-referral"]::before,
+#navbar-breadcrumbs li a[href*="Employee Referral"]::before {
+    content: "🤝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview"]::before,
+#navbar-breadcrumbs li a[href*="Interview"]::before {
+    content: "🎤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-type"]::before,
+#navbar-breadcrumbs li a[href*="Interview Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-round"]::before,
+#navbar-breadcrumbs li a[href*="Interview Round"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-feedback"]::before,
+#navbar-breadcrumbs li a[href*="Interview Feedback"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="appointment-letter"]::before,
+#navbar-breadcrumbs li a[href*="Appointment Letter"]::before {
+    content: "📄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="appointment-letter-template"]::before,
+#navbar-breadcrumbs li a[href*="Appointment Letter Template"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="recruitment-analytics"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment Analytics"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* HR EMPLOYEE LIFECYCLE COVERAGE */
+/* Onboarding */
+#navbar-breadcrumbs li a[href*="employee-onboarding-template"]::before,
+#navbar-breadcrumbs li a[href*="Employee Onboarding Template"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-onboarding"]::before,
+#navbar-breadcrumbs li a[href*="Employee Onboarding"]::before {
+    content: "🎯";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-skill-map"]::before,
+#navbar-breadcrumbs li a[href*="Employee Skill Map"]::before {
+    content: "🗺️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Grievance */
+#navbar-breadcrumbs li a[href*="grievance-type"]::before,
+#navbar-breadcrumbs li a[href*="Grievance Type"]::before {
+    content: "⚖️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-grievance"]::before,
+#navbar-breadcrumbs li a[href*="Employee Grievance"]::before {
+    content: "🔊";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Training */
+#navbar-breadcrumbs li a[href*="training-program"]::before,
+#navbar-breadcrumbs li a[href*="Training Program"]::before {
+    content: "🎓";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="training-event"]::before,
+#navbar-breadcrumbs li a[href*="Training Event"]::before {
+    content: "📅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="training-feedback"]::before,
+#navbar-breadcrumbs li a[href*="Training Feedback"]::before {
+    content: "💭";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="training-result"]::before,
+#navbar-breadcrumbs li a[href*="Training Result"]::before {
+    content: "🏆";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Daily Work Summary */
+#navbar-breadcrumbs li a[href*="daily-work-summary"]::before,
+#navbar-breadcrumbs li a[href*="Daily Work Summary"]::before {
+    content: "📊";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="daily-work-summary-group"]::before,
+#navbar-breadcrumbs li a[href*="Daily Work Summary Group"]::before {
+    content: "👥";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="daily-work-summary-replies"]::before,
+#navbar-breadcrumbs li a[href*="Daily Work Summary Replies"]::before {
+    content: "💬";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Employee Separation */
+#navbar-breadcrumbs li a[href*="employee-separation"]::before,
+#navbar-breadcrumbs li a[href*="Employee Separation"]::before {
+    content: "🚪";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Reports */
+#navbar-breadcrumbs li a[href*="employee-exits"]::before,
+#navbar-breadcrumbs li a[href*="Employee Exits"]::before {
+    content: "📉";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-birthday"]::before,
+#navbar-breadcrumbs li a[href*="Employee Birthday"]::before {
+    content: "🎂";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-information"]::before,
+#navbar-breadcrumbs li a[href*="Employee Information"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-analytics"]::before,
+#navbar-breadcrumbs li a[href*="Employee Analytics"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Performance end */
 
 /* ==================== SIDEBAR STYLING ==================== */
 /* Left sidebar with blue gradient and white text modules */
