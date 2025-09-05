@@ -552,6 +552,193 @@ header .form-control:focus {
     margin: 0 !important;
 }
 
+/* icons for the submenus */
+/* ==================== HR SUBMENU CATEGORY ICONS ==================== */
+/* Icons for main HR submenu categories */
+
+/* Recruitment submenu */
+#navbar-breadcrumbs li a[href*="recruitment"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment"]::before {
+    content: "🎯";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Employee Lifecycle submenu */
+#navbar-breadcrumbs li a[href*="employee-lifecycle"]::before,
+#navbar-breadcrumbs li a[href*="Employee Lifecycle"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Performance submenu */
+#navbar-breadcrumbs li a[href*="performance"]::before,
+#navbar-breadcrumbs li a[href*="Performance"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Shift & Attendance submenu */
+#navbar-breadcrumbs li a[href*="shift"]::before,
+#navbar-breadcrumbs li a[href*="Shift"]::before,
+#navbar-breadcrumbs li a[href*="attendance"]::before,
+#navbar-breadcrumbs li a[href*="Attendance"]::before {
+    content: "🕐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Expense Claims submenu */
+#navbar-breadcrumbs li a[href*="expense"]::before,
+#navbar-breadcrumbs li a[href*="Expense"]::before {
+    content: "💳";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Leaves submenu */
+#navbar-breadcrumbs li a[href*="leave"]::before,
+#navbar-breadcrumbs li a[href*="Leave"]::before {
+    content: "🏖️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Additional specific leave-related items */
+#navbar-breadcrumbs li a[href*="leave-application"]::before,
+#navbar-breadcrumbs li a[href*="Leave Application"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="leave-type"]::before,
+#navbar-breadcrumbs li a[href*="Leave Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="leave-policy"]::before,
+#navbar-breadcrumbs li a[href*="Leave Policy"]::before {
+    content: "📄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="compensatory-leave"]::before,
+#navbar-breadcrumbs li a[href*="Compensatory Leave"]::before {
+    content: "⏰";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Performance-related specific items */
+#navbar-breadcrumbs li a[href*="appraisal"]::before,
+#navbar-breadcrumbs li a[href*="Appraisal"]::before {
+    content: "⭐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="goal"]::before,
+#navbar-breadcrumbs li a[href*="Goal"]::before {
+    content: "🎯";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="energy-point"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point"]::before {
+    content: "⚡";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Employee Lifecycle specific items */
+#navbar-breadcrumbs li a[href*="employee-onboarding"]::before,
+#navbar-breadcrumbs li a[href*="Employee Onboarding"]::before {
+    content: "🚀";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-separation"]::before,
+#navbar-breadcrumbs li a[href*="Employee Separation"]::before {
+    content: "👋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-promotion"]::before,
+#navbar-breadcrumbs li a[href*="Employee Promotion"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-transfer"]::before,
+#navbar-breadcrumbs li a[href*="Employee Transfer"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Shift & Attendance specific items */
+#navbar-breadcrumbs li a[href*="shift-type"]::before,
+#navbar-breadcrumbs li a[href*="Shift Type"]::before {
+    content: "🕒";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="shift-request"]::before,
+#navbar-breadcrumbs li a[href*="Shift Request"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="attendance-request"]::before,
+#navbar-breadcrumbs li a[href*="Attendance Request"]::before {
+    content: "📅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-checkin"]::before,
+#navbar-breadcrumbs li a[href*="Employee Checkin"]::before {
+    content: "✅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Expense Claims specific items */
+#navbar-breadcrumbs li a[href*="expense-claim"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim"]::before {
+    content: "🧾";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="expense-claim-type"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="travel-request"]::before,
+#navbar-breadcrumbs li a[href*="Travel Request"]::before {
+    content: "✈️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* icons for the submenus end */
+
 /* ==================== MAIN CONTENT AREA ==================== */
 /* Dashboard overview and widgets */
 
