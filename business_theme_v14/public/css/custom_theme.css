@@ -857,7 +857,7 @@ header .form-control:focus {
 /* ================== COMMON SIDEBAR BOX STYLE ================== */
 /* ================== CLEAN MINIMAL SIDEBAR ================== */
 
-/* Sidebar wrapper */
+/* Sidebar        wrapper */
 /* ================== CLEAN MINIMAL SIDEBAR ================== */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
@@ -1048,7 +1048,7 @@ header .form-control:focus {
 }
 
 
-/* hide */
+/* /* hide */
 /* ====== SAVED FILTERS POPUP ====== */
 .saved-filters-preview {
     position: absolute !important;
@@ -1078,7 +1078,7 @@ header .form-control:focus {
 .saved-filters-preview .dropdown-item:hover {
     background: #2563eb !important;
     color: #ffffff !important;
-}
+} */
 
 
 
