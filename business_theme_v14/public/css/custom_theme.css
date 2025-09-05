@@ -937,21 +937,47 @@ header .form-control:focus {
 }
 
 /* Dropdowns */
+/* ================== DROPDOWN POPUP ================== */
 .dropdown-menu {
-    background: #fff !important;
+    background: #ffffff !important;      /* clean white background */
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08) !important;
+    min-width: 180px !important;         /* smaller width */
+    max-width: 220px !important;         /* prevent too wide */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
+    padding: 4px 0 !important;
+    font-size: 12px !important;          /* smaller text */
+    color: #111827 !important;
+    z-index: 1050 !important;            /* ensures popup stays on top */
 }
+
+/* Dropdown items */
 .dropdown-menu .dropdown-item {
-    font-size: 12px !important;   /* smaller */
-    padding: 5px 10px !important; /* tighter */
-    color: #374151 !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #374151 !important;           /* dark gray text */
+    transition: background 0.2s ease-in-out;
 }
 .dropdown-menu .dropdown-item:hover {
-    background: #2563eb !important;
-    color: #fff !important;
+    background: #2563eb !important;      /* brand hover */
+    color: #ffffff !important;
 }
+
+/* Placeholder text inside dropdown search */
+.dropdown-menu .form-control {
+    font-size: 12px !important;
+    padding: 5px 8px !important;
+    background: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    color: #111827 !important;
+}
+.dropdown-menu .form-control:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15) !important;
+    background: #ffffff !important;
+}
+
 
 /* ================== SIDEBAR FIELDS ================== */
 .group-by-field.list-link {
