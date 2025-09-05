@@ -1060,9 +1060,6 @@ header .form-control:focus {
 
 
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
-
-
-/* ====== FILTER NAME INPUT ====== */
 /* ===================== FILTER NAME INPUT ===================== */
 .input-with-feedback.form-control.input-xs {
     background: #f3f4f6 !important;
@@ -1110,10 +1107,6 @@ header .form-control:focus {
     color: #fff !important;
 }
 
-/* Hidden state */
-.hide-saved-hidden {
-    display: none !important;
-}
 
 
 
