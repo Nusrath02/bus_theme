@@ -863,8 +863,8 @@ header .form-control:focus {
     background: transparent !important;
     border: none !important;
     padding: 0 0 12px 0 !important;
-    width: 150px !important;
-    max-height: 30vh !important;  /* smaller sidebar height */
+    width: 180px !important;
+    max-height: 20vh !important;  /* smaller sidebar height */
     overflow-y: auto !important;
     box-shadow: none !important;
     margin-bottom: 16px !important;
