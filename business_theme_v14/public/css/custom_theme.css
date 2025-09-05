@@ -1093,6 +1093,25 @@ header .form-control:focus {
 }
 
 
+/* Force Filter Name + Saved filters to stack vertically */
+.sidebar-section .list-filters,
+.sidebar-section .save-filter-section {
+  display: block !important;       /* force block instead of inline */
+  width: 100% !important;
+  margin-bottom: 10px !important;  /* space between the two fields */
+}
+
+/* Ensure inputs/dropdowns take full width inside */
+.sidebar-section .list-filters select,
+.sidebar-section .save-filter-section select,
+.sidebar-section .list-filters input,
+.sidebar-section .save-filter-section input {
+  width: 100% !important;
+  display: block !important;
+}
+
+
+
 
 
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
