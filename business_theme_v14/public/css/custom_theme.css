@@ -1092,6 +1092,12 @@ header .form-control:focus {
   color: #fff !important;
 }
 
+/* ====== REMOVE SMALL BUTTON NEXT TO FILTER NAME ====== */
+.saved-filters-preview .btn,
+.saved-filters-preview button,
+.saved-filters-preview a {
+  display: none !important;
+}
 
 
 
