@@ -1051,35 +1051,34 @@ header .form-control:focus {
 /* ====== FIXED POSITIONING FOR ALL SIDEBAR POPUPS ====== */
 .dropdown-menu.group-by-dropdown.show,
 .dropdown-menu.list-stats-dropdown.show,
-.dropdown-menu.dlist-filters-dropdown.show {
-  position: absolute !important;     /* lock below parent */
-  top: calc(100% + 6px) !important;  /* small gap */
+.dropdown-menu.list-filters.show {
+  position: absolute !important;     /* lock to parent field */
+  top: calc(100% + 6px) !important;  /* small gap below trigger */
   left: 0 !important;
   right: auto !important;
   margin-top: 4px !important;
 
-  /* stop cursor-follow */
+  /* prevent cursor-follow movement */
   transform: none !important;
   pointer-events: auto !important;
 
-  /* size */
-  min-width: 160px !important;       
-  max-width: 220px !important;       
-  max-height: 190px !important;      
+  /* size & style */
+  min-width: 160px !important;
+  max-width: 220px !important;
+  max-height: 190px !important;      /* stop it from being too tall */
   overflow-y: auto !important;
 
-  /* style */
-  background: #ffffff !important;
+  background: #ffffff !important;    /* clean background */
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
   box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
   z-index: 2000 !important;
 }
 
-/* ====== DROPDOWN ITEMS (ALL POPUPS) ====== */
+/* ====== ITEMS INSIDE DROPDOWNS ====== */
 .dropdown-menu.group-by-dropdown.show .dropdown-item,
 .dropdown-menu.list-stats-dropdown.show .dropdown-item,
-.dropdown-menu.dlist-filters-dropdown.show .dropdown-item {
+.dropdown-menu.list-filters.show .dropdown-item {
   font-size: 12px !important;
   padding: 6px 10px !important;
   color: #374151 !important;
@@ -1088,8 +1087,8 @@ header .form-control:focus {
 
 .dropdown-menu.group-by-dropdown.show .dropdown-item:hover,
 .dropdown-menu.list-stats-dropdown.show .dropdown-item:hover,
-.dropdown-menu.dlist-filters-dropdown.show .dropdown-item:hover {
-  background: #2563eb !important;
+.dropdown-menu.list-filters.show .dropdown-item:hover {
+  background: #2563eb !important;   /* brand hover */
   color: #fff !important;
 }
 
