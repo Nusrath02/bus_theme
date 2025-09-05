@@ -996,3 +996,34 @@ header .form-control:focus {
     color: #fff !important;
     border-color: #2563eb !important;
 }
+
+/* ================== POPUP (empty-state group-by-empty) ================== */
+.empty-state .group-by-empty {
+    background: #ffffff !important;        /* clean white popup */
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    width: 220px !important;               /* decrease popup size */
+    max-height: 200px !important;          /* prevents it from overflowing */
+    overflow-y: auto !important;           /* scroll if content exceeds */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+    padding: 6px 0 !important;
+    font-size: 13px !important;
+    color: #1f2937 !important;             /* dark gray text */
+    z-index: 9999 !important;              /* ensure it’s visible above others */
+}
+
+/* Items inside popup */
+.empty-state .group-by-empty .dropdown-item {
+    padding: 6px 10px !important;
+    color: #374151 !important;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover / active state */
+.empty-state .group-by-empty .dropdown-item:hover,
+.empty-state .group-by-empty .dropdown-item:focus {
+    background: #2563eb !important;        /* blue highlight */
+    color: #ffffff !important;             /* white text */
+    border-radius: 4px !important;
+}
+
