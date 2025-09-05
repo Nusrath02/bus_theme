@@ -1192,6 +1192,12 @@ header .form-control:focus {
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
   .sidebar-section.save-filter-section { position: relative !important; }
 
+/* Hide extra controls inside Save Filter until activated */
+.save-filter-section .sidebar-action,
+.save-filter-section .saved-filters-preview,
+.save-filter-section .frappe-control[data-fieldtype="Check"] {
+    display: none !important;
+}
 
 
 
