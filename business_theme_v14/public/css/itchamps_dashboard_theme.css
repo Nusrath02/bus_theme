@@ -739,6 +739,48 @@ header .form-control:focus {
 
 /* icons for the submenus end */
 
+
+/* Add these lines to your existing CSS file right after your current breadcrumb icons */
+
+/* Dashboard - catch all variations */
+#navbar-breadcrumbs li a[href*="dashboard"]::before,
+#navbar-breadcrumbs li a[href*="Dashboard"]::before,
+#navbar-breadcrumbs li a[href="/app"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Recruitment - broader matching */
+#navbar-breadcrumbs li a[href*="recruitment"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment"]::before,
+#navbar-breadcrumbs li a[href*="dashboard-view/Recruitment"]::before {
+    content: "🎯" !important;
+    font-size: 16px !important; 
+    margin-right: 4px !important;
+}
+
+/* Employee Lifecycle */
+#navbar-breadcrumbs li a[href*="employee-lifecycle"]::before,
+#navbar-breadcrumbs li a[href*="Employee"]::before,
+#navbar-breadcrumbs li a[href*="grievance"]::before {
+    content: "🔄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Grievance Type specific */
+#navbar-breadcrumbs li a[href*="grievance-type"]::before,
+#navbar-breadcrumbs li a[href*="Grievance"]::before {
+    content: "⚖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+
+
+
+
 /* ==================== MAIN CONTENT AREA ==================== */
 /* Dashboard overview and widgets */
 
