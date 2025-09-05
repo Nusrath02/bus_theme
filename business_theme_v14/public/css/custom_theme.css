@@ -1101,6 +1101,12 @@ header .form-control:focus {
     color: #fff !important;
 }
 
+/* Hidden state */
+.hide-saved-hidden {
+    display: none !important;
+}
+
+
 
 
 
