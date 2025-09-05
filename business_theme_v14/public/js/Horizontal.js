@@ -183,45 +183,68 @@
 
 
 
-frappe.ready(function() {
-    let input = document.querySelector(
-        '.save-filter-section .input-with-feedback'
+frappe.ready(function () {
+    const saveSection = document.querySelector('.save-filter-section');
+    if (!saveSection) return;
+
+    const input = saveSection.querySelector(
+        '.input-with-feedback.form-control.input-xs, ' +
+        '.input-with-feedback.form-control, ' +
+        'input[type="text"]'
     );
+    const sidebarAction = saveSection.querySelector('.sidebar-action');
 
-    if (input) {
-        input.addEventListener('input', function() {
-            if (this.value.trim() !== "") {
-                // show extra controls only when user types something
-                document.querySelectorAll(
-                    '.save-filter-section .sidebar-action,' +
-                    '.save-filter-section .saved-filters-preview,' +
-                    '.save-filter-section .frappe-control[data-fieldtype="Check"]'
-                ).forEach(el => {
-                    el.style.display = "block";
-                });
-            }
-        });
+    if (!input || !sidebarAction) return;
+
+    // hide initially
+    sidebarAction.style.display = 'none';
+
+    // helper to show popup
+    function showPopup() {
+        if (!input.value || input.value.trim() === '') return;
+
+        saveSection.style.position = 'relative';
+
+        const top = input.offsetTop + input.offsetHeight + 6;
+        const left = input.offsetLeft;
+        const width = Math.max(input.offsetWidth, 160);
+
+        sidebarAction.classList.add('popup-mode');
+        sidebarAction.style.position = 'absolute';
+        sidebarAction.style.top = top + 'px';
+        sidebarAction.style.left = left + 'px';
+        sidebarAction.style.width = width + 'px';
+        sidebarAction.style.display = 'block';
+        sidebarAction.style.zIndex = '4000';
     }
-});
 
-
-frappe.ready(function() {
-    // Select the input and the hide saved section
-    let filterInput = document.querySelector(".input-with-feedback.form-control.input-xs");
-    let hideSaved = document.querySelector(".save-filter-section .sidebar-action");
-
-    if (filterInput && hideSaved) {
-        // Initially hide the section
-        hideSaved.classList.add("hide-saved-hidden");
-
-        // Add event listener
-        filterInput.addEventListener("input", function() {
-            if (this.value.trim() === "") {
-                hideSaved.classList.add("hide-saved-hidden");
-            } else {
-                hideSaved.classList.remove("hide-saved-hidden");
-            }
-        });
+    function hidePopup() {
+        sidebarAction.classList.remove('popup-mode');
+        sidebarAction.style.display = 'none';
     }
-});
 
+    // show popup when pressing Enter
+    input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            e.preventDefault();
+            showPopup();
+        }
+    });
+
+    // prevent closing when clicking inside popup
+    sidebarAction.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+    });
+
+    // close on outside click
+    document.addEventListener('click', function (ev) {
+        if (!saveSection.contains(ev.target)) {
+            hidePopup();
+        }
+    });
+
+    // close on Escape
+    document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') hidePopup();
+    });
+});
