@@ -939,30 +939,32 @@ header .form-control:focus {
 /* Dropdowns */
 /* ================== DROPDOWN POPUP ================== */
 /* ====== SIDEBAR GROUP-BY POPUP (compact, clean, fully visible) ====== */
+/* ====== FIXED POSITIONING FOR GROUP-BY POPUP ====== */
 .sidebar-section .dropdown-menu.group-by-dropdown,
 .dropdown-menu.group-by-dropdown.show {
-  /* size */
-  width: 100% !important;          /* match the trigger/input width */
+  position: absolute !important;   /* stays anchored to parent field */
+  top: calc(100% + 6px) !important; /* small gap below trigger */
+  left: 0 !important;
+  right: auto !important;
+  margin-top: 4px !important;
+
+  /* prevent cursor-based movement */
+  transform: none !important;
+  pointer-events: auto !important;
+
+  /* size & style (same as before) */
+  width: 100% !important;
   min-width: 0 !important;
   max-width: 100% !important;
-  max-height: 190px !important;     /* keep it small so it fits inside 30vh sidebar */
+  max-height: 190px !important;
   overflow-y: auto !important;
-
-  /* look & feel */
   background: #ffffff !important;
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
-  padding: 6px 0 !important;
   box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
-
-  /* make sure it shows above everything */
   z-index: 2000 !important;
-
-  /* keep it aligned to the left of the field */
-  left: 0 !important;
-  right: auto !important;
-  transform: none !important;
 }
+
 
 /* search box inside the popup (if present) */
 .dropdown-menu.group-by-dropdown .form-control {
