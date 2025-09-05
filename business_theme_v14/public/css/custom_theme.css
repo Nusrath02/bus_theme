@@ -938,45 +938,70 @@ header .form-control:focus {
 
 /* Dropdowns */
 /* ================== DROPDOWN POPUP ================== */
-.dropdown-menu {
-    background: #ffffff !important;      /* clean white background */
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    min-width: 180px !important;         /* smaller width */
-    max-width: 220px !important;         /* prevent too wide */
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
-    padding: 4px 0 !important;
-    font-size: 12px !important;          /* smaller text */
-    color: #111827 !important;
-    z-index: 1050 !important;            /* ensures popup stays on top */
+/* ====== SIDEBAR GROUP-BY POPUP (compact, clean, fully visible) ====== */
+.sidebar-section .dropdown-menu.group-by-dropdown,
+.dropdown-menu.group-by-dropdown.show {
+  /* size */
+  width: 100% !important;          /* match the trigger/input width */
+  min-width: 0 !important;
+  max-width: 100% !important;
+  max-height: 190px !important;     /* keep it small so it fits inside 30vh sidebar */
+  overflow-y: auto !important;
+
+  /* look & feel */
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  padding: 6px 0 !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
+
+  /* make sure it shows above everything */
+  z-index: 2000 !important;
+
+  /* keep it aligned to the left of the field */
+  left: 0 !important;
+  right: auto !important;
+  transform: none !important;
 }
 
-/* Dropdown items */
-.dropdown-menu .dropdown-item {
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-    color: #374151 !important;           /* dark gray text */
-    transition: background 0.2s ease-in-out;
+/* search box inside the popup (if present) */
+.dropdown-menu.group-by-dropdown .form-control {
+  font-size: 12px !important;
+  padding: 6px 8px !important;
+  background: #f9fafb !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  color: #111827 !important;
+  margin: 6px 8px !important;
 }
-.dropdown-menu .dropdown-item:hover {
-    background: #2563eb !important;      /* brand hover */
-    color: #ffffff !important;
+.dropdown-menu.group-by-dropdown .form-control:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37,99,235,.15) !important;
+  background: #ffffff !important;
 }
 
-/* Placeholder text inside dropdown search */
-.dropdown-menu .form-control {
-    font-size: 12px !important;
-    padding: 5px 8px !important;
-    background: #f9fafb !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    color: #111827 !important;
+/* items */
+.dropdown-menu.group-by-dropdown .dropdown-item {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  color: #374151 !important;
+  border-radius: 4px !important;
 }
-.dropdown-menu .form-control:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15) !important;
-    background: #ffffff !important;
+.dropdown-menu.group-by-dropdown .dropdown-item:hover,
+.dropdown-menu.group-by-dropdown .dropdown-item:focus {
+  background: #2563eb !important;
+  color: #ffffff !important;
 }
+
+/* empty state like "No filters found" */
+.dropdown-menu.group-by-dropdown .empty-state,
+.dropdown-menu.group-by-dropdown .no-results,
+.dropdown-menu.group-by-dropdown .group-by-empty {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+  padding: 8px 10px !important;
+}
+
 
 
 /* ================== SIDEBAR FIELDS ================== */
@@ -997,33 +1022,5 @@ header .form-control:focus {
     border-color: #2563eb !important;
 }
 
-/* ================== POPUP (empty-state group-by-empty) ================== */
-.empty-state .group-by-empty {
-    background: #ffffff !important;        /* clean white popup */
-    border: 1px solid #d1d5db !important;
-    border-radius: 8px !important;
-    width: 220px !important;               /* decrease popup size */
-    max-height: 200px !important;          /* prevents it from overflowing */
-    overflow-y: auto !important;           /* scroll if content exceeds */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
-    padding: 6px 0 !important;
-    font-size: 13px !important;
-    color: #1f2937 !important;             /* dark gray text */
-    z-index: 9999 !important;              /* ensure it’s visible above others */
-}
 
-/* Items inside popup */
-.empty-state .group-by-empty .dropdown-item {
-    padding: 6px 10px !important;
-    color: #374151 !important;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-/* Hover / active state */
-.empty-state .group-by-empty .dropdown-item:hover,
-.empty-state .group-by-empty .dropdown-item:focus {
-    background: #2563eb !important;        /* blue highlight */
-    color: #ffffff !important;             /* white text */
-    border-radius: 4px !important;
-}
 
