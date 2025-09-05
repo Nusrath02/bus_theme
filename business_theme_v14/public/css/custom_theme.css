@@ -1092,12 +1092,11 @@ header .form-control:focus {
   color: #fff !important;
 }
 
-/* ====== REMOVE SMALL BUTTON NEXT TO FILTER NAME ====== */
-.saved-filters-preview .btn,
-.saved-filters-preview button,
-.saved-filters-preview a {
+/* ====== REMOVE SIDEBAR ACTION BUTTON ====== */
+.sidebar-action {
   display: none !important;
 }
+
 
 
 
