@@ -1099,6 +1099,39 @@ header .form-control:focus {
 }
 
 
+/* ====== SAVED FILTERS POPUP ====== */
+.saved-filters-preview {
+    position: absolute !important;
+    top: 100% !important;           /* show below the filter name */
+    left: 0 !important;
+    margin-top: 6px !important;     /* small gap below filter name */
+    background: #ffffff !important; /* clean white background */
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    min-width: 180px !important;    /* same size as other dropdowns */
+    max-width: 220px !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12) !important;
+    padding: 6px 0 !important;
+    font-size: 12px !important;
+    color: #111827 !important;
+    z-index: 1100 !important;       /* keep above sidebar */
+    pointer-events: auto !important;
+}
+
+/* Items inside saved-filters-preview */
+.saved-filters-preview .dropdown-item {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #374151 !important;
+    transition: background 0.2s ease-in-out;
+}
+.saved-filters-preview .dropdown-item:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+
+
+
 
 
 
