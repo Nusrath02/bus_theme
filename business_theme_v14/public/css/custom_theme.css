@@ -1098,7 +1098,7 @@ header .form-control:focus {
 .sidebar-section .save-filter-section {
   display: block !important;       /* force block instead of inline */
   width: 100% !important;
-  margin-bottom: 10px !important;  /* space between the two fields */
+  margin-bottom: 10px !important;  /*  space between the two fields */
 }
 
 /* Ensure inputs/dropdowns take full width inside */
