@@ -1049,6 +1049,26 @@ header .form-control:focus {
   color: #fff !important;
 }
 
+
+
+/* ================== SIDEBAR FIELDS ================== */
+.group-by-field.list-link {
+    font-size: 12px !important;      /* smaller text */
+    padding: 5px 8px !important;     /* compact padding */
+    margin-bottom: 6px !important;
+    border-radius: 6px !important;
+    background: #f3f4f6 !important;  /* light background */
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    display: block !important;
+    transition: all 0.2s ease-in-out;
+}
+.group-by-field.list-link:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    border-color: #2563eb !important;
+}
+
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
 
 
