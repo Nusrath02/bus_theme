@@ -972,7 +972,7 @@ header .form-control:focus {
   border: 1px solid #d1d5db !important;
   border-radius: 6px !important;
   color: #111827 !important;
-  margin: 6px 8px !important;
+  margin: 16px 18px !important;
 }
 .dropdown-menu.group-by-dropdown .form-control:focus {
   border-color: #2563eb !important;
