@@ -1054,6 +1054,7 @@ header .form-control:focus {
 
 
 /* ====== FILTER NAME INPUT ====== */
+/* ===================== FILTER NAME INPUT ===================== */
 .input-with-feedback.form-control.input-xs {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
@@ -1061,8 +1062,8 @@ header .form-control:focus {
     padding: 6px 10px !important;
     font-size: 12px !important;
     color: #111827 !important;
-    width: 100% !important;          /* full width inside sidebar */
-    margin-bottom: 8px !important;   /* space below input */
+    width: 100% !important;
+    margin-bottom: 8px !important;
 }
 .input-with-feedback.form-control.input-xs:focus {
     border-color: #2563eb !important;
@@ -1070,133 +1071,34 @@ header .form-control:focus {
     background: #ffffff !important;
 }
 
-/* ====== SIDEBAR ACTION POPUP (move below input) ====== */
-.sidebar-action {
-    display: block !important;       /* force block so it stacks */
-    width: 100% !important;          /* match input width */
-    margin-top: 6px !important;      /* space below input */
-    background: #ffffff !important;  /* clean background */
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-    color: #111827 !important;
-    text-align: center !important;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
-    transition: background 0.2s ease-in-out;
-}
-.sidebar-action:hover {
-    background: #2563eb !important;
-    color: #ffffff !important;
-    border-color: #2563eb !important;
-}
-
-
-
-/* ========== Ensure vertical stacking of Save Filter row ========== */
-/* Very-specific selector to override desk/sidebar rules */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section > ul.list-unstyled > li.list-filters.list-link {
+/* ===================== LAYOUT: STACK INPUT + ACTION ===================== */
+.save-filter-section .list-filters.list-link {
     display: flex !important;
-    flex-direction: column !important;   /* stack child elements vertically */
-    align-items: stretch !important;
+    flex-direction: column !important;   /* stack vertically */
+    align-items: flex-start !important;
     gap: 8px !important;
-    padding: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
 }
 
-/* Make the input area FULL width and compact */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .input-area,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .input-area .frappe-control,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .input-area .form-control,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .input-area .input-with-feedback {
+/* ===================== HIDE SAVED BUTTON ===================== */
+.save-filter-section .sidebar-action {
     display: block !important;
+    margin-top: 6px !important;
     width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    padding: 6px 8px !important;
-    font-size: 12px !important;
-    height: auto !important;
 }
-
-/* Move the sidebar-action below the input and make it full width */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section > ul.list-unstyled > li.sidebar-action {
-    display: block !important;
-    order: 2 !important;
-    width: 100% !important;
-    margin: 6px 0 0 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-}
-
-/* If sidebar-action contains a button, style that button to match */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section li.sidebar-action > a,
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section li.sidebar-action > button {
-    display: block !important;
-    width: 100% !important;
-    padding: 6px 10px !important;
-    border-radius: 6px !important;
+.save-filter-section .sidebar-action .btn,
+.save-filter-section .sidebar-action button {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
     color: #111827 !important;
+    width: auto !important;
     text-align: center !important;
 }
-
-/* ========== Saved-filters popup: anchor below the input ========== */
-/* Specific saved-filters-preview target and fallback selector */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .saved-filters-preview,
-.saved-filters-preview {
-  position: absolute !important;                 /* anchor under trigger */
-  top: calc(100% + 6px) !important;              /* small gap below input */
-  left: 0 !important;                             /* align left to parent */
-  right: auto !important;
-  min-width: 160px !important;
-  max-width: 220px !important;
-  max-height: 220px !important;
-  overflow-y: auto !important;
-  background: #ffffff !important;
-  border: 1px solid #d1d5db !important;
-  border-radius: 8px !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12) !important;
-  z-index: 3000 !important;                       /* above sidebar */
-  transform: none !important;                    /* prevent JS transforms */
-}
-
-/* Popup items */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .saved-filters-preview .dropdown-item,
-.saved-filters-preview .dropdown-item {
-  padding: 6px 10px !important;
-  font-size: 12px !important;
-  color: #374151 !important;
-}
-
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section .saved-filters-preview .dropdown-item:hover,
-.saved-filters-preview .dropdown-item:hover {
-  background: #2563eb !important;
-  color: #fff !important;
-}
-
-/* If some JS keeps toggling inline styles, force left alignment relative to nearest positioned ancestor */
-.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar
-  .sidebar-section.save-filter-section { position: relative !important; }
-
-/* Hide extra controls inside Save Filter until activated */
-.save-filter-section .sidebar-action,
-.save-filter-section .saved-filters-preview,
-.save-filter-section .frappe-control[data-fieldtype="Check"] {
-    display: none !important;
+.save-filter-section .sidebar-action .btn:hover {
+    background: #2563eb !important;
+    color: #fff !important;
 }
 
 
