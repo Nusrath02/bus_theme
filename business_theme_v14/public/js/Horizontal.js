@@ -203,3 +203,25 @@ frappe.ready(function() {
         });
     }
 });
+
+
+frappe.ready(function() {
+    // Select the input and the hide saved section
+    let filterInput = document.querySelector(".input-with-feedback.form-control.input-xs");
+    let hideSaved = document.querySelector(".save-filter-section .sidebar-action");
+
+    if (filterInput && hideSaved) {
+        // Initially hide the section
+        hideSaved.classList.add("hide-saved-hidden");
+
+        // Add event listener
+        filterInput.addEventListener("input", function() {
+            if (this.value.trim() === "") {
+                hideSaved.classList.add("hide-saved-hidden");
+            } else {
+                hideSaved.classList.remove("hide-saved-hidden");
+            }
+        });
+    }
+});
+
