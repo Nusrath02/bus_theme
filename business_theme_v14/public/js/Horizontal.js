@@ -170,12 +170,36 @@
 // })();
 
 
-document.querySelectorAll('.list-sidebar.overlay-sidebar').forEach(el => {
-    el.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        el.scrollBy({
-            top: e.deltaY < 0 ? -60 : 60, // adjust step (smaller = smoother, larger = faster)
-            behavior: 'smooth'
+// document.querySelectorAll('.list-sidebar.overlay-sidebar').forEach(el => {
+//     el.addEventListener('wheel', (e) => {
+//         e.preventDefault();
+//         el.scrollBy({
+//             top: e.deltaY < 0 ? -60 : 60, // adjust step (smaller = smoother, larger = faster)
+//             behavior: 'smooth'
+//         });
+//     }, { passive: false });
+// });
+
+
+
+
+frappe.ready(function() {
+    let input = document.querySelector(
+        '.save-filter-section .input-with-feedback'
+    );
+
+    if (input) {
+        input.addEventListener('input', function() {
+            if (this.value.trim() !== "") {
+                // show extra controls only when user types something
+                document.querySelectorAll(
+                    '.save-filter-section .sidebar-action,' +
+                    '.save-filter-section .saved-filters-preview,' +
+                    '.save-filter-section .frappe-control[data-fieldtype="Check"]'
+                ).forEach(el => {
+                    el.style.display = "block";
+                });
+            }
         });
-    }, { passive: false });
+    }
 });
