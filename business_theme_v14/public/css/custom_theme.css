@@ -857,13 +857,14 @@ header .form-control:focus {
 /* ================== CLEAN MINIMAL SIDEBAR ================== */
 
 /* Sidebar wrapper */
+/* ================== CLEAN MINIMAL SIDEBAR ================== */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
-    background: transparent !important;   /* remove heavy blue box */
+    background: transparent !important;
     border: none !important;
     padding: 0 0 12px 0 !important;
-    width: 220px !important;             /* compact width */
-    max-height: 50vh !important;         /* smaller height */
+    width: 150px !important;
+    max-height: 30vh !important;  /* smaller sidebar height */
     overflow-y: auto !important;
     box-shadow: none !important;
     margin-bottom: 16px !important;
@@ -884,7 +885,7 @@ header .form-control:focus {
 .sidebar-section.save-filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #374151 !important;  /* dark gray text */
+    color: #374151 !important;
     margin-bottom: 6px !important;
     text-transform: none !important;
 }
@@ -896,13 +897,13 @@ header .form-control:focus {
 .sidebar-section.save-filter-section select,
 .sidebar-section.filter-section input[type="text"],
 .sidebar-section.save-filter-section input[type="text"] {
-    background: #f3f4f6 !important;  /* light gray background */
+    background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    padding: 7px 10px !important;
-    font-size: 13px !important;
+    padding: 6px 8px !important;   /* tighter padding */
+    font-size: 12px !important;    /* smaller font */
     color: #111827 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
 }
 
 /* Focus */
@@ -910,7 +911,7 @@ header .form-control:focus {
 .sidebar-section.save-filter-section .form-control:focus {
     border-color: #2563eb !important;
     box-shadow: 0 0 0 2px rgba(37,99,235,0.2) !important;
-    background: #fff !important;   /* white on focus */
+    background: #fff !important;
 }
 
 /* Buttons */
@@ -921,12 +922,12 @@ header .form-control:focus {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    padding: 6px 10px !important;
-    font-size: 13px !important;
+    padding: 5px 8px !important;   /* smaller */
+    font-size: 12px !important;    /* smaller */
     font-weight: 500 !important;
     color: #111827 !important;
-    margin-bottom: 8px !important;
-    width: 100% !important; /* uniform buttons */
+    margin-bottom: 6px !important;
+    width: 100% !important;
 }
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.save-filter-section .btn:hover {
@@ -943,11 +944,29 @@ header .form-control:focus {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08) !important;
 }
 .dropdown-menu .dropdown-item {
-    font-size: 13px !important;
-    padding: 6px 12px !important;
+    font-size: 12px !important;   /* smaller */
+    padding: 5px 10px !important; /* tighter */
     color: #374151 !important;
 }
 .dropdown-menu .dropdown-item:hover {
     background: #2563eb !important;
     color: #fff !important;
+}
+
+/* ================== SIDEBAR FIELDS ================== */
+.group-by-field.list-link {
+    font-size: 12px !important;      /* smaller text */
+    padding: 5px 8px !important;     /* compact padding */
+    margin-bottom: 6px !important;
+    border-radius: 6px !important;
+    background: #f3f4f6 !important;  /* light background */
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    display: block !important;
+    transition: all 0.2s ease-in-out;
+}
+.group-by-field.list-link:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    border-color: #2563eb !important;
 }
