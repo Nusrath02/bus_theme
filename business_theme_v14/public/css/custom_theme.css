@@ -1212,34 +1212,25 @@ header .form-control:focus {
 
 
 
-/* Make parent a flex column */
-
-
-
-.widget-control {
-  display: flex !important;
-  align-items: flex-start !important;  /* push children to top */
-  margin-top: 0 !important;
+/* Reduce overall card size */
+.widget.shortcut-widget-box {
+  min-height: 50px !important;   /* adjust smaller height */
+  padding: 6px 10px !important;  /* less inner space */
+  width: auto !important;        /* shrink width to content, remove if full width needed */
 }
 
-
-
-.widget-control .indicator-pill,
-.widget-control .es-icon {
-  margin-top: 0 !important;
-  align-self: flex-start !important;  /* stick each child to top */
-  line-height: 1.2 !important;        /* tighten vertical spacing */
-}
+/* Reduce head spacing */
 .widget-head {
-  display: flex !important;
-  align-items: flex-start !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-
-
-.widget-label {
-  margin-right: 6px; /* space between Job Opening and 0 Open */
+/* Shrink pill (0 Open) size */
+.widget-control .indicator-pill {
+  font-size: 11px !important;   /* smaller text */
+  padding: 2px 6px !important;  /* smaller pill size */
 }
+
 
 
 
