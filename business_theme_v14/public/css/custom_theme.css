@@ -1134,6 +1134,16 @@ header .form-control:focus {
     min-height: auto !important;
 }
 
+[data-page-route="Workspaces"] .widget.spacer {
+    display: none !important;
+}
+
+[data-page-route="Workspaces"] .ce-block__content {
+    margin: 0 !important;
+    padding: 5px 0 !important;
+}
+
+
 
 /* space removing */
 
