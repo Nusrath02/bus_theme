@@ -1107,7 +1107,22 @@ header .form-control:focus {
     color: #fff !important;
 }
 
+/* space removing */
 
+
+/* Remove empty widget spacers in Workspace pages */
+[data-page-route="Workspaces"] .widget.spacer {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.widget.spacer {
+    display: none !important;
+}
+
+
+/* space removing */
 
 
 
