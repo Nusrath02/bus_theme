@@ -1120,7 +1120,10 @@ header .form-control:focus {
 .widget.spacer {
     display: none !important;
 }
-/* ///1//// */
+
+
+
+/* ///o open//// */
 
 .widget-head {
   display: flex !important;
@@ -1142,6 +1145,12 @@ header .form-control:focus {
   margin: 0 !important;
   line-height: 1.2 !important;
   vertical-align: top !important; /* force pill to top */
+}
+
+
+.widget.shortcut-widget-box {
+    min-height: 50px !important;   /* adjust as needed */
+    padding: 8px 12px !important;  /* reduce internal spacing */
 }
 
 
