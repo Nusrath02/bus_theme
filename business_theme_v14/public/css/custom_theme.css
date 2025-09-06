@@ -1141,7 +1141,7 @@ header .form-control:focus {
 
 /* move only vertically to the top */
 .widget.shortcut-widget-box .widget-control {
-    order: -1;   /* places it at the top */
+    margin-bottom: -10;   /* places it at the top */
 }
 
 
