@@ -1148,10 +1148,53 @@ header .form-control:focus {
 }
 
 
+/* Reduce height of shortcut widget containers */
 .widget.shortcut-widget-box {
-    min-height: 50px !important;   /* adjust as needed */
+    min-height: 60px !important;   /* adjust as needed */
     padding: 8px 12px !important;  /* reduce internal spacing */
 }
+
+
+
+/* Optional: also control text alignment inside */
+.widget.shortcut-widget-box .widget-head,
+.widget.shortcut-widget-box .widget-body {
+    margin: 0 !important;
+    padding: 4px 0 !important;
+}
+/* ///o opene */
+
+
+
+/* Make parent a flex column */
+
+
+
+.widget-control {
+  display: flex !important;
+  align-items: flex-start !important;  /* push children to top */
+  margin-top: 0 !important;
+}
+
+
+
+.widget-control .indicator-pill,
+.widget-control .es-icon {
+  margin-top: 0 !important;
+  align-self: flex-start !important;  /* stick each child to top */
+  line-height: 1.2 !important;        /* tighten vertical spacing */
+}
+.widget-head {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+
+
+.widget-label {
+  margin-right: 6px; /* space between Job Opening and 0 Open */
+}
+
 
 
 
