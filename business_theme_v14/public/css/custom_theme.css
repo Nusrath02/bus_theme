@@ -1124,8 +1124,8 @@ header .form-control:focus {
 
 /* reduce shortcut widget size */
 .widget.shortcut-widget-box {
-  width: 180px !important;   /* adjust as per need */
-  height: 120px !important;  /* adjust as per need */
+  width: 280px !important;   /* adjust as per need */
+  height: 50px !important;  /* adjust as per need */
   min-height: unset !important;
   min-width: unset !important;
   padding: 10px !important;  /* reduce padding inside */
