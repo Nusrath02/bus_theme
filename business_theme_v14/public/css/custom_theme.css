@@ -1125,6 +1125,25 @@ header .form-control:focus {
 
 /* ///o open//// */
 
+/* Reduce height of shortcut widget containers */
+.widget.shortcut-widget-box {
+    min-height: 60px !important;   /* adjust as needed */
+    padding: 8px 12px !important;  /* reduce internal spacing */
+}
+
+/* Optional: also control text alignment inside */
+.widget.shortcut-widget-box .widget-head,
+.widget.shortcut-widget-box .widget-body {
+    margin: 0 !important;
+    padding: 4px 0 !important;
+}
+.widget.shortcut-widget-box {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 6px 10px !important;
+}
+
+
 
 
 /* space removing */
