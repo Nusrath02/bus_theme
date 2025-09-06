@@ -1110,29 +1110,6 @@ header .form-control:focus {
 /* space removing */
 
 
-/* Remove empty widget spacers in Workspace pages */
-[data-page-route="Workspaces"] .widget.spacer,
-.widget.spacer {
-    display: none !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Reduce height of shortcut widget containers */
-.widget.shortcut-widget-box {
-    min-height: auto !important;   /* auto height */
-    height: auto !important;
-    padding: 6px 10px !important;  /* reduced padding */
-}
-
-/* Adjust text alignment inside shortcut widget */
-.widget.shortcut-widget-box .widget-head,
-.widget.shortcut-widget-box .widget-body {
-    margin: 0 !important;
-    padding: 4px 0 !important;
-}
-
 
 
 
