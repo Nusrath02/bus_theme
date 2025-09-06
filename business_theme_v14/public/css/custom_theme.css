@@ -1134,43 +1134,32 @@ header .form-control:focus {
     margin: 0 !important;
     padding: 4px 0 !important;
 }
-/* /// */
+/* ///o opene */
 
 /* Make parent a flex column */
 
+.widget-control {
+  display: flex !important;
+  align-items: flex-start !important;  /* push children to top */
+  margin-top: 0 !important;
+}
 
+.widget-control .indicator-pill,
+.widget-control .es-icon {
+  margin-top: 0 !important;
+  align-self: flex-start !important;  /* stick each child to top */
+  line-height: 1.2 !important;        /* tighten vertical spacing */
+}
 .widget-head {
-  display: flex;
-  align-items: center; /* keep both vertically aligned */
-  justify-content: space-between; /* pushes left and right */
+  display: flex !important;
+  align-items: flex-start !important;
 }
 
 .widget-label {
-  margin-right: 8px; /* small gap */
-}
-
-.widget-control {
-  margin-top: 0 !important; /* remove extra top margin */
-}
-.widget-head {
-  display: flex;
-  align-items: center;
-}
-
-.widget-control {
-  margin-left: 8px; /* small gap next to text */
+  margin-right: 6px; /* space between Job Opening and 0 Open */
 }
 
 
-.widget-head {
-  display: flex;
-  align-items: flex-start !important; /* force children to top */
-}
-
-.widget-control {
-  margin-top: 0 !important;   /* remove extra space pushing it down */
-  align-self: flex-start !important; /* individually stick it to top */
-}
 
 
 
