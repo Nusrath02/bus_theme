@@ -1111,37 +1111,28 @@ header .form-control:focus {
 
 
 /* Remove empty widget spacers in Workspace pages */
-[data-page-route="Workspaces"] .widget.spacer {
+[data-page-route="Workspaces"] .widget.spacer,
+.widget.spacer {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
 }
-.widget.spacer {
-    display: none !important;
-}
-
-
-
-/* ///o open//// */
 
 /* Reduce height of shortcut widget containers */
 .widget.shortcut-widget-box {
-    min-height: 30px !important;   /* adjust as needed */
-    padding: 8px 12px !important;  /* reduce internal spacing */
+    min-height: auto !important;   /* auto height */
+    height: auto !important;
+    padding: 6px 10px !important;  /* reduced padding */
 }
 
-/* Optional: also control text alignment inside */
+/* Adjust text alignment inside shortcut widget */
 .widget.shortcut-widget-box .widget-head,
 .widget.shortcut-widget-box .widget-body {
     margin: 0 !important;
     padding: 4px 0 !important;
 }
-.widget.shortcut-widget-box {
-    min-height: auto !important;
-    height: auto !important;
-    padding: 6px 10px !important;
-}
+
 
 
 
