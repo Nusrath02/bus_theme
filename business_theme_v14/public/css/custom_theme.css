@@ -1134,9 +1134,20 @@ header .form-control:focus {
     margin: 0 !important;
     padding: 4px 0 !important;
 }
-.widget-control{
-    margin-top:-10px;
+/* /// */
+
+/* Make parent a flex column */
+.widget.shortcut-widget-box {
+    display: flex;
+    flex-direction: column;
 }
+
+/* Move control to top */
+.widget.shortcut-widget-box .widget-control {
+    order: -1;   /* send to top */
+    margin-bottom: 6px; /* optional spacing below */
+}
+
 
 
 /* space removing */
