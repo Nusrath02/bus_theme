@@ -1110,14 +1110,9 @@ header .form-control:focus {
 
 /* space removing */
 
-
-
-
-
-
-
-
-
+.widget.spacer {
+  display: none !important;
+}
 
 
 /* space removing */
