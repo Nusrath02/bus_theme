@@ -1109,7 +1109,7 @@ header .form-control:focus {
 
 /* space removing */
 
-/* Remove empty widget spacers in Workspace pages */
+
 [data-page-route="Workspaces"] .widget.spacer,
 .widget.spacer {
     display: none !important;
