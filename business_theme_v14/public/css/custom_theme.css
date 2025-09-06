@@ -1137,10 +1137,7 @@ header .form-control:focus {
 /* /// */
 
 /* Make parent a flex column */
-.widget.shortcut-widget-box {
-    display: flex;
-    flex-direction: column;
-}
+
 
 /* move only vertically to the top */
 .widget.shortcut-widget-box .widget-control {
