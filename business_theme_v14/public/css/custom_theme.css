@@ -1139,10 +1139,28 @@ header .form-control:focus {
 /* Make parent a flex column */
 
 
-/* move only vertically to the top */
-.widget.shortcut-widget-box .widget-control {
-    margin-bottom: 50;   /* places it at the top */
+.widget-head {
+  display: flex;
+  align-items: center; /* keep both vertically aligned */
+  justify-content: space-between; /* pushes left and right */
 }
+
+.widget-label {
+  margin-right: 8px; /* small gap */
+}
+
+.widget-control {
+  margin-top: 0 !important; /* remove extra top margin */
+}
+.widget-head {
+  display: flex;
+  align-items: center;
+}
+
+.widget-control {
+  margin-left: 8px; /* small gap next to text */
+}
+
 
 
 
