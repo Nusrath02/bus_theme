@@ -1117,6 +1117,29 @@ header .form-control:focus {
   padding: 0 !important;
 }
 
-
-
 /* space removing */
+
+
+/* shortcuts conainer */
+
+/* reduce shortcut widget size */
+.widget.shortcut-widget-box {
+  width: 180px !important;   /* adjust as per need */
+  height: 120px !important;  /* adjust as per need */
+  min-height: unset !important;
+  min-width: unset !important;
+  padding: 10px !important;  /* reduce padding inside */
+  font-size: 0.85rem;        /* optional: make text smaller */
+}
+
+/* fix grid so they don’t stretch full col */
+.ce-block__content > .col-lg-3,
+.ce-block__content > .col-md-4,
+.ce-block__content > .col-sm-6 {
+  flex: unset !important;
+  max-width: unset !important;
+}
+
+
+
+/* shoretcut container */
