@@ -1120,6 +1120,19 @@ header .form-control:focus {
 .widget.spacer {
     display: none !important;
 }
+/* ///1//// */
+
+/* Remove the empty spacer */
+.widget.spacer {
+    display: none !important;
+}
+
+/* Reduce spacing inside content blocks */
+.ce-block__content {
+    margin: 0 !important;
+    padding: 5px 0 !important;   /* adjust as needed */
+    min-height: auto !important;
+}
 
 
 /* space removing */
