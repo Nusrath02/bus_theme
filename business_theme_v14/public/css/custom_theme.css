@@ -1135,7 +1135,7 @@ header .form-control:focus {
     padding: 4px 0 !important;
 }
 .widget-control{
-    margin-bottom:30px;
+    margin-top:-10px;
 }
 
 
