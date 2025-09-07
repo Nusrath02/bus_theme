@@ -1132,6 +1132,12 @@ header .form-control:focus {
   min-height: 50px !important;
 }
 
+.ce-block__content {
+  width: 400px !important;
+  height: 200px !important;
+}
+
+
 
 
 
