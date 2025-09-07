@@ -1,14 +1,4 @@
-/* Use more specific selectors */
-div.ce-header {
-    background-color: #3498db !important;
-    color: white !important;
-}
 
-/* Or even more specific */
-.codex-editor .ce-header {
-    background-color: #3498db !important;
-    color: white !important;
-}
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
 /* Preserves ITChamps branding while achieving Image 1 layout */
@@ -1120,12 +1110,7 @@ header .form-control:focus {
 
 /* space removing */
 
-.widget.spacer {
-  display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+
 
 /* space removing */
 
