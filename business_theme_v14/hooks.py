@@ -19,7 +19,7 @@ app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
 # custom_theme
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-# app_include_js = "/assets/business_theme_v14/js/Horizontal.js"
+app_include_js = "/assets/business_theme_v14/js/Horizontal.js"
 # Favicon
 # Website settings
 website_context = {
