@@ -1151,20 +1151,29 @@ header .form-control:focus {
 /* big container */
 
 /* Target the outer container */
-.ce-block.col-xs-12.col-sm-6.col-md-4 {
+/* Target the Recruitment page column */
+[data-page-route="Recruitment"] .ce-block.col-xs-12.col-sm-6.col-md-4 {
     min-height: auto !important;
     height: auto !important;
-    flex: 0 0 auto !important;   /* stop stretching in flex/grid */
-    padding: 5px !important;     /* reduce extra spacing around */
+    flex: 0 0 auto !important;     /* stop stretching */
+    padding: 6px !important;       /* reduce spacing around */
 }
 
-/* Now shrink the widget inside */
-.ce-block.col-xs-12.col-sm-6.col-md-4 .widget.links-widget-box {
-    padding: 6px 10px !important;
-    min-height: 60px !important;   /* you can adjust this number */
+/* Shrink the widget inside */
+[data-page-route="Recruitment"] .ce-block.col-xs-12.col-sm-6.col-md-4 .widget.links-widget-box {
+    padding: 6px 10px !important;  /* was 20px */
+    min-height: 60px !important;   /* reduce default */
     height: auto !important;
     box-sizing: border-box !important;
 }
+
+/* Compress widget content (title + body) */
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-head,
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-body {
+    margin: 0 !important;
+    padding: 4px 6px !important;
+}
+
 
 
 
