@@ -1120,29 +1120,18 @@ header .form-control:focus {
 
 /* shortcuts conainer */
 
-/* Target the container */
-.ce-block_content {
-  max-width: 200px !important;   /* reduce width */
-  min-width: 180px !important;   /* stop it from expanding too much */
-  height: auto !important;       /* let it shrink automatically */
-  padding: 6px !important;       /* reduce inside spacing */
-  margin: 6px !important;        /* reduce outside spacing */
+/* Reduce height & width of ce-block__content */
+.ce-block__content {
+  max-width: 600px !important;   /* or any value you want */
+  height: auto !important;       /* use fixed px/rem if you want smaller */
+  padding: 8px !important;       /* adjust padding to shrink inside spacing */
+  margin: 0 auto;                /* keeps it centered */
+}
+.ce-block__content {
+  max-width: 70% !important;
+  min-height: 100px !important;
 }
 
-/* Compact header ("Jobs") */
-.ce-block_content .widget-head {
-  margin-bottom: 2px !important;
-  padding: 0 !important;
-  min-height: auto !important;
-  border: none !important;       /* remove underline */
-}
-
-/* Compact links */
-.ce-block_content .widget-body a {
-  margin: 2px 0 !important;
-  line-height: 1.2 !important;
-  font-size: 13px !important;    /* smaller text if needed */
-}
 
 
 
