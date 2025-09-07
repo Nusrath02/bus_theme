@@ -2206,33 +2206,3 @@ body {
 }
 
 
-/* ==================== BACKGROUND GRADIENT FIXES ==================== */
-/* Ensure gradients stay in background, not on top of content */
-
-body,
-html,
-.content.page-container,
-#page-Workspaces,
-div[data-page-route="workspaces"] {
-    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
-    min-height: 100vh !important;
-    z-index: -1 !important;
-}
-
-/* Fix header/navbar to stay on top but with transparent/light background */
-.sticky-top,
-header.navbar,
-.navbar.navbar-expand {
-    background: rgba(227, 242, 253, 0.9) !important;
-    backdrop-filter: blur(10px) !important;
-    z-index: 1000 !important;
-}
-
-/* Ensure main content area is above background */
-.layout-main-section,
-.main-content,
-.content {
-    position: relative !important;
-    z-index: 1 !important;
-    background: transparent !important;
-}
