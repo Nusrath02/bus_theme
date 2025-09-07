@@ -2204,3 +2204,12 @@ body {
     background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
     min-height: 100vh !important;
 }
+
+
+/* ==================== CODEX EDITOR OVERLAY BACKGROUND ==================== */
+/* Add blue gradient to codex editor overlay */
+
+.codex-editor-overlay,
+div.codex-editor-overlay {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+}
