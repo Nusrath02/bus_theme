@@ -1138,6 +1138,35 @@ header .form-control:focus {
 }
 
 
+/* open */
+/* Target shortcut widget container */
+.widget.shortcut-widget-box {
+  max-width: 250px !important;   /* reduce width */
+  height: auto !important;       /* shrink based on content */
+  padding: 8px !important;       /* reduce inside spacing */
+  margin: 6px !important;        /* reduce outside spacing */
+  font-size: 13px !important;    /* smaller text inside */
+}
+
+/* Optional: compact header */
+.widget.shortcut-widget-box .widget-head {
+  margin-bottom: 2px !important;
+  padding: 0 !important;
+  min-height: auto !important;
+}
+
+/* Optional: compact links */
+.widget.shortcut-widget-box a {
+  margin: 2px 0 !important;
+  line-height: 1.2 !important;
+}
+
+
+
+
+/* open */
+
+
 
 
 
