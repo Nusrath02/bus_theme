@@ -1120,24 +1120,33 @@ header .form-control:focus {
 
 /* shortcuts conainer */
 
-.widget.links.widget-box {
-  padding: 8px 12px;   /* reduce internal spacing */
-  margin-bottom: 10px; /* reduce spacing below the box */
-  max-width: 400px;    /* reduce container width */
+/* Reduce space below "Jobs" */
+.widget-head {
+  margin-bottom: 2px !important;   /* reduce gap */
+  padding-bottom: 0 !important;
+  min-height: auto !important;
 }
 
-.widget-head {
-  margin-bottom: 4px; /* reduce bottom spacing */
-  min-height: 0;      /* avoid forcing height */
-  padding: 0;         /* remove padding */
+/* Remove the thin horizontal line */
+.widget-head::after,
+.widget-head hr {
+  display: none !important;
 }
-.widget-head {
-  display: none;
-}
+
+/* Reduce spacing between links */
 .widget-body a {
-  margin: 2px 0;   /* reduce vertical gap */
-  display: block;  /* ensure clean stacking */
+  margin: 2px 0 !important;   /* tighter spacing */
+  display: block;
+  line-height: 1.2;           /* compact line height */
 }
+
+/* Reduce overall container size */
+.widget-box {
+  padding: 8px 12px !important; 
+  margin: 6px 0 !important;
+  max-width: 350px;           /* adjust container width */
+}
+
 
 
 
