@@ -1140,8 +1140,10 @@ header .form-control:focus {
 }
 
 .widget.shortcut-widget-box .widget-title {
-    margin-top: 8px !important;   /* increase this value to push further down */
+    position: relative;
+    top: 6px;   /* push down by 6px */
 }
+
 
 
 /* shortcuts conainer */
