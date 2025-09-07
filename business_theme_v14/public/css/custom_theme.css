@@ -1148,6 +1148,20 @@ header .form-control:focus {
 
 /* shortcuts conainer */
 
+/* big container */
+
+/* Recruitment - reduce height of Masters & Reports cards */
+[data-page-route="Recruitment"] .widget.links-widget-box {
+    padding: 6px 10px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+
+
+
+/* big container */
+
 
 
 
