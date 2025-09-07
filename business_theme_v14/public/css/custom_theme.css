@@ -1131,7 +1131,7 @@ header .form-control:focus {
   flex-direction: column;     /* stack content neatly */
   justify-content: flex-start;
   align-items: flex-start;
-  overflow: hidden;           /* hide overflowing content */
+  overflow: hidden;         
   border-radius: 12px;        /* optional: smooth edges */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   background: #fff;
