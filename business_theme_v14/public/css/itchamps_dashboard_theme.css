@@ -2204,3 +2204,18 @@ body {
     background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
     min-height: 100vh !important;
 }
+
+
+/* ==================== HEADER/STICKY TOP BACKGROUND ==================== */
+/* Add blue gradient to header and sticky elements */
+
+.sticky-top,
+header.navbar,
+.navbar.navbar-expand {
+    background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 70%, #64b5f6 100%) !important;
+}
+
+/* Ensure sticky elements maintain gradient */
+div.sticky-top {
+    background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 70%, #64b5f6 100%) !important;
+}
