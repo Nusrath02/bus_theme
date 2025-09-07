@@ -1,12 +1,13 @@
-.ce-header {
-    background-color: #your-color-code !important;
-    color: #text-color !important;
+/* Use more specific selectors */
+div.ce-header {
+    background-color: #3498db !important;
+    color: white !important;
 }
 
-/* Example with specific colors */
-.ce-header {
-    background-color: #3498db !important;  /* Blue background */
-    color: white !important;                /* White text */
+/* Or even more specific */
+.codex-editor .ce-header {
+    background-color: #3498db !important;
+    color: white !important;
 }
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
