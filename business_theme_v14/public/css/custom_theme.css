@@ -1,1 +1,9 @@
+.ce-block__content {
+  max-width: 1200px;   /* container width */
+  margin: 0 auto;      /* center horizontally */
+  padding: 20px;       /* inner spacing */
+  border-radius: 10px; /* optional */
+  background: #fff;    /* optional background */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional container shadow */
+}
 
