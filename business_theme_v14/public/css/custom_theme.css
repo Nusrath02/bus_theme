@@ -1150,25 +1150,21 @@ header .form-control:focus {
 
 /* big container */
 
-/* Target Recruitment page containers */
-[data-page-route="Recruitment"] .widget.links-widget-box {
-    padding: 5px !important;       /* override inline 20px */
-    min-height: 50px !important;   /* force smaller height */
-    height: auto !important;       /* allow shrink */
-    box-sizing: border-box !important;
+/* Shrink only the "Interviews" container */
+div[card_name="Interviews"] .widget.links-widget-box {
+    padding: 6px 10px !important;
+    min-height: 60px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
 }
 
-/* Also compress inside elements */
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-head,
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-body {
-    padding: 2px 4px !important;
+/* Also reduce inside padding */
+div[card_name="Interviews"] .widget-head,
+div[card_name="Interviews"] .widget-body {
+    padding: 4px 6px !important;
     margin: 0 !important;
 }
 
-
-[data-page-route="Recruitment"] .widget.links-widget-box {
-    flex: 0 0 auto !important;
-}
 
 
 
