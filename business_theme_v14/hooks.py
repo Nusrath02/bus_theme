@@ -13,8 +13,8 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
-app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
+app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
+# app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
 
 # custom_theme
 
