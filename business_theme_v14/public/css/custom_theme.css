@@ -1174,6 +1174,18 @@ header .form-control:focus {
     padding: 4px 6px !important;
 }
 
+[data-page-route="Recruitment"] .widget.links-widget-box {
+    background: red !important;   /* just to TEST */
+    padding: 5px !important;
+    min-height: 50px !important;
+    height: auto !important;
+}
+[data-page-route="Recruitment"] .widget.links-widget-box .link-item {
+    padding: 2px 4px !important;
+    line-height: 1.2 !important;
+}
+
+
 
 
 
