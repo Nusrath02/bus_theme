@@ -1122,7 +1122,7 @@ header .form-control:focus {
 
 /* Control the overall container */
 .widget-box {
-  max-width: 300px !important;   /* reduce width */
+  max-width: 100px !important;   /* reduce width */
   height: auto !important;       /* adjust automatically */
   padding: 6px 10px !important;  /* tighter spacing inside */
   margin: 4px auto !important;   /* less margin outside */
