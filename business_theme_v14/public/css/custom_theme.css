@@ -1,4 +1,13 @@
+.ce-header {
+    background-color: #your-color-code !important;
+    color: #text-color !important;
+}
 
+/* Example with specific colors */
+.ce-header {
+    background-color: #3498db !important;  /* Blue background */
+    color: white !important;                /* White text */
+}
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
 /* Preserves ITChamps branding while achieving Image 1 layout */
