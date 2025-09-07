@@ -1150,10 +1150,26 @@ header .form-control:focus {
 
 /* big container */
 
+/* Target Recruitment page containers */
 [data-page-route="Recruitment"] .widget.links-widget-box {
-    height: 100px !important;  /* or any fixed value you like */
-    overflow: hidden !important;
+    padding: 5px !important;       /* override inline 20px */
+    min-height: 50px !important;   /* force smaller height */
+    height: auto !important;       /* allow shrink */
+    box-sizing: border-box !important;
 }
+
+/* Also compress inside elements */
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-head,
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-body {
+    padding: 2px 4px !important;
+    margin: 0 !important;
+}
+
+
+[data-page-route="Recruitment"] .widget.links-widget-box {
+    flex: 0 0 auto !important;
+}
+
 
 
 
