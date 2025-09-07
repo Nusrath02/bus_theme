@@ -1140,13 +1140,21 @@ header .form-control:focus {
 
 /* open */
 /* Target shortcut widget container */
+/* Target shortcut widget container */
 .widget.shortcut-widget-box {
   max-width: 250px !important;   /* reduce width */
-  height: auto !important;       /* shrink based on content */
-  padding: 8px !important;       /* reduce inside spacing */
-  margin: 6px !important;        /* reduce outside spacing */
-  font-size: 13px !important;    /* smaller text inside */
+  height: 200px !important;      /* fixed height */
+  padding: 8px !important;       /* inner spacing */
+  margin: 6px !important;        /* space between boxes */
+  font-size: 13px !important;    /* slightly smaller text */
+  overflow: hidden;              /* hide overflow if content is taller */
 }
+
+/* Optional: if you want scroll inside instead of hiding content */
+.widget.shortcut-widget-box {
+  overflow-y: auto;  /* scroll vertically */
+}
+
 
 /* Optional: compact header */
 .widget.shortcut-widget-box .widget-head {
