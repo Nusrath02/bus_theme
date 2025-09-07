@@ -1150,20 +1150,22 @@ header .form-control:focus {
 
 /* big container */
 
-/* Shrink only the "Interviews" container */
-div[card_name="Interviews"] .widget.links-widget-box {
-    padding: 6px 10px !important;
-    min-height: 60px !important;
+/* Target the outer container */
+.ce-block.col-xs-12.col-sm-6.col-md-4 {
+    min-height: auto !important;
     height: auto !important;
-    flex: 0 0 auto !important;
+    flex: 0 0 auto !important;   /* stop stretching in flex/grid */
+    padding: 5px !important;     /* reduce extra spacing around */
 }
 
-/* Also reduce inside padding */
-div[card_name="Interviews"] .widget-head,
-div[card_name="Interviews"] .widget-body {
-    padding: 4px 6px !important;
-    margin: 0 !important;
+/* Now shrink the widget inside */
+.ce-block.col-xs-12.col-sm-6.col-md-4 .widget.links-widget-box {
+    padding: 6px 10px !important;
+    min-height: 60px !important;   /* you can adjust this number */
+    height: auto !important;
+    box-sizing: border-box !important;
 }
+
 
 
 
