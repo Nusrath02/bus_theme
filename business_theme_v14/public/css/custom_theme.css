@@ -1157,6 +1157,32 @@ header .form-control:focus {
 }
 
 
+/* Reduce height only for shortcut boxes with ellipsis */
+.widget.shortcut-widget-box.ellipsis {
+  height: 140px !important;    /* fixed smaller height */
+  max-height: 140px !important;
+  padding: 8px !important;     /* keep it neat */
+}
+
+/* Align title + badge on one line */
+.widget.shortcut-widget-box.ellipsis .widget-head {
+  display: flex;
+  justify-content: space-between;  /* title left, badge right */
+  align-items: center;
+  margin-bottom: 4px !important;
+  padding: 0 !important;
+}
+
+/* Tweak badge appearance */
+.widget.shortcut-widget-box.ellipsis .badge {
+  margin-left: 6px;
+  font-size: 12px !important;
+  padding: 2px 6px !important;
+  line-height: 1.2;
+}
+
+
+
 
 
 
