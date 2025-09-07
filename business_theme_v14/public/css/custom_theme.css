@@ -1150,19 +1150,11 @@ header .form-control:focus {
 
 /* big container */
 
-/* Recruitment page: shrink Masters & Reports widget containers */
 [data-page-route="Recruitment"] .widget.links-widget-box {
-    padding: 6px 10px !important;   /* reduce inner space */
-    min-height: unset !important;   /* override default min-height */
-    height: auto !important;        /* let it fit content */
+    height: 100px !important;  /* or any fixed value you like */
+    overflow: hidden !important;
 }
 
-/* Also shrink inside spacing (title, body, etc.) */
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-head,
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-body {
-    margin: 0 !important;
-    padding: 4px 6px !important;
-}
 
 
 
