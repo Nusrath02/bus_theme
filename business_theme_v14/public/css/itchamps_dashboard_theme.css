@@ -2181,3 +2181,26 @@ header .form-control:focus {
 }
 
 /* ==================== END OF STYLING ==================== */
+
+
+/* ==================== PAGE CONTAINER BACKGROUND ==================== */
+/* Add blue gradient background to the main page container */
+
+/* Target the specific page container div */
+#page-Workspaces,
+.content.page-container {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* Alternative broader targeting if the above doesn't work */
+div[data-page-route="workspaces"] {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* Ensure the body also has the gradient as fallback */
+body {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
