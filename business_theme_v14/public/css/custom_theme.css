@@ -1,3 +1,8 @@
+/* Remove empty gap under Show Tags */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;   /* kill extra gap */
+    padding-bottom: 0 !important;  /* kill extra space inside */
+}
 
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
