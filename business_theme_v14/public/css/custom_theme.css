@@ -1149,13 +1149,23 @@ header .form-control:focus {
 /* shortcuts conainer */
 
 /* big container */
-.layout-main-section .widget {
-    display: flex;
-    flex-direction: column;
+
+div[data-widget-name="rlaSlttkdm"] {
+    order: 999 !important;
+    align-self: flex-end !important;
 }
 
-.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
-    margin-top: auto;
+.layout-main-section .row {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+div[data-widget-name="rlaSlttkdm"] {
+    order: 999 !important;
+}
+
+.page-main-content .widget-shortcut-widget-box:has([data-widget-name="rlaSlttkdm"]) {
+    order: 999 !important;
 }
 
 
