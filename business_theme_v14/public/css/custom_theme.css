@@ -1154,20 +1154,6 @@ header .form-control:focus {
     order: 999;
 }
 
-.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.layout-main-section .widget {
-    display: flex;
-    flex-direction: column;
-}
-
-.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
-    margin-top: auto;
-}
 
 
 
