@@ -1110,22 +1110,10 @@ header .form-control:focus {
 
 
 /* ///// */
-/* Remove unwanted space after 'Hide Saved' */
-/* Remove bottom gap in sidebar */
-.list-sidebar,
-.list-sidebar .sidebar-menu {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-}
-
-/* Specific to last section (Hide Saved) */
+/* Remove ONLY the extra space after "Hide Saved" */
 .sidebar-section.save-filter-section {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-}
-.list-sidebar ul {
-    margin-bottom: 0 !important;
 }
 
 
