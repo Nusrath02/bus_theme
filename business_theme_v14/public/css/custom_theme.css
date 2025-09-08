@@ -1127,22 +1127,29 @@ header .form-control:focus {
 }
 
 /* Optional: also control text alignment inside */
-.widget.shortcut-widget-box .widget-head,
-.widget.shortcut-widget-box .widget-body {
-    margin: 0 !important;
-    padding: 4px 0 !important;
-}
-
+/* Keep your container sizing */
 .widget.shortcut-widget-box {
-    min-height: auto !important;
-    height: auto !important;
-    padding: 6px 10px !important;
+    min-height: 60px !important;
+    padding: 8px 12px !important;
 }
 
-.widget.shortcut-widget-box .widget-title {
-    position: relative;
-    top: 6px;   /* push down by 6px */
+/* Align title and subtitle in the same line */
+.widget.shortcut-widget-box .widget-head {
+    display: flex;
+    align-items: center;   /* vertical alignment */
+    justify-content: space-between; /* push title left, count right */
+    margin: 0 !important;
+    padding: 0 !important;
 }
+
+/* Reset any manual offsets */
+.widget.shortcut-widget-box .widget-title,
+.widget.shortcut-widget-box .widget-subtitle {
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 
 
 
@@ -1150,9 +1157,7 @@ header .form-control:focus {
 
 /* big container */
 
-.ellipsis{
-    margin-top:-10px !important;
-}
+
 
 
 
@@ -1168,20 +1173,7 @@ header .form-control:focus {
 
 /* big container */
 
-/* Make the widget-head arrange items side by side */
-.widget-head {
-    display: flex;
-    justify-content: space-between; /* pushes title left and count right */
-    align-items: center; /* vertically centers them */
-}
 
-/* Ensure the title and subtitle don't break */
-.widget-title, 
-.widget-subtitle {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-}
 
 
 
