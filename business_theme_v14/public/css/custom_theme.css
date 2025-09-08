@@ -1121,6 +1121,19 @@ header .form-control:focus {
     margin: 0 !important;
     padding: 0 !important;
 }
+.list-sidebar {
+    padding-top: 0 !important;  /* remove internal padding */
+    margin-top: 0 !important;   /* remove external gap */
+}
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.sidebar-section.filter-section {
+    margin-top: -10px !important;
+}
+
 
 
 
