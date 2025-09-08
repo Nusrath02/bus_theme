@@ -1107,6 +1107,8 @@ header .form-control:focus {
     color: #fff !important;
 }
 
+
+
 /* ///// */
 /* Target the entire sidebar column */
 .list-sidebar {
@@ -1119,6 +1121,20 @@ header .form-control:focus {
     padding: 6px 8px !important;
     margin-bottom: 4px !important;
 }
+
+
+/* Filter section */
+.sidebar-section.filter-section {
+    max-height: 60px !important;
+    overflow-y: auto !important;
+}
+
+/* Save filter section */
+.sidebar-section.save-filter-section {
+    max-height: 60px !important;
+    overflow-y: auto !important;
+}
+
 
 
 /* ///// */
