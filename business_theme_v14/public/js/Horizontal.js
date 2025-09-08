@@ -184,3 +184,21 @@
 
 
 frappe.ready(function() { let input = document.querySelector( '.save-filter-section .input-with-feedback' ); if (input) { input.addEventListener('input', function() { if (this.value.trim() !== "") { // show extra controls only when user types something document.querySelectorAll( '.save-filter-section .sidebar-action,' + '.save-filter-section .saved-filters-preview,' + '.save-filter-section .frappe-control[data-fieldtype="Check"]' ).forEach(el => { el.style.display = "block"; }); } }); } }); frappe.ready(function() { // Select the input and the hide saved section let filterInput = document.querySelector(".input-with-feedback.form-control.input-xs"); let hideSaved = document.querySelector(".save-filter-section .sidebar-action"); if (filterInput && hideSaved) { // Initially hide the section hideSaved.classList.add("hide-saved-hidden"); // Add event listener filterInput.addEventListener("input", function() { if (this.value.trim() === "") { hideSaved.classList.add("hide-saved-hidden"); } else { hideSaved.classList.remove("hide-saved-hidden"); } }); } });
+
+                                                                                                                                                                      
+ const widgets = document.querySelectorAll('.widget-shortcut-widget-box');
+let jobOpeningWidget = null;
+widgets.forEach(widget => {
+    const titleElement = widget.querySelector('.widget-title .ellipsis');
+    if (titleElement && titleElement.textContent.trim() === 'Job Opening') {
+        jobOpeningWidget = widget.closest('.widget-shortcut-widget-box');
+    }
+});
+if (jobOpeningWidget) {
+    const parent = jobOpeningWidget.parentElement;
+    parent.appendChild(jobOpeningWidget);
+    console.log('Job Opening widget moved to bottom');
+} else {
+    console.log('Job Opening widget not found');
+}                                                                                                                                                                     
+                                                                                                                                                                      
