@@ -1049,6 +1049,31 @@ header .form-control:focus {
   color: #fff !important;
 }
 
+/* ////////////tagspace///// */
+/* Remove unwanted gap below "Show Tags" */
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    display: none !important; /* hides the empty section */
+}
+
+.sidebar-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: unset !important;
+}
+
+
+/* ///////////tagspace///////// */
+
 
 /* hide */
 
@@ -1109,7 +1134,9 @@ header .form-control:focus {
 
 
 
-/* ///// */
+/* ///sidebar space removed// */
+
+
 /* Remove ONLY the extra space after "Hide Saved" */
 /* Sidebar section: remove extra gap but allow full scroll */
 .sidebar-section.save-filter-section {
@@ -1144,12 +1171,7 @@ header .form-control:focus {
 
 
 
-
-
-
-
-
-/* ///// */
+/* ///sidebar space removed// */
 
 /* space removing */
 .widget.spacer {
