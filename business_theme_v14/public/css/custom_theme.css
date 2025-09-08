@@ -1110,30 +1110,23 @@ header .form-control:focus {
 
 
 /* ///// */
-/* Target the entire sidebar column */
+/* Shrink the entire left sidebar column */
+.layout-side-section {
+    flex: 0 0 auto !important;       /* stop it from stretching */
+    height: 300px !important;        /* set desired height */
+    overflow-y: auto !important;     /* add scroll if content exceeds */
+}
+
+/* Make sure inner sidebar also respects this height */
 .list-sidebar {
-    max-height: 100px !important;  /* reduce as needed */
-    overflow-y: auto !important;   /* enable scroll when content overflows */
-}
-
-/* If you want to reduce inner paddings/gaps */
-.list-sidebar .sidebar-section {
-    padding: 6px 8px !important;
-    margin-bottom: 4px !important;
-}
-
-
-/* Filter section */
-.sidebar-section.filter-section {
-    max-height: 60px !important;
+    height: 100% !important;
+    max-height: 100% !important;
     overflow-y: auto !important;
 }
-
-/* Save filter section */
-.sidebar-section.save-filter-section {
-    max-height: 60px !important;
-    overflow-y: auto !important;
+.layout-main-section-wrapper {
+    align-items: flex-start !important; /* keep sidebar aligned at top */
 }
+
 
 
 
