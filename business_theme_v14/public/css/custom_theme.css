@@ -1150,15 +1150,23 @@ header .form-control:focus {
 
 /* big container */
 
-/* Reduce gap between "Jobs" title and first item */
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-head {
-    margin-bottom: 2px !important;   /* reduce title bottom spacing */
-    padding-bottom: 2px !important;  /* shrink padding */
+.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
+    order: 999;
 }
 
-/* Remove extra top margin on list items */
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-body .link-item {
-    margin-top: 2px !important;   /* was bigger before */
+.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.layout-main-section .widget {
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
+    margin-top: auto;
 }
 
 
