@@ -1177,7 +1177,7 @@ header .form-control:focus {
 .widget.shortcut-widget-box .widget-title {
     position: absolute;
     top: 8px;   /* adjust spacing from bottom */
-    left: 12px;    /* adjust spacing from left */
+    
     font-weight: 600; /* optional: make it bolder */
 }
 
