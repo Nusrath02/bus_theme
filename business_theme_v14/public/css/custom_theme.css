@@ -1133,6 +1133,16 @@ header .form-control:focus {
 }
 
 
+.list-sidebar.overlay-sidebar {
+    margin-top: 0 !important;   /* remove any default top margin */
+    padding-top: 4px !important; /* adjust: try 0–8px for fine-tuning */
+}
+.sidebar-section.filter-section {
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+}
+
+
 
 
 
