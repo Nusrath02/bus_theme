@@ -865,10 +865,10 @@ header .form-control:focus {
     border: none !important;
     padding: 0 0 12px 0 !important;
     width: 180px !important;
-    max-height: 20vh !important;  /* smaller sidebar height */
+    max-height: 13vh !important;  /* smaller sidebar height */
     overflow-y: auto !important;
     box-shadow: none !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 1px !important;
 }
 
 /* Hide scrollbar */
