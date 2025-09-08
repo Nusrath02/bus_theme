@@ -1168,16 +1168,19 @@ header .form-control:focus {
 
 /* big container */
 
-/* Move Job Opening widget to bottom */
-.widget-shortcut-widget-box:has(.widget-title .ellipsis[title*="Job Opening"]) {
-    order: 999 !important;
+/* Target only shortcut widgets */
+.widget.shortcut-widget-box {
+    position: relative; /* make it a reference for absolute child */
 }
 
-/* Ensure parent container supports flex ordering */
-.layout-main-section .widget {
-    display: flex !important;
-    flex-direction: column !important;
+/* Move the title to the bottom */
+.widget.shortcut-widget-box .widget-title {
+    position: absolute;
+    bottom: 8px;   /* adjust spacing from bottom */
+    left: 12px;    /* adjust spacing from left */
+    font-weight: 600; /* optional: make it bolder */
 }
+
 
 
 
