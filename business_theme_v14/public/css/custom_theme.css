@@ -1110,7 +1110,7 @@ header .form-control:focus {
 /* ///// */
 /* Target the entire sidebar column */
 .list-sidebar {
-    max-height: 400px !important;  /* reduce as needed */
+    max-height: 100px !important;  /* reduce as needed */
     overflow-y: auto !important;   /* enable scroll when content overflows */
 }
 
