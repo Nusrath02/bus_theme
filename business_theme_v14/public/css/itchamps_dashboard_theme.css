@@ -2332,3 +2332,479 @@ header * {
     outline: 2px solid green !important;
 }
 */
+
+
+
+
+
+
+
+
+
+/* Abhi */
+.col-lg-2.layout-side-section,
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar {
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 75vh !important;   /* reduced from 80vh → 70vh */
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;       /* added padding for spacing */
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+}
+
+/* Remove bottom margin/padding from inner elements */
+.list-sidebar.overlay-sidebar .sidebar-menu,
+.list-sidebar.overlay-sidebar .standard-sidebar,
+.list-sidebar.overlay-sidebar .sidebar-label,
+.list-sidebar.overlay-sidebar .standard-sidebar-item {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Hide webkit scrollbars */
+.col-lg-2.layout-side-section::-webkit-scrollbar,
+.list-sidebar.overlay-sidebar::-webkit-scrollbar,
+.list-sidebar.overlay-sidebar *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+
+/* Hide JS-injected rails/thumbs */
+.list-sidebar.overlay-sidebar .ps__rail-y,
+.list-sidebar.overlay-sidebar .ps__rail-y .ps__thumb-y,
+.list-sidebar.overlay-sidebar .simplebar-track,
+.list-sidebar.overlay-sidebar .simplebar-scrollbar,
+.list-sidebar.overlay-sidebar .os-scrollbar-vertical,
+.list-sidebar.overlay-sidebar .os-scrollbar-track,
+.list-sidebar.overlay-sidebar .os-scrollbar-handle,
+.list-sidebar.overlay-sidebar .nano-scrollbar,
+.list-sidebar.overlay-sidebar .scrollbar-track,
+.list-sidebar.overlay-sidebar .scrollbar-thumb,
+.list-sidebar.overlay-sidebar .mCSB_scrollTools,
+.list-sidebar.overlay-sidebar .close-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Sidebar items compact size */
+/* Ultra-compact sidebar items */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .sidebar-item,
+.list-sidebar .module-sidebar-item {
+    font-size: 8px !important;       /* very small text */
+    padding: 2px 5px !important;      /* minimal padding */
+    margin: 1px 0 !important;         /* tight spacing */
+    line-height: 1 !important;        /* no extra vertical space */
+    border-radius: 4px !important;    /* smaller rounde corners */
+}
+
+/* Ultra-compact icons */
+.list-sidebar.overlay-sidebar .sidebar-item .icon,
+.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
+    font-size: 8px !important;       /* shrink icons */
+    margin-right: 3px !important;     /* tighter icon gap */
+    min-width: 10px !important;       /* very narrow */
+}
+
+
+
+/* Hover effect */
+.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
+.list-sidebar.overlay-sidebar .sidebar-item:hover,
+.list-sidebar .module-sidebar-item:hover {
+    background: #2563eb !important;    /* brighter hover color */
+    color: #fff !important;
+    transform: scale(1.02);
+    border-radius: 10px !important;
+}
+
+
+
+
+
+
+
+/* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
+
+
+
+/* ==================== SIDEBAR WRAPPER ==================== */
+/* ==================== SIDEBAR WRAPPER ==================== */
+/* ================== COMMON SIDEBAR BOX STYLE ================== */
+/* ================== CLEAN MINIMAL SIDEBAR ================== */
+
+/* Sidebar        wrapper */
+/* ================== CLEAN MINIMAL SIDEBAR ================== */
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 0 12px 0 !important;
+    width: 180px !important;
+    max-height: 20vh !important;  /* smaller sidebar height */
+    overflow-y: auto !important;
+    box-shadow: none !important;
+    margin-bottom: 16px !important;
+}
+
+/* Hide scrollbar */
+.sidebar-section.filter-section::-webkit-scrollbar,
+.sidebar-section.save-filter-section::-webkit-scrollbar {
+    display: none !important;
+}
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    scrollbar-width: none !important;
+}
+
+/* Labels */
+.sidebar-section.filter-section .sidebar-label,
+.sidebar-section.save-filter-section .sidebar-label {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin-bottom: 6px !important;
+    text-transform: none !important;
+}
+
+/* Inputs & selects */
+.sidebar-section.filter-section .form-control,
+.sidebar-section.save-filter-section .form-control,
+.sidebar-section.filter-section select,
+.sidebar-section.save-filter-section select,
+.sidebar-section.filter-section input[type="text"],
+.sidebar-section.save-filter-section input[type="text"] {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 8px !important;   /* tighter padding */
+    font-size: 12px !important;    /* smaller font */
+    color: #111827 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Focus */
+.sidebar-section.filter-section .form-control:focus,
+.sidebar-section.save-filter-section .form-control:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2) !important;
+    background: #fff !important;
+}
+
+/* Buttons */
+.sidebar-section.filter-section .btn,
+.sidebar-section.save-filter-section .btn,
+.sidebar-section.filter-section button,
+.sidebar-section.save-filter-section button {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 5px 8px !important;   /* smaller */
+    font-size: 12px !important;    /* smaller */
+    font-weight: 500 !important;
+    color: #111827 !important;
+    margin-bottom: 6px !important;
+    width: 100% !important;
+}
+.sidebar-section.filter-section .btn:hover,
+.sidebar-section.save-filter-section .btn:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+    border-color: #2563eb !important;
+}
+
+/* Dropdowns */
+/* ================== DROPDOWN POPUP ================== */
+/* ====== SIDEBAR GROUP-BY POPUP (compact, clean, fully visible) ====== */
+/* ====== FIXED POSITIONING FOR GROUP-BY POPUP ====== */
+.sidebar-section .dropdown-menu.group-by-dropdown,
+.dropdown-menu.group-by-dropdown.show {
+  position: absolute !important;   /* stays anchored to parent field */
+  top: calc(100% + 6px) !important; /* small gap below trigger */
+  left: 0 !important;
+  right: auto !important;
+  margin-top: 4px !important;
+
+  /* prevent cursor-based movement */
+  transform: none !important;
+  pointer-events: auto !important;
+
+  /* size & style (same as before) */
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  max-height: 190px !important;
+  overflow-y: auto !important;
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
+  z-index: 2000 !important;
+}
+
+
+/* search box inside the popup (if present) */
+.dropdown-menu.group-by-dropdown .form-control {
+  font-size: 12px !important;
+  padding: 6px 8px !important;
+  background: #f9fafb !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  color: #111827 !important;
+  margin: 16px 18px !important;
+}
+.dropdown-menu.group-by-dropdown .form-control:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37,99,235,.15) !important;
+  background: #ffffff !important;
+}
+
+/* items */
+.dropdown-menu.group-by-dropdown .dropdown-item {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  color: #374151 !important;
+  border-radius: 4px !important;
+}
+.dropdown-menu.group-by-dropdown .dropdown-item:hover,
+.dropdown-menu.group-by-dropdown .dropdown-item:focus {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* empty state like "No filters found" */
+.dropdown-menu.group-by-dropdown .empty-state,
+.dropdown-menu.group-by-dropdown .no-results,
+.dropdown-menu.group-by-dropdown .group-by-empty {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+  padding: 8px 10px !important;
+}
+
+
+/* tags */
+
+
+.dropdown-menu.group-by-dropdown.show,
+.dropdown-menu.list-stats-dropdown.show {
+  position: absolute !important;     /* lock to parent field */
+  top: calc(100% + 6px) !important;  /* small gap below trigger */
+  left: 0 !important;
+  right: auto !important;
+  margin-top: 4px !important;
+
+  /* prevent cursor-follow movement */
+  transform: none !important;
+  pointer-events: auto !important;
+
+  /* size & style */
+  min-width: 160px !important;       /* compact popup */
+  max-width: 220px !important;       
+  max-height: 190px !important;      /* prevent oversized popup */
+  overflow-y: auto !important;
+
+  background: #ffffff !important;    /* clean white */
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
+  z-index: 2000 !important;
+}
+
+/* Dropdown items inside both popups */
+.dropdown-menu.group-by-dropdown.show .dropdown-item,
+.dropdown-menu.list-stats-dropdown.show .dropdown-item {
+  font-size: 12px !important;
+  padding: 6px 10px !important;
+  color: #374151 !important;
+  transition: background 0.2s ease-in-out;
+}
+
+.dropdown-menu.group-by-dropdown.show .dropdown-item:hover,
+.dropdown-menu.list-stats-dropdown.show .dropdown-item:hover {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+
+/* ////////////tagspace///// */
+/* Remove unwanted gap below "Show Tags" */
+/* Kill empty "save-filter-section" space */
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    display: none !important; /* completely removes it */
+}
+
+
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+}
+
+
+
+/* ///////////tagspace///////// */
+
+
+/* hide */
+
+
+
+
+
+
+
+
+/* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
+/* ===================== FILTER NAME INPUT ===================== */
+.input-with-feedback.form-control.input-xs {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #111827 !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+}
+.input-with-feedback.form-control.input-xs:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15) !important;
+    background: #ffffff !important;
+}
+
+/* ===================== LAYOUT: STACK INPUT + ACTION ===================== */
+.save-filter-section .list-filters.list-link {
+    display: flex !important;
+    flex-direction: column !important;   /* stack vertically */
+    align-items: flex-start !important;
+    gap: 8px !important;
+}
+
+/* ===================== HIDE SAVED BUTTON ===================== */
+.save-filter-section .sidebar-action {
+    display: block !important;
+    margin-top: 6px !important;
+    width: 100% !important;
+}
+.save-filter-section .sidebar-action .btn,
+.save-filter-section .sidebar-action button {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #111827 !important;
+    width: auto !important;
+    text-align: center !important;
+}
+.save-filter-section .sidebar-action .btn:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+
+
+/* ///sidebar space removed// */
+
+
+/* Remove ONLY the extra space after "Hide Saved" */
+/* Sidebar section: remove extra gap but allow full scroll */
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;       /* allow it to expand */
+    overflow: visible !important;      /* don’t cut content */
+}
+
+/* Ensure the parent UL doesn’t force extra gap */
+.list-unstyled.sidebar-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+}
+.list-sidebar.overlay-sidebar {
+    overflow-y: auto !important;
+    height: 100% !important;
+}
+
+
+.list-sidebar.overlay-sidebar {
+    margin-top: 0 !important;   /* remove any default top margin */
+    padding-top: 4px !important; /* adjust: try 0–8px for fine-tuning */
+}
+.sidebar-section.filter-section {
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+}
+
+
+
+/* ///sidebar space removed// */
+
+/* space removing */
+.widget.spacer {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* space removing */
+
+
+/* shortcuts conainer */
+
+/* Reduce height of shortcut widget containers */
+.widget.shortcut-widget-box {
+    min-height: 60px !important;   /* adjust as needed */
+    padding: 8px 12px !important;  /* reduce internal spacing */
+}
+
+/* Optional: also control text alignment inside */
+/* Keep your container sizing */
+.widget.shortcut-widget-box {
+    min-height: 50px !important;
+    padding: 8px 12px !important;
+}
+
+/* Align title and subtitle in the same line */
+.widget.shortcut-widget-box .widget-head {
+    display: flex;
+    align-items: center;   /* vertical alignment */
+    justify-content: space-between; /* push title left, count right */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Reset any manual offsets */
+.widget.shortcut-widget-box .widget-title,
+.widget.shortcut-widget-box .widget-subtitle {
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* ///////////////// */
+/* Force shortcut widgets into 3 per row */
+.ce-block:has(.widget.shortcut-widget-box) {
+    flex: 0 0 33.333% !important; /* take up 1/3 of row */
+    max-width: 30.333% !important;
+}
+/* Abhi */
