@@ -1110,7 +1110,7 @@ header .form-control:focus {
 /* ///// */
 /* Reduce overall sidebar height */
 .sidebar-section.save-filter-section {
-    max-height: 200px !important;   /* adjust px as needed */
+    max-height: 50px !important;   /* adjust px as needed */
     overflow-y: auto !important;   /* adds scroll if content exceeds */
     padding: 6px 8px !important;   /* reduce inner padding */
 }
