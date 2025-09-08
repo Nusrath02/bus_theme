@@ -1168,18 +1168,21 @@ header .form-control:focus {
 
 /* big container */
 
-/* Target only shortcut widgets */
-.widget.shortcut-widget-box {
-    position: relative; /* make it a reference for absolute child */
+/* Make the widget-head arrange items side by side */
+.widget-head {
+    display: flex;
+    justify-content: space-between; /* pushes title left and count right */
+    align-items: center; /* vertically centers them */
 }
 
-/* Move the title to the bottom */
-.widget.shortcut-widget-box .widget-title {
-    position: absolute;
-    top: 8px;   /* adjust spacing from bottom */
-    
-    font-weight: 600; /* optional: make it bolder */
+/* Ensure the title and subtitle don't break */
+.widget-title, 
+.widget-subtitle {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
+
 
 
 
