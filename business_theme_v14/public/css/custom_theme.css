@@ -1150,40 +1150,17 @@ header .form-control:focus {
 
 /* big container */
 
-/* Target the outer container */
-/* Target the Recruitment page column */
-[data-page-route="Recruitment"] .ce-block.col-xs-12.col-sm-6.col-md-4 {
-    min-height: auto !important;
-    height: auto !important;
-    flex: 0 0 auto !important;     /* stop stretching */
-    padding: 6px !important;       /* reduce spacing around */
+/* Reduce gap between "Jobs" title and first item */
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-head {
+    margin-bottom: 2px !important;   /* reduce title bottom spacing */
+    padding-bottom: 2px !important;  /* shrink padding */
 }
 
-/* Shrink the widget inside */
-[data-page-route="Recruitment"] .ce-block.col-xs-12.col-sm-6.col-md-4 .widget.links-widget-box {
-    padding: 6px 10px !important;  /* was 20px */
-    min-height: 60px !important;   /* reduce default */
-    height: auto !important;
-    box-sizing: border-box !important;
+/* Remove extra top margin on list items */
+[data-page-route="Recruitment"] .widget.links-widget-box .widget-body .link-item {
+    margin-top: 2px !important;   /* was bigger before */
 }
 
-/* Compress widget content (title + body) */
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-head,
-[data-page-route="Recruitment"] .widget.links-widget-box .widget-body {
-    margin: 0 !important;
-    padding: 4px 6px !important;
-}
-
-[data-page-route="Recruitment"] .widget.links-widget-box {
-    background: red !important;   /* just to TEST */
-    padding: 5px !important;
-    min-height: 50px !important;
-    height: auto !important;
-}
-[data-page-route="Recruitment"] .widget.links-widget-box .link-item {
-    padding: 2px 4px !important;
-    line-height: 1.2 !important;
-}
 
 
 
