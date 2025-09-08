@@ -1149,11 +1149,13 @@ header .form-control:focus {
 /* shortcuts conainer */
 
 /* big container */
+.layout-main-section .widget {
+    display: flex;
+    flex-direction: column;
+}
 
 .widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
 }
 
 
