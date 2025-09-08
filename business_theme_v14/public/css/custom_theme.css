@@ -1,8 +1,16 @@
-/* Remove empty gap under Show Tags */
+/* Kill forced height that creates the blue gap */
 .sidebar-section.filter-section {
-    margin-bottom: 0 !important;   /* kill extra gap */
-    padding-bottom: 0 !important;  /* kill extra space inside */
+    margin: 0 !important;
+    padding: 0 !important;
+    max-height: none !important;   /* remove 20vh limit */
+    height: auto !important;       /* let content decide height */
 }
+/* Ensure sidebar stacks cleanly */
+.list-unstyled.sidebar-menu > .sidebar-section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
