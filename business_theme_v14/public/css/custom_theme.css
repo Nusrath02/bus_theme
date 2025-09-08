@@ -1050,19 +1050,27 @@ header .form-control:focus {
 }
 
 /* ///////////tagspace///// */
-/* Remove unwanted gap below "Show Tags" */
-/* Remove extra spacing but keep content after it */
+.sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
+    padding: 0 0 12px 0 !important;
+    margin-bottom: 16px !important;
+}
+/* Remove big gap between Show Tags and Save Filter */
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;       /* remove internal padding */
+    margin: 0 !important;        /* remove external gap */
+    width: 180px !important;
     max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
 }
-.list-unstyled.sidebar-menu {
-    margin: 0 !important;
-    padding: 0 !important;
+.sidebar-section.save-filter-section {
+    margin-top: 6px !important;  /* small controlled gap */
 }
+
 
 
 
