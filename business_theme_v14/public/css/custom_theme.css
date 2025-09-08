@@ -1176,7 +1176,7 @@ header .form-control:focus {
 /* Move the title to the bottom */
 .widget.shortcut-widget-box .widget-title {
     position: absolute;
-    bottom: 8px;   /* adjust spacing from bottom */
+    top: 8px;   /* adjust spacing from bottom */
     left: 12px;    /* adjust spacing from left */
     font-weight: 600; /* optional: make it bolder */
 }
