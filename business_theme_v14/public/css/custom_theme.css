@@ -1151,7 +1151,9 @@ header .form-control:focus {
 /* big container */
 
 .widget-shortcut-widget-box[data-widget-name="rlaSlttkdm"] {
-    order: 999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 
