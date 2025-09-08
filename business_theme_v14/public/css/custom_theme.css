@@ -1113,14 +1113,14 @@ header .form-control:focus {
 /* Shrink the entire left sidebar column */
 .layout-side-section {
     flex: 0 0 auto !important;       /* stop it from stretching */
-    height: 300px !important;        /* set desired height */
+    height: 60px !important;        /* set desired height */
     overflow-y: auto !important;     /* add scroll if content exceeds */
 }
 
 /* Make sure inner sidebar also respects this height */
 .list-sidebar {
-    height: 100% !important;
-    max-height: 100% !important;
+    height: 40% !important;
+    max-height: 50% !important;
     overflow-y: auto !important;
 }
 .layout-main-section-wrapper {
