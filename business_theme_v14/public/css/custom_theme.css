@@ -1050,25 +1050,16 @@ header .form-control:focus {
 }
 
 /* ///////////tagspace///// */
-.sidebar-section.filter-section,
+/* Tighten gap between Show Tags and Save Filter */
 .sidebar-section.save-filter-section {
-    padding: 0 0 12px 0 !important;
-    margin-bottom: 16px !important;
-}
-/* Remove big gap between Show Tags and Save Filter */
-.sidebar-section.filter-section,
-.sidebar-section.save-filter-section {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;       /* remove internal padding */
-    margin: 0 !important;        /* remove external gap */
-    width: 180px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     max-height: none !important;
-    overflow: visible !important;
-    box-shadow: none !important;
 }
 .sidebar-section.save-filter-section {
-    margin-top: 6px !important;  /* small controlled gap */
+    margin-top: 6px !important; /* small neat gap */
+    padding: 0 !important;
+    max-height: none !important;
 }
 
 
