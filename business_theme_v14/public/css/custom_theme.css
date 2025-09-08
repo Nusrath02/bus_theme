@@ -1150,12 +1150,16 @@ header .form-control:focus {
     padding: 0 !important;
 }
 /* ///////////////// */
-
-
-.ce-block.col-sm-6.col-md-4.col-lg-3 .shortcut-widget-box {
-    width: 105% !important;   /* increase inside width */
-    margin: 10px auto !important;
+/* Force shortcut widgets into 3 per row */
+.ce-block:has(.widget.shortcut-widget-box) {
+    flex: 0 0 33.333% !important; /* take up 1/3 of row */
+    max-width: 33.333% !important;
 }
+
+
+
+/* Apply only to shortcut widgets container */
+
 
 
 
