@@ -1110,21 +1110,28 @@ header .form-control:focus {
 
 
 /* ///// */
-/* Shrink the entire left sidebar column */
-.layout-side-section {
-    flex: 0 0 auto !important;       /* stop it from stretching */
-    height: 60px !important;        /* set desired height */
-    overflow-y: auto !important;     /* add scroll if content exceeds */
+/* Remove extra space in sidebar sections */
+.save-filter-section,
+.save-filter-section .list-filters,
+.save-filter-section .sidebar-action {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Make sure inner sidebar also respects this height */
-.list-sidebar {
-    height: 40% !important;
-    max-height: 50% !important;
-    overflow-y: auto !important;
+/* Tighten the input field itself */
+.input-with-feedback.form-control.input-xs {
+    margin: 2px 0 !important;   /* reduce vertical spacing */
+    padding: 4px 8px !important; /* smaller padding inside */
 }
-.layout-main-section-wrapper {
-    align-items: flex-start !important; /* keep sidebar aligned at top */
+
+/* Adjust button spacing */
+.save-filter-section .sidebar-action {
+    margin-top: 4px !important;  /* reduce top gap */
+}
+.sidebar-section, 
+.sidebar-content {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
