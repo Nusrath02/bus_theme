@@ -865,10 +865,10 @@ header .form-control:focus {
     border: none !important;
     padding: 0 0 12px 0 !important;
     width: 180px !important;
-    max-height: 13vh !important;  /* smaller sidebar height */
+    max-height: 20vh !important;  /* smaller sidebar height */
     overflow-y: auto !important;
     box-shadow: none !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 16px !important;
 }
 
 /* Hide scrollbar */
@@ -1016,6 +1016,7 @@ header .form-control:focus {
   left: 0 !important;
   right: auto !important;
   margin-top: 4px !important;
+    margin-bottom: 0px !important;
 
   /* prevent cursor-follow movement */
   transform: none !important;
@@ -1024,7 +1025,7 @@ header .form-control:focus {
   /* size & style */
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
-  max-height: 190px !important;      /* prevent oversized popup */
+  max-height: 140px !important;      /* prevent oversized popup */
   overflow-y: auto !important;
 
   background: #ffffff !important;    /* clean white */
