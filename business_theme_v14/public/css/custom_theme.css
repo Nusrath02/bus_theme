@@ -1061,16 +1061,67 @@ header .form-control:focus {
 
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
 /* ===================== FILTER NAME INPUT ===================== */
+.input-with-feedback.form-control.input-xs {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #111827 !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+}
+.input-with-feedback.form-control.input-xs:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.15) !important;
+    background: #ffffff !important;
+}
 
-
-
-
+/* ===================== LAYOUT: STACK INPUT + ACTION ===================== */
+.save-filter-section .list-filters.list-link {
+    display: flex !important;
+    flex-direction: column !important;   /* stack vertically */
+    align-items: flex-start !important;
+    gap: 8px !important;
+}
 
 /* ===================== HIDE SAVED BUTTON ===================== */
+.save-filter-section .sidebar-action {
+    display: block !important;
+    margin-top: 6px !important;
+    width: 100% !important;
+}
+.save-filter-section .sidebar-action .btn,
+.save-filter-section .sidebar-action button {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    color: #111827 !important;
+    width: auto !important;
+    text-align: center !important;
+}
+.save-filter-section .sidebar-action .btn:hover {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+/* ///// */
+/* Target the entire sidebar column */
+.list-sidebar {
+    max-height: 400px !important;  /* reduce as needed */
+    overflow-y: auto !important;   /* enable scroll when content overflows */
+}
+
+/* If you want to reduce inner paddings/gaps */
+.list-sidebar .sidebar-section {
+    padding: 6px 8px !important;
+    margin-bottom: 4px !important;
+}
 
 
 /* ///// */
-
 
 /* space removing */
 .widget.spacer {
