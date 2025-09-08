@@ -1153,7 +1153,7 @@ header .form-control:focus {
 
 
 .ce-block.col-sm-6.col-md-4.col-lg-3 .shortcut-widget-box {
-    width: 95% !important;   /* increase inside width */
+    width: 105% !important;   /* increase inside width */
 }
 
 
