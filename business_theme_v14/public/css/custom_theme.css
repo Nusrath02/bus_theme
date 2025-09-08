@@ -1150,6 +1150,20 @@ header .form-control:focus {
     padding: 0 !important;
 }
 
+/* Parent container of widgets */
+.ce-block__content {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);  /* 3 per row */
+    gap: 16px;  /* space between cards */
+}
+
+/* Make sure each widget fits inside */
+.ce-block__content .widget.shortcut-widget-box {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+
 
 
 
