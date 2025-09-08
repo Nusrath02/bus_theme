@@ -1051,24 +1051,19 @@ header .form-control:focus {
 
 /* ///////////tagspace///// */
 /* Remove unwanted gap below "Show Tags" */
-/* Kill empty "save-filter-section" space */
-.sidebar-section.save-filter-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    max-height: 0 !important;
-    display: none !important; /* completely removes it */
-}
-
-
+/* Remove extra spacing but keep content after it */
 .sidebar-section.save-filter-section {
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
-    min-height: unset !important;
-    max-height: unset !important;
+    min-height: 0 !important;
+    max-height: none !important;
 }
+.list-unstyled.sidebar-menu {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 
 
 
