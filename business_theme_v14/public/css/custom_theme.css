@@ -1061,29 +1061,10 @@ header .form-control:focus {
 
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
 /* ===================== FILTER NAME INPUT ===================== */
-.input-with-feedback.form-control.input-xs {
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-    color: #111827 !important;
-    width: 100% !important;
-    margin-bottom: 8px !important;
-}
-.input-with-feedback.form-control.input-xs:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 2px rgba(37,99,235,0.15) !important;
-    background: #ffffff !important;
-}
 
-/* ===================== LAYOUT: STACK INPUT + ACTION ===================== */
-.save-filter-section .list-filters.list-link {
-    display: flex !important;
-    flex-direction: column !important;   /* stack vertically */
-    align-items: flex-start !important;
-    gap: 8px !important;
-}
+
+
+
 
 /* ===================== HIDE SAVED BUTTON ===================== */
 
