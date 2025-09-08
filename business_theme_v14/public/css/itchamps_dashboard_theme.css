@@ -2206,21 +2206,129 @@ body {
 }
 
 
-/* ==================== NAVBAR CONTAINER GRADIENT ==================== */
-/* Add blue gradient to sticky-top and container elements */
+/* ==================== NAVBAR GRADIENT FIX ==================== */
+/* Updated CSS to match the blue gradient shown in your image */
 
-.sticky-top,
-div.sticky-top {
-    background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 70%, #64b5f6 100%) !important;
+/* Main navbar container - primary target */
+.navbar,
+.navbar-expand,
+header.navbar,
+.sticky-top {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+    background-color: #87ceeb !important; /* Fallback */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Target the container within the header */
-header.navbar .container,
-.navbar .container {
+/* Navbar container and wrapper */
+.navbar .container,
+.navbar .container-fluid,
+.navbar > div {
     background: transparent !important;
 }
 
-/* Ensure navbar elements maintain the gradient */
-.navbar.navbar-expand {
-    background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 30%, #90caf9 70%, #64b5f6 100%) !important;
+/* Ensure navbar takes full width */
+.navbar {
+    width: 100% !important;
+    min-height: 60px !important;
+    padding: 0 !important;
 }
+
+/* Target specific ERPNext navbar elements */
+nav[data-original-title],
+.navbar.navbar-light,
+.navbar.navbar-expand-lg {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+}
+
+/* ITChamps logo area */
+.navbar-brand,
+.navbar .navbar-brand {
+    background-color: transparent !important;
+}
+
+/* Navbar text and links */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-text,
+.navbar a {
+    color: #1e3a8a !important; /* Dark blue text for contrast */
+    font-weight: 500 !important;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #1e40af !important;
+}
+
+/* Search bar in navbar */
+.navbar .form-control {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: #1f2937 !important;
+}
+
+.navbar .form-control:focus {
+    background-color: white !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Breadcrumb area styling */
+#navbar-breadcrumbs {
+    background: transparent !important;
+    color: #1e3a8a !important;
+}
+
+#navbar-breadcrumbs a {
+    color: #1e3a8a !important;
+}
+
+#navbar-breadcrumbs a:hover {
+    color: #1e40af !important;
+}
+
+/* Additional fallback selectors for ERPNext */
+.layout-main-section-wrapper > .container,
+.main-section,
+.page-container > .container {
+    background: transparent !important;
+}
+
+/* Force override any conflicting styles */
+body .navbar,
+html .navbar {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+}
+
+/* Mobile responsive navbar */
+@media (max-width: 768px) {
+    .navbar {
+        min-height: 50px !important;
+    }
+    
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%281, 30, 138, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+/* ==================== DEBUGGING STYLES ==================== */
+/* Add these temporarily to see what elements are being targeted */
+
+/* 
+Uncomment these lines one by one to debug which element needs styling:
+
+* {
+    outline: 1px solid red !important;
+}
+
+.navbar * {
+    outline: 2px solid blue !important;
+}
+
+header * {
+    outline: 2px solid green !important;
+}
+*/
