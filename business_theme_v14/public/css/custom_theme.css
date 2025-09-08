@@ -1107,6 +1107,22 @@ header .form-control:focus {
     color: #fff !important;
 }
 
+/* ///// */
+/* Reduce overall sidebar height */
+.sidebar-section.save-filter-section {
+    max-height: 200px !important;   /* adjust px as needed */
+    overflow-y: auto !important;   /* adds scroll if content exceeds */
+    padding: 6px 8px !important;   /* reduce inner padding */
+}
+
+/* Also tighten spacing inside */
+.sidebar-section.save-filter-section .sidebar-action {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+/* ///// */
+
 
 /* space removing */
 .widget.spacer {
@@ -1155,16 +1171,6 @@ header .form-control:focus {
     flex: 0 0 33.333% !important; /* take up 1/3 of row */
     max-width: 30.333% !important;
 }
-
-
-
-/* Apply only to shortcut widgets container */
-
-
-
-
-
-
 
 /* shortcuts conainer */
 
