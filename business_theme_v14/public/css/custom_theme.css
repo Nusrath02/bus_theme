@@ -1111,46 +1111,27 @@ header .form-control:focus {
 
 /* ///// */
 /* Remove ONLY the extra space after "Hide Saved" */
-/* -------------------------
-   FORCE: remove bottom gap under "Hide Saved"
-   Paste at the very end of your custom CSS file
-   ------------------------- */
-
-/* target exactly what your DOM shows in the screenshot */
-.col-lg-2.layout-side-section
-  .list-sidebar.overlay-sidebar
-  .list-unstyled.sidebar-menu
-  > .sidebar-section.save-filter-section {
+/* Sidebar section: remove extra gap but allow full scroll */
+.sidebar-section.save-filter-section {
     margin: 0 !important;
-    margin-bottom: 0 !important;
     padding: 0 !important;
-    padding-bottom: 0 !important;
+    height: auto !important;
     min-height: 0 !important;
+    max-height: none !important;       /* allow it to expand */
+    overflow: visible !important;      /* don’t cut content */
+}
+
+/* Ensure the parent UL doesn’t force extra gap */
+.list-unstyled.sidebar-menu {
+    margin: 0 !important;
+    padding: 0 !important;
     height: auto !important;
 }
-
-/* also remove margin/padding on the children that could add space */
-.col-lg-2.layout-side-section
-  .list-sidebar.overlay-sidebar
-  .list-unstyled.sidebar-menu
-  > .sidebar-section.save-filter-section
-  .sidebar-action,
-.col-lg-2.layout-side-section
-  .list-sidebar.overlay-sidebar
-  .list-unstyled.sidebar-menu
-  > .sidebar-section.save-filter-section
-  .list-filters,
-.col-lg-2.layout-side-section
-  .list-sidebar.overlay-sidebar
-  .list-unstyled.sidebar-menu
-  > .sidebar-section.save-filter-section
-  .input-with-feedback {
-    margin: 0 !important;
-    margin-bottom: 0 !important;
-    padding: 0 !important;
-    padding-bottom: 0 !important;
-    min-height: 0 !important;
+.list-sidebar.overlay-sidebar {
+    overflow-y: auto !important;
+    height: 100% !important;
 }
+
 
 
 
