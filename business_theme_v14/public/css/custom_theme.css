@@ -1111,28 +1111,23 @@ header .form-control:focus {
 
 /* ///// */
 /* Remove unwanted space after 'Hide Saved' */
-.sidebar-section.save-filter-section {
+/* Remove bottom gap in sidebar */
+.list-sidebar,
+.list-sidebar .sidebar-menu {
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
-    min-height: unset !important;
 }
-.list-unstyled.sidebar-menu {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-.list-sidebar {
-    padding-top: 0 !important;  /* remove internal padding */
-    margin-top: 0 !important;   /* remove external gap */
-}
-.sidebar-section.filter-section,
+
+/* Specific to last section (Hide Saved) */
 .sidebar-section.save-filter-section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
-.sidebar-section.filter-section {
-    margin-top: -10px !important;
+.list-sidebar ul {
+    margin-bottom: 0 !important;
 }
+
 
 
 
