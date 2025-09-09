@@ -1421,7 +1421,7 @@ header .form-control:focus {
 }
 
 ///bugs1 removing extra line///
-.widget-label{
+.widget-head{
     display:none;
 }
 
