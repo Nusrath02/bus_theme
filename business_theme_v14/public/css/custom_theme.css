@@ -1262,57 +1262,28 @@ header .form-control:focus {
 /* shoretcut container */
 
 
-/* ===== FINAL FIX: collapse gap + make Filter & Save Filter one block ===== */
-
-/* 1) Force the list to stack items without filler space */
-.list-sidebar.overlay-sidebar .sidebar-menu {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important; /* cancel space-between */
-  gap: 0 !important;
-  row-gap: 0 !important;
+/* ==================== FIX: REMOVE GAP BELOW TAGS ==================== */
+.tags-list,
+.filter-list,
+.tag-row,
+.tag-area,
+.tag-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* No list item should grow to fill the column */
-.list-sidebar.overlay-sidebar .sidebar-menu > li {
-  flex: 0 0 auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.tags-list + .form-dashboard,
+.filter-list + .form-dashboard,
+.tag-area + .form-dashboard {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
-/* 2) Nuke the spacer element(s) ERPNext adds */
-.list-sidebar.overlay-sidebar .sidebar-menu > li.spacer,
-.list-sidebar.overlay-sidebar .sidebar-menu > li.sidebar-spacer,
-.list-sidebar.overlay-sidebar .sidebar-menu > li.flex-spacer,
-.list-sidebar.overlay-sidebar .sidebar-menu > .spacer,
-.list-sidebar.overlay-sidebar .sidebar-menu > .sidebar-spacer,
-.list-sidebar.overlay-sidebar .sidebar-menu > li[class*="spacer"] {
-  display: none !important;
-  height: 0 !important;
-  flex: 0 0 auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 3) Join the two sections visually (no gap, no internal max-heights) */
-.list-sidebar.overlay-sidebar .sidebar-section.filter-section,
-.list-sidebar.overlay-sidebar .sidebar-section.save-filter-section {
-  margin: 0 !important;
-  padding: 0 !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.list-sidebar.overlay-sidebar .sidebar-section.filter-section
-  + .sidebar-section.save-filter-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* In case any pseudo elements add space */
-.sidebar-section.filter-section::before,
-.sidebar-section.filter-section::after,
-.sidebar-section.save-filter-section::before,
-.sidebar-section.save-filter-section::after {
-  content: none !important;
+/* Also collapse extra empty <p> or <div> after tags */
+.tags-list + p,
+.tags-list + div,
+.filter-list + p,
+.filter-list + div {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
