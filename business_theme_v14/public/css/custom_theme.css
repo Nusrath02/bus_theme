@@ -1,4 +1,4 @@
-.layout-main-section .widget, .layout-main-section [data-widget-name], .dashboard-widget-box {
+ .dashboard-widget-box {
     display: none !important;
 }
 
