@@ -1,70 +1,78 @@
-/* ==================== FINAL GAP KILLER + POPUP FIX ==================== */
-/* 🚫 Remove bottom gap under filter section completely */
-.sidebar-section.filter-section {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+/* ======= Remove debug outlines (delete your debug rules) ======= */
+.sidebar-section.filter-section,
+.sidebar-section {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-/* 🚫 Also remove gap before the next section */
+/* ======= Gap killer: shrink sidebar bottom space ======= */
+/* Let sidebar size itself to content (no forced full-viewport min-height) */
+.col-lg-2.layout-side-section,
+.layout-side-section,
+.list-sidebar.overlay-sidebar,
+.list-sidebar {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding-bottom: 6px !important; /* tiny padding so edges don't touch — change to 0 if you want absolutely no padding */
+}
+
+/* Remove any bottom margin/padding from every sidebar-section */
+.list-sidebar.overlay-sidebar .sidebar-section,
+.list-sidebar .sidebar-section,
+.sidebar-section {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure the last sidebar-section has zero bottom gap */
+.list-sidebar.overlay-sidebar .sidebar-section:last-child,
+.list-sidebar .sidebar-section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Hide any spacer widgets that create blank areas */
+.widget.spacer,
+.list-sidebar .spacer,
+.list-sidebar .widget.spacer,
+.sidebar-spacer,
+.flex-spacer {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove bottom padding from the sidebar menu container */
+.layout-side-section .sidebar-menu,
+.list-sidebar.overlay-sidebar .standard-sidebar,
+.list-sidebar .standard-sidebar {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Make filter-section sit flush with the next section */
 .sidebar-section.filter-section + .sidebar-section,
-.sidebar-section.filter-section + .form-section,
-.sidebar-section.filter-section + .form-group {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.sidebar-section.filter-section + .list-unstyled,
+.sidebar-section.filter-section + .standard-sidebar,
+.sidebar-section.filter-section + .save-filter-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-
-/* Main filter-section */
-.sidebar-section.filter-section {
-    margin: 0 !important;          /* kill all margin */
-    padding: 0 !important;         /* kill padding */
-    overflow: visible !important;  /* allow popups to expand */
+/* Keep dropdowns/popups visible & above everything (unchanged from before) */
+.sidebar-section.filter-section,
+.sidebar-section.filter-section * {
+  overflow: visible !important;
 }
-
-/* Kill pseudo spacing */
-.sidebar-section.filter-section::before,
-.sidebar-section.filter-section::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Children spacing (tight stack) */
-.sidebar-section.filter-section > * {
-    margin: 0 0 4px 0 !important;  /* only a tiny bottom gap */
-    overflow: visible !important;
-}
-
-/* Remove phantom space between this and next section */
-.sidebar-section.filter-section + .sidebar-section,
-.sidebar-section.filter-section + .form-section,
-.sidebar-section.filter-section + .frappe-control,
-.sidebar-section.filter-section + .form-group {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Inputs normal sizing */
-.sidebar-section.filter-section input,
-.sidebar-section.filter-section select,
-.sidebar-section.filter-section textarea {
-    height: auto !important;
-    padding: revert !important;
-    line-height: normal !important;
-}
-
-/* Ensure dropdowns/popups show fully */
 .awesomplete,
 .dropdown-menu,
 .select2-container {
-    z-index: 9999 !important;
-    position: absolute !important;
+  z-index: 9999 !important;
+  position: absolute !important;
 }
-.sidebar-section.filter-section {
-    outline: 2px solid red !important;
-}
-.sidebar-section {
-    outline: 1px dashed blue !important;
-}
+
 
 
 
