@@ -1392,6 +1392,23 @@ header .form-control:focus {
 }
 //////
 /* Add a small gap between Show Tags and Save Filter */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section {
-  margin-top: 10px !important;   /* adjust value: 6px, 8px, 12px etc */
+/* Make Show Tags button bigger (height + font size) */
+.sidebar-section.filter-section .sidebar-action.show-tags {
+  display: block !important;
+  width: 100% !important;
+  padding: 10px 12px !important;   /* ⬅ increase height */
+  font-size: 14px !important;      /* ⬅ slightly bigger text */
+  font-weight: 600 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  background: #f9fafb !important;
+  color: #111827 !important;
+  text-align: left !important;
+  cursor: pointer;
 }
+
+/* Add space below Show Tags */
+.sidebar-section.filter-section {
+  margin-bottom: 12px !important;   /* ⬅ increase/decrease as needed */
+}
+
