@@ -1261,29 +1261,30 @@ header .form-control:focus {
 
 /* shoretcut container */
 
+/* ================== FIX GAP AFTER SHOW TAGS ================== */
 
-/* ==================== FIX: REMOVE GAP BELOW TAGS ==================== */
-.tags-list,
-.filter-list,
-.tag-row,
-.tag-area,
-.tag-section {
+/* Remove default spacing between sidebar sections */
+.list-sidebar.overlay-sidebar .sidebar-section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Specifically collapse the gap between Show Tags block and Save Filter block */
+.sidebar-section:has(.btn:contains("Show Tags")) {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
-
-.tags-list + .form-dashboard,
-.filter-list + .form-dashboard,
-.tag-area + .form-dashboard {
-    margin-top: 0 !important;
+.sidebar-section:has(.btn:contains("Show Tags")) + .sidebar-section.save-filter-section {
+    margin-top: 6px !important;   /* small neat gap instead of big blue space */
     padding-top: 0 !important;
 }
 
-/* Also collapse extra empty <p> or <div> after tags */
-.tags-list + p,
-.tags-list + div,
-.filter-list + p,
-.filter-list + div {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+/* Kill hidden/empty spacers in between */
+.list-sidebar.overlay-sidebar .spacer,
+.list-sidebar.overlay-sidebar .empty,
+.list-sidebar.overlay-sidebar .sidebar-section:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
 }
