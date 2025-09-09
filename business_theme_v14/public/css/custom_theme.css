@@ -64,11 +64,15 @@ html body .sidebar-section.filter-section {
 .sidebar-section.filter-section .control-input-wrapper,
 .sidebar-section.filter-section select {
     position: relative !important;
-    overflow: hidden !important;   /* keep dropdown inside box */
-    border-radius: 8px !important; /* match rounded look */
+    overflow: hidden !important;   
+    border-radius: 8px !important; 
+    font-size: 14px !important;     /* slightly bigger text */
+    padding: 6px 10px !important;   /* increase clickable field size */
+    min-height: 38px !important;    /* increase field height */
+    width: 100% !important;         /* ensure it fills box */
 }
 
-/* Ensure dropdown stays inside its white box */
+/* Ensure dropdown stays inside its white box, but bigger */
 .sidebar-section.filter-section .awesomplete,
 .sidebar-section.filter-section .dropdown-menu {
     position: absolute !important;
@@ -76,9 +80,11 @@ html body .sidebar-section.filter-section {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    max-height: 280px !important;   /* ⬆️ increase popup height */
+    min-width: 200px !important;    /* ⬆️ ensure dropdown isn’t too narrow */
     z-index: 1000 !important;
     border-radius: 8px !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;    /* enable scroll if too many items */
 }
 
 /* Tighten spacing between dropdown and "No filters found" box */
@@ -90,6 +96,7 @@ html body .sidebar-section.filter-section {
 .sidebar-section.filter-section { 
     outline: 1px dashed rgba(255,0,0,0.12) !important; 
 }
+
 
 
 
