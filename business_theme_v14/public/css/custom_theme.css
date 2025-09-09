@@ -870,7 +870,7 @@ header .form-control:focus {
 /* ================== COMMON SIDEBAR BOX STYLE ================== */
 /* ================== CLEAN MINIMAL SIDEBAR ================== */
 
-/* Sidebar        wrapper */
+Sidebar        wrapper */
 /* ================== CLEAN MINIMAL SIDEBAR ================== */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
@@ -1019,7 +1019,7 @@ header .form-control:focus {
 }
 
 
-/* tags */
+/* tags
 
 
 .dropdown-menu.group-by-dropdown.show,
