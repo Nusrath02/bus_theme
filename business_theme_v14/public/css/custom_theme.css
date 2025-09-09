@@ -1,66 +1,15 @@
-/* ==================== FORCE-COLLAPSE: filter-section (place at EOF) ==================== */
-/* Aggressive, high-specificity overrides to remove extra vertical gap */
-
-html body .list-sidebar.overlay-sidebar .sidebar-section.filter-section,
-html body .list-sidebar .sidebar-section.filter-section,
-html body .sidebar-section.filter-section {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
+/* Only trim the bottom gap under Show Tags */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* Remove any generated pseudo-element spacing */
-.sidebar-section.filter-section::before,
-.sidebar-section.filter-section::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Make direct children compact (no extra margins/paddings/heights) */
-.sidebar-section.filter-section > * {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
-}
-
-/* Hide empty/placeholder nodes that sometimes create big empty blocks */
-.sidebar-section.filter-section .empty-state,
-.sidebar-section.filter-section .no-results,
-.sidebar-section.filter-section .group-by-empty,
-.sidebar-section.filter-section .hidden,
-.sidebar-section.filter-section .list-filters .list-link:empty {
-    display: none !important;
-}
-
-/* If ERPNext injected inline height styles, override them */
-.sidebar-section.filter-section [style*="height"],
-.sidebar-section.filter-section [style*="min-height"],
-.sidebar-section.filter-section [style*="max-height"] {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-}
-
-/* Ensure the next sidebar block sits up snugly */
-.sidebar-section.filter-section + .sidebar-section,
-.sidebar-section.filter-section + li {
-    margin-top: 4px !important;
+/* Tighten the space before the next block */
+.sidebar-section.filter-section + .sidebar-section {
+    margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
-/* Optional debug outline — remove after verifying */
-/* .sidebar-section.filter-section { outline: 1px dashed rgba(255,0,0,0.12) !important; } */
 
 
 
