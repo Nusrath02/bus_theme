@@ -1,79 +1,66 @@
-/* ==================== REMOVE WIDGET CONTAINER LINES ==================== */
-/* Target the specific widget structure causing horizontal lines */
-
-/* Remove borders from widget containers */
-.widget.links-widget-box,
-.widget[data-widget-name="rlarh5386p"] {
+.layout-main-section .widget,
+.layout-main-section [data-widget-name],
+.dashboard-widget-box {
+    background: white !important;
     border: none !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 25px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
 }
 
-/* Remove borders from widget header */
-.widget-head,
-.widget .widget-head {
-    border: none !important;
-    border-bottom: none !important;
-}
-
-/* Remove borders from widget body */
-.widget-body,
-.widget .widget-body {
+/* Remove internal borders and lines from widget content */
+.layout-main-section .widget *,
+.layout-main-section [data-widget-name] *,
+.dashboard-widget-box * {
     border: none !important;
     border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
 }
 
-/* Remove borders from individual navigation items */
-.widget-body a,
-.widget-body .widget-link {
-    border: none !important;
+/* Specifically target widget header to remove bottom border */
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title {
     border-bottom: none !important;
+    padding-bottom: 15px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Remove borders from widget body content */
+.layout-main-section .widget .widget-body,
+.layout-main-section .widget .widget-body * {
+    border: none !important;
     border-top: none !important;
+    border-bottom: none !important;
 }
 
-/* Remove any list item borders */
-.widget-body ul,
-.widget-body li {
+/* Remove borders from navigation links */
+.layout-main-section .widget .widget-body a {
     border: none !important;
     border-bottom: none !important;
+    display: block !important;
+    padding: 8px 0 !important;
+    text-decoration: none !important;
+}
+
+/* Remove any list styling borders */
+.layout-main-section .widget ul,
+.layout-main-section .widget li {
+    border: none !important;
     list-style: none !important;
-}
-
-/* Remove pseudo-elements that might create lines */
-.widget-body a::after,
-.widget-body a::before,
-.widget-body li::after,
-.widget-body li::before {
-    display: none !important;
-    content: none !important;
-    border: none !important;
-}
-
-/* Remove any separator elements */
-.widget-body .separator,
-.widget-body hr,
-.widget-body .divider {
-    display: none !important;
-    height: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* If the lines are coming from specific link styling */
-.widget-body a[href*="staffing-plan"],
-.widget-body a[href*="job-requisition"],
-.widget-body a[href*="job-opening"],
-.widget-body a[href*="job-applicant"],
-.widget-body a[href*="job-offer"],
-.widget-body a[href*="employee-referral"] {
+/* Remove pseudo-element borders */
+.layout-main-section .widget *::before,
+.layout-main-section .widget *::after {
     border: none !important;
-    border-bottom: none !important;
-    border-top: none !important;
-}
-
-/* Alternative approach - remove all borders from widget descendants */
-.widget * {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
+    content: none !important;
+    display: none !important;
 }
 
 
