@@ -1,55 +1,59 @@
-/* ==================== FIX GAP + POPUP VISIBILITY ==================== */
+/* ==================== FINAL GAP KILLER + POPUP FIX ==================== */
 
-/* Remove big bottom gap from filter-section itself */
+/* Main filter-section */
 .sidebar-section.filter-section {
-    margin-bottom: 0 !important;   /* 🚫 no gap */
-    padding-bottom: 0 !important;
-    overflow: visible !important;  /* allow popups to expand out */
+    margin: 0 !important;          /* kill all margin */
+    padding: 0 !important;         /* kill padding */
+    overflow: visible !important;  /* allow popups to expand */
 }
 
-/* Kill only artificial pseudo spacing */
+/* Kill pseudo spacing */
 .sidebar-section.filter-section::before,
 .sidebar-section.filter-section::after {
     display: none !important;
     content: none !important;
 }
 
-/* Compact margins between children (but do not force height/padding) */
+/* Children spacing (tight stack) */
 .sidebar-section.filter-section > * {
+    margin: 0 0 4px 0 !important;  /* only a tiny bottom gap */
+    overflow: visible !important;
+}
+
+/* Remove phantom space between this and next section */
+.sidebar-section.filter-section + .sidebar-section,
+.sidebar-section.filter-section + .form-section,
+.sidebar-section.filter-section + .frappe-control,
+.sidebar-section.filter-section + .form-group {
     margin-top: 0 !important;
-    margin-bottom: 4px !important; /* keep small spacing between fields */
-    overflow: visible !important;  /* keep child popups visible */
+    padding-top: 0 !important;
 }
 
-/* Ensure next section doesn’t create huge gap */
-.sidebar-section.filter-section + .sidebar-section {
-    margin-top: 0 !important;   /* 🚫 no gap between sections */
-}
-
-/* Restore natural input & popup sizing */
+/* Inputs normal sizing */
 .sidebar-section.filter-section input,
 .sidebar-section.filter-section select,
 .sidebar-section.filter-section textarea {
     height: auto !important;
-    min-height: unset !important;
-    max-height: unset !important;
     padding: revert !important;
     line-height: normal !important;
 }
 
-/* Allow dropdowns/popups inside sidebar to show fully */
-.sidebar-section.filter-section,
-.sidebar-section.filter-section * {
-    overflow: visible !important;
-}
-
-/* Ensure select2/awesomplete/autocomplete dropdowns are not clipped */
+/* Ensure dropdowns/popups show fully */
 .awesomplete,
 .dropdown-menu,
 .select2-container {
-    z-index: 9999 !important;   /* bring above sidebar */
+    z-index: 9999 !important;
     position: absolute !important;
 }
+.sidebar-section.filter-section {
+    outline: 2px solid red !important;
+}
+.sidebar-section {
+    outline: 1px dashed blue !important;
+}
+
+
+
 
 
 
