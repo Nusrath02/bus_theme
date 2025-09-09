@@ -1,4 +1,18 @@
 /* ==================== FINAL GAP KILLER + POPUP FIX ==================== */
+/* 🚫 Remove bottom gap under filter section completely */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* 🚫 Also remove gap before the next section */
+.sidebar-section.filter-section + .sidebar-section,
+.sidebar-section.filter-section + .form-section,
+.sidebar-section.filter-section + .form-group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 
 /* Main filter-section */
 .sidebar-section.filter-section {
