@@ -1387,9 +1387,17 @@ header .form-control:focus {
 }
 
 /* Save Filter starts AFTER dropdown */
-.sidebar-section.save-filter-section {
+/* .sidebar-section.save-filter-section {
   margin-top: 40px !important;     /* push it down so dropdown has room */
+} */
+
+/* Save Filter starts just a little below Show Tags */
+.sidebar-section.save-filter-section {
+  margin-top: 12px !important;   /* adjust this number as you like */
+  padding-top: 0 !important;
 }
+
+
 //////
 /* Add a small gap between Show Tags and Save Filter */
 /* Make Show Tags button bigger (height + font size) */
