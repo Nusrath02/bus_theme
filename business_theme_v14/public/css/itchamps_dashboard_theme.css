@@ -2814,97 +2814,56 @@ header * {
 
 
 
-/* ==================== COMPACT SIDEBAR SPACING FIX ==================== */
-/* Remove excessive spacing to match Image 1 layout */
+/* ==================== REDUCE VERTICAL SPACING BETWEEN FILTER ELEMENTS ==================== */
+/* Target the specific spacing between Tags dropdown and Show Tags button */
 
-/* Main filter sidebar container - remove extra height and padding */
-.sidebar-section.filter-section,
+/* Reduce margin/padding after Tags dropdown */
+.sidebar-section.filter-section select[data-fieldname="tags"],
+.sidebar-section.filter-section .form-control.tags-filter {
+    margin-bottom: 2px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Reduce spacing before Show Tags button */
+.sidebar-section.filter-section .show-tags,
+.sidebar-section.filter-section .btn.show-tags-btn {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    padding: 2px 6px !important;
+}
+
+/* Target the container holding Tags section */
+.sidebar-section.filter-section .tags-container,
+.sidebar-section.filter-section .filter-tags-section {
+    margin-bottom: 4px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove extra spacing from form groups in filter section */
+.sidebar-section.filter-section .form-group {
+    margin-bottom: 3px !important;
+}
+
+/* Compact spacing for all filter section items */
+.sidebar-section.filter-section > * {
+    margin-bottom: 3px !important;
+}
+
+/* Ensure Save Filter section is closer */
 .sidebar-section.save-filter-section {
-    padding: 8px 12px !important;
-    margin: 0 !important;
-    background: transparent !important;
-    min-height: auto !important;
-    height: auto !important;
+    margin-top: 2px !important;
+    padding-top: 2px !important;
 }
 
-/* Filter section items - tight spacing */
-.sidebar-section.filter-section .form-group,
-.sidebar-section.filter-section .sidebar-item {
-    margin-bottom: 8px !important;
-    padding: 0 !important;
+/* Target specific ERPNext filter element classes */
+.filter-section .filter-box,
+.filter-section .filter-field {
+    margin-bottom: 2px !important;
+    padding-bottom: 0 !important;
 }
 
-/* Filter dropdowns and inputs - compact sizing */
-.sidebar-section.filter-section .form-control,
-.sidebar-section.filter-section select {
-    padding: 4px 8px !important;
-    margin-bottom: 6px !important;
-    font-size: 13px !important;
-    height: 32px !important;
-    line-height: 1.2 !important;
-}
-
-/* Labels - minimal spacing */
-.sidebar-section.filter-section .sidebar-label,
-.sidebar-section.filter-section label {
-    margin-bottom: 4px !important;
-    margin-top: 0 !important;
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    line-height: 1.2 !important;
-}
-
-/* "Edit Filters" link - reduce spacing */
-.sidebar-section.filter-section .sidebar-link,
-.sidebar-section.filter-section .edit-filters {
-    margin: 4px 0 !important;
-    padding: 2px 0 !important;
-    font-size: 12px !important;
-}
-
-/* Tags section - compact */
-.sidebar-section.filter-section .tags-section {
-    margin: 4px 0 !important;
-    padding: 0 !important;
-}
-
-/* Show Tags button - smaller */
-.sidebar-section.filter-section .btn,
-.sidebar-section.filter-section button {
-    padding: 4px 8px !important;
-    margin: 4px 0 !important;
-    font-size: 12px !important;
-    height: auto !important;
-    line-height: 1.2 !important;
-}
-
-/* Save Filter section - minimal spacing */
-.sidebar-section.save-filter-section {
-    margin-top: 8px !important;
-    padding-top: 8px !important;
-}
-
-.sidebar-section.save-filter-section .form-control {
-    margin-bottom: 4px !important;
-    padding: 4px 8px !important;
-    height: 28px !important;
-}
-
-/* Remove any extra spacing from container elements */
-.sidebar-section.filter-section > div,
-.sidebar-section.save-filter-section > div {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Ensure no extra spacing between sections */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section {
-    margin-top: 4px !important;
-    border-top: none !important;
-}
-
-/* Override any existing spacing rules */
-.layout-side-section .sidebar-section {
-    padding: 8px 12px !important;
-    margin-bottom: 4px !important;
+/* Remove any inherited spacing from parent elements */
+.layout-side-section .sidebar-section .form-group,
+.layout-side-section .sidebar-section .control-group {
+    margin: 2px 0 !important;
 }
