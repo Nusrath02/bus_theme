@@ -1,81 +1,56 @@
-/* ==================== FORCE-COLLAPSE: filter-section (place at EOF) ==================== */
-/* Aggressive, high-specificity overrides to remove extra vertical gap */
+/* ==================== FIX GAP + POPUP VISIBILITY ==================== */
 
-html body .list-sidebar.overlay-sidebar .sidebar-section.filter-section,
-html body .list-sidebar .sidebar-section.filter-section,
-html body .sidebar-section.filter-section {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
+/* Remove big bottom gap from filter-section itself */
+.sidebar-section.filter-section {
+    margin-bottom: 4px !important;  /* adjust to taste */
+    padding-bottom: 0 !important;
+    overflow: visible !important;   /* allow popups to expand out */
 }
 
-/* Remove any generated pseudo-element spacing */
+/* Kill only artificial pseudo spacing */
 .sidebar-section.filter-section::before,
 .sidebar-section.filter-section::after {
     display: none !important;
     content: none !important;
 }
 
-/* Make direct children compact (no extra margins/paddings/heights) */
+/* Compact margins between children (but do not force height/padding) */
 .sidebar-section.filter-section > * {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important; /* tiny breathing room */
+    overflow: visible !important;  /* keep child popups visible */
 }
 
-/* Hide empty/placeholder nodes that sometimes create big empty blocks */
-.sidebar-section.filter-section .empty-state,
-.sidebar-section.filter-section .no-results,
-.sidebar-section.filter-section .group-by-empty,
-.sidebar-section.filter-section .hidden,
-.sidebar-section.filter-section .list-filters .list-link:empty {
-    display: none !important;
-}
-
-/* If ERPNext injected inline height styles, override them */
-.sidebar-section.filter-section [style*="height"],
-.sidebar-section.filter-section [style*="min-height"],
-.sidebar-section.filter-section [style*="max-height"] {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-}
-
-/* Ensure the next sidebar block sits up snugly */
-.sidebar-section.filter-section + .sidebar-section,
-.sidebar-section.filter-section + li {
+/* Ensure next section doesn’t create huge gap */
+.sidebar-section.filter-section + .sidebar-section {
     margin-top: 4px !important;
-    padding-top: 0 !important;
 }
 
-/* Optional debug outline — remove after verifying */
-.sidebar-section.filter-section { outline: 1px dashed rgba(255,0,0,0.12) !important; }
+/* Restore natural input & popup sizing */
+.sidebar-section.filter-section input,
+.sidebar-section.filter-section select,
+.sidebar-section.filter-section textarea {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    padding: revert !important;
+    line-height: normal !important;
+}
 
-/* ==================== POPUP FIX ==================== */
 /* Allow dropdowns/popups inside sidebar to show fully */
 .sidebar-section.filter-section,
 .sidebar-section.filter-section * {
     overflow: visible !important;
 }
 
-/* Ensure the select2/awesomplete/autocomplete dropdowns are not clipped */
+/* Ensure select2/awesomplete/autocomplete dropdowns are not clipped */
 .awesomplete,
 .dropdown-menu,
 .select2-container {
     z-index: 9999 !important;   /* bring above sidebar */
     position: absolute !important;
 }
+
 
 
 
