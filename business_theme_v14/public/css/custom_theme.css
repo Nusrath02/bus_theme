@@ -1,14 +1,14 @@
-/* Kill forced height that creates the blue gap */
+/* Remove unwanted vertical gap after "Show Tags" */
 .sidebar-section.filter-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    max-height: none !important;   /* remove 20vh limit */
-    height: auto !important;       /* let content decide height */
+    margin-bottom: 4px !important;   /* shrink large gap */
+    padding-bottom: 0 !important;
+    max-height: fit-content !important; /* shrink to content height */
 }
-/* Ensure sidebar stacks cleanly */
-.list-unstyled.sidebar-menu > .sidebar-section {
-    margin: 0 !important;
-    padding: 0 !important;
+
+/* Ensure the next block doesn’t push it down */
+.sidebar-section.save-filter-section {
+    margin-top: 4px !important;  /* small neat gap */
+    padding-top: 0 !important;
 }
 
 
