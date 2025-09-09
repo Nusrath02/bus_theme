@@ -11,6 +11,14 @@
     padding-top: 0 !important;
 }
 
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-height: fit-content !important;
+}
+
+
 
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
