@@ -1,5 +1,17 @@
-.widget-head {
+.ce-block {
+    border: none !important;
+    border-top: none !important;
     border-bottom: none !important;
+}
+
+/* If it's specifically for the content editor */
+.codex-editor .ce-block {
+    border: none !important;
+}
+
+/* Remove any box shadows that might appear as lines */
+.ce-block {
+    box-shadow: none !important;
 }
 
 
