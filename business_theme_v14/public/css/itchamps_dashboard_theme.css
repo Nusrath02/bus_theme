@@ -2459,10 +2459,10 @@ header * {
 }
 
 /* Hide scrollbar */
-.sidebar-section.filter-section::-webkit-scrollbar,
+/* .sidebar-section.filter-section::-webkit-scrollbar,
 .sidebar-section.save-filter-section::-webkit-scrollbar {
     display: none !important;
-}
+} */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
     scrollbar-width: none !important;
