@@ -763,6 +763,9 @@ header .form-control:focus {
 /* ==================== END OF STYLING ==================== */
 
 
+
+
+
 /* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
 /* Sidebar container smaller */
 .col-lg-2.layout-side-section,
@@ -1257,4 +1260,26 @@ header .form-control:focus {
 
 
 /* shoretcut container */
+
+
+/* ==================== MERGE FILTER + SAVE FILTER SECTIONS ==================== */
+
+/* Make both sections share the same base style */
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 180px !important;
+    max-height: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove any visible gap between them */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 
