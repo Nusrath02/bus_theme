@@ -1262,24 +1262,37 @@ header .form-control:focus {
 /* shoretcut container */
 
 
-/* ==================== MERGE FILTER + SAVE FILTER SECTIONS ==================== */
+/* ================== REMOVE GAP BETWEEN FILTER + SAVE FILTER ================== */
 
-/* Make both sections share the same base style */
+/* Remove margins/paddings on both sections */
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
     margin: 0 !important;
-    width: 180px !important;
+    padding: 0 !important;
     max-height: none !important;
-    box-shadow: none !important;
 }
 
-/* Remove any visible gap between them */
+/* Kill any extra gap between them */
 .sidebar-section.filter-section + .sidebar-section.save-filter-section {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+/* Ensure the UL wrapper doesn’t push space */
+.list-unstyled.sidebar-menu > li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide any empty spacer divs */
+.sidebar-section:empty,
+.sidebar-section .spacer,
+.widget.spacer {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+}
+
 
 
