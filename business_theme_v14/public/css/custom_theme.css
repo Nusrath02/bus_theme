@@ -1,95 +1,79 @@
-.ce-block,
-.ce-block.col-xs-12,
-.ce-block.col-sm-6,
-.ce-block.col-md-4,
-.ce-block.col-lg-3 {
+/* ==================== REMOVE WIDGET CONTAINER LINES ==================== */
+/* Target the specific widget structure causing horizontal lines */
+
+/* Remove borders from widget containers */
+.widget.links-widget-box,
+.widget[data-widget-name="rlarh5386p"] {
     border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    box-shadow: none !important;
-    outline: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Remove borders from ce-block__content */
-.ce-block__content,
-.ce-block .ce-block__content {
+/* Remove borders from widget header */
+.widget-head,
+.widget .widget-head {
     border: none !important;
-    border-top: none !important;
     border-bottom: none !important;
-    box-shadow: none !important;
-    outline: none !important;
 }
 
-/* Remove any pseudo-elements that create horizontal lines */
-.ce-block::before,
-.ce-block::after,
-.ce-block__content::before,
-.ce-block__content::after {
+/* Remove borders from widget body */
+.widget-body,
+.widget .widget-body {
+    border: none !important;
+    border-top: none !important;
+}
+
+/* Remove borders from individual navigation items */
+.widget-body a,
+.widget-body .widget-link {
+    border: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+/* Remove any list item borders */
+.widget-body ul,
+.widget-body li {
+    border: none !important;
+    border-bottom: none !important;
+    list-style: none !important;
+}
+
+/* Remove pseudo-elements that might create lines */
+.widget-body a::after,
+.widget-body a::before,
+.widget-body li::after,
+.widget-body li::before {
     display: none !important;
     content: none !important;
     border: none !important;
-    background: none !important;
-    height: 0 !important;
-    width: 0 !important;
 }
 
-/* Remove borders from nested columns inside ce-block */
-.ce-block .col-xs-12,
-.ce-block .col-sm-6,
-.ce-block .col-md-4,
-.ce-block .col-lg-3,
-.ce-block [class*="col-"] {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    box-shadow: none !important;
-}
-
-/* Remove widget borders that might appear as lines */
-.ce-block .widget,
-.ce-block .widget-box,
-.ce-block .links-widget-box {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-}
-
-/* Remove any row separators */
-.ce-block + .ce-block {
-    border-top: none !important;
-    margin-top: 15px !important;
-}
-
-/* Target the specific widget structure from screenshot */
-.ce-block .widget[data-widget-name] {
-    border: none !important;
-    background: white !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
-}
-
-/* Remove any dividers, separators, or horizontal rules */
-.ce-block hr,
-.ce-block .separator,
-.ce-block .divider,
-.ce-block .ce-delimiter {
+/* Remove any separator elements */
+.widget-body .separator,
+.widget-body hr,
+.widget-body .divider {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
 }
 
-/* Ensure codex-editor containers don't add borders */
-.codex-editor .ce-block,
-.codex-editor__redactor .ce-block {
+/* If the lines are coming from specific link styling */
+.widget-body a[href*="staffing-plan"],
+.widget-body a[href*="job-requisition"],
+.widget-body a[href*="job-opening"],
+.widget-body a[href*="job-applicant"],
+.widget-body a[href*="job-offer"],
+.widget-body a[href*="employee-referral"] {
     border: none !important;
-    outline: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+/* Alternative approach - remove all borders from widget descendants */
+.widget * {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
 }
 
 
