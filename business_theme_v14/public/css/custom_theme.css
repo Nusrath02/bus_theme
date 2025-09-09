@@ -1,7 +1,46 @@
-/* ==================== REMOVE CONTENT EDITOR LINES ==================== */
-/* Remove borders and lines from content editor blocks */
+/* ==================== REMOVE DASHBOARD WIDGET LINES ==================== */
+/* Target the specific structure from your screenshot */
 
-.ce-block {
+/* Remove borders from all column containers */
+.ce-block .col-xs-12,
+.ce-block .col-sm-6,
+.ce-block .col-md-4,
+.ce-block .col-lg-3,
+.ce-block [class*="col-"] {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove borders from widget containers */
+.ce-block .widget,
+.ce-block .widget-box,
+.ce-block .shortcut-widget-box {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove any row borders */
+.ce-block .row,
+.ce-block .widget-row {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove borders from ce-block itself */
+.ce-block,
+.ce-block.ce-block_content {
     border: none !important;
     border-top: none !important;
     border-bottom: none !important;
@@ -9,69 +48,55 @@
     outline: none !important;
 }
 
-/* Remove any pseudo-elements that create lines */
+/* Remove any pseudo-elements creating lines */
 .ce-block::before,
-.ce-block::after {
+.ce-block::after,
+.ce-block .col-xs-12::before,
+.ce-block .col-xs-12::after,
+.ce-block .widget::before,
+.ce-block .widget::after {
     display: none !important;
     content: none !important;
     border: none !important;
+    background: none !important;
+    height: 0 !important;
 }
 
-/* Remove borders from content areas */
-.ce-block .ce-block__content {
+/* Remove Bootstrap column gutters that might show as lines */
+.ce-block .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.ce-block [class*="col-"] {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+/* Target the specific widget structure */
+.ce-block .ce-block_content .widget,
+.ce-block .ce-block_content .col-xs-12 .widget {
     border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
+    background: white !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
 }
 
-.ce-block .ce-block__content::before,
-.ce-block .ce-block__content::after {
-    display: none !important;
-    content: none !important;
-    border: none !important;
-}
-
-/* Remove any separators or dividers */
-.codex-editor .ce-block + .ce-block {
-    border-top: none !important;
-    margin-top: 0 !important;
-}
-
-/* Remove any editor wrapper borders */
-.codex-editor,
-.codex-editor__redactor {
-    border: none !important;
-    outline: none !important;
-}
-
-/* Specifically target any horizontal rules or separators */
+/* Remove any dividers or separators */
 .ce-block hr,
-.ce-block .ce-delimiter,
-.ce-block .separator {
-    display: none !important;
-}
-
-/* Remove any container borders that might show as lines */
-.widget.ce-block,
-.ce-block.widget {
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* If the lines are coming from a specific content type */
-.ce-block[data-tool="paragraph"] {
-    border: none !important;
-}
-
-/* Alternative approach - hide any dividing elements */
-.ce-block > .ce-block-divider,
-.ce-block > .block-divider,
-.ce-block > hr {
+.ce-block .separator,
+.ce-block .divider,
+.ce-block .widget-separator {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* If there are specific widget card borders */
+.widget.links-widget-box,
+.widget[data-widget-name] {
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 }
 
 
