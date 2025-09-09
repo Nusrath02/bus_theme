@@ -1335,41 +1335,32 @@ header .form-control:focus {
 
 /////////////
 
-/* Ensure sidebar-action wrapper is positioned */
-.sidebar-action.show-tags {
-    position: relative !important;
-}
+/* Fix for dropdown popups moving outside sidebar */
 
-/* Keep sidebar compact, no gap after Show Tags */
-.sidebar-section.filter-section,
-.sidebar-section.save-filter-section {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: none !important;
-}
-
-/* Specific adjustment: Save Filter should sit neatly below Show Tags */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section {
-  margin-top: 0 !important;   /* no gap */
-  padding-top: 0 !important;
-}
-
-/* Sidebar container should still scroll normally */
+/* 1. Sidebar stays scrollable, not overflow: visible */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar .sidebar-menu {
   min-height: 0 !important;
   height: auto !important;
-  max-height: 75vh !important;     /* set scroll area */
-  overflow-y: auto !important;     /* keep vertical scroll */
-  overflow-x: hidden !important;   /* prevent horizontal bleed */
+  max-height: 75vh !important;   /* scrollable limit */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
-/* Allow dropdown menus (popups) to break out visually */
+/* 2. Force dropdown menus inside sidebar to align to parent */
 .list-sidebar.overlay-sidebar .dropdown-menu {
-  position: absolute !important;
-  z-index: 2000 !important;
-  overflow: visible !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  margin-top: 4px !important;
+  transform: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 3. Keep the "Save Filter" right under "Show Tags" without extra gap */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
