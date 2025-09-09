@@ -1,10 +1,77 @@
+/* ==================== REMOVE CONTENT EDITOR LINES ==================== */
+/* Remove borders and lines from content editor blocks */
+
+.ce-block {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove any pseudo-elements that create lines */
+.ce-block::before,
+.ce-block::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+}
+
+/* Remove borders from content areas */
 .ce-block .ce-block__content {
     border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 .ce-block .ce-block__content::before,
 .ce-block .ce-block__content::after {
     display: none !important;
+    content: none !important;
+    border: none !important;
+}
+
+/* Remove any separators or dividers */
+.codex-editor .ce-block + .ce-block {
+    border-top: none !important;
+    margin-top: 0 !important;
+}
+
+/* Remove any editor wrapper borders */
+.codex-editor,
+.codex-editor__redactor {
+    border: none !important;
+    outline: none !important;
+}
+
+/* Specifically target any horizontal rules or separators */
+.ce-block hr,
+.ce-block .ce-delimiter,
+.ce-block .separator {
+    display: none !important;
+}
+
+/* Remove any container borders that might show as lines */
+.widget.ce-block,
+.ce-block.widget {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* If the lines are coming from a specific content type */
+.ce-block[data-tool="paragraph"] {
+    border: none !important;
+}
+
+/* Alternative approach - hide any dividing elements */
+.ce-block > .ce-block-divider,
+.ce-block > .block-divider,
+.ce-block > hr {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
