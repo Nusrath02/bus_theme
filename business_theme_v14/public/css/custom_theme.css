@@ -1,77 +1,96 @@
-/* ======= Remove debug outlines (delete your debug rules) ======= */
-.sidebar-section.filter-section,
-.sidebar-section {
-  outline: none !important;
-  box-shadow: none !important;
+/* ==================== FORCE-COLLAPSE: filter-section (place at EOF) ==================== */
+/* Aggressive, high-specificity overrides to remove extra vertical gap */
+
+html body .list-sidebar.overlay-sidebar .sidebar-section.filter-section,
+html body .list-sidebar .sidebar-section.filter-section,
+html body .sidebar-section.filter-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
 }
 
-/* ======= Gap killer: shrink sidebar bottom space ======= */
-/* Let sidebar size itself to content (no forced full-viewport min-height) */
-.col-lg-2.layout-side-section,
-.layout-side-section,
-.list-sidebar.overlay-sidebar,
-.list-sidebar {
-  min-height: 0 !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding-bottom: 6px !important; /* tiny padding so edges don't touch — change to 0 if you want absolutely no padding */
+/* Remove any generated pseudo-element spacing */
+.sidebar-section.filter-section::before,
+.sidebar-section.filter-section::after {
+    display: none !important;
+    content: none !important;
 }
 
-/* Remove any bottom margin/padding from every sidebar-section */
-.list-sidebar.overlay-sidebar .sidebar-section,
-.list-sidebar .sidebar-section,
-.sidebar-section {
-  margin: 0 !important;
-  padding: 0 !important;
+/* Make direct children compact (no extra margins/paddings/heights) */
+.sidebar-section.filter-section > * {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
 }
 
-/* Ensure the last sidebar-section has zero bottom gap */
-.list-sidebar.overlay-sidebar .sidebar-section:last-child,
-.list-sidebar .sidebar-section:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+/* Hide empty/placeholder nodes that sometimes create big empty blocks */
+.sidebar-section.filter-section .empty-state,
+.sidebar-section.filter-section .no-results,
+.sidebar-section.filter-section .group-by-empty,
+.sidebar-section.filter-section .hidden,
+.sidebar-section.filter-section .list-filters .list-link:empty {
+    display: none !important;
 }
 
-/* Hide any spacer widgets that create blank areas */
-.widget.spacer,
-.list-sidebar .spacer,
-.list-sidebar .widget.spacer,
-.sidebar-spacer,
-.flex-spacer {
-  display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* If ERPNext injected inline height styles, override them */
+.sidebar-section.filter-section [style*="height"],
+.sidebar-section.filter-section [style*="min-height"],
+.sidebar-section.filter-section [style*="max-height"] {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
 }
 
-/* Remove bottom padding from the sidebar menu container */
-.layout-side-section .sidebar-menu,
-.list-sidebar.overlay-sidebar .standard-sidebar,
-.list-sidebar .standard-sidebar {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* Make filter-section sit flush with the next section */
+/* Ensure the next sidebar block sits up snugly */
 .sidebar-section.filter-section + .sidebar-section,
-.sidebar-section.filter-section + .list-unstyled,
-.sidebar-section.filter-section + .standard-sidebar,
-.sidebar-section.filter-section + .save-filter-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.sidebar-section.filter-section + li {
+    margin-top: 4px !important;
+    padding-top: 0 !important;
 }
 
-/* Keep dropdowns/popups visible & above everything (unchanged from before) */
-.sidebar-section.filter-section,
-.sidebar-section.filter-section * {
-  overflow: visible !important;
+/* ================== FIX DROPDOWN ALIGNMENT ================== */
+.sidebar-section.filter-section .frappe-control,
+.sidebar-section.filter-section .control-input-wrapper,
+.sidebar-section.filter-section select {
+    position: relative !important;
+    overflow: hidden !important;   /* keep dropdown inside box */
+    border-radius: 8px !important; /* match rounded look */
 }
-.awesomplete,
-.dropdown-menu,
-.select2-container {
-  z-index: 9999 !important;
-  position: absolute !important;
+
+/* Ensure dropdown stays inside its white box */
+.sidebar-section.filter-section .awesomplete,
+.sidebar-section.filter-section .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
 }
+
+/* Tighten spacing between dropdown and "No filters found" box */
+.sidebar-section.filter-section .frappe-control + div {
+    margin-top: 4px !important;
+}
+
+/* Optional debug outline — remove after verifying */
+.sidebar-section.filter-section { 
+    outline: 1px dashed rgba(255,0,0,0.12) !important; 
+}
+
 
 
 
