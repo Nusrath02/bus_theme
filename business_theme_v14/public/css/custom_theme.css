@@ -60,7 +60,7 @@ html body .sidebar-section.filter-section {
 }
 
 /* Optional debug outline — remove after verifying */
-.sidebar-section.filter-section { outline: 1px dashed rgba(255,0,0,0.12) !important; }
+/* .sidebar-section.filter-section { outline: 1px dashed rgba(255,0,0,0.12) !important; } */
 
 
 
