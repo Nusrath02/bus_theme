@@ -1,6 +1,7 @@
- .dashboard-widget-box {
-    display: none !important;
+.widget-head {
+    border-bottom: none !important;
 }
+
 
 
 
