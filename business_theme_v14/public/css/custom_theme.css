@@ -1,24 +1,4 @@
-/* ============================
-   FIX SIDEBAR SECTION SPACING
-   ============================ */
 
-/* Target direct child blocks inside sidebar */
-.sidebar > * {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Remove default gap if sidebar is using flex/grid */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 0 !important;
-}
-
-/* Optional: add a tiny spacing (change 0 to e.g. 4px if you want breathing room) */
-.sidebar > * + * {
-  margin-top: 0 !important;
-}
 
 
 
