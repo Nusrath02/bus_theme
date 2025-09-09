@@ -1376,3 +1376,21 @@ header .form-control:focus {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* Ensure dropdown sits below Show Tags but above Save Filter */
+.sidebar-section.filter-section {
+  position: relative !important;   /* anchor point for popup */
+  z-index: 10 !important;
+}
+
+/* Dropdown from Show Tags */
+.sidebar-section.filter-section .dropdown-menu {
+  margin-top: 6px !important;      /* small buffer so it clears the button */
+  z-index: 2000 !important;        /* keep it above Save Filter */
+}
+
+/* Save Filter starts AFTER dropdown */
+.sidebar-section.save-filter-section {
+  margin-top: 40px !important;     /* push it down so dropdown has room */
+}
+
