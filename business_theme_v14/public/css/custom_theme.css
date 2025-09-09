@@ -1,22 +1,13 @@
-/* Remove unwanted vertical gap after "Show Tags" */
-.sidebar-section.filter-section {
-    margin-bottom: 4px !important;   /* shrink large gap */
+/* Compact the filter section children */
+.sidebar-section.filter-section * {
+    margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-    max-height: fit-content !important; /* shrink to content height */
+}
+/* Compact filter section but keep a very small gap */
+.sidebar-section.filter-section * {
+    margin-bottom: 2px !important;
 }
 
-/* Ensure the next block doesn’t push it down */
-.sidebar-section.save-filter-section {
-    margin-top: 4px !important;  /* small neat gap */
-    padding-top: 0 !important;
-}
-
-.sidebar-section.filter-section,
-.sidebar-section.save-filter-section {
-    margin: 0 !important;
-    padding: 0 !important;
-    max-height: fit-content !important;
-}
 
 
 
