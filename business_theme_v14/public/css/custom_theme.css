@@ -1351,15 +1351,25 @@ header .form-control:focus {
 }
 
 /* 2. Force dropdown menus inside sidebar to align to parent */
+/* Keep dropdowns directly below their trigger inside the sidebar */
 .list-sidebar.overlay-sidebar .dropdown-menu {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  margin-top: 4px !important;
+  position: absolute !important;      /* anchor to parent */
+  top: 100% !important;               /* exactly below trigger */
+  left: 0 !important;                 /* align with trigger's left edge */
+  right: auto !important;
+  margin-top: 4px !important;         /* small neat gap */
   transform: none !important;
+
+  width: 100% !important;             /* same width as trigger */
   max-width: 100% !important;
-  width: 100% !important;
+  max-height: 180px !important;       /* prevent it from overflowing */
+  overflow-y: auto !important;
+
+  border-radius: 6px !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,.15) !important;
+  z-index: 2000 !important;           /* make sure it shows above */
 }
+
 
 /* 3. Keep the "Save Filter" right under "Show Tags" without extra gap */
 .sidebar-section.filter-section + .sidebar-section.save-filter-section {
