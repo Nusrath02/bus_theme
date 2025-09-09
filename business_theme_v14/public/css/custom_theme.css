@@ -1261,30 +1261,74 @@ header .form-control:focus {
 
 /* shoretcut container */
 
-/* ================== FIX GAP AFTER SHOW TAGS ================== */
+/* ====================== STRONG OVERRIDE: REMOVE BIG GAP AFTER "Show Tags" ====================== */
 
-/* Remove default spacing between sidebar sections */
-.list-sidebar.overlay-sidebar .sidebar-section {
-    margin: 0 !important;
-    padding: 0 !important;
+/* 1) Collapse all sidebar list items (remove any built-in spacing) */
+.list-unstyled.sidebar-menu,
+.list-unstyled.sidebar-menu > li {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
-/* Specifically collapse the gap between Show Tags block and Save Filter block */
-.sidebar-section:has(.btn:contains("Show Tags")) {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-.sidebar-section:has(.btn:contains("Show Tags")) + .sidebar-section.save-filter-section {
-    margin-top: 6px !important;   /* small neat gap instead of big blue space */
-    padding-top: 0 !important;
+/* 2) Collapse all .sidebar-section containers (no forced heights or bottom spacing) */
+.list-unstyled.sidebar-menu > li.sidebar-section,
+.sidebar-section.filter-section,
+.sidebar-section.save-filter-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
 }
 
-/* Kill hidden/empty spacers in between */
-.list-sidebar.overlay-sidebar .spacer,
-.list-sidebar.overlay-sidebar .empty,
-.list-sidebar.overlay-sidebar .sidebar-section:empty {
-    display: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 0 !important;
+/* 3) Remove margins/padding from common inner elements that create gaps */
+.list-unstyled.sidebar-menu > li.sidebar-section * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 4) Hide any spacer/empty blocks that Frappe might inject between sections */
+.list-unstyled.sidebar-menu > li[class*="spacer"],
+.list-unstyled.sidebar-menu > li > .spacer,
+.list-unstyled.sidebar-menu > li > .widget.spacer,
+.list-unstyled.sidebar-menu > li > .empty,
+.list-unstyled.sidebar-menu > li:empty {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 5) Target the Show Tags action specifically and remove its bottom gap */
+.sidebar-section.filter-section .sidebar-action.show-tags,
+.sidebar-section.filter-section .sidebar-action.show-tags * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* 6) Make sure the next sidebar-section (Save Filter) sits right under the filter-section */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section,
+.list-unstyled.sidebar-menu > li.sidebar-section.filter-section + li.sidebar-section.save-filter-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 7) (Fallback) If there is still a hard gap, gently pull Save Filter up.
+   Reduce the -XXpx value if it overlaps content — start at -8px, increase only if needed. */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+  /* comment out following line once gap is fixed */
+  margin-top: -8px !important;
+}
+
+/* 8) Prevent scrollbox / overflow heights from forcing a tall empty area */
+.col-lg-2.layout-side-section,
+.list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar .sidebar-menu {
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
