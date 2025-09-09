@@ -1,3 +1,20 @@
+/* Remove unwanted gap below tags */
+.tags {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* In case there's an extra empty paragraph after tags */
+.tags + p,
+.tags + div {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Normalize line height so no extra vertical space sneaks in */
+.tags * {
+  line-height: 1.2;
+}
 
 
 
