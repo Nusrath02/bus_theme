@@ -1420,3 +1420,8 @@ header .form-control:focus {
   margin-bottom: 12px !important;   /* ⬅ increase/decrease as needed */
 }
 
+///bugs1 removing extra line///
+.widget-label{
+    display:none;
+}
+
