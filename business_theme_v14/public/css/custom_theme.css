@@ -376,7 +376,9 @@ header .form-control:focus {
     font-weight: 700 !important;
     margin: 15px 0 !important;
     display: block !important;
+    display:!important;
 }
+/* //379 */
 
 /* Percentage indicators */
 .percentage-indicator,
@@ -1422,6 +1424,6 @@ header .form-control:focus {
 
 ///bugs1 removing extra line///
 .widget-head{
-    display:none;
+    display:none !important;
 }
 
