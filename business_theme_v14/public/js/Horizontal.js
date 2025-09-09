@@ -200,5 +200,19 @@ if (jobOpeningWidget) {
     console.log('Job Opening widget moved to bottom');
 } else {
     console.log('Job Opening widget not found');
-}                                                                                                                                                                     
+}   
+
+let el = document.querySelector('.sidebar-section.filter-section');
+if (!el) { console.log('filter-section not found'); }
+else {
+  let p = el;
+  while (p) {
+    const cs = getComputedStyle(p);
+    console.log(p.tagName.toLowerCase(), p.className, 'margin-bottom=', cs.marginBottom, 'padding-bottom=', cs.paddingBottom, 'height=', cs.height);
+    p = p.parentElement;
+    if (p.tagName.toLowerCase()==='body') break;
+  }
+}
+document.querySelectorAll('.widget.spacer, .spacer, .flex-spacer').forEach(n=>n.style.display='none');
+                                                                                                                                                                  
                                                                                                                                                                       
