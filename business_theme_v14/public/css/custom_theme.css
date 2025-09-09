@@ -1,67 +1,50 @@
-/* ---------- Surgical: remove only the bottom gap, keep everything else ---------- */
+/* ==================== FIX FILTER-SECTION GAP (Balanced) ==================== */
 
-/* Remove debug outline if present from earlier trial */
-.sidebar-section.filter-section { outline: none !important; }
-
-/* Trim only the bottom space of the filter block (safe, minimal) */
-.list-sidebar.overlay-sidebar > .sidebar-section.filter-section,
-.list-sidebar > .sidebar-section.filter-section,
+/* Only control outer spacing of the filter section */
 .sidebar-section.filter-section {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Pull the next sibling up (if it's the save-filter block) without touching internal layout */
-.list-sidebar.overlay-sidebar > .sidebar-section.filter-section + .sidebar-section.save-filter-section,
-.list-sidebar > .sidebar-section.filter-section + .sidebar-section.save-filter-section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* Restore reasonable spacing for form controls & actions INSIDE the filter-section
-   so inputs/buttons and dropdowns keep their expected spacing and popup behaviour. */
-.sidebar-section.filter-section .form-control,
-.sidebar-section.filter-section .input-with-feedback,
-.sidebar-section.filter-section .btn,
-.sidebar-section.filter-section .sidebar-action,
-.sidebar-section.filter-section .list-filters,
-.sidebar-section.filter-section .list-link,
-.sidebar-section.filter-section .dropdown,
-.sidebar-section.filter-section .group-by-dropdown,
-.sidebar-section.filter-section .dropdown-menu {
-    margin: 6px 0 !important;       /* small breathing space for controls */
-    padding: initial !important;    /* don't force internal padding */
-}
-
-/* Keep dropdowns positioned as popups (don’t break them) */
-.sidebar-section.filter-section .dropdown-menu {
-    position: absolute !important;
-    top: calc(100% + 6px) !important;
-    left: 0 !important;
-    z-index: 2000 !important;
-    max-height: 240px !important;
-    overflow-y: auto !important;
-}
-
-/* Hide empty placeholders that sometimes introduce invisible gaps */
-.sidebar-section.filter-section .empty-state,
-.sidebar-section.filter-section .no-results,
-.sidebar-section.filter-section .group-by-empty,
-.sidebar-section.filter-section br,
-.sidebar-section.filter-section hr {
-    display: none !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Undo any inline-height forcing left by earlier aggressive rules */
-.sidebar-section.filter-section [style*="height"],
-.sidebar-section.filter-section [style*="min-height"],
-.sidebar-section.filter-section [style*="max-height"] {
-    height: auto !important;
-    min-height: 0 !important;
+/* Remove empty pseudo-elements that create space */
+.sidebar-section.filter-section::before,
+.sidebar-section.filter-section::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Collapse empty placeholders but keep real fields intact */
+.sidebar-section.filter-section .empty-state,
+.sidebar-section.filter-section .no-results,
+.sidebar-section.filter-section .group-by-empty,
+.sidebar-section.filter-section .hidden,
+.sidebar-section.filter-section .list-filters .list-link:empty {
+    display: none !important;
+}
+
+/* Restore input and popup sizing */
+.sidebar-section.filter-section input,
+.sidebar-section.filter-section select,
+.sidebar-section.filter-section textarea,
+.sidebar-section.filter-section .btn,
+.sidebar-section.filter-section .awesomplete,
+.sidebar-section.filter-section .dropdown-menu {
+    margin: 4px 0 !important;   /* small neat gap between fields */
+    padding: 6px 8px !important;
+    height: auto !important;    /* allow natural height */
+    min-height: 32px !important;
     max-height: none !important;
 }
+
+/* Ensure popups/dropdowns are fully visible */
+.sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .popover,
+.sidebar-section.filter-section .modal {
+    max-height: 400px !important; /* adjust as needed */
+    overflow: auto !important;
+    z-index: 9999 !important;     /* bring above sidebar */
+}
+
 
 
 
