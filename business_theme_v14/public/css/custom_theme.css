@@ -1,3 +1,55 @@
+/* ==================== FIX GAP + POPUP VISIBILITY ==================== */
+
+/* Remove big bottom gap from filter-section itself */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;   /* 🚫 no gap */
+    padding-bottom: 0 !important;
+    overflow: visible !important;  /* allow popups to expand out */
+}
+
+/* Kill only artificial pseudo spacing */
+.sidebar-section.filter-section::before,
+.sidebar-section.filter-section::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Compact margins between children (but do not force height/padding) */
+.sidebar-section.filter-section > * {
+    margin-top: 0 !important;
+    margin-bottom: 4px !important; /* keep small spacing between fields */
+    overflow: visible !important;  /* keep child popups visible */
+}
+
+/* Ensure next section doesn’t create huge gap */
+.sidebar-section.filter-section + .sidebar-section {
+    margin-top: 0 !important;   /* 🚫 no gap between sections */
+}
+
+/* Restore natural input & popup sizing */
+.sidebar-section.filter-section input,
+.sidebar-section.filter-section select,
+.sidebar-section.filter-section textarea {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+    padding: revert !important;
+    line-height: normal !important;
+}
+
+/* Allow dropdowns/popups inside sidebar to show fully */
+.sidebar-section.filter-section,
+.sidebar-section.filter-section * {
+    overflow: visible !important;
+}
+
+/* Ensure select2/awesomplete/autocomplete dropdowns are not clipped */
+.awesomplete,
+.dropdown-menu,
+.select2-container {
+    z-index: 9999 !important;   /* bring above sidebar */
+    position: absolute !important;
+}
 
 
 
