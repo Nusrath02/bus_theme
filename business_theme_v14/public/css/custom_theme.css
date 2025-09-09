@@ -1324,16 +1324,18 @@ header .form-control:focus {
 }
 
 /* 8) Prevent scrollbox / overflow heights from forcing a tall empty area */
-.col-lg-2.layout-side-section,
+/* .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar .sidebar-menu {
   min-height: 0 !important;
   height: auto !important;
   max-height: none !important;
   overflow: visible !important;
-}
+} */
 
 /////////////
+
+/* Fix for dropdown popups moving outside sidebar */
 
 /* Fix for dropdown popups moving outside sidebar */
 
