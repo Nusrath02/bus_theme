@@ -636,7 +636,7 @@ header .form-control:focus {
     .layout-main-section .widget .widget-head,
     .layout-main-section .widget .widget-title {
         font-size: 16px !important;
-        margin-bottom: 15px !important;
+        margin-bottom: 5px !important;
     }
 }
 
