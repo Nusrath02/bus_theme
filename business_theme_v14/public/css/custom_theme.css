@@ -1207,8 +1207,8 @@ header .form-control:focus {
 /* Optional: also control text alignment inside */
 /* Keep your container sizing */
 .widget.shortcut-widget-box {
-    min-height: 50px !important;
-    padding: 8px 12px !important;
+    min-height: 40px !important;
+    padding: 6px 8px !important;
 }
 
 /* Align title and subtitle in the same line */
