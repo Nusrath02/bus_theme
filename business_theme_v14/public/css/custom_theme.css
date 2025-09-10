@@ -780,7 +780,7 @@ header .form-control:focus {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 95vh !important;   /* reduced from             80vh → 70vh */
+    max-height: 80vh !important;   /* reduced from             80vh → 70vh */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
@@ -1298,6 +1298,32 @@ header .form-control:focus {
     margin-top: 8px !important;   /* small clean gap */
     padding-top: 0 !important;
 }
+/* ==================== REMOVE EMPTY GAP AFTER "SHOW TAGS" ==================== */
+
+/* Kill empty/unused containers under filter-section */
+.sidebar-section.filter-section > div:empty,
+.sidebar-section.filter-section > ul:empty,
+.sidebar-section.filter-section > li:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure filter-section only fits its content */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Pull the Save Filter section up */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+    margin-top: 8px !important;  /* small clean gap */
+}
+
 
 ///bugs1 removing extra line///
 
