@@ -1323,6 +1323,25 @@ header .form-control:focus {
 .sidebar-section.filter-section + .sidebar-section.save-filter-section {
     margin-top: 8px !important;  /* small clean gap */
 }
+/* ==================== FIX DROPDOWN/POPUP POSITION ==================== */
+
+/* Make sure parent container allows absolute positioning */
+.sidebar-section.filter-section {
+    position: relative !important;
+}
+
+/* Force dropdown/popups to appear just under the input field */
+.sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .awesomplete,
+.sidebar-section.filter-section .autocomplete-results {
+    position: absolute !important;
+    top: 100% !important;   /* directly below field */
+    left: 0 !important;
+    right: auto !important;
+    z-index: 9999 !important; /* keep it above other elements */
+    margin-top: 2px !important; /* small gap under input */
+}
+
 
 
 ///bugs1 removing extra line///
