@@ -2432,37 +2432,39 @@ header * {
 
 /* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
 
-/* ==================== CONFIGURE COLUMNS MODAL ALIGNMENT FIX ==================== */
-/* Simplified fix targeting the exact ERPNext structure from your HTML */
+/* ==================== DELETE ICON ALIGNMENT FIX ==================== */
+/* Fix the delete icon positioning to match Image 2 layout exactly */
 
-/* Target the specific control-input elements that contain each row */
+/* Remove any extra borders or backgrounds from individual field containers */
 .control-input-wrapper.selected-fields .control-input.flex.align-center.form-control.fields_order.sortable-handle.sortable {
     display: flex !important;
     align-items: center !important;
-    padding: 8px 12px !important;
+    padding: 8px 0 !important;
     margin-bottom: 4px !important;
-    background: #f8fafc !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     min-height: 48px !important;
+    border-bottom: 1px solid #e5e7eb !important;
 }
 
-/* Fix the internal row structure */
+/* Fix the internal row structure - single line layout */
 .control-input-wrapper.selected-fields .control-input .row {
     display: flex !important;
     align-items: center !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    flex-wrap: nowrap !important;
 }
 
 /* Drag handle column - first col-1 */
 .control-input-wrapper.selected-fields .row .col-1:first-child {
-    flex: 0 0 32px !important;
+    flex: 0 0 40px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 !important;
+    padding: 0 8px 0 0 !important;
 }
 
 .control-input-wrapper.selected-fields .row .col-1:first-child a {
@@ -2470,6 +2472,12 @@ header * {
     align-items: center !important;
     justify-content: center !important;
     color: #64748b !important;
+    cursor: grab !important;
+}
+
+.control-input-wrapper.selected-fields .row .col-1:first-child a svg {
+    width: 16px !important;
+    height: 16px !important;
 }
 
 /* Field name column - col-6 */
@@ -2477,44 +2485,58 @@ header * {
     flex: 1 !important;
     display: flex !important;
     align-items: center !important;
-    padding: 0 8px !important;
+    padding: 0 16px 0 8px !important;
     margin: 0 !important;
+    text-align: left !important;
 }
 
 .control-input-wrapper.selected-fields .row .col-6 b {
     font-size: 14px !important;
     font-weight: 500 !important;
-    color: #1e293b !important;
+    color: #374151 !important;
+    line-height: 1.2 !important;
 }
 
-/* Column width input - col-4 */
+/* Column width input - col-4 - remove border box styling */
 .control-input-wrapper.selected-fields .row .col-4 {
-    flex: 0 0 80px !important;
+    flex: 0 0 60px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 4px !important;
+    padding: 0 40px 0 8px !important; /* Increased right padding to push delete icon further right */
     margin: 0 !important;
 }
 
 .control-input-wrapper.selected-fields .row .col-4 input.form-control.column-width {
-    width: 60px !important;
+    width: 40px !important;
     height: 32px !important;
     padding: 4px 8px !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
     text-align: center !important;
-    border: 1px solid #cbd5e1 !important;
-    border-radius: 4px !important;
-    background: white !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #374151 !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-/* Delete button column - last col-1 */
+.control-input-wrapper.selected-fields .row .col-4 input.form-control.column-width:focus {
+    border: none !important;
+    background: #f9fafb !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Delete button column - FIXED POSITIONING */
 .control-input-wrapper.selected-fields .row .col-1:last-child {
-    flex: 0 0 32px !important;
+    flex: 0 0 40px !important; /* Increased width for better spacing */
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
+    justify-content: flex-end !important; /* Changed to flex-end to align right */
+    padding: 0 8px 0 0 !important; /* Right padding for spacing from edge */
+    margin-left: auto !important; /* Push to the far right */
 }
 
 .control-input-wrapper.selected-fields .row .col-1:last-child a.text-muted.remove-field {
@@ -2524,64 +2546,68 @@ header * {
     width: 24px !important;
     height: 24px !important;
     color: #ef4444 !important;
+    text-decoration: none !important;
 }
 
 .control-input-wrapper.selected-fields .row .col-1:last-child a.text-muted.remove-field:hover {
     color: #dc2626 !important;
 }
 
-/* Header styling */
-.form-group .row.form-section.visible-section {
-    background: #e2e8f0 !important;
-    font-weight: 600 !important;
-    color: #475569 !important;
-    border-radius: 6px !important;
-    padding: 8px 12px !important;
-    margin-bottom: 8px !important;
-}
-
-/* Add/Remove columns link */
-.help-box.small.text-muted {
-    margin-top: 12px !important;
-    padding: 8px 12px !important;
-    background: #f1f5f9 !important;
-    border-radius: 6px !important;
-    border: 1px dashed #cbd5e1 !important;
-}
-
-.help-box.small.text-muted p {
-    margin: 0 !important;
-    font-size: 13px !important;
-    color: #3b82f6 !important;
-    cursor: pointer !important;
-}
-
-/* Modal buttons */
-.modal-footer .btn {
-    padding: 8px 16px !important;
+.control-input-wrapper.selected-fields .row .col-1:last-child a i.fa.fa-trash-o {
     font-size: 14px !important;
-    font-weight: 500 !important;
-    border-radius: 6px !important;
 }
 
-.modal-footer .btn.btn-secondary {
+/* Header row styling - match the alignment */
+.form-layout .form-page .row.form-section.visible-section {
     background: #f8fafc !important;
-    border: 1px solid #cbd5e1 !important;
-    color: #475569 !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    border-radius: 0 !important;
+    padding: 12px 16px !important;
+    margin-bottom: 16px !important;
+    border: 1px solid #e5e7eb !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
-.modal-footer .btn.btn-primary {
-    background: #3b82f6 !important;
-    border: 1px solid #3b82f6 !important;
-    color: white !important;
+.form-layout .form-page .row.form-section.visible-section .col-1:first-child {
+    flex: 0 0 40px !important;
 }
 
-.modal-footer .btn.btn-primary:hover {
-    background: #1d4ed8 !important;
-    border-color: #1d4ed8 !important;
+.form-layout .form-page .row.form-section.visible-section .col-6 {
+    flex: 1 !important;
+    padding: 0 16px 0 8px !important;
 }
 
+.form-layout .form-page .row.form-section.visible-section .col-4 {
+    flex: 0 0 60px !important;
+    text-align: center !important;
+    padding: 0 40px 0 8px !important;
+}
 
+.form-layout .form-page .row.form-section.visible-section .col-1:last-child {
+    flex: 0 0 40px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding: 0 8px 0 0 !important;
+}
+
+/* Ensure no conflicting styles */
+.control-input-wrapper.selected-fields .control-input * {
+    box-sizing: border-box !important;
+}
+
+/* Additional fine-tuning for perfect alignment */
+.control-input-wrapper.selected-fields .row {
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Make sure the delete icon is positioned at the far right */
+.control-input-wrapper.selected-fields .row .col-1:last-child {
+    position: relative !important;
+    right: 0 !important;
+}
 
 
 
