@@ -325,8 +325,11 @@ header .form-control:focus {
     margin-bottom: 25px !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
+}
+.dashboard-widget-box {
     display:none !important;
 }
+/* ////////1 */
 
 /* Widget hover effects */
 .layout-main-section .widget:hover,
