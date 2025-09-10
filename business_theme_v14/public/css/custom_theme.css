@@ -1,66 +1,117 @@
+/* Target ALL possible widget selectors and force remove borders */
+.widget,
+.widget-box,
+.links-widget-box,
+.shortcut-widget-box,
+.dashboard-widget-box,
+[data-widget-name],
 .layout-main-section .widget,
 .layout-main-section [data-widget-name],
-.dashboard-widget-box {
-    background: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 25px !important;
-    margin-bottom: 25px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.3s ease !important;
+.layout-main-section .dashboard-widget-box,
+.ce-block .widget,
+.ce-block [data-widget-name] {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Remove internal borders and lines from widget content */
+/* Remove ALL borders from ANY element inside widgets */
+.widget *,
+.widget-box *,
+.links-widget-box *,
+[data-widget-name] *,
 .layout-main-section .widget *,
 .layout-main-section [data-widget-name] *,
-.dashboard-widget-box * {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
+.ce-block .widget * {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
 }
 
-/* Specifically target widget header to remove bottom border */
-.layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title {
-    border-bottom: none !important;
-    padding-bottom: 15px !important;
-    margin-bottom: 20px !important;
+/* Specifically target common elements that create lines */
+.widget-head,
+.widget-title,
+.widget-body,
+.widget-footer,
+.widget-content,
+.widget-header {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
 }
 
-/* Remove borders from widget body content */
-.layout-main-section .widget .widget-body,
-.layout-main-section .widget .widget-body * {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
+/* Remove lines from links and list items */
+.widget a,
+.widget li,
+.widget ul,
+.widget ol,
+.widget div,
+.widget span,
+.widget p {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
 }
 
-/* Remove borders from navigation links */
-.layout-main-section .widget .widget-body a {
-    border: none !important;
-    border-bottom: none !important;
-    display: block !important;
-    padding: 8px 0 !important;
-    text-decoration: none !important;
+/* Remove ALL pseudo-elements */
+.widget *::before,
+.widget *::after,
+.widget::before,
+.widget::after,
+[data-widget-name] *::before,
+[data-widget-name] *::after,
+[data-widget-name]::before,
+[data-widget-name]::after {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+    border-width: 0 !important;
+    background: none !important;
+    height: 0 !important;
+    width: 0 !important;
 }
 
-/* Remove any list styling borders */
-.layout-main-section .widget ul,
-.layout-main-section .widget li {
-    border: none !important;
-    list-style: none !important;
+/* Remove any separator elements */
+.widget hr,
+.widget .separator,
+.widget .divider,
+.widget .line,
+.widget .border {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
+    border: 0 !important;
 }
 
-/* Remove pseudo-element borders */
-.layout-main-section .widget *::before,
-.layout-main-section .widget *::after {
-    border: none !important;
-    content: none !important;
-    display: none !important;
+/* Remove table borders if present */
+.widget table,
+.widget tr,
+.widget td,
+.widget th {
+    border: 0 !important;
+    border-collapse: collapse !important;
+}
+
+/* Force remove any background images that might look like lines */
+.widget *[style*="border"],
+.widget *[style*="background"] {
+    border: 0 !important;
+    background-image: none !important;
 }
 
 
