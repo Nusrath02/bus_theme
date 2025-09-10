@@ -777,13 +777,17 @@ header .form-control:focus {
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
-    min-height: auto !important;
+    min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: none !important;       /* 🚫 remove restriction */
-    overflow-y: visible !important;    /* 🚫 allow full content, no scroll */
+    max-height: 95vh !important;   /* reduced from             80vh → 70vh */
+    overflow-y: auto !important;
     overflow-x: hidden !important;
-    padding: 4px !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;       /* added padding for spacing */
+    padding-bottom: 0 !important;
     border-radius: 15px !important;
 }
 
@@ -830,19 +834,19 @@ header .form-control:focus {
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
 .list-sidebar.overlay-sidebar .sidebar-item,
 .list-sidebar .module-sidebar-item {
-    font-size: 10px !important;      /* small readable text */
-    padding: 3px 6px !important;     /* tighter padding */
-    margin: 1px 0 !important;        /* tight spacing */
-    line-height: 1.2 !important;     /* compact line height */
-    border-radius: 4px !important;
+    font-size: 8px !important;       /* very small text */
+    padding: 2px 5px !important;      /* minimal padding */
+    margin: 1px 0 !important;         /* tight spacing */
+    line-height: 1 !important;        /* no extra vertical space */
+    border-radius: 4px !important;    /* smaller rounde corners */
 }
 
 /* Ultra-compact icons */
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
 .list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 10px !important;
-    margin-right: 4px !important;
-    min-width: 12px !important;
+    font-size: 8px !important;       /* shrink icons */
+    margin-right: 3px !important;     /* tighter icon gap */
+    min-width: 10px !important;       /* very narrow */
 }
 
 
@@ -851,12 +855,11 @@ header .form-control:focus {
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
 .list-sidebar.overlay-sidebar .sidebar-item:hover,
 .list-sidebar .module-sidebar-item:hover {
-    background: #2563eb !important;
+    background: #2563eb !important;    /* brighter hover color */
     color: #fff !important;
     transform: scale(1.02);
-    border-radius: 8px !important;
+    border-radius: 10px !important;
 }
-
 
 
 
