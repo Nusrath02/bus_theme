@@ -1268,161 +1268,35 @@ header .form-control:focus {
 
 /* ====================== STRONG OVERRIDE: REMOVE BIG GAP AFTER "Show Tags" ====================== */
 
-/* 1) Collapse all sidebar list items (remove any built-in spacing) */
-.list-unstyled.sidebar-menu,
-.list-unstyled.sidebar-menu > li {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
+/* ==================== FIX FILTER-SECTION SPACING ==================== */
 
-/* 2) Collapse all .sidebar-section containers (no forced heights or bottom spacing) */
-.list-unstyled.sidebar-menu > li.sidebar-section,
-.sidebar-section.filter-section,
-.sidebar-section.save-filter-section {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: none !important;
-}
-
-/* 3) Remove margins/padding from common inner elements that create gaps */
-.list-unstyled.sidebar-menu > li.sidebar-section * {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 4) Hide any spacer/empty blocks that Frappe might inject between sections */
-.list-unstyled.sidebar-menu > li[class*="spacer"],
-.list-unstyled.sidebar-menu > li > .spacer,
-.list-unstyled.sidebar-menu > li > .widget.spacer,
-.list-unstyled.sidebar-menu > li > .empty,
-.list-unstyled.sidebar-menu > li:empty {
-  display: none !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 5) Target the Show Tags action specifically and remove its bottom gap */
-.sidebar-section.filter-section .sidebar-action.show-tags,
-.sidebar-section.filter-section .sidebar-action.show-tags * {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-}
-
-/* 6) Make sure the next sidebar-section (Save Filter) sits right under the filter-section */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section,
-.list-unstyled.sidebar-menu > li.sidebar-section.filter-section + li.sidebar-section.save-filter-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* 7) (Fallback) If there is still a hard gap, gently pull Save Filter up.
-   Reduce the -XXpx value if it overlaps content — start at -8px, increase only if needed. */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section {
-  /* comment out following line once gap is fixed */
-  margin-top: -8px !important;
-}
-
-/* 8) Prevent scrollbox / overflow heights from forcing a tall empty area */
-/* .col-lg-2.layout-side-section,
-.list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar .sidebar-menu {
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-} */
-
-/////////////
-
-/* Fix for dropdown popups moving outside sidebar */
-
-
-.col-lg-2.layout-side-section,
-.list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar .sidebar-menu {
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: 75vh !important;   /* scrollable limit */
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-}
-
-
-.list-sidebar.overlay-sidebar .dropdown-menu {
-  position: absolute !important;      /* anchor to parent */
-  top: 100% !important;               /* exactly below trigger */
-  left: 0 !important;                 /* align with trigger's left edge */
-  right: auto !important;
-  margin-top: 4px !important;         /* small neat gap */
-  transform: none !important;
-
-  width: 100% !important;             /* same width as trigger */
-  max-width: 100% !important;
-  max-height: 180px !important;       /* prevent it from overflowing */
-  overflow-y: auto !important;
-
-  border-radius: 6px !important;
-  box-shadow: 0 6px 12px rgba(0,0,0,.15) !important;
-  z-index: 2000 !important;           /* make sure it shows above */
-}
-
-
-/* 3. Keep the "Save Filter" right under "Show Tags" without extra gap */
-.sidebar-section.filter-section + .sidebar-section.save-filter-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Ensure dropdown sits below Show Tags but above Save Filter */
+/* Keep fields normal, only remove the big bottom gap */
 .sidebar-section.filter-section {
-  position: relative !important;   /* anchor point for popup */
-  z-index: 10 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Dropdown from Show Tags */
-.sidebar-section.filter-section .dropdown-menu {
-  margin-top: 6px !important;      /* small buffer so it clears the button */
-  z-index: 2000 !important;        /* keep it above Save Filter */
+/* Restore normal spacing for fields inside */
+.sidebar-section.filter-section > * {
+    margin-bottom: 8px !important;   /* adjust: 8–12px for comfortable spacing */
+    padding: initial !important;
+    height: auto !important;
+    min-height: 36px !important;     /* ensures inputs/buttons don’t shrink */
+    max-height: none !important;
 }
 
-/* Save Filter starts AFTER dropdown */
-/* .sidebar-section.save-filter-section {
-  margin-top: 40px !important;     /* push it down so dropdown has room */
-} */
-
-/* Save Filter starts just a little below Show Tags */
-.sidebar-section.save-filter-section {
-  margin-top: 12px !important;   /* adjust this number as you like */
-  padding-top: 0 !important;
+/* Remove extra empty space created by pseudo-elements or empty nodes */
+.sidebar-section.filter-section::before,
+.sidebar-section.filter-section::after {
+    display: none !important;
+    content: none !important;
 }
 
-
-//////
-/* Add a small gap between Show Tags and Save Filter */
-/* Make Show Tags button bigger (height + font size) */
-.sidebar-section.filter-section .sidebar-action.show-tags {
-  display: block !important;
-  width: 100% !important;
-  padding: 10px 12px !important;   /* ⬅ increase height */
-  font-size: 14px !important;      /* ⬅ slightly bigger text */
-  font-weight: 600 !important;
-  border: 1px solid #d1d5db !important;
-  border-radius: 6px !important;
-  background: #f9fafb !important;
-  color: #111827 !important;
-  text-align: left !important;
-  cursor: pointer;
-}
-
-/* Add space below Show Tags */
-.sidebar-section.filter-section {
-  margin-bottom: 12px !important; 
+/* Make sure the next sidebar block sits neatly without huge gap */
+.sidebar-section.filter-section + .sidebar-section,
+.sidebar-section.filter-section + li {
+    margin-top: 8px !important;   /* small clean gap */
+    padding-top: 0 !important;
 }
 
 ///bugs1 removing extra line///
