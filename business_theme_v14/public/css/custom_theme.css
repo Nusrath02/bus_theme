@@ -342,7 +342,7 @@ header .form-control:focus {
     font-size: 18px !important;
     font-weight: 600 !important;
     margin-bottom: 0px !important;
-    border-bottom: 2px solid #f3f4f6 !important;
+    border-bottom: none !important;
     padding-bottom: 5px !important;
     text-decoration:none !important;
 }
