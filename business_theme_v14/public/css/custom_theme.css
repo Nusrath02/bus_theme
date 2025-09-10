@@ -1200,9 +1200,18 @@ header .form-control:focus {
 
 /* /* Reduce height of shortcut widget containers */
 .widget.shortcut-widget-box {
-    min-height: 60px !important;   /* adjust as needed */
-    padding: 8px 12px !important;  /* reduce internal spacing */
-} */
+    min-height: 50px !important;
+    padding: 8px 12px !important;
+    display: inline-flex !important;
+    align-items: center;
+    margin: 6px;
+    white-space: nowrap;          /* keep text in one line */
+    width: fit-content !important; /* expand only as needed */
+    max-width: 250px !important;   /* prevent from stretching too much */
+    overflow: hidden !important;   /* hide overflow */
+    text-overflow: ellipsis !important; /* show ... when too long */
+    border-radius: 6px;            /* optional style */
+}
 
 /* Optional: also control text alignment inside */
 /* Keep your container sizing */
@@ -1219,9 +1228,11 @@ header .form-control:focus {
 .widget.shortcut-widget-box .widget-head {
     display: flex;
     align-items: center;
-    gap: 6px;                      /* space between title & subtitle */
+    gap: 6px;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 
 /* Reset any manual offsets */
@@ -1235,8 +1246,8 @@ header .form-control:focus {
 /* Force shortcut widgets into 3 per row */
 .ce-block:has(.widget.shortcut-widget-box) {
     display: flex !important;
-    flex-wrap: wrap !important;   /* allow multiple per row */
-    gap: 8px;                     /* spacing between widgets */
+    flex-wrap: wrap !important;
+    gap: 8px;
 }
 
 /* shortcuts conainer */
