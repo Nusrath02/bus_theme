@@ -1754,7 +1754,7 @@ header .form-control:focus {
 }
 
 /* Widget headers */
-.layout-main-section .widget .widget-head,
+/* .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .widget-head h4 {
     color: #1f2937 !important;
@@ -1763,7 +1763,19 @@ header .form-control:focus {
     margin-bottom: 20px !important;
     border-bottom: 2px solid #f3f4f6 !important;
     padding-bottom: 15px !important;
+} */
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.widget-head h4 {
+    color: #1f2937 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 0px !important;
+    border-bottom: none !important;
+    padding-bottom: 5px !important;
+    text-decoration:none !important;
 }
+
 
 /* Widget content text */
 .layout-main-section .widget .widget-body,
@@ -1789,14 +1801,24 @@ header .form-control:focus {
 }
 
 /* Revenue metrics styling */
-.layout-main-section .widget .widget-body .number,
+/* .layout-main-section .widget .widget-body .number,
 .dashboard-number {
     color: #3b82f6 !important;
     font-size: 32px !important;
     font-weight: 700 !important;
     margin: 15px 0 !important;
     display: block !important;
+} */
+.layout-main-section .widget .widget-body .number,
+.dashboard-number {
+    color: #3b82f6 !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin: 1px 0 !important;
+    display: block !important;
+    display:!important;
 }
+
 
 /* Percentage indicators */
 .percentage-indicator,
@@ -2342,6 +2364,7 @@ header * {
 
 
 /* Abhi */
+
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
@@ -2986,6 +3009,71 @@ header * {
     flex: 0 0 33.333% !important; /* take up 1/3 of row */
     max-width: 30.333% !important;
 }
+
+
+/* sidebar seondpart */
+
+.col-lg-2.layout-side-section,
+.list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar .sidebar-menu {
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: 75vh !important;   /* scrollable limit */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+ 
+ 
+.list-sidebar.overlay-sidebar .dropdown-menu {
+  position: absolute !important;      /* anchor to parent */
+  top: 100% !important;               /* exactly below trigger */
+  left: 0 !important;                 /* align with trigger's left edge */
+  right: auto !important;
+  margin-top: 4px !important;         /* small neat gap */
+  transform: none !important;
+ 
+  width: 100% !important;             /* same width as trigger */
+  max-width: 100% !important;
+  max-height: 180px !important;       /* prevent it from overflowing */
+  overflow-y: auto !important;
+ 
+  border-radius: 6px !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,.15) !important;
+  z-index: 2000 !important;           /* make sure it shows above */
+}
+ 
+ 
+/* 3. Keep the "Save Filter" right under "Show Tags" without extra gap */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+ 
+/* Ensure dropdown sits below Show Tags but above Save Filter */
+.sidebar-section.filter-section {
+  position: relative !important;   /* anchor point for popup */
+  z-index: 10 !important;
+}
+ 
+/* Dropdown from Show Tags */
+.sidebar-section.filter-section .dropdown-menu {
+  margin-top: 6px !important;      /* small buffer so it clears the button */
+  z-index: 2000 !important;        /* keep it above Save Filter */
+}
+ 
+/* Save Filter starts AFTER dropdown */
+/* .sidebar-section.save-filter-section {
+  margin-top: 40px !important;     /* push it down so dropdown has room */
+} */
+ 
+/* Save Filter starts just a little below Show Tags */
+.sidebar-section.save-filter-section {
+  margin-top: 12px !important;   /* adjust this number as you like */
+  padding-top: 0 !important;
+}
+
+
+
 /* Abhi */
 
 
