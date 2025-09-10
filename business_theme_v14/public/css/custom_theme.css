@@ -779,7 +779,7 @@ header .form-control:focus {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 75vh !important;   /* reduced from 80vh → 70vh */
+    max-height: 95vh !important;   /* reduced from             80vh → 70vh */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
