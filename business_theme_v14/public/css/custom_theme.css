@@ -343,9 +343,10 @@ header .form-control:focus {
     color: #1f2937 !important;
     font-size: 18px !important;
     font-weight: 600 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: rpx !important;
     border-bottom: 2px solid #f3f4f6 !important;
-    padding-bottom: 15px !important;
+    padding-bottom: 5px !important;
+    text-decoration:none !important;
 }
 
 /* Widget content text */
@@ -364,7 +365,7 @@ header .form-control:focus {
     text-decoration: none !important;
     font-weight: 500 !important;
     transition: color 0.2s ease !important;
-    display:none !important;
+    
 }
 
 .layout-main-section .widget .widget-body a:hover {
@@ -1427,7 +1428,5 @@ header .form-control:focus {
 }
 
 ///bugs1 removing extra line///
-.widget-head{
-    display:none !important;
-}
+
 
