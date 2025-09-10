@@ -1341,6 +1341,20 @@ header .form-control:focus {
     z-index: 9999 !important; /* keep it above other elements */
     margin-top: 2px !important; /* small gap under input */
 }
+/* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
+
+/* Target common popup/dropdown classes */
+.dropdown-menu,
+.awesomplete,
+.autocomplete-results {
+    position: fixed !important;   /* detach from scrolling parent */
+    z-index: 9999 !important;     /* keep on top */
+}
+
+/* Ensure the sidebar does not clip popups */
+.sidebar-section.filter-section {
+    overflow: visible !important;
+}
 
 
 
