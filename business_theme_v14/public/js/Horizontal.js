@@ -214,5 +214,96 @@ else {
   }
 }
 document.querySelectorAll('.widget.spacer, .spacer, .flex-spacer').forEach(n=>n.style.display='none');
+
+
+    (() => {
+  // keep track of the last field/button the user clicked or focused inside the filter sidebar
+  let lastActiveField = null;
+  const SIDEBAR_SELECTOR = '.sidebar-section.filter-section';
+
+  // Update lastActiveField when user clicks or focuses inside the sidebar
+  document.addEventListener('mousedown', e => {
+    const el = e.target.closest(SIDEBAR_SELECTOR + ' *');
+    if (el) lastActiveField = e.target;
+  }, true);
+
+  document.addEventListener('focusin', e => {
+    const el = e.target.closest(SIDEBAR_SELECTOR + ' *');
+    if (el) lastActiveField = e.target;
+  }, true);
+
+  // reposition helper
+  function positionPopupBelowField(popup, field) {
+    if (!popup || !field) return;
+    try {
+      const rect = field.getBoundingClientRect();
+      popup.classList.add('sidebar-popup-fixed');
+      popup.style.left = rect.left + 'px';
+      popup.style.top  = (rect.bottom + 6) + 'px'; // small gap
+      popup.style.minWidth = rect.width + 'px';
+      popup.style.maxWidth = 'calc(100vw - 20px)';
+      popup.style.right = 'auto';
+      popup.style.transform = 'none';
+    } catch (err) {
+      // safe fail
+      console.error('positionPopupBelowField error', err);
+    }
+  }
+
+  // find visible popups within a node
+  function findAndPinPopups(node) {
+    if (!node) return;
+    const popupSelectors = [
+      '.dropdown-menu',
+      '.awesomplete',
+      '.autocomplete-results',
+      '.list-stats-dropdown',
+      '.group-by-dropdown'
+    ];
+    const sel = popupSelectors.join(',');
+    const popups = node.matches && node.matches(sel) ? [node] : Array.from(node.querySelectorAll ? node.querySelectorAll(sel) : []);
+    popups.forEach(popup => {
+      // slight delay to let JS position/animate it first, then we override
+      setTimeout(() => {
+        // If the popup is hidden or not visible, skip
+        const rect = popup.getBoundingClientRect();
+        if (rect.width === 0 && rect.height === 0) return;
+        positionPopupBelowField(popup, lastActiveField || document.activeElement);
+      }, 10);
+    });
+  }
+
+  // Observe newly added popups
+  const mo = new MutationObserver(mutations => {
+    for (const m of mutations) {
+      for (const node of m.addedNodes) {
+        if (!(node instanceof HTMLElement)) continue;
+        findAndPinPopups(node);
+      }
+      // also handle attribute changes where plugin toggles classes/display
+      if (m.type === 'attributes' && m.target instanceof HTMLElement) {
+        findAndPinPopups(m.target);
+      }
+    }
+  });
+
+  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style'] });
+
+  // Also pin any popups that already exist on load
+  setTimeout(() => findAndPinPopups(document.body), 300);
+
+  // Reposition while scrolling/resizing (keeps popup below field)
+  const repositionAll = () => {
+    document.querySelectorAll('.sidebar-popup-fixed').forEach(popup => {
+      positionPopupBelowField(popup, lastActiveField || document.activeElement);
+    });
+  };
+  window.addEventListener('scroll', repositionAll, true); // capture = true to hear sidebar scrolls
+  window.addEventListener('resize', repositionAll);
+
+  // Clean up: when popup is removed, garbage CSS class automatically goes away
+  console.log('Sidebar popup pinning initialized.');
+})();
+
                                                                                                                                                                   
                                                                                                                                                                       
