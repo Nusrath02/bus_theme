@@ -1334,7 +1334,8 @@ header .form-control:focus {
 .sidebar-section.filter-section .dropdown-menu,
 .sidebar-section.filter-section .awesomplete,
 .sidebar-section.filter-section .autocomplete-results {
-    position: absolute !important;
+/*     position: absolute !important; */
+    position: fixed !important;
     top: 100% !important;   /* directly below field */
     left: 0 !important;
     right: auto !important;
@@ -1343,23 +1344,6 @@ header .form-control:focus {
 }
 /* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
 
-/* allow sidebar to show popups (no clipping) */
-.sidebar-section.filter-section {
-  position: relative !important;
-  overflow: visible !important;
-}
-
-/* helper class used by JS to make a popup sticky to viewport */
-.sidebar-popup-fixed {
-  position: fixed !important;
-  transform: none !important;
-  z-index: 2147483647 !important;
-  max-height: 60vh !important;
-  overflow-y: auto !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
-  background-clip: padding-box !important;
-  will-change: top, left !important;
-}
 
 
 
