@@ -3083,130 +3083,230 @@ header * {
 
 /* search bar */
 
-/* ==================== SEARCH BAR ALIGNMENT FIX ==================== */
-/* Fix search bar alignment to match Image 1 layout */
+/* ==================== ERPNEXT SEARCH MODAL ALIGNMENT FIX ==================== */
+/* Fix ERPNext global search modal to match Image 1 layout */
 
-/* Main search container alignment */
-header .navbar-form,
-header .search-bar,
-.navbar .navbar-form {
+/* Target the search modal overlay */
+.modal-backdrop.search-modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Search modal positioning */
+.modal.search-modal,
+.search-dialog.modal,
+.global-search-dialog {
     display: flex !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     justify-content: center !important;
-    flex: 1 !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
+    padding-top: 8vh !important;
 }
 
-/* Search input field styling to match Image 1 */
-header .form-control,
-.navbar .form-control,
-.search-bar .form-control {
-    background-color: #f9fafb !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 24px !important; /* More rounded like Image 1 */
-    padding: 8px 16px !important;
-    color: #374151 !important;
-    font-size: 14px !important;
+/* Search modal content container */
+.modal.search-modal .modal-dialog,
+.search-dialog .modal-dialog {
     width: 100% !important;
-    max-width: 400px !important; /* Limit max width */
+    max-width: 650px !important;
     margin: 0 auto !important;
-    height: 40px !important; /* Consistent height */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transform: none !important;
 }
 
-/* Search input focus state */
-header .form-control:focus,
-.navbar .form-control:focus {
+.modal.search-modal .modal-content,
+.search-dialog .modal-content {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+    background: white !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Search input area - the main fix */
+.modal.search-modal .form-control,
+.search-dialog .form-control,
+.global-search-input {
     background-color: white !important;
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+    border-radius: 16px 16px 0 0 !important;
+    padding: 20px 60px 20px 20px !important; /* Extra right padding for close button */
+    color: #374151 !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 60px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.modal.search-modal .form-control:focus,
+.search-dialog .form-control:focus {
+    border-color: #e5e7eb !important;
+    box-shadow: none !important;
     outline: none !important;
 }
 
-/* Search icon positioning */
-.navbar .search-icon,
-header .search-icon {
+/* Search input placeholder */
+.modal.search-modal .form-control::placeholder,
+.search-dialog .form-control::placeholder {
+    color: #9ca3af !important;
+    font-size: 16px !important;
+}
+
+/* Close button positioning - critical fix */
+.modal.search-modal .btn-modal-close,
+.modal.search-modal .close,
+.search-dialog .btn-modal-close,
+.search-dialog .close {
     position: absolute !important;
-    left: 12px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    color: #6b7280 !important;
-    pointer-events: none !important;
-}
-
-/* Adjust input padding when icon is present */
-.navbar .form-control.has-icon,
-header .form-control.has-icon {
-    padding-left: 40px !important;
-}
-
-/* Search suggestions dropdown alignment */
-.awesomplete {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 400px !important;
-    margin: 0 auto !important;
-}
-
-.awesomplete > ul {
-    background: white !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    margin-top: 4px !important;
-    width: 100% !important;
-}
-
-/* Cancel/close button alignment */
-.search-close-btn,
-.form-control + .btn-close {
-    position: absolute !important;
-    right: 8px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    top: 18px !important;
+    right: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
     background: none !important;
     border: none !important;
     color: #6b7280 !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
     cursor: pointer !important;
-    padding: 4px !important;
-    border-radius: 50% !important;
-    width: 24px !important;
-    height: 24px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
 }
 
-.search-close-btn:hover,
-.form-control + .btn-close:hover {
-    background: #f3f4f6 !important;
+.modal.search-modal .btn-modal-close:hover,
+.modal.search-modal .close:hover,
+.search-dialog .btn-modal-close:hover,
+.search-dialog .close:hover {
     color: #374151 !important;
+    background: #f3f4f6 !important;
+    border-radius: 50% !important;
 }
 
-/* Responsive adjustments */
+/* Search results area */
+.modal.search-modal .modal-body,
+.search-dialog .modal-body {
+    padding: 0 !important;
+    background: white !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+}
+
+/* No results state */
+.search-no-results {
+    text-align: center !important;
+    padding: 40px 20px !important;
+    color: #6b7280 !important;
+}
+
+.search-no-results h4 {
+    color: #374151 !important;
+    margin-bottom: 10px !important;
+    font-weight: 500 !important;
+}
+
+/* Search icon if present */
+.modal.search-modal .search-icon,
+.search-dialog .search-icon {
+    position: absolute !important;
+    left: 20px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #6b7280 !important;
+    font-size: 16px !important;
+}
+
+/* Adjust input padding when search icon is present */
+.modal.search-modal .form-control.has-icon,
+.search-dialog .form-control.has-icon {
+    padding-left: 50px !important;
+}
+
+/* Keyboard shortcut indicator */
+.search-shortcut {
+    position: absolute !important;
+    right: 60px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    font-size: 12px !important;
+    color: #6b7280 !important;
+}
+
+/* Results list styling */
+.search-results-list {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.search-result-item {
+    padding: 12px 20px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease !important;
+}
+
+.search-result-item:hover {
+    background-color: #f8fafc !important;
+}
+
+.search-result-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
-    header .form-control,
-    .navbar .form-control {
-        max-width: 280px !important;
-        font-size: 13px !important;
-        height: 36px !important;
-        padding: 6px 14px !important;
+    .modal.search-modal,
+    .search-dialog {
+        padding-top: 5vh !important;
     }
     
-    header .navbar-form,
-    .navbar .navbar-form {
-        padding: 0 10px !important;
+    .modal.search-modal .modal-dialog,
+    .search-dialog .modal-dialog {
+        max-width: 95% !important;
+        margin: 0 2.5% !important;
+    }
+    
+    .modal.search-modal .form-control,
+    .search-dialog .form-control {
+        font-size: 16px !important;
+        padding: 16px 50px 16px 16px !important;
+        min-height: 50px !important;
+    }
+    
+    .modal.search-modal .btn-modal-close,
+    .modal.search-modal .close,
+    .search-dialog .btn-modal-close,
+    .search-dialog .close {
+        top: 13px !important;
+        right: 15px !important;
     }
 }
 
-@media (max-width: 480px) {
-    header .form-control,
-    .navbar .form-control {
-        max-width: 240px !important;
-        height: 34px !important;
-    }
+/* Additional ERPNext-specific selectors */
+.awesomebar-wrapper .modal-content {
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+.awesomebar-wrapper .form-control {
+    padding: 20px 60px 20px 20px !important;
+    border: none !important;
+    font-size: 16px !important;
+    min-height: 60px !important;
+}
+
+.awesomebar-wrapper .close {
+    position: absolute !important;
+    top: 18px !important;
+    right: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
 }
 
 /* search bar */
