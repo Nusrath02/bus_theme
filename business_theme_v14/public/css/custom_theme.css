@@ -1041,9 +1041,9 @@ header .form-control:focus {
   pointer-events: auto !important;
 
   /* size & style */
-  min-width: 160px !important;       /* compact popup */
+  min-width: 140px !important;       /* compact popup */
   max-width: 220px !important;       
-  max-height: 140px !important;      /* prevent oversized popup */
+  max-height: 100px !important;      /* prevent oversized popup */
   overflow-y: auto !important;
 
   background: #ffffff !important;    /* clean white */
@@ -1347,20 +1347,6 @@ header .form-control:focus {
 
 /* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
 /* Make popup background more solid and cover more area */
-.sidebar-section.filter-section .dropdown-menu,
-.sidebar-section.filter-section .awesomplete,
-.sidebar-section.filter-section .autocomplete-results {
-    position: fixed !important;
-    z-index: 9999 !important;
-    margin-top: 2px !important;
-    background-color: white !important;
-    border: 1px solid #ccc !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
-    min-height: 100px !important; /* Force minimum height */
-    max-height: 200px !important;
-    overflow-y: auto !important;
-    padding: 8px 0 !important;
-}
 
 
 
