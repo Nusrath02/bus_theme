@@ -1349,18 +1349,17 @@ header .form-control:focus {
   overflow: visible !important;
 }
 
-/* class the JS will add to pinned popups */
+/* helper class used by JS to make a popup sticky to viewport */
 .sidebar-popup-fixed {
-  position: fixed !important;     /* detach from scrolling parent */
-  transform: none !important;     /* avoid plugin transforms */
-  z-index: 2147483647 !important; /* max z-index to stay above everything */
+  position: fixed !important;
+  transform: none !important;
+  z-index: 2147483647 !important;
   max-height: 60vh !important;
   overflow-y: auto !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important;
-  background-clip: padding-box !important; /* avoid blur clipping */
+  background-clip: padding-box !important;
+  will-change: top, left !important;
 }
-
-
 
 
 
