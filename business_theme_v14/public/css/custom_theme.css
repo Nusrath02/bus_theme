@@ -1362,22 +1362,7 @@ header .form-control:focus {
 
 
 
-/* allow sidebar to show popups (no clipping) */
-.sidebar-section.filter-section {
-  position: relative !important;
-  overflow: visible !important;
-}
 
-/* helper class added by JS so styling is consistent */
-.sidebar-popup-fixed {
-  position: fixed !important;
-  transform: none !important;
-  z-index: 99999 !important;
-  right: auto !important;
-  max-height: 60vh !important;    /* keep popup reasonably tall */
-  overflow-y: auto !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.16) !important;
-}
 
 
 
