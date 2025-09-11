@@ -1353,12 +1353,12 @@ header .form-control:focus {
 /* sidebar//bugtjs// */
 
 /* Target only the small stats container */
-.form-sidebar-stats li.flex {
+/* .form-sidebar-stats li.flex {
     height: 40px !important;   /* reduce height */
     line-height: 30px !important; /* align text vertically */
     padding: 4px 8px !important;  /* adjust spacing */
     margin: 2px 0 !important;     /* reduce outer gap */
-}
+} */
 
 /* Unfollow button */
 .form-sidebar .form-follow.text-sm {
