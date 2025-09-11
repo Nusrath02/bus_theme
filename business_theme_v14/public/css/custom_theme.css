@@ -1350,6 +1350,18 @@ header .form-control:focus {
 /* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
 /* Make popup background more solid and cover more area */
 
+/* sidebar//bugtjs// */
+
+/* Target only the small stats container */
+.form-sidebar-stats li.flex {
+    height: 30px !important;   /* reduce height */
+    line-height: 30px !important; /* align text vertically */
+    padding: 4px 8px !important;  /* adjust spacing */
+    margin: 2px 0 !important;     /* reduce outer gap */
+}
+
+
+/* sidebar//bugtjs// */
 
 
 
@@ -1359,7 +1371,5 @@ header .form-control:focus {
 
 
 
-
-///bugs1 removing extra line///
 
 
