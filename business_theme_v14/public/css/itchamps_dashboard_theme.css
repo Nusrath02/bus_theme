@@ -3073,3 +3073,140 @@ header * {
 .layout-side-section .sidebar-section .control-group {
     margin: 2px 0 !important;
 }
+
+
+
+
+
+
+
+
+/* search bar */
+
+/* ==================== SEARCH BAR ALIGNMENT FIX ==================== */
+/* Fix search bar alignment to match Image 1 layout */
+
+/* Main search container alignment */
+header .navbar-form,
+header .search-bar,
+.navbar .navbar-form {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* Search input field styling to match Image 1 */
+header .form-control,
+.navbar .form-control,
+.search-bar .form-control {
+    background-color: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 24px !important; /* More rounded like Image 1 */
+    padding: 8px 16px !important;
+    color: #374151 !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    max-width: 400px !important; /* Limit max width */
+    margin: 0 auto !important;
+    height: 40px !important; /* Consistent height */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Search input focus state */
+header .form-control:focus,
+.navbar .form-control:focus {
+    background-color: white !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+}
+
+/* Search icon positioning */
+.navbar .search-icon,
+header .search-icon {
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #6b7280 !important;
+    pointer-events: none !important;
+}
+
+/* Adjust input padding when icon is present */
+.navbar .form-control.has-icon,
+header .form-control.has-icon {
+    padding-left: 40px !important;
+}
+
+/* Search suggestions dropdown alignment */
+.awesomplete {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+}
+
+.awesomplete > ul {
+    background: white !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    margin-top: 4px !important;
+    width: 100% !important;
+}
+
+/* Cancel/close button alignment */
+.search-close-btn,
+.form-control + .btn-close {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: none !important;
+    border: none !important;
+    color: #6b7280 !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    border-radius: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.search-close-btn:hover,
+.form-control + .btn-close:hover {
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .form-control,
+    .navbar .form-control {
+        max-width: 280px !important;
+        font-size: 13px !important;
+        height: 36px !important;
+        padding: 6px 14px !important;
+    }
+    
+    header .navbar-form,
+    .navbar .navbar-form {
+        padding: 0 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header .form-control,
+    .navbar .form-control {
+        max-width: 240px !important;
+        height: 34px !important;
+    }
+}
+
+/* search bar */
