@@ -1330,7 +1330,7 @@ header .form-control:focus {
 }
 
 /* Force dropdown/popups to appear just under the input field */
-/* .sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .dropdown-menu,
 .sidebar-section.filter-section .awesomplete,
 .sidebar-section.filter-section .autocomplete-results {
 /*     position: absolute !important; */
@@ -1340,7 +1340,7 @@ header .form-control:focus {
     right: auto !important;
     z-index: 9999 !important; /* keep it above other elements */
     margin-top: 2px !important; /* small gap under input */
-} */
+}
 
 
 
