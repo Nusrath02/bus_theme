@@ -3083,230 +3083,75 @@ header * {
 
 /* search bar */
 
-/* ==================== ERPNEXT SEARCH MODAL ALIGNMENT FIX ==================== */
-/* Fix ERPNext global search modal to match Image 1 layout */
+/* ==================== SEARCH MODAL ICON ALIGNMENT FIX ==================== */
+/* Fix only the search icon and close button positioning based on your HTML structure */
 
-/* Target the search modal overlay */
-.modal-backdrop.search-modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Search modal positioning */
-.modal.search-modal,
-.search-dialog.modal,
-.global-search-dialog {
-    display: flex !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-    padding-top: 8vh !important;
-}
-
-/* Search modal content container */
-.modal.search-modal .modal-dialog,
-.search-dialog .modal-dialog {
-    width: 100% !important;
-    max-width: 650px !important;
-    margin: 0 auto !important;
-    transform: none !important;
-}
-
-.modal.search-modal .modal-content,
-.search-dialog .modal-content {
-    border-radius: 16px !important;
-    border: none !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
-    background: white !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-}
-
-/* Search input area - the main fix */
-.modal.search-modal .form-control,
-.search-dialog .form-control,
-.global-search-input {
-    background-color: white !important;
-    border: none !important;
-    border-radius: 16px 16px 0 0 !important;
-    padding: 20px 60px 20px 20px !important; /* Extra right padding for close button */
-    color: #374151 !important;
-    font-size: 16px !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 60px !important;
-    outline: none !important;
-    box-shadow: none !important;
-    border-bottom: 1px solid #e5e7eb !important;
-}
-
-.modal.search-modal .form-control:focus,
-.search-dialog .form-control:focus {
-    border-color: #e5e7eb !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* Search input placeholder */
-.modal.search-modal .form-control::placeholder,
-.search-dialog .form-control::placeholder {
-    color: #9ca3af !important;
-    font-size: 16px !important;
-}
-
-/* Close button positioning - critical fix */
-.modal.search-modal .btn-modal-close,
-.modal.search-modal .close,
-.search-dialog .btn-modal-close,
-.search-dialog .close {
+/* Search icon positioning - left side */
+.modal-header.search-header .input-group .search-icon,
+.modal-header.search-header .search-icon svg.icon.icon-sm {
     position: absolute !important;
-    top: 18px !important;
-    right: 20px !important;
-    width: 24px !important;
-    height: 24px !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    color: #6b7280 !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Adjust input padding to accommodate the search icon */
+.modal-header.search-header .form-control.search-input {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+/* Close button positioning - right side */
+.modal-actions .btn.btn-secondary,
+.modal-header.search-header .modal-actions .btn {
+    position: absolute !important;
+    top: 50% !important;
+    right: 12px !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
     background: none !important;
     border: none !important;
-    color: #6b7280 !important;
-    font-size: 18px !important;
-    font-weight: 300 !important;
-    cursor: pointer !important;
+    padding: 4px !important;
+    width: 24px !important;
+    height: 24px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    z-index: 10 !important;
-    opacity: 1 !important;
+    color: #6b7280 !important;
+    cursor: pointer !important;
 }
 
-.modal.search-modal .btn-modal-close:hover,
-.modal.search-modal .close:hover,
-.search-dialog .btn-modal-close:hover,
-.search-dialog .close:hover {
-    color: #374151 !important;
+.modal-actions .btn.btn-secondary:hover,
+.modal-header.search-header .modal-actions .btn:hover {
     background: #f3f4f6 !important;
     border-radius: 50% !important;
-}
-
-/* Search results area */
-.modal.search-modal .modal-body,
-.search-dialog .modal-body {
-    padding: 0 !important;
-    background: white !important;
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-}
-
-/* No results state */
-.search-no-results {
-    text-align: center !important;
-    padding: 40px 20px !important;
-    color: #6b7280 !important;
-}
-
-.search-no-results h4 {
     color: #374151 !important;
-    margin-bottom: 10px !important;
-    font-weight: 500 !important;
 }
 
-/* Search icon if present */
-.modal.search-modal .search-icon,
-.search-dialog .search-icon {
-    position: absolute !important;
-    left: 20px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    color: #6b7280 !important;
-    font-size: 16px !important;
+/* Ensure the modal header has relative positioning for absolute elements */
+.modal-header.search-header {
+    position: relative !important;
 }
 
-/* Adjust input padding when search icon is present */
-.modal.search-modal .form-control.has-icon,
-.search-dialog .form-control.has-icon {
-    padding-left: 50px !important;
+/* Input group positioning */
+.modal-header.search-header .input-group.text-muted {
+    position: relative !important;
+    flex: 1 !important;
 }
 
-/* Keyboard shortcut indicator */
-.search-shortcut {
-    position: absolute !important;
-    right: 60px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 4px !important;
-    padding: 2px 6px !important;
-    font-size: 12px !important;
-    color: #6b7280 !important;
+/* Hide any duplicate icons that might interfere */
+.modal-header.search-header .input-group .input-group-text {
+    display: none !important;
 }
 
-/* Results list styling */
-.search-results-list {
-    padding: 0 !important;
-    margin: 0 !important;
+/* Ensure proper layering */
+.modal-header.search-header .form-control {
+    position: relative !important;
+    z-index: 1 !important;
 }
-
-.search-result-item {
-    padding: 12px 20px !important;
-    border-bottom: 1px solid #f3f4f6 !important;
-    cursor: pointer !important;
-    transition: background-color 0.15s ease !important;
-}
-
-.search-result-item:hover {
-    background-color: #f8fafc !important;
-}
-
-.search-result-item:last-child {
-    border-bottom: none !important;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .modal.search-modal,
-    .search-dialog {
-        padding-top: 5vh !important;
-    }
-    
-    .modal.search-modal .modal-dialog,
-    .search-dialog .modal-dialog {
-        max-width: 95% !important;
-        margin: 0 2.5% !important;
-    }
-    
-    .modal.search-modal .form-control,
-    .search-dialog .form-control {
-        font-size: 16px !important;
-        padding: 16px 50px 16px 16px !important;
-        min-height: 50px !important;
-    }
-    
-    .modal.search-modal .btn-modal-close,
-    .modal.search-modal .close,
-    .search-dialog .btn-modal-close,
-    .search-dialog .close {
-        top: 13px !important;
-        right: 15px !important;
-    }
-}
-
-/* Additional ERPNext-specific selectors */
-.awesomebar-wrapper .modal-content {
-    border-radius: 16px !important;
-    border: none !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
-}
-
-.awesomebar-wrapper .form-control {
-    padding: 20px 60px 20px 20px !important;
-    border: none !important;
-    font-size: 16px !important;
-    min-height: 60px !important;
-}
-
-.awesomebar-wrapper .close {
-    position: absolute !important;
-    top: 18px !important;
-    right: 20px !important;
-    width: 24px !important;
-    height: 24px !important;
-}
-
 /* search bar */
