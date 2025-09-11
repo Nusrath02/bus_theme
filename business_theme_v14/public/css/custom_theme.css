@@ -1331,7 +1331,7 @@ header .form-control:focus {
 }
 
 /* Force dropdown/popups to appear just under the input field */
-/* .sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .dropdown-menu,
 .sidebar-section.filter-section .awesomplete,
 .sidebar-section.filter-section .autocomplete-results {
 /*     position: absolute !important; */
@@ -1341,43 +1341,20 @@ header .form-control:focus {
     right: auto !important;
     z-index: 9999 !important; /* keep it above other elements */
     margin-top: 2px !important; /* small gap under input */
-} */
-
-/* Force dropdown/popups to stay fixed below the input field */
-.sidebar-section.filter-section .dropdown-menu,
-.sidebar-section.filter-section .awesomplete,
-.sidebar-section.filter-section .autocomplete-results {
-    position: fixed !important;
-    z-index: 9999 !important;
-    margin-top: 2px !important;
-    background-color: white !important;
-    border: 1px solid #ccc !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-    /* Position will be set dynamically via JavaScript */
 }
+
+
 /* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
-/* Make sure popup content is properly styled */
-.sidebar-section.filter-section .dropdown-menu ul,
-.sidebar-section.filter-section .awesomplete ul,
-.sidebar-section.filter-section .autocomplete-results ul {
-    background-color: white !important;
-    margin: 0 !important;
-    padding: 4px 0 !important;
-    list-style: none !important;
+/* Hide Save Filter section when popup is active */
+.sidebar-section.filter-section:has(.dropdown-menu:not([style*="display: none"])) ~ .save-filter-section,
+.sidebar-section.filter-section:has(.awesomplete:not([style*="display: none"])) ~ .save-filter-section,
+.sidebar-section.filter-section:has(.autocomplete-results:not([style*="display: none"])) ~ .save-filter-section {
+    display: none !important;
 }
 
-.sidebar-section.filter-section .dropdown-menu li,
-.sidebar-section.filter-section .awesomplete li,
-.sidebar-section.filter-section .autocomplete-results li {
-    padding: 8px 12px !important;
-    background-color: white !important;
-    border-bottom: none !important;
-}
-
-.sidebar-section.filter-section .dropdown-menu li:hover,
-.sidebar-section.filter-section .awesomplete li:hover,
-.sidebar-section.filter-section .autocomplete-results li:hover {
-    background-color: #f0f0f0 !important;
+/* Alternative - if above doesn't work, use this JavaScript approach */
+.save-filter-section.hidden-by-popup {
+    display: none !important;
 }
 
 
