@@ -1331,7 +1331,7 @@ header .form-control:focus {
 }
 
 /* Force dropdown/popups to appear just under the input field */
-.sidebar-section.filter-section .dropdown-menu,
+/* .sidebar-section.filter-section .dropdown-menu,
 .sidebar-section.filter-section .awesomplete,
 .sidebar-section.filter-section .autocomplete-results {
 /*     position: absolute !important; */
@@ -1341,20 +1341,25 @@ header .form-control:focus {
     right: auto !important;
     z-index: 9999 !important; /* keep it above other elements */
     margin-top: 2px !important; /* small gap under input */
-}
+} */
+
 
 
 /* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
-/* Hide Save Filter section when popup is active */
-.sidebar-section.filter-section:has(.dropdown-menu:not([style*="display: none"])) ~ .save-filter-section,
-.sidebar-section.filter-section:has(.awesomplete:not([style*="display: none"])) ~ .save-filter-section,
-.sidebar-section.filter-section:has(.autocomplete-results:not([style*="display: none"])) ~ .save-filter-section {
-    display: none !important;
-}
-
-/* Alternative - if above doesn't work, use this JavaScript approach */
-.save-filter-section.hidden-by-popup {
-    display: none !important;
+/* Make popup background more solid and cover more area */
+.sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .awesomplete,
+.sidebar-section.filter-section .autocomplete-results {
+    position: fixed !important;
+    z-index: 9999 !important;
+    margin-top: 2px !important;
+    background-color: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+    min-height: 100px !important; /* Force minimum height */
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    padding: 8px 0 !important;
 }
 
 
