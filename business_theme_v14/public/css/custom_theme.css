@@ -1354,8 +1354,8 @@ header .form-control:focus {
 
 /* Target only the small stats container */
 .form-sidebar-stats li.flex {
-    height: 30px !important;   /* reduce height */
-    line-height: 30px !important; /* align text vertically */
+    height: 40px !important;   /* reduce height */
+    line-height: 40px !important; /* align text vertically */
     padding: 4px 8px !important;  /* adjust spacing */
     margin: 2px 0 !important;     /* reduce outer gap */
 }
