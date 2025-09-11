@@ -1041,11 +1041,11 @@ header .form-control:focus {
   pointer-events: auto !important;
 
   /* size & style */
-  min-width: 140px !important;       /* compact popup */
+  min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
-  max-height: 100px !important;      /* prevent oversized popup */
+  max-height: 140px !important;      /* prevent oversized popup */
   overflow-y: auto !important;
-
+background-color: #ffffff !important;
   background: #ffffff !important;    /* clean white */
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
