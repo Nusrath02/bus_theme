@@ -3091,7 +3091,7 @@ header * {
 .modal-header.search-header .search-icon svg.icon.icon-sm {
     position: absolute !important;
     left: 12px !important;
-    top: -550% !important;
+    top: 50% !important;
     transform: translateY(-50%) !important;
     z-index: 5 !important;
     pointer-events: none !important;
@@ -3110,7 +3110,7 @@ header * {
 .modal-actions .btn.btn-secondary,
 .modal-header.search-header .modal-actions .btn {
     position: absolute !important;
-    top: -550% !important;
+    top: 50% !important;
     right: 12px !important;
     transform: translateY(-50%) !important;
     z-index: 5 !important;
