@@ -1045,7 +1045,6 @@ header .form-control:focus {
   max-width: 220px !important;       
   max-height: 140px !important;      /* prevent oversized popup */
   overflow-y: auto !important;
-background-color: #ffffff !important;
   background: #ffffff !important;    /* clean white */
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
