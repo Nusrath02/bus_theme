@@ -1076,7 +1076,7 @@ header .form-control:focus {
     max-height: none !important;
 }
 .sidebar-section.save-filter-section {
-    margin-top: 6px !important; /* small neat gap */
+    margin-top: 2px !important; /* small neat gap */
     padding: 0 !important;
     max-height: none !important;
 }
