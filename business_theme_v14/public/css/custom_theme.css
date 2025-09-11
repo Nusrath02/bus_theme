@@ -1043,7 +1043,8 @@ header .form-control:focus {
   /* size & style */
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
-  max-height: 140px !important;      /* prevent oversized popup */
+/*   max-height: 140px !important;       */
+    height: 100px !important; 
   overflow-y: auto !important;
   background: #ffffff !important;
   border: 1px solid #d1d5db !important;
@@ -1081,10 +1082,7 @@ header .form-control:focus {
 }
 
 
-/* Keep Save Filter in sidebar, but never in dropdowns */
-.dropdown-menu .save-filter-section {
-    display: none !important;
-}
+
 
 
 
