@@ -1043,7 +1043,7 @@ header .form-control:focus {
   /* size & style */
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
- max-height: 50px !important;      
+ max-height: 95px !important;      
 /*     height: 140px !important;  */
   overflow-y: auto !important;
   background: #ffffff !important;
