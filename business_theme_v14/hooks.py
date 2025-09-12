@@ -203,3 +203,11 @@ website_context = {
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+
+
+
+# catch clear
+
+after_migrate = [
+    "frappe.utils.clear_cache"
+]
