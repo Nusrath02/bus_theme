@@ -1388,6 +1388,22 @@ header .form-control:focus {
 
 /* Make the container vertical 
 
+.form-sidebar-items {
+    display: flex !important;
+    flex-direction: column !important;   /* stack children vertically */
+    justify-content: space-between !important; /* push last item to bottom */
+    height: 100%; /* full height so bottom alignment works */
+}
+
+.form-sidebar-items .es-icon.ml-0.icon-sm {
+    margin-top: auto !important; /* ensures it stays at bottom */
+}
+.pill-label.ellipsis.explore-link {
+    display: inline-block !important;
+    margin-left: auto !important;  /* push to right if in flex container */
+    float: right !important;       /* fallback if parent is not flex */
+    text-align: right !important;
+}
 
 
 
