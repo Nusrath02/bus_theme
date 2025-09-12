@@ -1378,8 +1378,12 @@ header .form-control:focus {
 
 .modal-header.search-header .modal-actions {
     margin-left: 0;
-    margin-right: auto;  /* pushes it to the left */
+    margin-right: auto;      /* stick to the left */
+    display: flex;           /* arrange children in a row */
+    align-items: center;     /* vertical centering */
+    gap: 6px;                /* spacing between minimize & close buttons */
 }
+
 
 
 
