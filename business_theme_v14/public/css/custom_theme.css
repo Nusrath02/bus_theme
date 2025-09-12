@@ -1376,11 +1376,10 @@ header .form-control:focus {
 /* ////X//// */
 
 
-/* Move the close (X) button to the left */
-.modal-header.search-header {
-    display: flex;
-    flex-direction: row-reverse; /* flips the order */
-    justify-content: flex-start;
+.modal-header.search-header .modal-actions {
+    margin-left: 0;
+    margin-right: auto;  /* pushes it to the left */
 }
+
 
 
