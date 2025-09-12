@@ -1375,10 +1375,11 @@ header .form-control:focus {
     margin-left: -6px !important; /* shift left */
 }
 
-.es-icon.ml-0.icon-sm {
+.attachments-actions .es-icon.ml-0.icon-sm {
     position: relative;
-    top: 2px; /* increase this value to move further down */
+    top: 3px;  /* increase or decrease to move further down */
 }
+
 
 
 
