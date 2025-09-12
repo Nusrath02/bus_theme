@@ -1386,21 +1386,24 @@ header .form-control:focus {
 
 /* sidebar//bugtjs// */
 
+/* Make the container vertical */
 .form-sidebar-items {
     display: flex !important;
-    align-items: center !important;   /* vertical centering */
-    gap: 6px !important;              /* small space between icon & text */
+    flex-direction: column !important;  /* stack children vertically */
+    align-items: flex-start !important; /* align items to the left */
 }
 
-/* Keep icon small and aligned */
+/* Icon adjustments */
 .form-sidebar-items .es-icon.ml-0.icon-sm {
-    order: 0;   /* make sure it comes first (left) */
+    margin-top: 6px !important;   /* move a little bit down */
 }
 
-/* Attachments pill stays to the right of the icon */
+/* Attachment adjustments */
 .form-sidebar-items .pill-label.ellipsis.explore-link {
-    order: 1;
+    margin-left: 10px !important; /* move a little bit right */
+    margin-top: 4px !important;   /* small spacing below icon */
 }
+
 
 
 
