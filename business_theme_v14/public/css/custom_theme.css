@@ -1373,35 +1373,14 @@ header .form-control:focus {
     padding: 2px 4px !important;  /* reduce spacing */
     margin-left: -6px !important; /* shift left */
 }
-
-/* Unfollow button */
-
+/* ////X//// */
 
 
-
-
-
-
-
-
-
-
-/* sidebar//bugtjs// */
-
-/* Make the container vertical 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Move the close (X) button to the left */
+.modal-header.search-header {
+    display: flex;
+    flex-direction: row-reverse; /* flips the order */
+    justify-content: flex-start;
+}
 
 
