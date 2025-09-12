@@ -1376,13 +1376,53 @@ header .form-control:focus {
 /* ////X//// */
 
 
-.modal-header.search-header .modal-actions {
-    margin-left: -10;
-    margin-right: auto;      /* stick to the left */
-    display: flex;           /* arrange children in a row */
-    align-items: center;     /* vertical centering */
-    gap: 6px;                /* spacing between minimize & close buttons */
+/* container must be positioned so we can absolutely place the badge */
+.modal-header.search-header {
+  position: relative;
 }
+
+/* single round badge containing both icons */
+.modal-header.search-header .modal-actions {
+  position: absolute;
+  left: 12px;                /* change to `right: 12px;` to place on the right */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                  /* space between icons */
+  width: 40px;               /* adjust to fit your icons */
+  height: 36px;              /* make it a circle-ish shape */
+  padding: 4px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #f5f6f8;       /* optional — matches your UI */
+  overflow: hidden;
+  z-index: 20;               /* ensure it's above the input */
+}
+
+/* tiny clean buttons inside the badge */
+.modal-header.search-header .modal-actions button {
+  margin: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ensure svg fits inside the small button */
+.modal-header.search-header .modal-actions svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+
 
 
 
