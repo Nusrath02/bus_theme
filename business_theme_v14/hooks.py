@@ -24,6 +24,19 @@ website_context = {
     # "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
 }
 
+# abhi
+
+import time
+ 
+app_version = str(int(time.time()))  # current timestamp, changes every deploy
+ 
+app_include_css = [
+    f"/assets/business_theme_v14/css/itchamps_dashboard_theme.css?v={app_version}"
+]
+
+# abhi
+
+
 # include js, css files in header of web template
 # web_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
 # web_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
