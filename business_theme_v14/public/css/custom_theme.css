@@ -1375,6 +1375,11 @@ header .form-control:focus {
     margin-left: -6px !important; /* shift left */
 }
 
+.es-icon.ml-0.icon-sm {
+    vertical-align: -2px; /* adjust the pixel value as needed */
+}
+
+
 
 
 /* sidebar//bugtjs// */
