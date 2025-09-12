@@ -2365,13 +2365,15 @@ header * {
 
 /* Abhi */
 
+/* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
+/* Sidebar container smaller */
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 75vh !important;   /* reduced from 80vh → 70vh */
+    max-height: 80vh !important;   /* reduced from             80vh → 70vh */
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
@@ -2453,191 +2455,11 @@ header * {
 }
 
 
+
+
+
+
 /* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
-
-/* ==================== DELETE ICON ALIGNMENT FIX ==================== */
-/* Fix the delete icon positioning to match Image 2 layout exactly */
-
-/* Remove any extra borders or backgrounds from individual field containers */
-.control-input-wrapper.selected-fields .control-input.flex.align-center.form-control.fields_order.sortable-handle.sortable {
-    display: flex !important;
-    align-items: center !important;
-    padding: 8px 0 !important;
-    margin-bottom: 4px !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    min-height: 48px !important;
-    border-bottom: 1px solid #e5e7eb !important;
-}
-
-/* Fix the internal row structure - single line layout */
-.control-input-wrapper.selected-fields .control-input .row {
-    display: flex !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    flex-wrap: nowrap !important;
-}
-
-/* Drag handle column - first col-1 */
-.control-input-wrapper.selected-fields .row .col-1:first-child {
-    flex: 0 0 40px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 8px 0 0 !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-1:first-child a {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #64748b !important;
-    cursor: grab !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-1:first-child a svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* Field name column - col-6 */
-.control-input-wrapper.selected-fields .row .col-6 {
-    flex: 1 !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 0 16px 0 8px !important;
-    margin: 0 !important;
-    text-align: left !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-6 b {
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    color: #374151 !important;
-    line-height: 1.2 !important;
-}
-
-/* Column width input - col-4 - remove border box styling */
-.control-input-wrapper.selected-fields .row .col-4 {
-    flex: 0 0 60px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 40px 0 8px !important; /* Increased right padding to push delete icon further right */
-    margin: 0 !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-4 input.form-control.column-width {
-    width: 40px !important;
-    height: 32px !important;
-    padding: 4px 8px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    text-align: center !important;
-    border: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    color: #374151 !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-4 input.form-control.column-width:focus {
-    border: none !important;
-    background: #f9fafb !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* Delete button column - FIXED POSITIONING */
-.control-input-wrapper.selected-fields .row .col-1:last-child {
-    flex: 0 0 40px !important; /* Increased width for better spacing */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important; /* Changed to flex-end to align right */
-    padding: 0 8px 0 0 !important; /* Right padding for spacing from edge */
-    margin-left: auto !important; /* Push to the far right */
-}
-
-.control-input-wrapper.selected-fields .row .col-1:last-child a.text-muted.remove-field {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 24px !important;
-    height: 24px !important;
-    color: #ef4444 !important;
-    text-decoration: none !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-1:last-child a.text-muted.remove-field:hover {
-    color: #dc2626 !important;
-}
-
-.control-input-wrapper.selected-fields .row .col-1:last-child a i.fa.fa-trash-o {
-    font-size: 14px !important;
-}
-
-/* Header row styling - match the alignment */
-.form-layout .form-page .row.form-section.visible-section {
-    background: #f8fafc !important;
-    font-weight: 600 !important;
-    color: #6b7280 !important;
-    border-radius: 0 !important;
-    padding: 12px 16px !important;
-    margin-bottom: 16px !important;
-    border: 1px solid #e5e7eb !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.form-layout .form-page .row.form-section.visible-section .col-1:first-child {
-    flex: 0 0 40px !important;
-}
-
-.form-layout .form-page .row.form-section.visible-section .col-6 {
-    flex: 1 !important;
-    padding: 0 16px 0 8px !important;
-}
-
-.form-layout .form-page .row.form-section.visible-section .col-4 {
-    flex: 0 0 60px !important;
-    text-align: center !important;
-    padding: 0 40px 0 8px !important;
-}
-
-.form-layout .form-page .row.form-section.visible-section .col-1:last-child {
-    flex: 0 0 40px !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    padding: 0 8px 0 0 !important;
-}
-
-/* Ensure no conflicting styles */
-.control-input-wrapper.selected-fields .control-input * {
-    box-sizing: border-box !important;
-}
-
-/* Additional fine-tuning for perfect alignment */
-.control-input-wrapper.selected-fields .row {
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-/* Make sure the delete icon is positioned at the far right */
-.control-input-wrapper.selected-fields .row .col-1:last-child {
-    position: relative !important;
-    right: 0 !important;
-}
-
-
-
-
-
-
-
 
 
 
@@ -2661,10 +2483,10 @@ header * {
 }
 
 /* Hide scrollbar */
-/* .sidebar-section.filter-section::-webkit-scrollbar,
+.sidebar-section.filter-section::-webkit-scrollbar,
 .sidebar-section.save-filter-section::-webkit-scrollbar {
     display: none !important;
-} */
+}
 .sidebar-section.filter-section,
 .sidebar-section.save-filter-section {
     scrollbar-width: none !important;
@@ -2805,6 +2627,7 @@ header * {
   left: 0 !important;
   right: auto !important;
   margin-top: 4px !important;
+    margin-bottom: 0px !important;
 
   /* prevent cursor-follow movement */
   transform: none !important;
@@ -2813,10 +2636,11 @@ header * {
   /* size & style */
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
-  max-height: 190px !important;      /* prevent oversized popup */
-  overflow-y: auto !important;
-
-  background: #ffffff !important;    /* clean white */
+ max-height: 105px !important;      
+/*     height: 140px !important;  */
+/*   overflow-y: auto !important; */
+    overflow: hidden !important; 
+  background: #ffffff !important;
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
   box-shadow: 0 8px 18px rgba(0,0,0,.12) !important;
@@ -2838,26 +2662,21 @@ header * {
   color: #fff !important;
 }
 
-/* ////////////tagspace///// */
-/* Remove unwanted gap below "Show Tags" */
-/* Kill empty "save-filter-section" space */
+/* ///////////tagspace///// */
+/* Tighten gap between Show Tags and Save Filter */
 .sidebar-section.save-filter-section {
     margin: 0 !important;
     padding: 0 !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    max-height: 0 !important;
-    display: none !important; /* completely removes it */
+    max-height: none !important;
 }
-
-
 .sidebar-section.save-filter-section {
-    margin: 0 !important;
+    margin-top: 2px !important; /* small neat gap */
     padding: 0 !important;
-    height: auto !important;
-    min-height: unset !important;
-    max-height: unset !important;
+    max-height: none !important;
 }
+
+
+
 
 
 
@@ -2976,15 +2795,15 @@ header * {
 
 /* Reduce height of shortcut widget containers */
 .widget.shortcut-widget-box {
-    min-height: 60px !important;   /* adjust as needed */
-    padding: 8px 12px !important;  /* reduce internal spacing */
+    min-height: 40px !important;   /* adjust as needed */
+    padding: 6px 8px !important;  /* reduce internal spacing */
 }
 
 /* Optional: also control text alignment inside */
 /* Keep your container sizing */
 .widget.shortcut-widget-box {
-    min-height: 50px !important;
-    padding: 8px 12px !important;
+    min-height: 40px !important;
+    padding: 6px 8px !important;
 }
 
 /* Align title and subtitle in the same line */
@@ -3007,10 +2826,146 @@ header * {
 /* Force shortcut widgets into 3 per row */
 .ce-block:has(.widget.shortcut-widget-box) {
     flex: 0 0 33.333% !important; /* take up 1/3 of row */
-    max-width: 30.333% !important;
+    max-width: 37.333% !important;
+}
+
+/* shortcuts conainer */
+
+/* big container */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* big container */
+
+
+
+
+
+
+
+
+
+
+
+/* shoretcut container */
+
+/* ====================== STRONG OVERRIDE: REMOVE BIG GAP AFTER "Show Tags" ====================== */
+
+/* ==================== FIX FILTER-SECTION SPACING ==================== */
+
+/* Keep fields normal, only remove the big bottom gap */
+.sidebar-section.filter-section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Restore normal spacing for fields inside */
+.sidebar-section.filter-section > * {
+    margin-bottom: 8px !important;   /* adjust: 8–12px for comfortable spacing */
+    padding: initial !important;
+    height: auto !important;
+    min-height: 36px !important;     /* ensures inputs/buttons don’t shrink */
+    max-height: none !important;
+}
+
+/* Remove extra empty space created by pseudo-elements or empty nodes */
+.sidebar-section.filter-section::before,
+.sidebar-section.filter-section::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Make sure the next sidebar block sits neatly without huge gap */
+.sidebar-section.filter-section + .sidebar-section,
+.sidebar-section.filter-section + li {
+    margin-top: 8px !important;   /* small clean gap */
+    padding-top: 0 !important;
+}
+/* ==================== REMOVE EMPTY GAP AFTER "SHOW TAGS" ==================== */
+
+/* Kill empty/unused containers under filter-section */
+.sidebar-section.filter-section > div:empty,
+.sidebar-section.filter-section > ul:empty,
+.sidebar-section.filter-section > li:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure filter-section only fits its content */
+.sidebar-section.filter-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Pull the Save Filter section up */
+.sidebar-section.filter-section + .sidebar-section.save-filter-section {
+    margin-top: 8px !important;  /* small clean gap */
+}
+/* ==================== FIX DROPDOWN/POPUP POSITION ==================== */
+
+/* Make sure parent container allows absolute positioning */
+.sidebar-section.filter-section {
+    position: relative !important;
+}
+
+/* Force dropdown/popups to appear just under the input field */
+.sidebar-section.filter-section .dropdown-menu,
+.sidebar-section.filter-section .awesomplete,
+.sidebar-section.filter-section .autocomplete-results {
+/*     position: absolute !important; */
+    position: fixed !important;
+    top: 100% !important;   /* directly below field */
+    left: 0 !important;
+    right: auto !important;
+    z-index: 9999 !important; /* keep it above other elements */
+    margin-top: 2px !important; /* small gap under input */
 }
 
 
+
+/* ==================== KEEP POPUP FIXED BELOW FIELD ==================== */
+/* Make popup background more solid and cover more area */
+
+/* sidebar//bugtjs// */
+
+/* Target only the small stats container */
+.form-sidebar-stats li.flex {
+    height: 50px !important;   /* reduce height */
+    line-height: 25px !important; /* align text vertically */
+    padding: 4px 8px !important;  /* adjust spacing */
+    margin: 2px 0 !important;     /* reduce outer gap */
+}
+
+.form-sidebar .form-follow.text-sm {
+    font-size: 10px !important;      /* smaller text */
+    padding: 2px 6px !important;     /* smaller button size */
+    margin-left: -6px !important;    /* move left */
+    border-radius: 4px !important;   /* tighter rounding */
+}
+
+/* 0 counter */
+.form-sidebar .comments.d-flex.align-items-center {
+    font-size: 10px !important;   /* smaller number */
+    padding: 2px 4px !important;  /* reduce spacing */
+    margin-left: -6px !important; /* shift left */
+}
 
 
 /* Abhi */
