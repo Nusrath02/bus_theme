@@ -1360,6 +1360,20 @@ header .form-control:focus {
     margin: 2px 0 !important;     /* reduce outer gap */
 }
 
+.form-sidebar .form-follow.text-sm {
+    font-size: 10px !important;      /* smaller text */
+    padding: 2px 6px !important;     /* smaller button size */
+    margin-left: -6px !important;    /* move left */
+    border-radius: 4px !important;   /* tighter rounding */
+}
+
+/* 0 counter */
+.form-sidebar .comments.d-flex.align-items-center {
+    font-size: 10px !important;   /* smaller number */
+    padding: 2px 4px !important;  /* reduce spacing */
+    margin-left: -6px !important; /* shift left */
+}
+
 /* Unfollow button */
 
 
@@ -1382,19 +1396,7 @@ header .form-control:focus {
 
 
 
-.form-sidebar .form-follow.text-sm {
-    font-size: 10px !important;      /* smaller text */
-    padding: 2px 6px !important;     /* smaller button size */
-    margin-left: -6px !important;    /* move left */
-    border-radius: 4px !important;   /* tighter rounding */
-}
 
-/* 0 unter */
-.form-sidebar .comments.d-flex.align-items-center {
-    font-size: 10px !important;   /* smaller number */
-    padding: 2px 4px !important;  /* reduce spacing */
-    margin-left: -6px !important; /* shift left */
-}
 
 
 
