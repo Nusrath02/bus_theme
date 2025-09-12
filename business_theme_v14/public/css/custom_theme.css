@@ -1384,6 +1384,11 @@ header .form-control:focus {
     gap: 6px;                /* spacing between minimize & close buttons */
 }
 
+.modal-header.search-header .modal-actions button {
+    padding: 4px;
+}
+
+
 
 
 
