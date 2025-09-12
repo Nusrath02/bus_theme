@@ -1375,10 +1375,18 @@ header .form-control:focus {
     margin-left: -6px !important; /* shift left */
 }
 
+.attachments-actions .form-sidebar-items {
+    display: flex;
+    align-items: center;  /* vertically center icon + text */
+    gap: 6px;             /* space between icon and text */
+}
+
 .attachments-actions .es-icon.ml-0.icon-sm {
     position: relative;
-    top: 3px;  /* increase or decrease to move further down */
+    top: 0;               /* reset any previous offset */
+    margin: 0;            /* remove extra spacing */
 }
+
 
 
 
