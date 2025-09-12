@@ -1388,20 +1388,20 @@ header .form-control:focus {
 
 .form-sidebar-items {
     display: flex !important;
-    flex-direction: column !important;   /* stack children vertically */
-    justify-content: space-between !important; /* push last item to bottom */
-    height: 100%; /* full height so bottom alignment works */
+    align-items: center !important;   /* vertical centering */
+    gap: 6px !important;              /* small space between icon & text */
 }
 
+/* Keep icon small and aligned */
 .form-sidebar-items .es-icon.ml-0.icon-sm {
-    margin-top: auto !important; /* ensures it stays at bottom */
+    order: 0;   /* make sure it comes first (left) */
 }
-.pill-label.ellipsis.explore-link {
-    display: inline-block !important;
-    margin-left: auto !important;  /* push to right if in flex container */
-    float: right !important;       /* fallback if parent is not flex */
-    text-align: right !important;
+
+/* Attachments pill stays to the right of the icon */
+.form-sidebar-items .pill-label.ellipsis.explore-link {
+    order: 1;
 }
+
 
 
 
