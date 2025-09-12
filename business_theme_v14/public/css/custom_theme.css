@@ -1376,8 +1376,10 @@ header .form-control:focus {
 }
 
 .es-icon.ml-0.icon-sm {
-    vertical-align: -2px; /* adjust the pixel value as needed */
+    position: relative;
+    top: 2px; /* increase this value to move further down */
 }
+
 
 
 
