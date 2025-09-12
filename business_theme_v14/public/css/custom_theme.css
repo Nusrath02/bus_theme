@@ -1387,11 +1387,7 @@ header .form-control:focus {
 /* sidebar//bugtjs// */
 
 /* Make the container vertical */
-.form-sidebar-items {
-    display: flex !important;
-    flex-direction: column !important;  /* stack children vertically */
-    align-items: flex-start !important; /* align items to the left */
-}
+
 
 /* Icon adjustments */
 .form-sidebar-items .es-icon.ml-0.icon-sm {
