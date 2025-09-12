@@ -1389,7 +1389,7 @@ header .form-control:focus {
     border-radius: 4px !important;   /* tighter rounding */
 }
 
-/* 0 counter */
+/* 0 unter */
 .form-sidebar .comments.d-flex.align-items-center {
     font-size: 10px !important;   /* smaller number */
     padding: 2px 4px !important;  /* reduce spacing */
