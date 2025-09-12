@@ -1389,22 +1389,21 @@ header .form-control:focus {
 /* Make the container vertical */
 
 
-/* Stack children vertically inside attachments-actions */
-.attachments-actions {
+.form-sidebar-items {
     display: flex !important;
-    flex-direction: column !important;   /* put icon above, attachment below */
-    align-items: flex-start !important;  /* align to left side */
+    flex-direction: column !important;   /* stack children vertically */
+    justify-content: space-between !important; /* push last item to bottom */
+    height: 100%; /* full height so bottom alignment works */
 }
 
-/* Icon adjustments */
-.attachments-actions .es-icon.ml-0.icon-sm {
-    margin-top: 6px !important;   /* push a little down */
+.form-sidebar-items .es-icon.ml-0.icon-sm {
+    margin-top: auto !important; /* ensures it stays at bottom */
 }
-
-/* Attachment pill adjustments */
-.attachments-actions .pill-label.ellipsis.explore-link {
-    margin-left: 10px !important; /* move slightly right */
-    margin-top: 4px !important;   /* small gap below icon */
+.pill-label.ellipsis.explore-link {
+    display: inline-block !important;
+    margin-left: auto !important;  /* push to right if in flex container */
+    float: right !important;       /* fallback if parent is not flex */
+    text-align: right !important;
 }
 
 
