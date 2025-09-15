@@ -2412,99 +2412,6 @@ header * {
 }
 
 
-
-
-
-
-
-
-/* search bar */
-
-/* ==================== SEARCH MODAL ICON ALIGNMENT FIX ==================== */
-/* Fix only the search icon and close button positioning based on your HTML structure */
-
-/* Search icon positioning - left side */
-.modal-header.search-header .input-group .search-icon,
-.modal-header.search-header .search-icon svg.icon.icon-sm {
-    position: absolute !important;
-    left: 12px !important;
-    top: 790% !important;
-    transform: translateY(-50%) !important;
-    z-index: 5 !important;
-    pointer-events: none !important;
-    color: #6b7280 !important;
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* Adjust input padding to accommodate the search icon */
-.modal-header.search-header .form-control.search-input {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-}
-
-/* Close button positioning - right side */
-.modal-actions .btn.btn-secondary,
-.modal-header.search-header .modal-actions .btn {
-    position: absolute !important;
-    top: 790% !important;
-    right: 12px !important;
-    transform: translateY(-50%) !important;
-    z-index: 5 !important;
-    background: none !important;
-    border: none !important;
-    padding: 4px !important;
-    width: 24px !important;
-    height: 24px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #6b7280 !important;
-    cursor: pointer !important;
-}
-
-.modal-actions .btn.btn-secondary:hover,
-.modal-header.search-header .modal-actions .btn:hover {
-    background: #f3f4f6 !important;
-    border-radius: 50% !important;
-    color: #374151 !important;
-}
-
-/* Ensure the modal header has relative positioning for absolute elements */
-.modal-header.search-header {
-    position: relative !important;
-}
-
-/* Input group positioning */
-.modal-header.search-header .input-group.text-muted {
-    position: relative !important;
-    flex: 1 !important;
-}
-
-/* Hide any duplicate icons that might interfere */
-.modal-header.search-header .input-group .input-group-text {
-    display: none !important;
-}
-
-/* Ensure proper layering */
-.modal-header.search-header .form-control {
-    position: relative !important;
-    z-index: 1 !important;
-}
-/* /* search bar / */
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ------------------------------------------------------------------------------------ */
 
 .col-lg-2.layout-side-section,
@@ -2827,11 +2734,6 @@ header * {
 
 
 
-
-
-
-
-
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
 /* ===================== FILTER NAME INPUT ===================== */
 .input-with-feedback.form-control.input-xs {
@@ -2977,24 +2879,7 @@ header * {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* big container */
-
-
-
-
-
-
-
 
 
 
