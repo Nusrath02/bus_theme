@@ -1385,7 +1385,7 @@ header .form-control:focus {
 .modal-header.search-header .modal-actions {
   position: absolute;
   top: 50%;
-  right: 16px;                 /* push inside from right edge */
+  right: 26px;                 /* push inside from right edge */
   transform: translateY(-50%);
   display: flex;
   align-items: center;
