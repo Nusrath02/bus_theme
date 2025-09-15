@@ -1,16 +1,12 @@
-
-
-
-
-
-
-
-
-
-
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* New CSS file for recreating the blue dashboard design */
 /* Preserves ITChamps branding while achieving Image 1 layout */
+
+/* background color */
+
+
+
+/* background color end */
 
 /* ==================== NAVBAR STYLING ==================== */
 /* Top navigation bar with ITChamps logo */
@@ -27,7 +23,6 @@
     width: 160px;
     height: 40px;
 }
-
 
 /* Navbar background - clean white */
 .navbar,
@@ -46,11 +41,40 @@
 }
 
 /* Breadcrumbs styling */
+#navbar-breadcrumbs {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+#navbar-breadcrumbs > li {
+    display: flex !important;
+    align-items: center !important;
+}
+
 #navbar-breadcrumbs > li > a {
     color: #6b7280 !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
+    text-decoration: none !important;
+}
+
+/* Add slash separator between breadcrumb items - more specific targeting */
+#navbar-breadcrumbs li:not(:last-child)::after {
+    content: " / " !important;
+    color: #6b7280 !important;
+    margin: 0 4px !important;
+    font-weight: normal !important;
+    display: inline !important;
+    white-space: nowrap !important;
+}
+
+/* Make current page (last breadcrumb) bold */
+#navbar-breadcrumbs > li:last-child > a,
+#navbar-breadcrumbs > li:last-child {
+    font-weight: bold !important;
+    color: #374151 !important;
 }
 
 #navbar-breadcrumbs > li > a::before {
@@ -58,7 +82,40 @@
     color: #6b7280;
 }
 
-/* Add icons to specific breadcrumb items */
+/* Dynamic icons for all ERPNext modules */
+/* Home/App */
+#navbar-breadcrumbs li a[href="/app"]::before,
+#navbar-breadcrumbs li a[href*="Home"]::before {
+    content: "🏠";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Stock Management */
+#navbar-breadcrumbs li a[href*="/app/stock"]::before,
+#navbar-breadcrumbs li a[href*="Stock"]::before {
+    content: "📦";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Item */
+#navbar-breadcrumbs li a[href*="/app/item"]::before,
+#navbar-breadcrumbs li a[href*="Item"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Accounting */
+#navbar-breadcrumbs li a[href*="/app/accounting"]::before,
+#navbar-breadcrumbs li a[href*="Accounting"]::before {
+    content: "💰";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* HR */
 #navbar-breadcrumbs li a[href*="/app/hr"]::before,
 #navbar-breadcrumbs li a[href*="HR"]::before {
     content: "👥";
@@ -66,32 +123,264 @@
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="staffing-plan"]::before,
-#navbar-breadcrumbs li a[href*="Staffing Plan"]::before {
+/* HR Sub-modules - EXPANDED RECRUITMENT COVERAGE */
+#navbar-breadcrumbs li a[href*="job-opening"]::before,
+#navbar-breadcrumbs li a[href*="Job Opening"]::before {
+    content: "💼";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="job-applicant"]::before,
+#navbar-breadcrumbs li a[href*="Job Applicant"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="job-offer"]::before,
+#navbar-breadcrumbs li a[href*="Job Offer"]::before {
     content: "📋";
     font-size: 16px;
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="accounting"]::before,
-#navbar-breadcrumbs li a[href*="Accounting"]::before {
-    content: "💰";
+#navbar-breadcrumbs li a[href*="staffing-plan"]::before,
+#navbar-breadcrumbs li a[href*="Staffing Plan"]::before {
+    content: "📊";
     font-size: 16px;
     margin-right: 4px;
 }
 
-#navbar-breadcrumbs li a[href*="/app"]::before,
-#navbar-breadcrumbs li a[href*="Home"]::before {
-    content: "🏠";
+#navbar-breadcrumbs li a[href*="job-requisition"]::before,
+#navbar-breadcrumbs li a[href*="Job Requisition"]::before {
+    content: "📝";
     font-size: 16px;
     margin-right: 4px;
 }
 
-/* Remove the arrow for items with icons */
-#navbar-breadcrumbs li a[href*="/app/hr"]::after,
-#navbar-breadcrumbs li a[href*="staffing-plan"]::after,
-#navbar-breadcrumbs li a[href*="accounting"]::after,
-#navbar-breadcrumbs li a[href*="/app"]::after {
+#navbar-breadcrumbs li a[href*="employee-referral"]::before,
+#navbar-breadcrumbs li a[href*="Employee Referral"]::before {
+    content: "🤝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview"]::before,
+#navbar-breadcrumbs li a[href*="Interview"]::before {
+    content: "🎤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-type"]::before,
+#navbar-breadcrumbs li a[href*="Interview Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-round"]::before,
+#navbar-breadcrumbs li a[href*="Interview Round"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="interview-feedback"]::before,
+#navbar-breadcrumbs li a[href*="Interview Feedback"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="appointment-letter"]::before,
+#navbar-breadcrumbs li a[href*="Appointment Letter"]::before {
+    content: "📄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="appointment-letter-template"]::before,
+#navbar-breadcrumbs li a[href*="Appointment Letter Template"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="recruitment-analytics"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment Analytics"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee"]::before,
+#navbar-breadcrumbs li a[href*="Employee"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="payroll"]::before,
+#navbar-breadcrumbs li a[href*="Payroll"]::before {
+    content: "💵";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Company */
+#navbar-breadcrumbs li a[href*="/app/company"]::before,
+#navbar-breadcrumbs li a[href*="Company"]::before {
+    content: "🏛️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Buying */
+#navbar-breadcrumbs li a[href*="/app/buying"]::before,
+#navbar-breadcrumbs li a[href*="Buying"]::before {
+    content: "🛒";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Selling */
+#navbar-breadcrumbs li a[href*="/app/selling"]::before,
+#navbar-breadcrumbs li a[href*="Selling"]::before {
+    content: "🏪";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Manufacturing */
+#navbar-breadcrumbs li a[href*="/app/manufacturing"]::before,
+#navbar-breadcrumbs li a[href*="Manufacturing"]::before {
+    content: "🏭";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Projects */
+#navbar-breadcrumbs li a[href*="/app/projects"]::before,
+#navbar-breadcrumbs li a[href*="Projects"]::before {
+    content: "📊";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* CRM */
+#navbar-breadcrumbs li a[href*="/app/crm"]::before,
+#navbar-breadcrumbs li a[href*="CRM"]::before {
+    content: "🤝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Assets */
+#navbar-breadcrumbs li a[href*="/app/assets"]::before,
+#navbar-breadcrumbs li a[href*="Assets"]::before {
+    content: "🏢";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Quality */
+#navbar-breadcrumbs li a[href*="/app/quality"]::before,
+#navbar-breadcrumbs li a[href*="Quality"]::before {
+    content: "✅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Support */
+#navbar-breadcrumbs li a[href*="/app/support"]::before,
+#navbar-breadcrumbs li a[href*="Support"]::before {
+    content: "🎧";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Website */
+#navbar-breadcrumbs li a[href*="/app/website"]::before,
+#navbar-breadcrumbs li a[href*="Website"]::before {
+    content: "🌐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Settings */
+#navbar-breadcrumbs li a[href*="settings"]::before,
+#navbar-breadcrumbs li a[href*="Settings"]::before {
+    content: "⚙️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Users */
+#navbar-breadcrumbs li a[href*="/app/users"]::before,
+#navbar-breadcrumbs li a[href*="Users"]::before {
+    content: "👤";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Reports */
+#navbar-breadcrumbs li a[href*="reports"]::before,
+#navbar-breadcrumbs li a[href*="Reports"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* NEW DOCUMENT CREATION ICONS */
+/* Generic "New" documents */
+#navbar-breadcrumbs li a[href*="/new-"]::before,
+#navbar-breadcrumbs li a[href*="New "]::before {
+    content: "➕";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Specific "New" document types */
+#navbar-breadcrumbs li a[href*="new-job-opening"]::before,
+#navbar-breadcrumbs li a[href*="New Job Opening"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-staffing-plan"]::before,
+#navbar-breadcrumbs li a[href*="New Staffing Plan"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-interview"]::before,
+#navbar-breadcrumbs li a[href*="New Interview"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-job-applicant"]::before,
+#navbar-breadcrumbs li a[href*="New Job Applicant"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="new-company"]::before,
+#navbar-breadcrumbs li a[href*="New Company"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Remove arrow separator for new documents */
+#navbar-breadcrumbs li a[href*="new-"]::after,
+#navbar-breadcrumbs li a[href*="New "]::after {
     content: none;
 }
 
@@ -135,8 +424,6 @@ header .form-control:focus {
     margin-left: 0 !important;
     min-height: 100vh !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
-     scrollbar-width: thin !important; /* Firefox - makes scrollbar thinner */
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent !important; /* Firefox - thumb color and track color (transparent removes line) */
 }
 
 /* Target the specific sidebar menu structure from your image */
@@ -271,6 +558,1140 @@ header .form-control:focus {
     margin: 0 !important;
 }
 
+/* icons for the submenus */
+/* ==================== HR SUBMENU CATEGORY ICONS ==================== */
+/* Icons for main HR submenu categories */
+
+/* Recruitment submenu */
+#navbar-breadcrumbs li a[href*="recruitment"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment"]::before {
+    content: "🎯";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Employee Lifecycle submenu */
+#navbar-breadcrumbs li a[href*="employee-lifecycle"]::before,
+#navbar-breadcrumbs li a[href*="Employee Lifecycle"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Performance submenu */
+#navbar-breadcrumbs li a[href*="performance"]::before,
+#navbar-breadcrumbs li a[href*="Performance"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Shift & Attendance submenu */
+#navbar-breadcrumbs li a[href*="shift"]::before,
+#navbar-breadcrumbs li a[href*="Shift"]::before,
+#navbar-breadcrumbs li a[href*="attendance"]::before,
+#navbar-breadcrumbs li a[href*="Attendance"]::before {
+    content: "🕐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Expense Claims submenu */
+#navbar-breadcrumbs li a[href*="expense"]::before,
+#navbar-breadcrumbs li a[href*="Expense"]::before {
+    content: "💳";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Leaves submenu */
+#navbar-breadcrumbs li a[href*="leave"]::before,
+#navbar-breadcrumbs li a[href*="Leave"]::before {
+    content: "🏖️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Additional specific leave-related items */
+#navbar-breadcrumbs li a[href*="leave-application"]::before,
+#navbar-breadcrumbs li a[href*="Leave Application"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="leave-type"]::before,
+#navbar-breadcrumbs li a[href*="Leave Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="leave-policy"]::before,
+#navbar-breadcrumbs li a[href*="Leave Policy"]::before {
+    content: "📄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="compensatory-leave"]::before,
+#navbar-breadcrumbs li a[href*="Compensatory Leave"]::before {
+    content: "⏰";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Performance-related specific items */
+#navbar-breadcrumbs li a[href*="appraisal"]::before,
+#navbar-breadcrumbs li a[href*="Appraisal"]::before {
+    content: "⭐";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="goal"]::before,
+#navbar-breadcrumbs li a[href*="Goal"]::before {
+    content: "🎯";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="energy-point"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point"]::before {
+    content: "⚡";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Employee Lifecycle specific items */
+#navbar-breadcrumbs li a[href*="employee-onboarding"]::before,
+#navbar-breadcrumbs li a[href*="Employee Onboarding"]::before {
+    content: "🚀";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-separation"]::before,
+#navbar-breadcrumbs li a[href*="Employee Separation"]::before {
+    content: "👋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-promotion"]::before,
+#navbar-breadcrumbs li a[href*="Employee Promotion"]::before {
+    content: "📈";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-transfer"]::before,
+#navbar-breadcrumbs li a[href*="Employee Transfer"]::before {
+    content: "🔄";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Shift & Attendance specific items */
+#navbar-breadcrumbs li a[href*="shift-type"]::before,
+#navbar-breadcrumbs li a[href*="Shift Type"]::before {
+    content: "🕒";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="shift-request"]::before,
+#navbar-breadcrumbs li a[href*="Shift Request"]::before {
+    content: "📝";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="attendance-request"]::before,
+#navbar-breadcrumbs li a[href*="Attendance Request"]::before {
+    content: "📅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="employee-checkin"]::before,
+#navbar-breadcrumbs li a[href*="Employee Checkin"]::before {
+    content: "✅";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* Expense Claims specific items */
+#navbar-breadcrumbs li a[href*="expense-claim"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim"]::before {
+    content: "🧾";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="expense-claim-type"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim Type"]::before {
+    content: "📋";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+#navbar-breadcrumbs li a[href*="travel-request"]::before,
+#navbar-breadcrumbs li a[href*="Travel Request"]::before {
+    content: "✈️";
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+/* icons for the submenus end */
+
+
+/* Add these lines to your existing CSS file right after your current breadcrumb icons */
+
+/* Dashboard - catch all variations */
+#navbar-breadcrumbs li a[href*="dashboard"]::before,
+#navbar-breadcrumbs li a[href*="Dashboard"]::before,
+#navbar-breadcrumbs li a[href="/app"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Recruitment - broader matching */
+#navbar-breadcrumbs li a[href*="recruitment"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment"]::before,
+#navbar-breadcrumbs li a[href*="dashboard-view/Recruitment"]::before {
+    content: "🎯" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Lifecycle */
+#navbar-breadcrumbs li a[href*="employee-lifecycle"]::before,
+#navbar-breadcrumbs li a[href*="Employee"]::before,
+#navbar-breadcrumbs li a[href*="grievance"]::before {
+    content: "🔄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Grievance Type specific */
+#navbar-breadcrumbs li a[href*="grievance-type"]::before,
+#navbar-breadcrumbs li a[href*="Grievance"]::before {
+    content: "⚖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== COMPLETE HR MODULE ICONS ==================== */
+/* Comprehensive icon coverage for all HR submenu items */
+
+/* ==================== MAIN HR CATEGORIES ==================== */
+
+/* Dashboard - catch all variations */
+#navbar-breadcrumbs li a[href*="dashboard"]::before,
+#navbar-breadcrumbs li a[href*="Dashboard"]::before,
+#navbar-breadcrumbs li a[href="/app"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* HR Main Module */
+#navbar-breadcrumbs li a[href*="/app/hr"]::before,
+#navbar-breadcrumbs li a[href*="HR"]::before {
+    content: "👥" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== RECRUITMENT ==================== */
+
+/* Recruitment submenu - broader matching */
+#navbar-breadcrumbs li a[href*="recruitment"]::before,
+#navbar-breadcrumbs li a[href*="Recruitment"]::before {
+    content: "🎯" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Staffing Plan */
+#navbar-breadcrumbs li a[href*="staffing-plan"]::before,
+#navbar-breadcrumbs li a[href*="Staffing Plan"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Job Opening */
+#navbar-breadcrumbs li a[href*="job-opening"]::before,
+#navbar-breadcrumbs li a[href*="Job Opening"]::before {
+    content: "💼" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Job Applicant */
+#navbar-breadcrumbs li a[href*="job-applicant"]::before,
+#navbar-breadcrumbs li a[href*="Job Applicant"]::before {
+    content: "👤" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Job Offer */
+#navbar-breadcrumbs li a[href*="job-offer"]::before,
+#navbar-breadcrumbs li a[href*="Job Offer"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Interview */
+#navbar-breadcrumbs li a[href*="interview"]::before,
+#navbar-breadcrumbs li a[href*="Interview"]::before {
+    content: "🎤" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== EMPLOYEE LIFECYCLE ==================== */
+
+/* Employee Lifecycle submenu */
+#navbar-breadcrumbs li a[href*="employee-lifecycle"]::before,
+#navbar-breadcrumbs li a[href*="Employee Lifecycle"]::before {
+    content: "🔄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee */
+#navbar-breadcrumbs li a[href*="employee"]::before,
+#navbar-breadcrumbs li a[href*="Employee"]::before {
+    content: "👤" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employment Type */
+#navbar-breadcrumbs li a[href*="employment-type"]::before,
+#navbar-breadcrumbs li a[href*="Employment Type"]::before {
+    content: "📝" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Branch */
+#navbar-breadcrumbs li a[href*="branch"]::before,
+#navbar-breadcrumbs li a[href*="Branch"]::before {
+    content: "🏢" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Department */
+#navbar-breadcrumbs li a[href*="department"]::before,
+#navbar-breadcrumbs li a[href*="Department"]::before {
+    content: "🏛️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Designation */
+#navbar-breadcrumbs li a[href*="designation"]::before,
+#navbar-breadcrumbs li a[href*="Designation"]::before {
+    content: "🎯" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Grade */
+#navbar-breadcrumbs li a[href*="employee-grade"]::before,
+#navbar-breadcrumbs li a[href*="Employee Grade"]::before {
+    content: "⭐" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Group */
+#navbar-breadcrumbs li a[href*="employee-group"]::before,
+#navbar-breadcrumbs li a[href*="Employee Group"]::before {
+    content: "👥" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Health Insurance */
+#navbar-breadcrumbs li a[href*="employee-health-insurance"]::before,
+#navbar-breadcrumbs li a[href*="Employee Health Insurance"]::before,
+#navbar-breadcrumbs li a[href*="health-insurance"]::before {
+    content: "🏥" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Onboarding */
+#navbar-breadcrumbs li a[href*="employee-onboarding"]::before,
+#navbar-breadcrumbs li a[href*="Employee Onboarding"]::before {
+    content: "🚀" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Separation */
+#navbar-breadcrumbs li a[href*="employee-separation"]::before,
+#navbar-breadcrumbs li a[href*="Employee Separation"]::before {
+    content: "👋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Transfer */
+#navbar-breadcrumbs li a[href*="employee-transfer"]::before,
+#navbar-breadcrumbs li a[href*="Employee Transfer"]::before {
+    content: "🔄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Promotion */
+#navbar-breadcrumbs li a[href*="employee-promotion"]::before,
+#navbar-breadcrumbs li a[href*="Employee Promotion"]::before {
+    content: "📈" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Skill Map */
+#navbar-breadcrumbs li a[href*="employee-skill-map"]::before,
+#navbar-breadcrumbs li a[href*="Employee Skill Map"]::before {
+    content: "🗺️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Education */
+#navbar-breadcrumbs li a[href*="employee-education"]::before,
+#navbar-breadcrumbs li a[href*="Employee Education"]::before {
+    content: "🎓" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee External Work History */
+#navbar-breadcrumbs li a[href*="employee-external-work-history"]::before,
+#navbar-breadcrumbs li a[href*="Employee External Work History"]::before {
+    content: "📜" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Internal Work History */
+#navbar-breadcrumbs li a[href*="employee-internal-work-history"]::before,
+#navbar-breadcrumbs li a[href*="Employee Internal Work History"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Contract */
+#navbar-breadcrumbs li a[href*="contract"]::before,
+#navbar-breadcrumbs li a[href*="Contract"]::before {
+    content: "📄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== EMPLOYEE LIFECYCLE - GRIEVANCE ==================== */
+
+/* Grievance Type */
+#navbar-breadcrumbs li a[href*="grievance-type"]::before,
+#navbar-breadcrumbs li a[href*="Grievance Type"]::before {
+    content: "⚖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Disciplinary Action */
+#navbar-breadcrumbs li a[href*="disciplinary-action"]::before,
+#navbar-breadcrumbs li a[href*="Disciplinary Action"]::before {
+    content: "⚠️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== PERFORMANCE ==================== */
+
+/* Performance submenu */
+#navbar-breadcrumbs li a[href*="performance"]::before,
+#navbar-breadcrumbs li a[href*="Performance"]::before {
+    content: "📈" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Appraisal */
+#navbar-breadcrumbs li a[href*="appraisal"]::before,
+#navbar-breadcrumbs li a[href*="Appraisal"]::before {
+    content: "⭐" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Appraisal Template */
+#navbar-breadcrumbs li a[href*="appraisal-template"]::before,
+#navbar-breadcrumbs li a[href*="Appraisal Template"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Energy Point */
+#navbar-breadcrumbs li a[href*="energy-point"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point"]::before {
+    content: "⚡" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Energy Point Log */
+#navbar-breadcrumbs li a[href*="energy-point-log"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point Log"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Energy Point Rule */
+#navbar-breadcrumbs li a[href*="energy-point-rule"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point Rule"]::before {
+    content: "📏" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Energy Point Settings */
+#navbar-breadcrumbs li a[href*="energy-point-settings"]::before,
+#navbar-breadcrumbs li a[href*="Energy Point Settings"]::before {
+    content: "⚙️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Goal */
+#navbar-breadcrumbs li a[href*="goal"]::before,
+#navbar-breadcrumbs li a[href*="Goal"]::before {
+    content: "🎯" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== SHIFT & ATTENDANCE ==================== */
+
+/* Shift & Attendance submenu */
+#navbar-breadcrumbs li a[href*="shift"]::before,
+#navbar-breadcrumbs li a[href*="Shift"]::before,
+#navbar-breadcrumbs li a[href*="attendance"]::before,
+#navbar-breadcrumbs li a[href*="Attendance"]::before {
+    content: "🕐" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Checkin */
+#navbar-breadcrumbs li a[href*="employee-checkin"]::before,
+#navbar-breadcrumbs li a[href*="Employee Checkin"]::before {
+    content: "✅" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Attendance Request */
+#navbar-breadcrumbs li a[href*="attendance-request"]::before,
+#navbar-breadcrumbs li a[href*="Attendance Request"]::before {
+    content: "📅" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Upload Attendance */
+#navbar-breadcrumbs li a[href*="upload-attendance"]::before,
+#navbar-breadcrumbs li a[href*="Upload Attendance"]::before {
+    content: "📤" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Shift Type */
+#navbar-breadcrumbs li a[href*="shift-type"]::before,
+#navbar-breadcrumbs li a[href*="Shift Type"]::before {
+    content: "🕒" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Shift Request */
+#navbar-breadcrumbs li a[href*="shift-request"]::before,
+#navbar-breadcrumbs li a[href*="Shift Request"]::before {
+    content: "📝" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Shift Assignment */
+#navbar-breadcrumbs li a[href*="shift-assignment"]::before,
+#navbar-breadcrumbs li a[href*="Shift Assignment"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Holiday List */
+#navbar-breadcrumbs li a[href*="holiday-list"]::before,
+#navbar-breadcrumbs li a[href*="Holiday List"]::before {
+    content: "🗓️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== LEAVES ==================== */
+
+/* Leaves submenu */
+#navbar-breadcrumbs li a[href*="leave"]::before,
+#navbar-breadcrumbs li a[href*="Leave"]::before {
+    content: "🏖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Application */
+#navbar-breadcrumbs li a[href*="leave-application"]::before,
+#navbar-breadcrumbs li a[href*="Leave Application"]::before {
+    content: "📝" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Allocation */
+#navbar-breadcrumbs li a[href*="leave-allocation"]::before,
+#navbar-breadcrumbs li a[href*="Leave Allocation"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Type */
+#navbar-breadcrumbs li a[href*="leave-type"]::before,
+#navbar-breadcrumbs li a[href*="Leave Type"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Period */
+#navbar-breadcrumbs li a[href*="leave-period"]::before,
+#navbar-breadcrumbs li a[href*="Leave Period"]::before {
+    content: "📅" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Policy */
+#navbar-breadcrumbs li a[href*="leave-policy"]::before,
+#navbar-breadcrumbs li a[href*="Leave Policy"]::before {
+    content: "📄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Policy Assignment */
+#navbar-breadcrumbs li a[href*="leave-policy-assignment"]::before,
+#navbar-breadcrumbs li a[href*="Leave Policy Assignment"]::before {
+    content: "📎" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Control Panel */
+#navbar-breadcrumbs li a[href*="leave-control-panel"]::before,
+#navbar-breadcrumbs li a[href*="Leave Control Panel"]::before {
+    content: "🎛️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Compensatory Leave Request */
+#navbar-breadcrumbs li a[href*="compensatory-leave"]::before,
+#navbar-breadcrumbs li a[href*="Compensatory Leave"]::before {
+    content: "⏰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Encashment */
+#navbar-breadcrumbs li a[href*="leave-encashment"]::before,
+#navbar-breadcrumbs li a[href*="Leave Encashment"]::before {
+    content: "💰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Leave Ledger Entry */
+#navbar-breadcrumbs li a[href*="leave-ledger-entry"]::before,
+#navbar-breadcrumbs li a[href*="Leave Ledger Entry"]::before {
+    content: "📚" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== EXPENSE CLAIMS ==================== */
+
+/* Expense Claims submenu */
+#navbar-breadcrumbs li a[href*="expense"]::before,
+#navbar-breadcrumbs li a[href*="Expense"]::before {
+    content: "💳" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Expense Claim */
+#navbar-breadcrumbs li a[href*="expense-claim"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim"]::before {
+    content: "🧾" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Expense Claim Type */
+#navbar-breadcrumbs li a[href*="expense-claim-type"]::before,
+#navbar-breadcrumbs li a[href*="Expense Claim Type"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Advance */
+#navbar-breadcrumbs li a[href*="employee-advance"]::before,
+#navbar-breadcrumbs li a[href*="Employee Advance"]::before {
+    content: "💵" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Travel Request */
+#navbar-breadcrumbs li a[href*="travel-request"]::before,
+#navbar-breadcrumbs li a[href*="Travel Request"]::before {
+    content: "✈️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== PAYROLL ==================== */
+
+/* Payroll submenu */
+#navbar-breadcrumbs li a[href*="payroll"]::before,
+#navbar-breadcrumbs li a[href*="Payroll"]::before {
+    content: "💵" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Salary Structure */
+#navbar-breadcrumbs li a[href*="salary-structure"]::before,
+#navbar-breadcrumbs li a[href*="Salary Structure"]::before {
+    content: "🏗️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Salary Structure Assignment */
+#navbar-breadcrumbs li a[href*="salary-structure-assignment"]::before,
+#navbar-breadcrumbs li a[href*="Salary Structure Assignment"]::before {
+    content: "📎" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Salary Slip */
+#navbar-breadcrumbs li a[href*="salary-slip"]::before,
+#navbar-breadcrumbs li a[href*="Salary Slip"]::before {
+    content: "📄" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Payroll Entry */
+#navbar-breadcrumbs li a[href*="payroll-entry"]::before,
+#navbar-breadcrumbs li a[href*="Payroll Entry"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Payroll Period */
+#navbar-breadcrumbs li a[href*="payroll-period"]::before,
+#navbar-breadcrumbs li a[href*="Payroll Period"]::before {
+    content: "📅" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Income Tax Slab */
+#navbar-breadcrumbs li a[href*="income-tax-slab"]::before,
+#navbar-breadcrumbs li a[href*="Income Tax Slab"]::before {
+    content: "📈" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Salary Component */
+#navbar-breadcrumbs li a[href*="salary-component"]::before,
+#navbar-breadcrumbs li a[href*="Salary Component"]::before {
+    content: "🧩" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Additional Salary */
+#navbar-breadcrumbs li a[href*="additional-salary"]::before,
+#navbar-breadcrumbs li a[href*="Additional Salary"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Retention Bonus */
+#navbar-breadcrumbs li a[href*="retention-bonus"]::before,
+#navbar-breadcrumbs li a[href*="Retention Bonus"]::before {
+    content: "🎁" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Incentive */
+#navbar-breadcrumbs li a[href*="employee-incentive"]::before,
+#navbar-breadcrumbs li a[href*="Employee Incentive"]::before {
+    content: "🏆" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Benefit Application */
+#navbar-breadcrumbs li a[href*="employee-benefit-application"]::before,
+#navbar-breadcrumbs li a[href*="Employee Benefit Application"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Benefit Claim */
+#navbar-breadcrumbs li a[href*="employee-benefit-claim"]::before,
+#navbar-breadcrumbs li a[href*="Employee Benefit Claim"]::before {
+    content: "💼" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Tax Exemption Declaration */
+#navbar-breadcrumbs li a[href*="employee-tax-exemption-declaration"]::before,
+#navbar-breadcrumbs li a[href*="Employee Tax Exemption Declaration"]::before {
+    content: "📜" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Tax Exemption Proof Submission */
+#navbar-breadcrumbs li a[href*="employee-tax-exemption-proof-submission"]::before,
+#navbar-breadcrumbs li a[href*="Employee Tax Exemption Proof Submission"]::before {
+    content: "📎" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Other Income */
+#navbar-breadcrumbs li a[href*="employee-other-income"]::before,
+#navbar-breadcrumbs li a[href*="Employee Other Income"]::before {
+    content: "💰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Gratuity */
+#navbar-breadcrumbs li a[href*="gratuity"]::before,
+#navbar-breadcrumbs li a[href*="Gratuity"]::before {
+    content: "🎖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Payroll Settings */
+#navbar-breadcrumbs li a[href*="payroll-settings"]::before,
+#navbar-breadcrumbs li a[href*="Payroll Settings"]::before {
+    content: "⚙️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== TRAINING ==================== */
+
+/* Training Program */
+#navbar-breadcrumbs li a[href*="training-program"]::before,
+#navbar-breadcrumbs li a[href*="Training Program"]::before {
+    content: "🎓" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Training Event */
+#navbar-breadcrumbs li a[href*="training-event"]::before,
+#navbar-breadcrumbs li a[href*="Training Event"]::before {
+    content: "📚" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Training Result */
+#navbar-breadcrumbs li a[href*="training-result"]::before,
+#navbar-breadcrumbs li a[href*="Training Result"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Training Feedback */
+#navbar-breadcrumbs li a[href*="training-feedback"]::before,
+#navbar-breadcrumbs li a[href*="Training Feedback"]::before {
+    content: "📝" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== FLEET MANAGEMENT ==================== */
+
+/* Vehicle */
+#navbar-breadcrumbs li a[href*="vehicle"]::before,
+#navbar-breadcrumbs li a[href*="Vehicle"]::before {
+    content: "🚗" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Vehicle Log */
+#navbar-breadcrumbs li a[href*="vehicle-log"]::before,
+#navbar-breadcrumbs li a[href*="Vehicle Log"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== LOANS ==================== */
+
+/* Loan Type */
+#navbar-breadcrumbs li a[href*="loan-type"]::before,
+#navbar-breadcrumbs li a[href*="Loan Type"]::before {
+    content: "🏦" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Loan Application */
+#navbar-breadcrumbs li a[href*="loan-application"]::before,
+#navbar-breadcrumbs li a[href*="Loan Application"]::before {
+    content: "📝" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Loan */
+#navbar-breadcrumbs li a[href*="employee-loan"]::before,
+#navbar-breadcrumbs li a[href*="Employee Loan"]::before {
+    content: "💰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== HR SETTINGS ==================== */
+
+/* HR Settings */
+#navbar-breadcrumbs li a[href*="hr-settings"]::before,
+#navbar-breadcrumbs li a[href*="HR Settings"]::before {
+    content: "⚙️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Daily Work Summary Group */
+#navbar-breadcrumbs li a[href*="daily-work-summary-group"]::before,
+#navbar-breadcrumbs li a[href*="Daily Work Summary Group"]::before {
+    content: "📊" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== OVERRIDE CONFLICTS ==================== */
+/* Ensure these icons take precedence over any existing styles */
+
+/* Remove the generic arrow before content for these specific items */
+#navbar-breadcrumbs li a[href*="dashboard"],
+#navbar-breadcrumbs li a[href*="recruitment"],
+#navbar-breadcrumbs li a[href*="employee"],
+#navbar-breadcrumbs li a[href*="performance"],
+#navbar-breadcrumbs li a[href*="shift"],
+#navbar-breadcrumbs li a[href*="attendance"],
+#navbar-breadcrumbs li a[href*="leave"],
+#navbar-breadcrumbs li a[href*="expense"],
+#navbar-breadcrumbs li a[href*="payroll"] {
+    position: relative !important;
+}
+
+/* Force override any conflicting styles */
+#navbar-breadcrumbs li a::before {
+    display: inline !important;
+    margin-right: 4px !important;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
+}
+
+/* ==================== NEW DOCUMENT ICONS FOR HR ==================== */
+/* Icons for "New" document creation in HR */
+
+/* New Job Opening */
+#navbar-breadcrumbs li a[href*="new-job-opening"]::before,
+#navbar-breadcrumbs li a[href*="New Job Opening"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* New Employee */
+#navbar-breadcrumbs li a[href*="new-employee"]::before,
+#navbar-breadcrumbs li a[href*="New Employee"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* New Leave Application */
+#navbar-breadcrumbs li a[href*="new-leave-application"]::before,
+#navbar-breadcrumbs li a[href*="New Leave Application"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* New Expense Claim */
+#navbar-breadcrumbs li a[href*="new-expense-claim"]::before,
+#navbar-breadcrumbs li a[href*="New Expense Claim"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* New Salary Structure */
+#navbar-breadcrumbs li a[href*="new-salary-structure"]::before,
+#navbar-breadcrumbs li a[href*="New Salary Structure"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* New Appraisal */
+#navbar-breadcrumbs li a[href*="new-appraisal"]::before,
+#navbar-breadcrumbs li a[href*="New Appraisal"]::before {
+    content: "➕" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== ADDITIONAL HR ICONS ==================== */
+/* Adding any missing items from your handwritten list */
+
+/* Employee Boarding Activity */
+#navbar-breadcrumbs li a[href*="employee-boarding-activity"]::before,
+#navbar-breadcrumbs li a[href*="Employee Boarding Activity"]::before {
+    content: "📋" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Boarding */
+#navbar-breadcrumbs li a[href*="employee-boarding"]::before,
+#navbar-breadcrumbs li a[href*="Employee Boarding"]::before {
+    content: "🛬" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Grievance */
+#navbar-breadcrumbs li a[href*="employee-grievance"]::before,
+#navbar-breadcrumbs li a[href*="Employee Grievance"]::before {
+    content: "⚖️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Salary Detail */
+#navbar-breadcrumbs li a[href*="salary-detail"]::before,
+#navbar-breadcrumbs li a[href*="Salary Detail"]::before {
+    content: "💰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Working Hours */
+#navbar-breadcrumbs li a[href*="employee-working-hours"]::before,
+#navbar-breadcrumbs li a[href*="Employee Working Hours"]::before {
+    content: "⏰" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Process Payroll */
+#navbar-breadcrumbs li a[href*="process-payroll"]::before,
+#navbar-breadcrumbs li a[href*="Process Payroll"]::before {
+    content: "⚙️" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Bank Account */
+#navbar-breadcrumbs li a[href*="bank-account"]::before,
+#navbar-breadcrumbs li a[href*="Bank Account"]::before {
+    content: "🏦" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Employee Checkin */
+#navbar-breadcrumbs li a[href*="checkin"]::before,
+#navbar-breadcrumbs li a[href*="Checkin"]::before {
+    content: "✅" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Attendance Tool */
+#navbar-breadcrumbs li a[href*="attendance-tool"]::before,
+#navbar-breadcrumbs li a[href*="Attendance Tool"]::before {
+    content: "🔧" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* Auto Attendance */
+#navbar-breadcrumbs li a[href*="auto-attendance"]::before,
+#navbar-breadcrumbs li a[href*="Auto Attendance"]::before {
+    content: "🤖" !important;
+    font-size: 16px !important;
+    margin-right: 4px !important;
+}
+
+/* ==================== END OF HR ICONS ==================== */
+
+
+
+
+
+
 /* ==================== MAIN CONTENT AREA ==================== */
 /* Dashboard overview and widgets */
 
@@ -325,8 +1746,6 @@ header .form-control:focus {
     transition: all 0.3s ease !important;
 }
 
-/* ////////1 */
-
 /* Widget hover effects */
 .layout-main-section .widget:hover,
 .layout-main-section [data-widget-name]:hover {
@@ -335,6 +1754,16 @@ header .form-control:focus {
 }
 
 /* Widget headers */
+/* .layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.widget-head h4 {
+    color: #1f2937 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    padding-bottom: 15px !important;
+} */
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .widget-head h4 {
@@ -346,6 +1775,7 @@ header .form-control:focus {
     padding-bottom: 5px !important;
     text-decoration:none !important;
 }
+
 
 /* Widget content text */
 .layout-main-section .widget .widget-body,
@@ -363,7 +1793,6 @@ header .form-control:focus {
     text-decoration: none !important;
     font-weight: 500 !important;
     transition: color 0.2s ease !important;
-    
 }
 
 .layout-main-section .widget .widget-body a:hover {
@@ -372,6 +1801,14 @@ header .form-control:focus {
 }
 
 /* Revenue metrics styling */
+/* .layout-main-section .widget .widget-body .number,
+.dashboard-number {
+    color: #3b82f6 !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin: 15px 0 !important;
+    display: block !important;
+} */
 .layout-main-section .widget .widget-body .number,
 .dashboard-number {
     color: #3b82f6 !important;
@@ -380,9 +1817,8 @@ header .form-control:focus {
     margin: 1px 0 !important;
     display: block !important;
     display:!important;
-    width: 200px !important;
 }
-/* //379 */
+
 
 /* Percentage indicators */
 .percentage-indicator,
@@ -769,11 +2205,308 @@ header .form-control:focus {
 /* ==================== END OF STYLING ==================== */
 
 
+/* ==================== PAGE CONTAINER BACKGROUND ==================== */
+/* Add blue gradient background to the main page container */
+
+/* Target the specific page container div */
+#page-Workspaces,
+.content.page-container {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* Alternative broader targeting if the above doesn't work */
+div[data-page-route="workspaces"] {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
+
+/* Ensure the body also has the gradient as fallback */
+body {
+    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    min-height: 100vh !important;
+}
+
+
+/* ==================== NAVBAR GRADIENT FIX ==================== */
+/* Updated CSS to match the blue gradient shown in your image */
+
+/* Main navbar container - primary target */
+.navbar,
+.navbar-expand,
+header.navbar,
+.sticky-top {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+    background-color: #87ceeb !important; /* Fallback */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Navbar container and wrapper */
+.navbar .container,
+.navbar .container-fluid,
+.navbar > div {
+    background: transparent !important;
+}
+
+/* Ensure navbar takes full width */
+.navbar {
+    width: 100% !important;
+    min-height: 60px !important;
+    padding: 0 !important;
+}
+
+/* Target specific ERPNext navbar elements */
+nav[data-original-title],
+.navbar.navbar-light,
+.navbar.navbar-expand-lg {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+}
+
+/* ITChamps logo area */
+.navbar-brand,
+.navbar .navbar-brand {
+    background-color: transparent !important;
+}
+
+/* Navbar text and links */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-text,
+.navbar a {
+    color: #1e3a8a !important; /* Dark blue text for contrast */
+    font-weight: 500 !important;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #1e40af !important;
+}
+
+/* Search bar in navbar */
+.navbar .form-control {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: #1f2937 !important;
+}
+
+.navbar .form-control:focus {
+    background-color: white !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Breadcrumb area styling */
+#navbar-breadcrumbs {
+    background: transparent !important;
+    color: #1e3a8a !important;
+}
+
+#navbar-breadcrumbs a {
+    color: #1e3a8a !important;
+}
+
+#navbar-breadcrumbs a:hover {
+    color: #1e40af !important;
+}
+
+/* Additional fallback selectors for ERPNext */
+.layout-main-section-wrapper > .container,
+.main-section,
+.page-container > .container {
+    background: transparent !important;
+}
+
+/* Force override any conflicting styles */
+body .navbar,
+html .navbar {
+    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+}
+
+/* Mobile responsive navbar */
+@media (max-width: 768px) {
+    .navbar {
+        min-height: 50px !important;
+    }
+   
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5) !important;
+    }
+   
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%281, 30, 138, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+/* ==================== DEBUGGING STYLES ==================== */
+/* Add these temporarily to see what elements are being targeted */
+
+/*
+Uncomment these lines one by one to debug which element needs styling:
+
+* {
+    outline: 1px solid red !important;
+}
+
+.navbar * {
+    outline: 2px solid blue !important;
+}
+
+header * {
+    outline: 2px solid green !important;
+}
+*/
 
 
 
-/* ==================== REMOVE BOTTOM GAP: sidebar fits content but still scrolls if needed ==================== */
-/* Sidebar container smaller */
+/* ==================== REDUCE VERTICAL SPACING BETWEEN FILTER ELEMENTS ==================== */
+/* Target the specific spacing between Tags dropdown and Show Tags button */
+
+/* Reduce margin/padding after Tags dropdown */
+.sidebar-section.filter-section select[data-fieldname="tags"],
+.sidebar-section.filter-section .form-control.tags-filter {
+    margin-bottom: 2px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Reduce spacing before Show Tags button */
+.sidebar-section.filter-section .show-tags,
+.sidebar-section.filter-section .btn.show-tags-btn {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    padding: 2px 6px !important;
+}
+
+/* Target the container holding Tags section */
+.sidebar-section.filter-section .tags-container,
+.sidebar-section.filter-section .filter-tags-section {
+    margin-bottom: 4px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove extra spacing from form groups in filter section */
+.sidebar-section.filter-section .form-group {
+    margin-bottom: 3px !important;
+}
+
+/* Compact spacing for all filter section items */
+.sidebar-section.filter-section > * {
+    margin-bottom: 3px !important;
+}
+
+/* Ensure Save Filter section is closer */
+.sidebar-section.save-filter-section {
+    margin-top: 2px !important;
+    padding-top: 2px !important;
+}
+
+/* Target specific ERPNext filter element classes */
+.filter-section .filter-box,
+.filter-section .filter-field {
+    margin-bottom: 2px !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove any inherited spacing from parent elements */
+.layout-side-section .sidebar-section .form-group,
+.layout-side-section .sidebar-section .control-group {
+    margin: 2px 0 !important;
+}
+
+
+
+
+
+
+
+
+/* search bar */
+
+/* ==================== SEARCH MODAL ICON ALIGNMENT FIX ==================== */
+/* Fix only the search icon and close button positioning based on your HTML structure */
+
+/* Search icon positioning - left side */
+.modal-header.search-header .input-group .search-icon,
+.modal-header.search-header .search-icon svg.icon.icon-sm {
+    position: absolute !important;
+    left: 12px !important;
+    top: 790% !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    color: #6b7280 !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Adjust input padding to accommodate the search icon */
+.modal-header.search-header .form-control.search-input {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+/* Close button positioning - right side */
+.modal-actions .btn.btn-secondary,
+.modal-header.search-header .modal-actions .btn {
+    position: absolute !important;
+    top: 790% !important;
+    right: 12px !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+    background: none !important;
+    border: none !important;
+    padding: 4px !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #6b7280 !important;
+    cursor: pointer !important;
+}
+
+.modal-actions .btn.btn-secondary:hover,
+.modal-header.search-header .modal-actions .btn:hover {
+    background: #f3f4f6 !important;
+    border-radius: 50% !important;
+    color: #374151 !important;
+}
+
+/* Ensure the modal header has relative positioning for absolute elements */
+.modal-header.search-header {
+    position: relative !important;
+}
+
+/* Input group positioning */
+.modal-header.search-header .input-group.text-muted {
+    position: relative !important;
+    flex: 1 !important;
+}
+
+/* Hide any duplicate icons that might interfere */
+.modal-header.search-header .input-group .input-group-text {
+    display: none !important;
+}
+
+/* Ensure proper layering */
+.modal-header.search-header .form-control {
+    position: relative !important;
+    z-index: 1 !important;
+}
+/* /* search bar / */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------ */
+
 .col-lg-2.layout-side-section,
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
@@ -1042,11 +2775,11 @@ header .form-control:focus {
 
   /* size & style */
   min-width: 160px !important;       /* compact popup */
-  max-width: 220px !important;       
+  max-width: 220px !important;      
  max-height: 105px !important;      
 /*     height: 140px !important;  */
 /*   overflow-y: auto !important; */
-    overflow: hidden !important; 
+    overflow: hidden !important;
   background: #ffffff !important;
   border: 1px solid #d1d5db !important;
   border-radius: 8px !important;
@@ -1376,28 +3109,27 @@ header .form-control:focus {
 /* ////X//// */
 
 
-/* make header relative so we can position icons inside */
+/* make the container relative so we can place icons inside */
 .modal-header.search-header {
   position: relative;
 }
 
-/* position icons inside the right corner */
+/* place the icons inside, at the left */
 .modal-header.search-header .modal-actions {
   position: absolute;
   top: 50%;
-  right: 26px;                 /* push inside from right edge */
-  transform: translateY(-50%);
+  left: 8px;                  /* adjust horizontal offset */
+  transform: translateY(50%);
   display: flex;
   align-items: center;
-  gap: 6px;                   /* spacing between minimize & close icons */
+  gap: 6px;
 }
 
-/* each icon styled neatly */
+/* style buttons consistently */
 .modal-header.search-header .modal-actions button {
   width: 20px;
   height: 20px;
   padding: 0;
-  margin: 0;
   border: none;
   background: transparent;
   display: flex;
@@ -1406,18 +3138,10 @@ header .form-control:focus {
   cursor: pointer;
 }
 
-/* svg sizing */
+/* size the svg icons */
 .modal-header.search-header .modal-actions svg {
   width: 14px;
   height: 14px;
 }
 
-
-
-
-
-
-
-
-
-
+/* ---------------------------------------------------------------------------- */
