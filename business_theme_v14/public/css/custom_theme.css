@@ -1376,27 +1376,28 @@ header .form-control:focus {
 /* ////X//// */
 
 
-/* make the container relative so we can place icons inside */
+/* make header relative so we can position icons inside */
 .modal-header.search-header {
   position: relative;
 }
 
-/* place the icons inside, at the left */
+/* position icons inside the right corner */
 .modal-header.search-header .modal-actions {
   position: absolute;
   top: 50%;
-  left: 8px;                  /* adjust horizontal offset */
+  right: 8px;                 /* push inside from right edge */
   transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6px;                   /* spacing between minimize & close icons */
 }
 
-/* style buttons consistently */
+/* each icon styled neatly */
 .modal-header.search-header .modal-actions button {
   width: 20px;
   height: 20px;
   padding: 0;
+  margin: 0;
   border: none;
   background: transparent;
   display: flex;
@@ -1405,7 +1406,7 @@ header .form-control:focus {
   cursor: pointer;
 }
 
-/* size the svg icons */
+/* svg sizing */
 .modal-header.search-header .modal-actions svg {
   width: 14px;
   height: 14px;
