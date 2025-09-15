@@ -762,7 +762,7 @@ header .form-control:focus {
 #navbar-breadcrumbs li a[href*="Recruitment"]::before,
 #navbar-breadcrumbs li a[href*="dashboard-view/Recruitment"]::before {
     content: "🎯" !important;
-    font-size: 16px !important; 
+    font-size: 16px !important;
     margin-right: 4px !important;
 }
 
@@ -1967,20 +1967,20 @@ header .form-control:focus {
         transition: left 0.3s ease !important;
         padding: 80px 15px 20px 15px !important; /* Extra top padding for navbar */
     }
-    
+   
     /* When sidebar is open on mobile */
     .layout-side-section.show,
     .layout-side-section.sidebar-open {
         left: 0 !important;
     }
-    
+   
     /* Main content takes full width on mobile */
     .layout-main-section {
         margin-left: 0 !important;
         width: 100% !important;
         padding: 20px 15px !important;
     }
-    
+   
     /* Add overlay when sidebar is open */
     .layout-side-section.show::before,
     .layout-side-section.sidebar-open::before {
@@ -2001,11 +2001,11 @@ header .form-control:focus {
         padding: 20px !important;
         margin-bottom: 20px !important;
     }
-    
+   
     .layout-main-section h1 {
         font-size: 24px !important;
     }
-    
+   
     /* Sidebar items on tablet */
     .layout-side-section .sidebar-menu li,
     .layout-side-section .standard-sidebar li,
@@ -2022,18 +2022,18 @@ header .form-control:focus {
         width: 120px !important;
         height: 30px !important;
     }
-    
+   
     /* Reduce sidebar width on very small screens */
     .layout-side-section {
         width: 260px !important;
     }
-    
+   
     .layout-side-section.show::before,
     .layout-side-section.sidebar-open::before {
         left: 260px !important;
         width: calc(100vw - 260px) !important;
     }
-    
+   
     /* Smaller sidebar items */
     .layout-side-section .sidebar-menu li,
     .layout-side-section .standard-sidebar li,
@@ -2042,7 +2042,7 @@ header .form-control:focus {
         margin-bottom: 4px !important;
         font-size: 12px !important;
     }
-    
+   
     /* Smaller navigation icons */
     .layout-side-section svg,
     .sidebar-item-icon,
@@ -2051,24 +2051,24 @@ header .form-control:focus {
         height: 16px !important;
         margin-right: 6px !important;
     }
-    
+   
     /* Main content padding */
     .layout-main-section {
         padding: 15px 10px !important;
     }
-    
+   
     /* Widget adjustments */
     .layout-main-section .widget {
         padding: 15px !important;
         margin-bottom: 15px !important;
         border-radius: 8px !important;
     }
-    
+   
     /* Revenue numbers smaller on phone */
     .layout-main-section .widget .widget-body .number {
         font-size: 24px !important;
     }
-    
+   
     /* Widget headers smaller */
     .layout-main-section .widget .widget-head,
     .layout-main-section .widget .widget-title {
@@ -2091,7 +2091,7 @@ header .form-control:focus {
         font-size: 18px !important;
         padding: 5px 8px !important;
     }
-    
+   
     /* Hide desktop sidebar toggle when not needed */
     .layout-side-section .sidebar-toggle {
         display: none !important;
@@ -2326,11 +2326,11 @@ html .navbar {
     .navbar {
         min-height: 50px !important;
     }
-    
+   
     .navbar-toggler {
         border-color: rgba(255, 255, 255, 0.5) !important;
     }
-    
+   
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%281, 30, 138, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     }
@@ -2339,7 +2339,7 @@ html .navbar {
 /* ==================== DEBUGGING STYLES ==================== */
 /* Add these temporarily to see what elements are being targeted */
 
-/* 
+/*
 Uncomment these lines one by one to debug which element needs styling:
 
 * {
@@ -2410,99 +2410,6 @@ header * {
 .layout-side-section .sidebar-section .control-group {
     margin: 2px 0 !important;
 }
-
-
-
-
-
-
-
-
-/* search bar */
-
-/* ==================== SEARCH MODAL ICON ALIGNMENT FIX ==================== */
-/* Fix only the search icon and close button positioning based on your HTML structure */
-
-/* Search icon positioning - left side */
-.modal-header.search-header .input-group .search-icon,
-.modal-header.search-header .search-icon svg.icon.icon-sm {
-    position: absolute !important;
-    left: 12px !important;
-    top: 790% !important;
-    transform: translateY(-50%) !important;
-    z-index: 5 !important;
-    pointer-events: none !important;
-    color: #6b7280 !important;
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* Adjust input padding to accommodate the search icon */
-.modal-header.search-header .form-control.search-input {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-}
-
-/* Close button positioning - right side */
-.modal-actions .btn.btn-secondary,
-.modal-header.search-header .modal-actions .btn {
-    position: absolute !important;
-    top: 790% !important;
-    right: 12px !important;
-    transform: translateY(-50%) !important;
-    z-index: 5 !important;
-    background: none !important;
-    border: none !important;
-    padding: 4px !important;
-    width: 24px !important;
-    height: 24px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #6b7280 !important;
-    cursor: pointer !important;
-}
-
-.modal-actions .btn.btn-secondary:hover,
-.modal-header.search-header .modal-actions .btn:hover {
-    background: #f3f4f6 !important;
-    border-radius: 50% !important;
-    color: #374151 !important;
-}
-
-/* Ensure the modal header has relative positioning for absolute elements */
-.modal-header.search-header {
-    position: relative !important;
-}
-
-/* Input group positioning */
-.modal-header.search-header .input-group.text-muted {
-    position: relative !important;
-    flex: 1 !important;
-}
-
-/* Hide any duplicate icons that might interfere */
-.modal-header.search-header .input-group .input-group-text {
-    display: none !important;
-}
-
-/* Ensure proper layering */
-.modal-header.search-header .form-control {
-    position: relative !important;
-    z-index: 1 !important;
-}
-/* /* search bar / */
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ------------------------------------------------------------------------------------ */
@@ -2827,11 +2734,6 @@ header * {
 
 
 
-
-
-
-
-
 /* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
 /* ===================== FILTER NAME INPUT ===================== */
 .input-with-feedback.form-control.input-xs {
@@ -2977,24 +2879,7 @@ header * {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* big container */
-
-
-
-
-
-
-
 
 
 
@@ -3109,27 +2994,28 @@ header * {
 /* ////X//// */
 
 
-/* make the container relative so we can place icons inside */
+/* make header relative so we can position icons inside */
 .modal-header.search-header {
   position: relative;
 }
 
-/* place the icons inside, at the left */
+/* position icons inside the right corner */
 .modal-header.search-header .modal-actions {
   position: absolute;
   top: 50%;
-  left: 8px;                  /* adjust horizontal offset */
-  transform: translateY(50%);
+  right: 26px;                 /* push inside from right edge */
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6px;                   /* spacing between minimize & close icons */
 }
 
-/* style buttons consistently */
+/* each icon styled neatly */
 .modal-header.search-header .modal-actions button {
   width: 20px;
   height: 20px;
   padding: 0;
+  margin: 0;
   border: none;
   background: transparent;
   display: flex;
@@ -3138,11 +3024,9 @@ header * {
   cursor: pointer;
 }
 
-/* size the svg icons */
+/* svg sizing */
 .modal-header.search-header .modal-actions svg {
   width: 14px;
   height: 14px;
 }
-
 /* ---------------------------------------------------------------------------- */
-
