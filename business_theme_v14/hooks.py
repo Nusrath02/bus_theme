@@ -25,8 +25,7 @@ app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 app_include_js = [
-    "/assets/business_theme_v14/js/sycone_footer.js",
-    "/assets/business_theme_v14/js/select_fix.js"
+    "/assets/business_theme_v14/js/sycone_footer.js"
 ]
 
 # Favicon
