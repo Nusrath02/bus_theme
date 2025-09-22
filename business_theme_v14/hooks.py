@@ -19,9 +19,9 @@ app_license = "MIT"
 # app_include_js = "/assets/business_theme_v14/js/Horizontal.js"
 
 # 
-app_include_css = [
+app_include_css = 
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
-]
+
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
