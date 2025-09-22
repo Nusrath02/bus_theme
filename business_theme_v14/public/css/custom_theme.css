@@ -4167,6 +4167,12 @@ footer.footer,
     color: #ffffff;
     text-decoration: none;
 }
+
+.section-title,
+.section-title span {
+    color: white !important;
+}
+
 /* test color end */
 
 .layout-side-section, .sidebar-section, .desk-sidebar {
