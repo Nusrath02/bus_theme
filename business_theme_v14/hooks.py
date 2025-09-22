@@ -13,10 +13,25 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/assets/business_theme_v14/css/itchamps_dashboard_theme.css"
+# app_include_css = "/assets/business_theme_v14/css/itchamps_dashboard_theme.css"
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 # app_include_js = "/assets/business_theme_v14/js/Horizontal.js"
+
+# 
+app_include_css = [
+    f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
+]
+
+# app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
+app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
+app_include_js = "/assets/business_theme_v14/js/select_fix.js"
+
+
+
+
+
+
 # Favicon
 # Website settings
 website_context = {
