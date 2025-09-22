@@ -1585,12 +1585,11 @@ li.nav-item.dropdown .dropdown-menu,
 /* Dashboard overview and widgets */
 
 .layout-main-section, .main-section, .page-container {
-    /* padding-bottom: 80px !important; */
+    padding-bottom: 80px !important;
 }
-
 @media (max-width: 768px) {
     .layout-main-section, .main-section, .page-container {
-        /* padding-bottom: 100px !important; */
+        padding-bottom: 100px !important;
     }
 }
 
