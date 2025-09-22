@@ -4168,8 +4168,12 @@ footer.footer,
     text-decoration: none;
 }
 
+/* Try targeting the parent elements too */
+button .section-title,
+button .section-title span,
 .section-title,
-.section-title span {
+.section-title span,
+.section-title * {
     color: white !important;
 }
 
