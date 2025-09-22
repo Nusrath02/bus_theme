@@ -13,24 +13,20 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/business_theme_v14/css/itchamps_dashboard_theme.css"
+# app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
+# app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
+
+import time
+
+app_version = str(int(time.time()))  # current timestamp, changes every deploy
+
+app_include_css = f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-# app_include_js = "/assets/business_theme_v14/js/Horizontal.js"
-
-# 
-app_include_css = 
-    f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
-
-
-# app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
-app_include_js = "/assets/business_theme_v14/js/select_fix.js"
-
-
-
-
-
+app_include_js = [
+    "/assets/business_theme_v14/js/sycone_footer.js",
+    "/assets/business_theme_v14/js/select_fix.js"
+]
 
 # Favicon
 # Website settings
@@ -38,21 +34,6 @@ website_context = {
     "favicon": "/assets/business_theme_v14/images/favicon.png",
     # "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
 }
-
-
-
-# abhi
-
-import time
- 
-app_version = str(int(time.time()))  # current timestamp, changes every deploy
- 
-app_include_css = [
-    f"/assets/business_theme_v14/css/itchamps_dashboard_theme.css?v={app_version}"
-]
-
-# abhi
-
 
 # include js, css files in header of web template
 # web_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
@@ -233,11 +214,3 @@ app_include_css = [
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
-
-
-
-# catch clear
-
-after_migrate = [
-    "frappe.utils.clear_cache"
-]
