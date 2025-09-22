@@ -3502,16 +3502,7 @@ header .form-control:focus {
 /* ==================== SIDEBAR STYLING ==================== */
 /* Left sidebar with red gradient and white text modules */
 
-.layout-side-section,
-.sidebar-section,
-.desk-sidebar {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
-    padding: 20px 15px !important;
-    border-radius: 0 !important;
-    margin-left: 0 !important;
-    min-height: 100vh !important;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
-}
+
 
 .layout-side-section .sidebar-menu,
 .layout-side-section .standard-sidebar,
@@ -4209,10 +4200,6 @@ ease-in-out;
     }
 }
 
-
-
-
-
 .col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
     font-size: 14px !important;
     min-height: 0 !important;
@@ -4227,7 +4214,7 @@ ease-in-out;
     padding: 8px !important;
     padding-bottom: 0 !important;
     border-radius: 15px !important;
-/*     background-color: red; */
+    background-color: #dc0e0e;
 }
 
 
