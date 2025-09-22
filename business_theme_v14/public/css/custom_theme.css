@@ -4169,3 +4169,67 @@ footer.footer,
 /* footer */
 
 
+/* sidebar color and text */
+
+/* test color */
+.standard-sidebar .standard-sidebar-item>a, .desk-sidebar .standard-sidebar-item>a, .search-dialog .search-results .search-sidebar .standard-sidebar-item>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+/* test color end */
+
+.layout-side-section, .sidebar-section, .desk-sidebar {
+    /* background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important; */
+    /* padding: 20px 15px !important; */
+    /* border-radius: 0 !important; */
+    /* margin-left: 0 !important; */
+    /* min-height: 100vh !important; */
+    /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important; */
+}
+
+
+
+
+@media (max-width: 991px) {
+    .layout-side-section .overlay-sidebar {
+        margin-top: 0 !important;
+        position: fixed;
+        background: #e21d1d;
+        top: 0;
+        left: 0;
+        transform: translate(-110%);
+        z-index: 9999;
+        box-shadow: var(--shadow-base);
+        height: 100%;
+        width: 40%;
+        display: block !important;
+        transition: transform .2s 
+ease-in-out;
+        padding: var(--padding-md);
+    }
+}
+
+
+
+
+
+.col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
+    font-size: 14px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+    background-color: red;
+}
+
+
+
+/* sidebar color and text end */
