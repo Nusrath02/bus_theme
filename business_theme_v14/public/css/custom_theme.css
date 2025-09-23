@@ -2476,12 +2476,12 @@ header * {
     scrollbar-width: none !important;
 }
 
-.sidebar-section.filter-section .sidebar-label,
+/* .sidebar-section.filter-section .sidebar-label, */
 .sidebar-section.save-filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
     color: #374151 !important;
-    margin-top: 8px !important;
+    margin-top: 28px !important;
     text-transform: none !important;
 }
 
