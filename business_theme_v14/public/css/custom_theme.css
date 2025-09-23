@@ -3498,8 +3498,17 @@ body .tt-menu {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-    color: #1f2937 !important;
 }
+.sidebar-section.save-filter-section .btn:hover,
+.sidebar-section.save-filter-section button:hover,
+.sidebar-section.filter-section .btn:hover,
+.sidebar-section.filter-section button:hover {
+    color: #1f2937 !important;
+    background: transparent !important;
+}
+
+
+
 
 /* save filter text */
 
