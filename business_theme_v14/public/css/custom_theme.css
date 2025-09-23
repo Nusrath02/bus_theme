@@ -2492,7 +2492,7 @@ header * {
 .sidebar-section.save-filter-section select,
 .sidebar-section.filter-section input[type="text"],
 .sidebar-section.save-filter-section input[type="text"] {
-    background: #f3f4f6 !important;
+    background: #eceff5 !important;
     border: none !important;
     border-radius: 6px !important;
     padding: 6px 8px !important;   /* tighter padding */
