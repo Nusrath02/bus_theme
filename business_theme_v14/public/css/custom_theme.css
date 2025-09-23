@@ -2843,8 +2843,8 @@ header * {
 }
 .save-filter-section .sidebar-action .btn,
 .save-filter-section .sidebar-action button {
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
+    /* background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important; */
     border-radius: 6px !important;
     padding: 6px 10px !important;
     font-size: 12px !important;
