@@ -2477,14 +2477,14 @@ header * {
 }
 
 /* Labels */
-.sidebar-section.filter-section .sidebar-label,
+/* .sidebar-section.filter-section .sidebar-label,
 .sidebar-section.save-filter-section .sidebar-label {
     font-size: 12px !important;
     font-weight: 600 !important;
     color: #374151 !important;
     margin-bottom: 6px !important;
     text-transform: none !important;
-}
+} */
 
 /* Inputs & selects */
 .sidebar-section.filter-section .form-control,
