@@ -3498,6 +3498,7 @@ body .tt-menu {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+    color: #1f2937 !important;
 }
 
 /* save filter text */
