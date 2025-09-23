@@ -3994,10 +3994,10 @@ header .form-control:focus {
     opacity: 0.9 !important;
 }
 
-.layout-side-section .sidebar-menu li,
+/* .layout-side-section .sidebar-menu li,
 .layout-side-section .standard-sidebar li,
 .layout-side-section .sidebar-menu li a,
-.layout-side-section .standard-sidebar li a,
+.layout-side-section .standard-sidebar li a, */
 .standard-sidebar-item {
     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -4017,8 +4017,8 @@ header .form-control:focus {
 .layout-side-section .sidebar-menu li a:hover,
 .layout-side-section .standard-sidebar li a:hover,
 .standard-sidebar-item:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
+/*     background: rgba(255, 255, 255, 0.2) !important; */
+/*     border-color: rgba(255, 255, 255, 0.4) !important; */
     transform: translateX(3px) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
