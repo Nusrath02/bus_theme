@@ -3504,7 +3504,7 @@ body .tt-menu {
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
     color: #1f2937 !important;
-    background: transparent !important;
+    background: white !important;
 }
 
 
