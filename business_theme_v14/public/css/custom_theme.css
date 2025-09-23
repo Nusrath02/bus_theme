@@ -2481,7 +2481,7 @@ header * {
     font-size: 12px !important;
     font-weight: 600 !important;
     color: #374151 !important;
-    margin-top: 28px !important;
+    margin-top: 18px !important;
     text-transform: none !important;
 }
 
@@ -3508,12 +3508,9 @@ body .tt-menu {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-
   font-weight: 600 !important;   /* bold */
   font-size: 12px !important;    /* increase size (adjust as needed) */
   color: #111 !important;        /* readable dark color */
-
-/*   margin-top: 8px !important;     */
   padding: 2px 0 !important;     /* small vertical spacing */
   cursor: default !important;    /* make it behave like text */
 }
@@ -3564,13 +3561,7 @@ body .tt-menu {
     display: none !important;
     content: none !important;
 }
-.sidebar-section.save-filter-section .sidebar-label {
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    color: #374151 !important;
-    margin-top: -18px !important;
-    text-transform: none !important;
-}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
