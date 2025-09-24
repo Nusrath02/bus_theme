@@ -1729,20 +1729,7 @@ li.nav-item.dropdown .dropdown-menu,
 /* ==================== FORM STYLING ==================== */
 /* Form inputs and controls */
 
-.form-control {
-    appearance: none;
-    padding: 0 12px;   /* only horizontal padding */
-    line-height: 1.5;
-    color: inherit;    /* inherit text color from parent */
-    background-color: inherit;
-    border: 1px solid #ddd !important;
-}
- 
-  .form-control:focus {
-    background-color: white !important;
-    border-color: #3b82f6 !important;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
-}
+
 
 /* Form labels */
 .control-label,
