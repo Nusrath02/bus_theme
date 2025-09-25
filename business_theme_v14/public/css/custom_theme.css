@@ -2187,7 +2187,7 @@ background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) 
 
 /* Search bar in navbar */
 header .form-control {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid #d1d5db !important;
     color: #f4f4f4 !important;
     z-index: 10 !important;
@@ -2205,7 +2205,7 @@ header .form-control {
 
 /* Search bar in navbar */
 .navbar .form-control {
-    background: linear-gradient(180deg, rgb(219, 59, 68) 0%, rgb(177, 6, 14) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
     color: white !important;
 }
