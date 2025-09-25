@@ -4554,3 +4554,9 @@ ease-in-out;
 
 
 /* sidebar color and text end */
+/* main container text color */
+.widget.onboarding-widget-box .widget-body .onboarding-step-preview h3{
+    color: #ed1d1d !important;
+}
+text color
+/* main container text color end */
