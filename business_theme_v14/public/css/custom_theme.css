@@ -1872,7 +1872,7 @@ li.nav-item.dropdown .dropdown-menu,
         left: 280px !important;
         width: calc(100vw - 280px) !important;
         height: 100vh !important;
-        background: rgba(0, 0, 0, 0.5) !important;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
         z-index: -1 !important;
     }
 }
