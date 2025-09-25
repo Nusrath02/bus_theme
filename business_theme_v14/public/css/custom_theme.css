@@ -4503,23 +4503,13 @@ button .section-title span,
 
 /* test color end */
 
-.layout-side-section, .sidebar-section, .desk-sidebar {
-    /* background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important; */
-    /* padding: 20px 15px !important; */
-    /* border-radius: 0 !important; */
-    /* margin-left: 0 !important; */
-    /* min-height: 100vh !important; */
-    /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important; */
-}
-
-
 
 
 @media (max-width: 991px) {
     .layout-side-section .overlay-sidebar {
         margin-top: 0 !important;
         position: fixed;
-        background: #e21d1d;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
         top: 0;
         left: 0;
         transform: translate(-110%);
@@ -4579,3 +4569,91 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
 }
 
 /* HR SETTINGS END */
+
+
+/* ==================== SIDEBAR BACKGROUND GRADIENT UPDATE ==================== */
+
+/* Main sidebar container - apply the navy blue gradient */
+.layout-side-section, 
+.sidebar-section, 
+.desk-sidebar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    padding: 20px 15px !important;
+    border-radius: 0 !important;
+    margin-left: 0 !important;
+    min-height: 100vh !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Overlay sidebar - also apply gradient */
+.col-lg-2.layout-side-section, 
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, 
+.list-sidebar.overlay-sidebar {
+    font-size: 14px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+}
+
+/* ==================== SIDEBAR ITEMS STYLING ==================== */
+
+/* Sidebar menu items - set background to #2a5298 */
+.standard-sidebar-item {
+    background: #2a5298 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    margin-bottom: 4px !important;
+    padding: 8px 12px !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Compact sidebar items */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .sidebar-item,
+.list-sidebar .module-sidebar-item {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+    margin: 1px 0 !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    background: #2a5298 !important;
+    color: white !important;
+}
+
+/* ==================== HOVER EFFECTS ==================== */
+
+/* Main sidebar item hover */
+.layout-side-section .sidebar-menu li:hover,
+.layout-side-section .standard-sidebar li:hover,
+.layout-side-section .sidebar-menu li a:hover,
+.layout-side-section .standard-sidebar li a:hover,
+.standard-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(3px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Compact sidebar item hover */
+.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
+.list-sidebar.overlay-sidebar .sidebar-item:hover,
+.list-sidebar .module-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+    transform: scale(1.02);
+    border-radius: 10px !important;
+}
