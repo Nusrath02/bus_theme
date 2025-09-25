@@ -4560,3 +4560,21 @@ ease-in-out;
 }
 text color
 /* main container text color end */
+
+
+/* HR SETTINGS */
+.btn.btn-primary, div#driver-popover-item .driver-popover-footer button.btn-primary, div#driver-popover-item .driver-popover-footer button.driver-next-btn {
+    linear-gradient(rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    color
+Sets the color of an element's text
+
+Widely available across major browsers (Baseline since January 2018)
+Learn more
+
+Don't show
+: var(--neutral);
+    white-space: nowrap;
+    --icon-stroke: currentColor;
+    --icon-fill-bg: #000000;
+}
+/* HR SETTINGS END */
