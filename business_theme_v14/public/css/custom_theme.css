@@ -4570,4 +4570,12 @@ text color
     --icon-stroke: currentColor;
     --icon-fill-bg: var(--btn-primary);
 }
+
+/* on hover */
+.btn.btn-primary:hover, 
+div#driver-popover-item .driver-popover-footer button.btn-primary:hover, 
+div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
+    background-color: rgb(213, 191, 131) !important;
+}
+
 /* HR SETTINGS END */
