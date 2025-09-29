@@ -4697,15 +4697,9 @@ a {
 }
 
 .form-sidebar .form-sidebar-stats li:first-child .form-follow {
-    text-transform: uppercase;
     color: #ffffff;
 }
 
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #ffffff;
-}
 
 use.like-icon {
     stroke: #ffffff;
