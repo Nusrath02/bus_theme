@@ -4685,3 +4685,21 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
     transform: scale(1.02);
     border-radius: 10px !important;
 }
+
+
+
+
+/* Stock sidebar text */
+
+a {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.form-sidebar .form-sidebar-stats li:first-child .form-follow {
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+
+/*  Stock sidebar text end */
