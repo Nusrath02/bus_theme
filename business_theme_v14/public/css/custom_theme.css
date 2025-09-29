@@ -3245,7 +3245,7 @@ color: #e14040 !important;
 /* === Make "Edit Filters" look exactly like other fields === */
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
-    background: #f8f9fa !important;   /* same background as other fields */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;   /* same background as other fields */
     border: 1px solid #ddd !important; /* same border as selects */
     border-radius: 4px !important;
     padding: 6px 10px !important;     /* same padding as selects */
@@ -3390,7 +3390,7 @@ body .tt-menu {
 /* === Make "Edit Filters" look exactly like other fields === */
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
-    background: #f8f9fa !important;   /* same background as other fields */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important !important;   /* same background as other fields */
     border: none !important; /* same border as selects */
     border-radius: 6px !important;
     padding: 2px 5px !important;     /* same padding as selects */
