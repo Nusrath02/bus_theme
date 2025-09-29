@@ -3187,7 +3187,7 @@ span.link-content.ellipsis {
 /* dta */
  
 .text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
-    color: #e14040 !important;
+    color: #21417b !important;
 }
 /* dta */
  
@@ -3197,7 +3197,7 @@ span.link-content.ellipsis {
     width: 100%;
     background-color: var(--btn-default-bg);
     text-decoration: none;
-    color: #e14040 !important;
+    color: #21417b !important;
 }
  
 /* viewlist */
@@ -4403,7 +4403,7 @@ footer.footer,
 
 /* Copyright text */
 .sycone-copyright {
-    color: #8b6914;
+    color: #21417b;
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
@@ -4414,7 +4414,7 @@ footer.footer,
 }
 
 .sycone-copyright a {
-    color: #8b6914;
+    color: #21417b;
     text-decoration: none;
     font-weight: 500;
 }
