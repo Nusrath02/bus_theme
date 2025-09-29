@@ -2514,22 +2514,6 @@ header * {
     margin-bottom: 8px !important;
 }
 
-/*  */
-
-.sidebar-section.save-filter-section .form-control,
-section.save-filter-section input[type="text"] {
-    background: #f2f2f2 !important;
-    border: 1px solid white important;
-    border-radius: 6px !important;
-    padding: 6px 8px !important;
-    font-size: 12px !important;
-    color: #111827 !important;
-    margin-bottom: 8px !important;
-}
-
-/*  */
-
-
 /* Focus */
 .sidebar-section.filter-section .form-control:focus,
 .sidebar-section.save-filter-section .form-control:focus {
