@@ -2100,7 +2100,7 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Override any conflicting page container backgrounds */
 #page-Workspaces .layout-main-section,
 .content.page-container .layout-main-section {
-    background: #d5bf83 !important;
+    background: #fff  !important;
 }
 
 /* ----------------------------------------------------------------- */
@@ -2109,7 +2109,7 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Target the specific page container div */
 #page-Workspaces,
 .content.page-container {
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 25%, #ffffff 50%, #ffffff 75%, #ffffff 100%) !important;
+    background: #fff  !important;
     min-height: 100vh !important;
 }
 
@@ -3170,7 +3170,7 @@ span.link-content.ellipsis {
  
 /* header red color */
 .ce-block.col-xs-12 .ce-header {
-    color: #c7290f !important;   /* deep red */
+    color: #21417b !important;   /* deep red */
     font-weight: bold;
 }
  
