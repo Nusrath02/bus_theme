@@ -4722,12 +4722,5 @@ use.like-icon {
 
 /*  Stock sidebar text end */
 
-.page-head {
-    z-index: 6;
-    /* position: sticky; */
-    top: var(--navbar-height);
-    background: var(--bg-color);
-    margin-bottom: 5px;
-    transition: .5s top;
-}
+
 
