@@ -4658,7 +4658,7 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
     margin: 1px 0 !important;
     line-height: 1 !important;
     border-radius: 4px !important;
-    background: #2a5298 !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     color: white !important;
 }
 
