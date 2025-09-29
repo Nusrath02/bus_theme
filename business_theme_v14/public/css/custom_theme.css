@@ -3534,7 +3534,7 @@ body .tt-menu {
   box-shadow: none !important;
   font-weight: 600 !important;   /* bold */
   font-size: 12px !important;    /* increase size (adjust as needed) */
-  color: #111 !important;        /* readable dark color */
+  color: #fff !important;        /* readable dark color */
   padding: 2px 0 !important;     /* small vertical spacing */
   cursor: default !important;    /* make it behave like text */
 }
