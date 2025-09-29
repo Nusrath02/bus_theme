@@ -3158,7 +3158,8 @@ color: #a67c28 !important;
 .layout-main-section .widget .widget-body a,
 .layout-main-section .widget .widget-body span,
 .layout-main-section .widget .widget-body p {
-    color: #a67c28 !important;
+    color: #21417b !important;
+    
 }
 span.link-content.ellipsis {
       color: #a67c28 !important;
@@ -3176,7 +3177,7 @@ span.link-content.ellipsis {
  
 .ce-block.col-xs-12 .ce-header,
 .ce-block.col-xs-12 .ce-header span {
-    color: #ff0000 !important;
+    color: #21417b !important;
 }
 /* o open */
 .indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
