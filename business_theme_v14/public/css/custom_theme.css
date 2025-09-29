@@ -1676,7 +1676,7 @@ li.nav-item.dropdown .dropdown-menu,
 .layout-main-section .widget p,
 .layout-main-section .widget span {
 /*     color: #4b5563 !important; */
-    color:#ff7f7f !important;
+    color:#21417b !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
 }
@@ -2426,6 +2426,34 @@ header * {
     color: #fff !important;
     transform: scale(1.02);
     border-radius: 10px !important;
+}
+
+.list-sidebar.overlay-sidebar .standard-sidebar-item, .list-sidebar.overlay-sidebar .sidebar-item, .list-sidebar .module-sidebar-item {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+    margin: 1px 0 !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    color: white !important;
+}
+
+
+.col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
+    font-size: 14px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+    background: #22437e !important;
 }
 
 /* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
