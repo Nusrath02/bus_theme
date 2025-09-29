@@ -4705,14 +4705,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #ffffff;
-    font-weight: var(--weight-regular);
-    letter-spacing: .02em;
-    background-color: var(--bg-color);
 }
 
 use.like-icon {
-    --icon-stroke: transparent;
-    cursor: pointer;
     stroke: #ffffff;
 }
 
