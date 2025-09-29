@@ -4574,7 +4574,7 @@ ease-in-out;
 /* sidebar color and text end */
 /* main container text color */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h3{
-    color: #21417b !important;
+    color: #2a5298 !important;
 }
 text color
 /* main container text color end */
@@ -4721,3 +4721,13 @@ use.like-icon {
 }
 
 /*  Stock sidebar text end */
+
+.page-head {
+    z-index: 6;
+    /* position: sticky; */
+    top: var(--navbar-height);
+    background: var(--bg-color);
+    margin-bottom: 5px;
+    transition: .5s top;
+}
+
