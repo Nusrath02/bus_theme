@@ -3246,7 +3246,7 @@ color: #e14040 !important;
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;   /* same background as other fields */
-    border: 1px solid #ddd !important; /* same border as selects */
+    border: 1px solid #e0e3e8 !important; /* same border as selects */
     border-radius: 4px !important;
     padding: 6px 10px !important;     /* same padding as selects */
     margin: 5px 0 !important;
@@ -3290,7 +3290,7 @@ color: #e14040 !important;
 .sidebar-section.filter-section .list-tags select:hover,
 .sidebar-section.filter-section .list-tags input:hover {
     background: #f8f9fa !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #e0e3e8 !important;
     box-shadow: none !important;
     color: #000 !important;
 }
@@ -3391,7 +3391,7 @@ body .tt-menu {
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important !important;   /* same background as other fields */
-    border: none !important; /* same border as selects */
+    border: 1px solid #e0e3e8 !important; /* same border as selects */
     border-radius: 6px !important;
     padding: 2px 5px !important;     /* same padding as selects */
     margin: 5px 0 !important;
