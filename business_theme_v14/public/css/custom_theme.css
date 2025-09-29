@@ -3181,7 +3181,7 @@ span.link-content.ellipsis {
 }
 /* o open */
 .indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
-    color: #ff7f7f !important;
+    color: #21417b !important;
 }
 /* o open */
 /* dta */
@@ -3205,13 +3205,13 @@ span.link-content.ellipsis {
 /* side small line */
  
 .widget.onboarding-widget-box .widget-head .widget-subtitle {
-    color: #a67c28 !important
+    color: #21417b !important
 }
  
 /* synk */
  
 .widget.dashboard-widget-box .widget-subtitle.widget.dashboard-widget-box .widget-subtitle{
-color: #e14040 !important;
+color: #21417b !important;
 }
 /* chart of home h1 */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h1{
