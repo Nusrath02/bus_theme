@@ -2533,7 +2533,7 @@ header * {
     padding: 5px 8px !important;   /* smaller */
     font-size: 12px !important;    /* smaller */
     font-weight: 500 !important;
-    color: #111827 !important;
+    color: #fff !important;
     margin-bottom: 6px !important;
     width: 100% !important;
 }
