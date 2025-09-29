@@ -1743,7 +1743,7 @@ li.nav-item.dropdown .dropdown-menu,
 /* Primary and secondary buttons */
 
 .btn-primary {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
@@ -4253,7 +4253,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .btn-primary:hover {
-    background: #d5bf83 !important;
+    background: #2a5298 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
 }
