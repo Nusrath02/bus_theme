@@ -4710,23 +4710,7 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
 
 /* Stock sidebar text */
 
-a {
-    color: #000000;
-    cursor: pointer;
-}
 
-.form-sidebar .form-sidebar-stats li:first-child .form-follow {
-    color: #ffffff;
-}
-
-
-use.like-icon {
-    stroke: #ffffff;
-}
-
-.text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
-    color: #ffffff !important;
-}
 
 /*  Stock sidebar text end */
 
