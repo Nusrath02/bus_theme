@@ -3586,6 +3586,19 @@ body .tt-menu {
     content: none !important;
 }
 
+/* 3) Target your exact anchor class too (extra specificity) */
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item,
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item:hover,
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+    cursor:pointer !important;
+    border:none !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
