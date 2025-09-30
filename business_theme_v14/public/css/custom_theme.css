@@ -3599,6 +3599,13 @@ body .tt-menu {
     border:none !important;
 }
 
+/* Remove hover background for the input area */
+.sidebar-section.save-filter-section li.input-area:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
