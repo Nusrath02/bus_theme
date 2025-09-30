@@ -3600,10 +3600,9 @@ body .tt-menu {
 }
 
 /* Remove hover background for the input area */
-.sidebar-section.save-filter-section li.input-area:hover {
+.sidebar-section.save-filter-section li.input-area input:hover {
     background: transparent !important;
     box-shadow: none !important;
-    border: none !important;
 }
 
 /* -----------------------------Abhi ended----------------------------------------------- */
