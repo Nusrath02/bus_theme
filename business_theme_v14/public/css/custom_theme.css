@@ -4566,7 +4566,7 @@ ease-in-out;
     }
 }
 
-/* .col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
+.col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
     font-size: 14px !important;
     min-height: 0 !important;
     height: auto !important;
@@ -4581,9 +4581,7 @@ ease-in-out;
     padding-bottom: 0 !important;
     border-radius: 15px !important;
     background-color: #dc0e0e;
-} */
-
-
+}
 
 /* sidebar color and text end */
 /* main container text color */
