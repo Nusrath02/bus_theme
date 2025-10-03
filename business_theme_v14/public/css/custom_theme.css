@@ -3517,9 +3517,8 @@ body .tt-menu {
 .sidebar-section.save-filter-section button:hover,
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
-   background: #2a5298 !important;
-    color: #fff !important;
-    border-color: #2a5298 !important;
+    color: #1f2937 !important;
+    background: white !important;
 }
 
 
@@ -3600,6 +3599,11 @@ body .tt-menu {
     border:none !important;
 }
 
+/* Remove hover background for the input area */
+.sidebar-section.save-filter-section li.input-area input:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
@@ -4584,6 +4588,8 @@ ease-in-out;
     background-color: #dc0e0e;
 }
 
+
+
 /* sidebar color and text end */
 /* main container text color */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h3{
@@ -4704,9 +4710,23 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
 
 /* Stock sidebar text */
 
+a {
+    color: #000000;
+    cursor: pointer;
+}
 
+.form-sidebar .form-sidebar-stats li:first-child .form-follow {
+    color: #ffffff;
+}
+
+
+use.like-icon {
+    stroke: #ffffff;
+}
+
+.text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #ffffff !important;
+}
 
 /*  Stock sidebar text end */
-
-
 
