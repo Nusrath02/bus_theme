@@ -20,7 +20,7 @@ setup(
 
 import frappe
 
-NAVBAR_ITEM_LABEL = "Show Time"
+NAVBAR_ITEM_LABEL = "Show Time" 
 NAVBAR_EXTND_ITEMS = [
     {
         "item_label": NAVBAR_ITEM_LABEL,
