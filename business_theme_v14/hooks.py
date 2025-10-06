@@ -1,4 +1,5 @@
 from . import __version__ as app_version
+import time
 
 app_name = "business_theme_v14"
 app_title = "Business Theme V14"
@@ -12,35 +13,18 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
-# include js, css files in header of desk.html
-# app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
-# app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
-
-
-
-
-
-# Simple version without dynamic versioning
-app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
-
-# app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-app_include_js = [
-    "/assets/business_theme_v14/js/sycone_footer.js"
-    "/assets/business_theme_v14/js/desk_navbar_extended.js"
-]
-
-
-import time
- 
+# Dynamic versioning for cache busting
 app_version = str(int(time.time()))  # current timestamp, changes every deploy
- 
+
+# include js, css files in header of desk.html
 app_include_css = [
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
 ]
 
-
-
-
+app_include_js = [
+    "/assets/business_theme_v14/js/sycone_footer.js",  # Added missing comma
+    "/assets/business_theme_v14/js/desk_navbar_extended.js"
+]
 
 # Favicon
 # Website settings
@@ -48,6 +32,16 @@ website_context = {
     "favicon": "/assets/business_theme_v14/images/favicon.png",
     # "splash_image": "/assets/business_theme_v14/images/itchamps_logo.png"
 }
+
+# Installation
+# ------------
+
+after_install = "business_theme_v14.setup.after_install"
+
+# Uninstallation
+# ------------
+
+after_uninstall = "business_theme_v14.setup.after_uninstall"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
@@ -94,18 +88,6 @@ website_context = {
 # 	"methods": "business_theme_v14.utils.jinja_methods",
 # 	"filters": "business_theme_v14.utils.jinja_filters"
 # }
-
-# Installation
-# ------------
-
-# before_install = "business_theme_v14.install.before_install"
-# after_install = "business_theme_v14.install.after_install"
-
-# Uninstallation
-# ------------
-
-# before_uninstall = "business_theme_v14.uninstall.before_uninstall"
-# after_uninstall = "business_theme_v14.uninstall.after_uninstall"
 
 # Desk Notifications
 # ------------------
