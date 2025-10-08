@@ -19,6 +19,7 @@ app_version = str(int(time.time()))  # current timestamp, changes every deploy
 # include js, css files in header of desk.html
 app_include_css = [
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
+    f"/assets/business_theme_v14/css/navbar_extended.css?v={app_version}"
 ]
 
 app_include_js = [
