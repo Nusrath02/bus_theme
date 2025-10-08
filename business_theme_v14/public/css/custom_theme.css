@@ -3605,6 +3605,54 @@ body .tt-menu {
     box-shadow: none !important;
 }
 
+span.form-sidebar-items{
+
+    color:white !important;
+
+}
+ 
+span.add-assignment-label{
+
+    color:white !important;
+
+}
+
+a.pill-label.ellipsis.explore-link{
+
+    color:white !important;
+
+}
+
+span.share-label{
+
+    color:white !important;
+
+}
+
+span.liked-by.like-action.d-flex.align-items-center.not-liked{
+
+    color:white !important;
+
+}
+ 
+header.level.list-row-head.text-muted{
+
+    color:black !important;
+
+}
+ 
+use.like-icon {
+
+    stroke: white !important;
+
+}
+ 
+span.form-sidebar-items{
+
+    color:white !important;
+
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
