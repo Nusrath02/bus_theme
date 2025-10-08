@@ -3075,6 +3075,7 @@ header * {
     font-size: 10px !important;   /* smaller number */
     padding: 2px 4px !important;  /* reduce spacing */
     margin-left: -6px !important; /* shift left */
+    color: white;
 }
 /* ////X//// */
 
