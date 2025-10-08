@@ -1,0 +1,109 @@
+/* ========================================
+   WIDER AWESOMEBAR STYLES
+   ======================================== */
+
+/* Make the search container wider */
+#navbar-search {
+    max-width: 600px !important;
+    min-width: 400px !important;
+    flex: 1 !important;
+}
+
+/* Adjust the form group */
+#navbar-search .form-group {
+    margin-bottom: 0 !important;
+    flex: 1 !important;
+}
+
+/* Make input wider */
+#navbar-search input.form-control {
+    width: 100% !important;
+    padding-right: 40px !important; /* Space for voice button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #navbar-search {
+        min-width: 250px !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ========================================
+   VOICE SEARCH BUTTON STYLES
+   ======================================== */
+
+.voice-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none !important;
+    background: transparent !important;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.voice-search-btn:hover {
+    color: var(--primary-color, #2490ef) !important;
+}
+
+.voice-search-btn svg {
+    display: block;
+}
+
+/* Listening state */
+.voice-search-btn.listening {
+    color: #ff5858 !important;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ========================================
+   CLOCK STYLES (Enhancement)
+   ======================================== */
+
+#desk-navbar-extended-clock {
+    padding: 8px 16px !important;
+    background: transparent !important;
+    border-bottom: 1px solid var(--border-color, #e8e8e8);
+    cursor: default !important;
+}
+
+#desk-navbar-extended-clock:hover {
+    background: transparent !important;
+}
+
+/* Clock text styling */
+#desk-navbar-extended-clock small {
+    opacity: 0.7;
+    font-size: 0.85em;
+}
+
+/* ========================================
+   GENERAL NAVBAR IMPROVEMENTS
+   ======================================== */
+
+/* Better spacing for navbar */
+.navbar .container {
+    max-width: 100% !important;
+}
+
+/* Improve dropdown menu appearance */
+.dropdown-navbar-user {
+    min-width: 250px;
+}
+
+.dropdown-navbar-user .dropdown-item {
+    padding: 10px 16px;
+}
