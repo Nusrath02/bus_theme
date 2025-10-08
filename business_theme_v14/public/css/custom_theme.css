@@ -3518,8 +3518,9 @@ body .tt-menu {
 .sidebar-section.save-filter-section button:hover,
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
-    color: #1f2937 !important;
-    background: white !important;
+     background: #2a5298 !important;
+    color: #fff !important;
+    border-color: #2a5298 !important;
 }
 
 
