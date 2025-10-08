@@ -3970,8 +3970,8 @@ header .form-control:focus {
 .standard-sidebar-item:hover {
 /*     background: rgba(255, 255, 255, 0.2) !important; */
 /*     border-color: rgba(255, 255, 255, 0.4) !important; */
-    transform: translateX(3px) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    /* transform: translateX(3px) !important; */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important; */
 }
 
 /* Navigation icons */
