@@ -11,6 +11,29 @@
   color: #1e3a8a !important;
 }
 
+.notifications-list .notification-item-tabs .notifications-category.active {
+  color: #1e3a8a;
+  border-bottom: 1px solid #1e3a8a;
+}
+
+.notifications-list .notification-item-tabs .notifications-category {
+  padding: var(--padding-md) 0px;
+  margin-bottom: -1px;
+  margin-right: var(--margin-lg);
+  color: #1e3a8a;
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+}
+
+.notifications-list .notification-list-body .notification-null-state .title {
+  margin-top: var(--margin-lg);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: .015em;
+  color: #1e3a8a;
+}
+
+
 
 /* ITChamps logo styling - FIXED */
 .-brand {
