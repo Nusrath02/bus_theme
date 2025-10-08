@@ -2519,7 +2519,7 @@ header * {
 .sidebar-section.save-filter-section .form-control:focus {
        border: none !important;
     box-shadow: none !important;
-    background: #2a5298 !important;
+    /* background: #2a5298 !important; */
 }
 
 /* Buttons */
