@@ -6,6 +6,11 @@
 .navbar .app-logo {
     display: none !important;
 }
+.navbar .navbar-nav .dropdown-item {
+  padding: 6px 8px !important;
+  color: #1e3a8a !important;
+}
+
 
 /* ITChamps logo styling - FIXED */
 .-brand {
