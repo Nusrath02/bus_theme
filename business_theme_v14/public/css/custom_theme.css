@@ -32,7 +32,13 @@
   letter-spacing: .015em;
   color: #1e3a8a;
 }
-
+.notifications-list .notification-list-body .notification-null-state .subtitle {
+  margin-top: var(--margin-sm);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  letter-spacing: .02em;
+  color: #1e3a8a;
+}
 
 
 /* ITChamps logo styling - FIXED */
