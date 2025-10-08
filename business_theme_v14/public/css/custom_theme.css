@@ -3290,10 +3290,10 @@ color: #2a5298 !important;
 .sidebar-section.filter-section .list-tags a:hover,
 .sidebar-section.filter-section .list-tags select:hover,
 .sidebar-section.filter-section .list-tags input:hover {
-    background: #f8f9fa !important;
+    background: #2a5298 !important;
     border: 1px solid #e0e3e8 !important;
     box-shadow: none !important;
-    color: #000 !important;
+    color: #fff !important;
 }
 /* === Shrink the popup inside Tags === */
 .sidebar-section.filter-section .list-tags .awesomplete ul,
@@ -4780,3 +4780,7 @@ use.like-icon {
 
 /*  Stock sidebar text end */
 
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    min-height: 100vh !important;
+}
