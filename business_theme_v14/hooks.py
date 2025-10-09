@@ -1,7 +1,6 @@
 from . import __version__ as app_version
 import time
 
-
 app_name = "business_theme_v14"
 app_title = "Business Theme V14"
 app_publisher = "Midocean Technologies Pvt Ltd"
