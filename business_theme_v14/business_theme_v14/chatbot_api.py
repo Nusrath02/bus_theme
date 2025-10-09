@@ -9,9 +9,8 @@ def get_response(message):
     Main chatbot endpoint that processes user messages and returns Claude's response
     """
     try:
-        # Get API key from Site Config or Custom Field
-        api_key = frappe.db.get_single_value("Chatbot Settings", "claude_api_key") or \
-                  frappe.conf.get("claude_api_key")
+        # Get API key from Frappe site config
+        api_key = frappe.conf.get("claude_api_key")
         
         if not api_key:
             return {
@@ -87,7 +86,6 @@ def call_claude_api(api_key, message, system_prompt, context=None):
 def get_frappe_context(message):
     """
     Fetches relevant context from Frappe based on the user's message
-    You can customize this to fetch specific data
     """
     context_data = []
     
@@ -104,49 +102,4 @@ def get_frappe_context(message):
         except Exception:
             pass
     
-    # Example: If user asks about items/products
-    if any(keyword in message.lower() for keyword in ["item", "product", "stock", "inventory"]):
-        try:
-            items = frappe.get_all(
-                "Item",
-                fields=["item_code", "item_name", "item_group"],
-                limit=5
-            )
-            if items:
-                context_data.append(f"Recent items: {json.dumps(items, indent=2)}")
-        except Exception:
-            pass
-    
-    # Example: If user asks about customers
-    if any(keyword in message.lower() for keyword in ["customer", "client"]):
-        try:
-            customers = frappe.get_all(
-                "Customer",
-                fields=["name", "customer_name", "customer_group"],
-                limit=5
-            )
-            if customers:
-                context_data.append(f"Recent customers: {json.dumps(customers, indent=2)}")
-        except Exception:
-            pass
-    
     return "\n\n".join(context_data) if context_data else None
-
-
-@frappe.whitelist()
-def save_chat_history(message, response):
-    """
-    Optional: Save chat history for analytics
-    """
-    try:
-        chat_log = frappe.get_doc({
-            "doctype": "Chatbot Log",
-            "user": frappe.session.user,
-            "message": message,
-            "response": response,
-            "timestamp": frappe.utils.now()
-        })
-        chat_log.insert(ignore_permissions=True)
-        frappe.db.commit()
-    except Exception as e:
-        frappe.log_error(f"Failed to save chat history: {str(e)}")
