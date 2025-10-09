@@ -35,13 +35,6 @@
     overflow-y: auto;
     background: #1a1a1a;
   }
-  .chat-box::-webkit-scrollbar {
-    width: 8px;
-  }
-  .chat-box::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 4px;
-  }
   .msg {
     margin-bottom: 16px;
     line-height: 1.6;
@@ -51,9 +44,6 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .user {
-    text-align: right;
-  }
   .user .bubble {
     background: #0d6efd;
     color: white;
@@ -62,9 +52,8 @@
     border-radius: 18px 18px 4px 18px;
     max-width: 80%;
     word-wrap: break-word;
-  }
-  .bot {
-    text-align: left;
+    float: right;
+    clear: both;
   }
   .bot .bubble {
     background: #2a2a2a;
@@ -92,9 +81,6 @@
     border-radius: 24px;
     font-size: 14px;
   }
-  .input-box input:focus {
-    border-color: #0d6efd;
-  }
   .input-box button {
     background: #0d6efd;
     color: white;
@@ -104,19 +90,6 @@
     border-radius: 24px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .input-box button:hover {
-    background: #0b5ed7;
-    transform: scale(1.05);
-  }
-  .input-box button:disabled {
-    background: #555;
-    cursor: not-allowed;
-    transform: none;
-  }
-  .typing-indicator {
-    display: inline-block;
   }
   .typing-indicator span {
     display: inline-block;
@@ -127,8 +100,6 @@
     margin: 0 2px;
     animation: bounce 1.4s infinite ease-in-out;
   }
-  .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-  .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
   @keyframes bounce {
     0%, 80%, 100% { transform: scale(0); }
     40% { transform: scale(1); }
@@ -141,7 +112,7 @@
   </div>
   <div class="chat-box" id="chatBox">
     <div class="msg bot">
-      <div class="bubble">👋 Hi! I'm your Frappe AI assistant. Ask me anything about your HR, inventory, customers, or general ERP questions!</div>
+      <div class="bubble">👋 Hi! I'm your Frappe AI assistant. Ask me anything!</div>
     </div>
   </div>
   <div class="input-box">
@@ -149,7 +120,7 @@
       type="text" 
       id="userInput" 
       placeholder="Type your question..." 
-      onkeypress="if(event.key==='Enter' && !event.shiftKey) { event.preventDefault(); sendMessage(); }"
+      onkeypress="if(event.key==='Enter') sendMessage()"
     />
     <button id="sendBtn" onclick="sendMessage()">Send</button>
   </div>
@@ -168,12 +139,10 @@
     
     if (!userMsg) return;
 
-    // Disable input while processing
     isProcessing = true;
     sendBtn.disabled = true;
     sendBtn.textContent = '...';
 
-    // Display user message
     chatBox.innerHTML += `
       <div class="msg user">
         <div class="bubble">${escapeHtml(userMsg)}</div>
@@ -181,7 +150,6 @@
     `;
     input.value = '';
 
-    // Show typing indicator
     const loadingId = 'loading-' + Date.now();
     chatBox.innerHTML += `
       <div class="msg bot" id="${loadingId}">
@@ -195,42 +163,34 @@
     chatBox.scrollTop = chatBox.scrollHeight;
 
     try {
-      // Call Frappe API
       const response = await frappe.call({
         method: 'business_theme_v14.business_theme_v14.chatbot_api.get_response',
-        args: { message: userMsg },
-        freeze: false
+        args: { message: userMsg }
       });
 
-      // Remove typing indicator
       document.getElementById(loadingId)?.remove();
 
-      // Display bot response
       const botMessage = response.message?.message || "Sorry, I couldn't process your request.";
-      const isError = response.message?.error || false;
       
       chatBox.innerHTML += `
         <div class="msg bot">
-          <div class="bubble" style="${isError ? 'color: #ff6b6b;' : ''}">${escapeHtml(botMessage)}</div>
+          <div class="bubble">${escapeHtml(botMessage)}</div>
         </div>
       `;
 
     } catch (error) {
-      console.error('Chat error:', error);
       document.getElementById(loadingId)?.remove();
       
       chatBox.innerHTML += `
         <div class="msg bot">
-          <div class="bubble" style="color: #ff6b6b;">⚠️ Error: ${escapeHtml(error.message || 'Failed to connect to server')}</div>
+          <div class="bubble" style="color: #ff6b6b;">⚠️ Error: ${escapeHtml(error.message)}</div>
         </div>
       `;
     } finally {
-      // Re-enable input
       isProcessing = false;
       sendBtn.disabled = false;
       sendBtn.textContent = 'Send';
       chatBox.scrollTop = chatBox.scrollHeight;
-      input.focus();
     }
   }
 
@@ -239,10 +199,5 @@
     div.textContent = text;
     return div.innerHTML;
   }
-
-  // Focus input on load
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('userInput').focus();
-  });
 </script>
 {% endblock %}
