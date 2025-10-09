@@ -81,6 +81,19 @@ after_uninstall = "business_theme_v14.setup.after_uninstall"
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
 
+# ============================================
+# CHATBOT CONFIGURATION
+# ============================================
+
+# Whitelist chatbot API methods (optional - decorators handle this)
+# These methods are accessible from the frontend
+whitelist = [
+    "business_theme_v14.business_theme_v14.chatbot_api.get_response",
+    "business_theme_v14.business_theme_v14.chatbot_api.save_chat_history"
+]
+
+# ============================================
+
 # Jinja
 # ----------
 
