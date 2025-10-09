@@ -1,0 +1,107 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Frappe Chatbot{% endblock %}
+
+{% block page_content %}
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
+  .chat-container {
+    background: #1e1e1e;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin: 50px auto;
+  }
+  .chat-box {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  .msg {
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .user {
+    text-align: right;
+    color: #0d6efd;
+  }
+  .bot {
+    text-align: left;
+    color: #00e676;
+  }
+  .input-box {
+    display: flex;
+    padding: 12px;
+    background: #2a2a2a;
+  }
+  .input-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  .input-box button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="chat-container">
+  <div class="chat-box" id="chatBox">
+    <div class="msg bot">👋 Hi! Ask me something about your Frappe data.</div>
+  </div>
+  <div class="input-box">
+    <input type="text" id="userInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  async function sendMessage() {
+    const input = document.getElementById('userInput');
+    const chatBox = document.getElementById('chatBox');
+    const userMsg = input.value.trim();
+    if (!userMsg) return;
+
+    chatBox.innerHTML += `<div class="msg user">${userMsg}</div>`;
+    input.value = '';
+
+    // Show typing indicator
+    chatBox.innerHTML += `<div class="msg bot" id="loading">🤖 Thinking...</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    try {
+      // Use Frappe's frappe.call method for better integration
+      const response = await frappe.call({
+        method: 'chatbot_api.get_response',
+        args: { message: userMsg }
+      });
+
+      document.getElementById('loading').remove();
+      chatBox.innerHTML += `<div class="msg bot">${response.message || "Sorry, I couldn't understand."}</div>`;
+    } catch (error) {
+      document.getElementById('loading').remove();
+      chatBox.innerHTML += `<div class="msg bot">⚠️ Error connecting to server.</div>`;
+    }
+    
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+</script>
+{% endblock %}
