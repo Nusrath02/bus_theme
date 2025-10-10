@@ -1,289 +1,333 @@
-// Wait for page to load
-$(document).ready(function() {
-    console.log('Chatbot navbar script loaded');
-    add_chatbot_to_navbar();
-});
+<style>
+  /* Chatbot Dropdown Container */
+  .chatbot-dropdown {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 400px;
+    max-width: 95vw;
+    height: 600px;
+    max-height: 80vh;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    z-index: 9999;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .chatbot-dropdown.active {
+    display: flex;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .chat-header {
+    background: #0d6efd;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .chat-header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .chat-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+    padding: 0;
+  }
+  
+  .chat-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #1a1a1a;
+  }
+  
+  .msg {
+    margin-bottom: 16px;
+    animation: fadeIn 0.3s ease-in;
+    clear: both;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .user .bubble {
+    background: #0d6efd;
+    color: white;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 16px 16px 4px 16px;
+    max-width: 85%;
+    word-wrap: break-word;
+    float: right;
+    font-size: 14px;
+  }
+  
+  .bot .bubble {
+    background: #2a2a2a;
+    color: #00e676;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 16px 16px 16px 4px;
+    max-width: 85%;
+    word-wrap: break-word;
+    border: 1px solid #333;
+    font-size: 14px;
+  }
+  
+  .input-box {
+    display: flex;
+    padding: 12px 16px;
+    background: #252525;
+    border-top: 1px solid #333;
+    gap: 8px;
+  }
+  
+  .input-box input {
+    flex: 1;
+    border: 1px solid #444;
+    outline: none;
+    background: #1a1a1a;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .input-box input:focus {
+    border-color: #0d6efd;
+  }
+  
+  .input-box button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .input-box button:hover {
+    background: #0b5ed7;
+  }
+  
+  /* Floating chatbot button */
+  .chatbot-float-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #0d6efd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
+    z-index: 9998;
+    font-size: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .chatbot-float-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay for closing dropdown when clicking outside */
+  .chatbot-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+  }
+  
+  .chatbot-overlay.active {
+    display: block;
+  }
+</style>
 
-// Also try on frappe ready
-frappe.ready(function() {
-    console.log('Frappe ready - adding chatbot');
-    add_chatbot_to_navbar();
-});
+<!-- Overlay (clicking outside closes dropdown) -->
+<div class="chatbot-overlay" id="chatbotOverlay" onclick="closeChatbot()"></div>
 
-// Also try on app ready
-$(document).on('app_ready', function() {
-    console.log('App ready - adding chatbot');
-    add_chatbot_to_navbar();
-});
+<!-- Chatbot Dropdown -->
+<div class="chatbot-dropdown" id="chatbotDropdown">
+  <div class="chat-header">
+    <div class="chat-header-title">
+      <span>🤖</span>
+      <span>AI Assistant</span>
+    </div>
+    <button class="chat-close-btn" onclick="closeChatbot()" title="Close">×</button>
+  </div>
+  <div class="chat-box" id="chatBox">
+    <div class="msg bot">
+      <div class="bubble">👋 Hi! I'm your AI assistant. Ask me anything!</div>
+    </div>
+  </div>
+  <div class="input-box">
+    <input type="text" id="userInput" placeholder="Type your question..." onkeypress="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 
-function add_chatbot_to_navbar() {
-    // Wait for navbar to be available
-    setTimeout(function() {
-        // Check if already added
-        if ($('#chatbot-navbar-btn').length > 0) {
-            console.log('Chatbot button already exists');
-            return;
-        }
-        
-        // Find the navbar (where bell icon and user icon are)
-        const navbar = $('.navbar-right .navbar-nav, .navbar .navbar-nav');
-        
-        if (navbar.length === 0) {
-            console.log('Navbar not found, retrying...');
-            setTimeout(add_chatbot_to_navbar, 500);
-            return;
-        }
-        
-        console.log('Adding chatbot button to navbar');
-        
-        // Create chatbot button HTML
-        const chatbot_html = `
-            <li class="nav-item" id="chatbot-navbar-btn">
-                <a class="nav-link" href="javascript:void(0)" 
-                   onclick="openChatbotModal()" 
-                   title="AI Assistant"
-                   style="cursor: pointer;">
-                    <span style="font-size: 22px;">🤖</span>
-                </a>
-            </li>
-        `;
-        
-        // Insert at the beginning of navbar
-        navbar.prepend(chatbot_html);
-        console.log('Chatbot button added successfully');
-        
-    }, 1000);
+<!-- Floating button (optional - for mobile/quick access) -->
+<div class="chatbot-float-btn" onclick="toggleChatbot()" title="Open AI Chatbot">
+  🤖
+</div>
+
+<script>
+// Toggle chatbot dropdown
+function toggleChatbot() {
+  const dropdown = document.getElementById('chatbotDropdown');
+  const overlay = document.getElementById('chatbotOverlay');
+  
+  if (dropdown.classList.contains('active')) {
+    closeChatbot();
+  } else {
+    openChatbot();
+  }
 }
 
-// Global function to open chatbot modal
-window.openChatbotModal = function() {
-    console.log('Opening chatbot modal');
-    
-    // Create modal dialog using Frappe's dialog
-    const dialog = new frappe.ui.Dialog({
-        title: '🤖 AI Assistant',
-        size: 'large',
-        fields: [
-            {
-                fieldtype: 'HTML',
-                fieldname: 'chatbot_container'
-            }
-        ],
-        primary_action_label: 'Close',
-        primary_action: function() {
-            dialog.hide();
-        }
+// Open chatbot dropdown
+function openChatbot() {
+  document.getElementById('chatbotDropdown').classList.add('active');
+  document.getElementById('chatbotOverlay').classList.add('active');
+  
+  // Focus input after opening
+  setTimeout(() => {
+    const input = document.getElementById('userInput');
+    if (input) input.focus();
+  }, 100);
+}
+
+// Close chatbot dropdown
+function closeChatbot() {
+  document.getElementById('chatbotDropdown').classList.remove('active');
+  document.getElementById('chatbotOverlay').classList.remove('active');
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeChatbot();
+  }
+});
+
+// Send message function
+async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const chatBox = document.getElementById('chatBox');
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+
+  chatBox.innerHTML += '<div class="msg user"><div class="bubble">' + escapeHtml(userMsg) + '</div></div>';
+  input.value = '';
+  chatBox.innerHTML += '<div class="msg bot" id="loading"><div class="bubble">🤖 Thinking...</div></div>';
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  try {
+    const response = await frappe.call({
+      method: 'business_theme_v14.business_theme_v14.chatbot_api.get_response',
+      args: { message: userMsg }
     });
     
-    // Add chatbot HTML to modal
-    const chatbot_html = `
-        <style>
-            .chatbot-modal-container {
-                height: 600px;
-                display: flex;
-                flex-direction: column;
-                background: #1a1a1a;
-                border-radius: 8px;
-                overflow: hidden;
-            }
-            .chatbot-header {
-                background: #0d6efd;
-                padding: 16px;
-                text-align: center;
-                font-weight: 600;
-                color: white;
-            }
-            .chatbot-messages {
-                flex: 1;
-                padding: 20px;
-                overflow-y: auto;
-                background: #1a1a1a;
-            }
-            .chat-msg {
-                margin-bottom: 16px;
-                animation: fadeIn 0.3s ease-in;
-                clear: both;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .chat-msg.user .msg-bubble {
-                background: #0d6efd;
-                color: white;
-                display: inline-block;
-                padding: 12px 16px;
-                border-radius: 18px 18px 4px 18px;
-                max-width: 80%;
-                word-wrap: break-word;
-                float: right;
-            }
-            .chat-msg.bot .msg-bubble {
-                background: #2a2a2a;
-                color: #00e676;
-                display: inline-block;
-                padding: 12px 16px;
-                border-radius: 18px 18px 18px 4px;
-                max-width: 80%;
-                word-wrap: break-word;
-                border: 1px solid #333;
-            }
-            .chatbot-input-area {
-                display: flex;
-                padding: 16px;
-                background: #252525;
-                border-top: 1px solid #333;
-                gap: 12px;
-            }
-            .chatbot-input-area input {
-                flex: 1;
-                border: 1px solid #444;
-                outline: none;
-                background: #1a1a1a;
-                color: white;
-                padding: 12px 16px;
-                border-radius: 24px;
-            }
-            .chatbot-input-area button {
-                background: #0d6efd;
-                color: white;
-                border: none;
-                padding: 12px 24px;
-                border-radius: 24px;
-                cursor: pointer;
-                font-weight: 600;
-            }
-            .chatbot-input-area button:hover {
-                background: #0b5ed7;
-            }
-        </style>
-        <div class="chatbot-modal-container">
-            <div class="chatbot-header">AI Assistant</div>
-            <div class="chatbot-messages" id="modalChatBox">
-                <div class="chat-msg bot">
-                    <div class="msg-bubble">👋 Hi! I'm your AI assistant. Ask me anything!</div>
-                </div>
-            </div>
-            <div class="chatbot-input-area">
-                <input type="text" id="modalChatInput" placeholder="Type your question..." />
-                <button onclick="sendModalMessage()">Send</button>
-            </div>
-        </div>
-    `;
+    const loadingEl = document.getElementById('loading');
+    if (loadingEl) loadingEl.remove();
     
-    // Insert HTML into dialog
-    dialog.fields_dict.chatbot_container.$wrapper.html(chatbot_html);
+    const botMsg = response.message?.message || "Sorry, I couldn't process that.";
+    chatBox.innerHTML += '<div class="msg bot"><div class="bubble">' + escapeHtml(botMsg) + '</div></div>';
+  } catch (error) {
+    const loadingEl = document.getElementById('loading');
+    if (loadingEl) loadingEl.remove();
     
-    // Show dialog
-    dialog.show();
-    
-    // Add Enter key support
-    $('#modalChatInput').on('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendModalMessage();
-        }
-    });
-    
-    // Focus input after a brief delay
-    setTimeout(() => $('#modalChatInput').focus(), 100);
+    chatBox.innerHTML += '<div class="msg bot"><div class="bubble" style="color: #ff6b6b;">⚠️ Error: ' + escapeHtml(error.message) + '</div></div>';
+  }
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Function to send message from modal
-window.sendModalMessage = async function() {
-    const input = document.getElementById('modalChatInput');
-    const chatBox = document.getElementById('modalChatBox');
-    
-    if (!input || !chatBox) {
-        console.error('Chat elements not found');
-        return;
-    }
-    
-    const userMsg = input.value.trim();
-    
-    if (!userMsg) return;
-    
-    console.log('Sending message:', userMsg);
-    
-    // Add user message
-    chatBox.innerHTML += `
-        <div class="chat-msg user">
-            <div class="msg-bubble">${escapeHtml(userMsg)}</div>
-        </div>
-    `;
-    input.value = '';
-    
-    // Add loading message
-    chatBox.innerHTML += `
-        <div class="chat-msg bot" id="modalLoading">
-            <div class="msg-bubble">🤖 Thinking...</div>
-        </div>
-    `;
-    chatBox.scrollTop = chatBox.scrollHeight;
-    
-    try {
-        // Call your chatbot API
-        const response = await frappe.call({
-            method: 'business_theme_v14.business_theme_v14.chatbot_api.get_response',
-            args: { message: userMsg }
-        });
-        
-        console.log('Response received:', response);
-        
-        // Remove loading
-        const loadingEl = document.getElementById('modalLoading');
-        if (loadingEl) loadingEl.remove();
-        
-        // Add bot response
-        const botMsg = response.message?.message || "Sorry, I couldn't process that.";
-        chatBox.innerHTML += `
-            <div class="chat-msg bot">
-                <div class="msg-bubble">${escapeHtml(botMsg)}</div>
-            </div>
-        `;
-    } catch (error) {
-        console.error('Error:', error);
-        
-        const loadingEl = document.getElementById('modalLoading');
-        if (loadingEl) loadingEl.remove();
-        
-        chatBox.innerHTML += `
-            <div class="chat-msg bot">
-                <div class="msg-bubble" style="color: #ff6b6b;">⚠️ Error: ${escapeHtml(error.message || 'Something went wrong')}</div>
-            </div>
-        `;
-    }
-    
-    chatBox.scrollTop = chatBox.scrollHeight;
-    input.focus();
-}
-
-// Helper function to escape HTML
 function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
-// Add floating button
-$(document).ready(function() {
-    setTimeout(function() {
-        if ($('#chatbot-float-btn').length > 0) return;
-        
-        const floatingBtn = `
-            <div id="chatbot-float-btn" 
-                 onclick="openChatbotModal()" 
-                 style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; 
-                        background: #0d6efd; border-radius: 50%; display: flex; align-items: center; 
-                        justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4); 
-                        z-index: 9999; font-size: 30px; transition: transform 0.3s ease;"
-                 onmouseover="this.style.transform='scale(1.1)'" 
-                 onmouseout="this.style.transform='scale(1)'"
-                 title="Open AI Assistant">
-                🤖
-            </div>
-        `;
-        
-        $('body').append(floatingBtn);
-        console.log('Floating chatbot button added');
-    }, 1500);
-});
+// Add chatbot icon to navbar
+(function() {
+  function addNavbarIcon() {
+    if (document.getElementById('chatbot-navbar-icon')) return;
+    
+    const navbar = document.querySelector('.navbar .navbar-nav');
+    if (!navbar) {
+      setTimeout(addNavbarIcon, 500);
+      return;
+    }
+    
+    const li = document.createElement('li');
+    li.id = 'chatbot-navbar-icon';
+    li.className = 'nav-item';
+    li.style.marginRight = '12px';
+    
+    const a = document.createElement('a');
+    a.className = 'nav-link';
+    a.href = 'javascript:void(0)';
+    a.title = 'AI Assistant';
+    a.onclick = toggleChatbot;
+    a.innerHTML = '<span style="font-size: 20px;">🤖</span>';
+    
+    li.appendChild(a);
+    navbar.insertBefore(li, navbar.firstChild);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(addNavbarIcon, 1000);
+    });
+  } else {
+    setTimeout(addNavbarIcon, 1000);
+  }
+})();
+</script>
