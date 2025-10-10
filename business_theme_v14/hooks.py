@@ -24,8 +24,8 @@ app_include_css = [
 
 app_include_js = [
     "/assets/business_theme_v14/js/sycone_footer.js",  # Added missing comma
-    "/assets/business_theme_v14/js/chatbot_navbar.js" ,
-    "/assets/business_theme_v14/js/chatbot.html" 
+    "/assets/business_theme_v14/js/chatbot_navbar.js" 
+   
 
 ]
 
