@@ -1,5 +1,11 @@
 from setuptools import setup, find_packages
 
+install_requires=[
+    "anthropic>=0.18.0",
+]
+
+
+
 with open("requirements.txt") as f:
 	install_requires = f.read().strip().split("\n")
 
