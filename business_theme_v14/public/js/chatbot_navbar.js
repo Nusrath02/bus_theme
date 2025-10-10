@@ -219,7 +219,7 @@
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="chat-msg bot">
-                    <div class="msg-bubble">👋 Hi! I'm your AI assistant. Ask me anything! HI Nusrath 🥰</div>
+                    <div class="msg-bubble">👋 Hi! I'm your AI assistant. Ask me anything! Hi Nusrath🥰</div>
                 </div>
             </div>
             <div class="chatbot-input-area">
@@ -248,48 +248,14 @@
     const sendBtn = document.getElementById('chatbotSendBtn');
     const messages = document.getElementById('chatbotMessages');
 
-    // Toggle chatbot
-    window.toggleChatbot = function() {
-        if (dropdown.classList.contains('active')) {
-            closeChatbot();
-        } else {
-            openChatbot();
-        }
-    };
-
-    // Open chatbot
-    window.openChatbot = function() {
-        dropdown.classList.add('active');
-        overlay.classList.add('active');
-        setTimeout(() => input && input.focus(), 100);
-        console.log('Chatbot opened');
-    };
-
-    // Close chatbot
-    window.closeChatbot = function() {
-        dropdown.classList.remove('active');
-        overlay.classList.remove('active');
-        console.log('Chatbot closed');
-    };
-
-    // Event listeners
-    if (closeBtn) closeBtn.onclick = closeChatbot;
-    if (overlay) overlay.onclick = closeChatbot;
-    if (floatBtn) floatBtn.onclick = toggleChatbot;
-    if (sendBtn) sendBtn.onclick = sendMessage;
-    
-    if (input) {
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') sendMessage();
-        });
+    // Helper function to escape HTML
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
-    // Close on Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeChatbot();
-    });
-
-    // Send message function
+    // Send message function - DEFINE THIS FIRST!
     window.sendMessage = async function() {
         const userMsg = input.value.trim();
         if (!userMsg) return;
@@ -343,11 +309,46 @@
         input.focus();
     };
 
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
+    // Toggle chatbot
+    window.toggleChatbot = function() {
+        if (dropdown.classList.contains('active')) {
+            closeChatbot();
+        } else {
+            openChatbot();
+        }
+    };
+
+    // Open chatbot
+    window.openChatbot = function() {
+        dropdown.classList.add('active');
+        overlay.classList.add('active');
+        setTimeout(() => input && input.focus(), 100);
+        console.log('Chatbot opened');
+    };
+
+    // Close chatbot
+    window.closeChatbot = function() {
+        dropdown.classList.remove('active');
+        overlay.classList.remove('active');
+        console.log('Chatbot closed');
+    };
+
+    // Event listeners - NOW AFTER FUNCTION DEFINITIONS!
+    if (closeBtn) closeBtn.onclick = closeChatbot;
+    if (overlay) overlay.onclick = closeChatbot;
+    if (floatBtn) floatBtn.onclick = toggleChatbot;
+    if (sendBtn) sendBtn.onclick = sendMessage;  // Now sendMessage is defined!
+    
+    if (input) {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();  // Now sendMessage is defined!
+        });
     }
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeChatbot();
+    });
 
     // Add navbar icon
     function addNavbarIcon() {
