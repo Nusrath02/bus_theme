@@ -10,7 +10,7 @@ def get_response(message):
     """
     try:
         # Get Claude API key from Site Config or Custom Settings
-        api_key = get_claude_api_key()
+        api_key = claude_api_key()
         
         if not api_key:
             return {
