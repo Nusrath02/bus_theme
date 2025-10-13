@@ -61,12 +61,6 @@
             gap: 8px;
         }
         
-        .chatbot-icon {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-        }
-        
         .chatbot-close-btn {
             background: none;
             border: none;
@@ -183,17 +177,12 @@
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
             z-index: 9998;
+            font-size: 30px;
             transition: transform 0.3s ease;
         }
         
         .chatbot-float-btn:hover {
             transform: scale(1.1);
-        }
-        
-        .chatbot-float-btn img {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
         }
         
         /* Overlay for closing dropdown when clicking outside */
@@ -223,7 +212,7 @@
         <div class="chatbot-dropdown" id="chatbotDropdown">
             <div class="chatbot-header">
                 <div class="chatbot-header-title">
-                    <img src="/assets/business_theme_v14/images/robot_Ai-rem.jpg" alt="AI" class="chatbot-icon">
+                    <span>🤖</span>
                     <span>AI Assistant</span>
                 </div>
                 <button class="chatbot-close-btn" id="chatbotCloseBtn" title="Close">×</button>
@@ -241,7 +230,7 @@
         
         <!-- Floating button -->
         <div class="chatbot-float-btn" id="chatbotFloatBtn" title="Open AI Chatbot">
-            <img src="/assets/business_theme_v14/images/robot_Ai-rem" alt="AI Assistant">
+            🤖
         </div>
     `;
 
@@ -284,7 +273,7 @@
         // Add loading
         messages.innerHTML += `
             <div class="chat-msg bot" id="chatbotLoading">
-                <div class="msg-bubble"><img src="/assets/business_theme_v14/images/robot_Ai-rem.jpg" alt="AI" style="width: 16px; height: 16px; vertical-align: middle;"> Thinking...</div>
+                <div class="msg-bubble">🤖 Thinking...</div>
             </div>
         `;
         messages.scrollTop = messages.scrollHeight;
@@ -381,7 +370,7 @@
         a.href = 'javascript:void(0)';
         a.title = 'AI Assistant';
         a.onclick = toggleChatbot;
-        a.innerHTML = '<img src="/assets/business_theme_v14/images/robot_Ai-rem.jpg" alt="AI" style="width: 24px; height: 24px; vertical-align: middle;">';
+        a.innerHTML = '<span style="font-size: 20px;">🤖</span>';
 
         li.appendChild(a);
         navbar.insertBefore(li, navbar.firstChild);
