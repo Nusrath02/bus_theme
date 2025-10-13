@@ -223,7 +223,7 @@
         <div class="chatbot-dropdown" id="chatbotDropdown">
             <div class="chatbot-header">
                 <div class="chatbot-header-title">
-                    <img src="/files/robot_Ai.png" alt="AI" class="chatbot-icon">
+                    <img src="/files/robot_Ai-r.png" alt="AI" class="chatbot-icon">
                     <span>AI Assistant</span>
                 </div>
                 <button class="chatbot-close-btn" id="chatbotCloseBtn" title="Close">×</button>
