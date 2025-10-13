@@ -45,7 +45,7 @@
         }
         
         .chatbot-header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+            background: #0d6efd;
             padding: 16px;
             display: flex;
             align-items: center;
@@ -59,6 +59,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+        
+        .chatbot-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
         }
         
         .chatbot-close-btn {
@@ -100,7 +106,7 @@
         }
         
         .chat-msg.user .msg-bubble {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+            background: #0d6efd;
             color: white;
             display: inline-block;
             padding: 10px 14px;
@@ -113,7 +119,7 @@
         
         .chat-msg.bot .msg-bubble {
             background: #2a2a2a;
-            color: #ffffff;
+            color: #00e676;
             display: inline-block;
             padding: 10px 14px;
             border-radius: 16px 16px 16px 4px;
@@ -147,7 +153,7 @@
         }
         
         .chatbot-input-area button {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+            background: #0d6efd;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -169,7 +175,7 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+            background: #0d6efd;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -177,12 +183,17 @@
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
             z-index: 9998;
-            font-size: 30px;
             transition: transform 0.3s ease;
         }
         
         .chatbot-float-btn:hover {
             transform: scale(1.1);
+        }
+        
+        .chatbot-float-btn img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
         }
         
         /* Overlay for closing dropdown when clicking outside */
@@ -212,7 +223,7 @@
         <div class="chatbot-dropdown" id="chatbotDropdown">
             <div class="chatbot-header">
                 <div class="chatbot-header-title">
-                    <span>🤖</span>
+                    <img src="/assets/business_theme_v14/images/robot_Ai.jpg" alt="AI" class="chatbot-icon">
                     <span>AI Assistant</span>
                 </div>
                 <button class="chatbot-close-btn" id="chatbotCloseBtn" title="Close">×</button>
@@ -230,7 +241,7 @@
         
         <!-- Floating button -->
         <div class="chatbot-float-btn" id="chatbotFloatBtn" title="Open AI Chatbot">
-            🤖
+            <img src="/assets/business_theme_v14/images/robot_Ai.jpg" alt="AI Assistant">
         </div>
     `;
 
@@ -273,7 +284,7 @@
         // Add loading
         messages.innerHTML += `
             <div class="chat-msg bot" id="chatbotLoading">
-                <div class="msg-bubble">🤖 Thinking...</div>
+                <div class="msg-bubble"><img src="/assets/business_theme_v14/images/robot_Ai.jpg" alt="AI" style="width: 16px; height: 16px; vertical-align: middle;"> Thinking...</div>
             </div>
         `;
         messages.scrollTop = messages.scrollHeight;
@@ -330,6 +341,14 @@
     window.closeChatbot = function() {
         dropdown.classList.remove('active');
         overlay.classList.remove('active');
+        
+        // Clear chat history and reset to initial message
+        messages.innerHTML = `
+            <div class="chat-msg bot">
+                <div class="msg-bubble">👋 Hi! I'm your AI assistant. Ask me anything! Hi Nusrath🥰</div>
+            </div>
+        `;
+        
         console.log('Chatbot closed');
     };
 
@@ -370,7 +389,7 @@
         a.href = 'javascript:void(0)';
         a.title = 'AI Assistant';
         a.onclick = toggleChatbot;
-        a.innerHTML = '<span style="font-size: 20px;">🤖</span>';
+        a.innerHTML = '<img src="/assets/business_theme_v14/images/robot_Ai.jpg" alt="AI" style="width: 24px; height: 24px; vertical-align: middle;">';
 
         li.appendChild(a);
         navbar.insertBefore(li, navbar.firstChild);
