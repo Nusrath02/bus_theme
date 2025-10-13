@@ -219,7 +219,7 @@
             </div>
             <div class="chatbot-messages" id="chatbotMessages">
                 <div class="chat-msg bot">
-                    <div class="msg-bubble">👋 Hi! I'm your AI assistant. Ask me anything! Hi Nusrath🥰</div>
+                    <div class="msg-bubble">👋 Hi! Nusrath🥰 I'm your AI assistant. Ask me anything! </div>
                 </div>
             </div>
             <div class="chatbot-input-area">
