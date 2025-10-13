@@ -113,7 +113,7 @@
         
         .chat-msg.bot .msg-bubble {
             background: #2a2a2a;
-            color: #00e676;
+            color: #ffffff;
             display: inline-block;
             padding: 10px 14px;
             border-radius: 16px 16px 16px 4px;
