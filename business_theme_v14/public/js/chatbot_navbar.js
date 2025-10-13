@@ -169,7 +169,7 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: #0d6efd;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
             border-radius: 50%;
             display: flex;
             align-items: center;
