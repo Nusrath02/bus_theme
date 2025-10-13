@@ -45,7 +45,7 @@
         }
         
         .chatbot-header {
-            background: #0d6efd;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
             padding: 16px;
             display: flex;
             align-items: center;
@@ -147,7 +147,7 @@
         }
         
         .chatbot-input-area button {
-            background: #0d6efd;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
             color: white;
             border: none;
             padding: 10px 20px;
