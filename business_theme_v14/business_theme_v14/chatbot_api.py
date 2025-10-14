@@ -7,7 +7,7 @@ def get_response(message):
     Get AI response from Claude API
     """
     try:
-        # Get API key from Frappe Cloud config
+        # Get API key from Frappe config
         api_key = frappe.conf.get('claude_api_key')
         
         if not api_key:
@@ -20,9 +20,9 @@ def get_response(message):
         # Initialize Claude client
         client = anthropic.Anthropic(api_key=api_key)
         
-        # Call Claude API
+        # Call Claude API with correct model name
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-5-20250929",  # ✅ Fixed model name
             max_tokens=1024,
             messages=[{
                 "role": "user",
