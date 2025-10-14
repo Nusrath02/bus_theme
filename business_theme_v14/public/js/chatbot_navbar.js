@@ -334,7 +334,7 @@ window.closeChatbot = function() {
     // Clear chat messages and restore welcome message
     messages.innerHTML = `
         <div class="chat-msg bot">
-            <div class="msg-bubble">👋 Hi! Nusrath🥰 I'm your AI assistant. Ask me anything!</div>
+            <div class="msg-bubble">👋 Hi! I'm your AI assistant 🤖. Ask me anything! 🗣️</div>
         </div>
     `;
     
