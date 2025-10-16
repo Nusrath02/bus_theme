@@ -99,7 +99,7 @@
         }
         
         .chat-msg {
-            margin-bottom: 20px;
+            margin-bottom: 28px;
             animation: fadeIn 0.3s ease-in;
             clear: both;
         }
