@@ -524,6 +524,14 @@
     window.closeChatbot = function() {
         dropdown.classList.remove('active');
         overlay.classList.remove('active');
+        
+        // Clear chat messages and restore welcome message
+        messages.innerHTML = `
+            <div class="chat-msg bot">
+                <div class="msg-bubble">👋 Hi! I'm your AI assistant. How can I help you today?</div>
+            </div>
+        `;
+        
         console.log('Chatbot closed');
     };
 
