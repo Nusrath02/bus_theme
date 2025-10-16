@@ -520,8 +520,15 @@
         console.log('Chatbot opened');
     };
 
-    // Close chatbot
+    // Close chatbot (just hide, don't clear)
     window.closeChatbot = function() {
+        dropdown.classList.remove('active');
+        overlay.classList.remove('active');
+        console.log('Chatbot closed');
+    };
+
+    // Close and clear chatbot (only for X button)
+    window.closeChatbotAndClear = function() {
         dropdown.classList.remove('active');
         overlay.classList.remove('active');
         
@@ -532,12 +539,12 @@
             </div>
         `;
         
-        console.log('Chatbot closed');
+        console.log('Chatbot closed and cleared');
     };
 
     // Event listeners
-    if (closeBtn) closeBtn.onclick = closeChatbot;
-    if (overlay) overlay.onclick = closeChatbot;
+    if (closeBtn) closeBtn.onclick = closeChatbotAndClear;  // X button clears chat
+    if (overlay) overlay.onclick = closeChatbot;  // Overlay click just hides
     if (floatBtn) floatBtn.onclick = toggleChatbot;
     if (sendBtn) sendBtn.onclick = sendMessage;
     
