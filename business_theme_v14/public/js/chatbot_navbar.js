@@ -45,7 +45,7 @@
         }
         
         .chatbot-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 50%, rgb(79, 172, 254) 100%) !important;
             padding: 20px;
             display: flex;
             align-items: center;
@@ -252,7 +252,7 @@
         }
         
         .chatbot-input-area button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 50%, rgb(79, 172, 254) 100%) !important;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -280,7 +280,7 @@
             right: 30px;
             width: 64px;
             height: 64px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 50%, rgb(79, 172, 254) 100%) !important;
             border-radius: 50%;
             display: flex;
             align-items: center;
