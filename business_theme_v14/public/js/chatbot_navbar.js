@@ -110,7 +110,7 @@
         }
         
         .chat-msg.user .msg-bubble {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 50%, rgb(79, 172, 254) 100%) !important;
             color: white;
             display: inline-block;
             padding: 12px 16px;
