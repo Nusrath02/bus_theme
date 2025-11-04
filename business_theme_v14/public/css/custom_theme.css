@@ -6,7 +6,6 @@
 .navbar .app-logo {
     display: none !important;
 }
-
 .navbar .navbar-nav .dropdown-item {
   padding: 6px 8px !important;
   color: #1e3a8a !important;
@@ -41,11 +40,9 @@
   color: #1e3a8a;
 }
 
-
-
 /* ITChamps logo styling - FIXED */
 .-brand {
-    background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center;
+    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center;
     background-size: contain;
     width: 160px;
     height: 40px;
@@ -56,14 +53,13 @@
 /* /* Alternative selectors in case the above doesn't work */
 .navbar .navbar-brand,
 .navbar-header .navbar-brand {
-/*     background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center !important;
+/*     background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
     background-size: contain !important;
     width: 160px !important;
     height: 40px !important;
     text-indent: -9999px !important;
     overflow: hidden !important; */
 }
-
 /* ------------------- */
 
 /* Navbar background - clean white */
@@ -95,7 +91,7 @@
 }
 
 #navbar-breadcrumbs > li > a {
-    color: #ffffff !important;
+    color: #6b7280 !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
@@ -105,7 +101,7 @@
 /* Add slash separator between breadcrumb items - more specific targeting */
 #navbar-breadcrumbs li:not(:last-child)::after {
     content: " / " !important;
-    color: #fcfdff !important;
+    color: #6b7280 !important;
     margin: 0 4px !important;
     font-weight: normal !important;
     display: inline !important;
@@ -116,12 +112,12 @@
 #navbar-breadcrumbs > li:last-child > a,
 #navbar-breadcrumbs > li:last-child {
     font-weight: bold !important;
-    color: #ffffff !important;
+    color: #374151 !important;
 }
 
 #navbar-breadcrumbs > li > a::before {
     content: "\f105";
-    color: #ffffff;
+    color: #6b7280;
 }
 
 /* Dynamic icons for all ERPNext modules */
@@ -478,8 +474,6 @@ li.nav-item.dropdown .dropdown-menu,
 }
 
 /* notify list */
-
-
 /* ==================== SIDEBAR STYLING ==================== */
 
 /* icons for the submenus */
@@ -1682,17 +1676,40 @@ li.nav-item.dropdown .dropdown-menu,
     transform: translateY(-2px) !important;
 }
 
+/* Widget headers */
+/* .layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.widget-head h4 {
+    color: #1f2937 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    padding-bottom: 15px !important;
+} */
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.widget-head h4 {
+    color: #1f2937 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+/*     margin-bottom: 0px !important; */
+    border-bottom: none !important;
+/*     padding-bottom: 5px !important; */
+    text-decoration:none !important;
+}
 
 
 /* Widget content text */
 .layout-main-section .widget .widget-body,
 .layout-main-section .widget .widget-body a,
-.layout-main-section .widget p{
+.layout-main-section .widget p,
+.layout-main-section .widget span {
+/*     color: #4b5563 !important; */
     color:#21417b !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
 }
-
 
 /* Widget links */
 .layout-main-section .widget .widget-body a {
@@ -1707,11 +1724,21 @@ li.nav-item.dropdown .dropdown-menu,
     text-decoration: underline !important;
 }
 
+/* Revenue metrics styling */
+/* .layout-main-section .widget .widget-body .number,
+.dashboard-number {
+    color: #3b82f6 !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin: 15px 0 !important;
+    display: block !important;
+} */
 .layout-main-section .widget .widget-body .number,
 .dashboard-number {
     color: #3b82f6 !important;
     font-size: 32px !important;
     font-weight: 700 !important;
+/*     margin: 1px 0 !important; */
     display: block !important;
     display:!important;
 }
@@ -2179,7 +2206,7 @@ background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) 
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-text,
 .navbar a {
-    color: #ffffff !important; /* Dark blue text for contrast */
+    color: #1e3a8a !important; /* Dark blue text for contrast */
     font-weight: 500 !important;
 }
 
@@ -2248,7 +2275,7 @@ header .form-control {
 /* Force override any conflicting styles */
 body .navbar,
 html .navbar {
-       background: #052a67 !important;
+       background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) !important;
 }
 
 /* Mobile responsive navbar */
@@ -2522,7 +2549,7 @@ header * {
 .sidebar-section.save-filter-section .form-control:focus {
        border: none !important;
     box-shadow: none !important;
-    background: #2a5298 !important;
+    /* background: #2a5298 !important; */
 }
 
 /* Buttons */
@@ -2615,7 +2642,9 @@ header * {
   padding: 8px 10px !important;
 }
 
+
 /* tags */
+
 
 .dropdown-menu.group-by-dropdown.show,
 .dropdown-menu.list-stats-dropdown.show {
@@ -3173,13 +3202,13 @@ span.link-content.ellipsis {
  
 /* header red color */
 .ce-block.col-xs-12 .ce-header {
-    color: #ce040c !important;   /* deep red */
+    color: #21417b !important;   /* deep red */
     font-weight: bold;
 }
  
 .ce-block.col-xs-12 .ce-header,
 .ce-block.col-xs-12 .ce-header span {
-    color: #ce040c !important;
+    color: #21417b !important;
 }
 /* o open */
 .indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
@@ -3217,7 +3246,7 @@ color: #21417b !important;
 }
 /* chart of home h1 */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h1{
-color: #ce040c !important;
+color: #2a5298 !important;
 }
  
 /* synk */
@@ -3292,9 +3321,9 @@ color: #ce040c !important;
 .sidebar-section.filter-section .list-tags select:hover,
 .sidebar-section.filter-section .list-tags input:hover {
     background: #2a5298 !important;
-    color: #fff !important;
     border: 1px solid #e0e3e8 !important;
     box-shadow: none !important;
+    color: #fff !important;
 }
 /* === Shrink the popup inside Tags === */
 .sidebar-section.filter-section .list-tags .awesomplete ul,
@@ -3397,7 +3426,7 @@ body .tt-menu {
     border-radius: 6px !important;
     padding: 2px 5px !important;     /* same padding as selects */
     margin: 5px 0 !important;
-    color: #fff !important;
+    color: #2a5298 !important;
     width: 100% !important;
     box-shadow: none !important;
     text-align: left !important;
@@ -3519,7 +3548,7 @@ body .tt-menu {
 .sidebar-section.save-filter-section button:hover,
 .sidebar-section.filter-section .btn:hover,
 .sidebar-section.filter-section button:hover {
-    background: #2a5298 !important;
+     background: #2a5298 !important;
     color: #fff !important;
     border-color: #2a5298 !important;
 }
@@ -3659,82 +3688,7 @@ span.form-sidebar-items{
 span.text-muted{
    color:black !important;
 }
- .sidebar-section.save-filter-section .input-area:hover,
-.sidebar-section.save-filter-section .list-link:hover {
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border-color: solid white !important;
-}
- 
-/* === Make background transparent and border white === */
-.sidebar-section.save-filter-section input[type="text"],
-.sidebar-section.save-filter-section input[type="text"]:hover,
-.sidebar-section.save-filter-section input[type="text"]:focus {
-    background: transparent !important;
-    background-image: none !important;
-    border: 1px solid #fff !important; /* white border */
-    color: #fff !important;            /* white text inside input */
-    box-shadow: none !important;
-    outline: none !important;
-}
-.checkbox .label-area {
-    color: black !important;
-}
-.sidebar-section a, .control-value a, .data-row a {
-    color: white !important;
-}
 
-#awesomplete_list_1 {
-  background:linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-  color: #000000 !important; /* black text */
-  border-radius: 6px;
-}
- 
- 
-/* Base list background */
-#awesomplete_list_1 {
-  background-color: #cce5ff !important; /* light blue background */
-  color: #000 !important;
-  border-radius: 6px;
-}
- 
-/* Remove always-on highlight from first item  */
-#awesomplete_list_1 li[aria-selected="true"] {
-  background-color: transparent !important;
-}
- 
-/* Normal text */
-#awesomplete_list_1 li {
-  color: #000 !important;
-  background-color: transparent !important;
-}
- 
-/* Hover highlight */
-#awesomplete_list_1 li:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #000 !important;
-}
-#awesomplete_list_1,
-#awesomplete_list_1 li,
-#awesomplete_list_1 li a,
-#awesomplete_list_1 span {
-  color: white !important; /* force black text */
-}
-
-.widget.links-widget-box .widget-head .widget-label .widget-title {
-       font-size: 14px !important;
-    line-height: 1.6 !important;
-     color: #ce040c !important;
-}
-
-.layout-main-section .widget .widget-title {
-    color: #29599b !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-
-}
- 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
@@ -3825,7 +3779,7 @@ element.style {
 
 /* ITChamps logo styling - FIXED */
 .navbar-brand {
-    background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center;
+    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center;
     background-size: contain;
     width: 160px;
     height: 40px;
@@ -4050,8 +4004,8 @@ header .form-control:focus {
 .standard-sidebar-item:hover {
 /*     background: rgba(255, 255, 255, 0.2) !important; */
 /*     border-color: rgba(255, 255, 255, 0.4) !important; */
-    transform: translateX(3px) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    /* transform: translateX(3px) !important; */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important; */
 }
 
 /* Navigation icons */
@@ -4383,17 +4337,11 @@ document.addEventListener('DOMContentLoaded', function() {
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .widget-head h4 {
-    color: #21417b !important;
-    font-size: 15px !important;
+    color: #1f2937 !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
     border-bottom: none !important;
     text-decoration: none !important;
-}
-
-.layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title,
-.widget-head h4: hover{
-  background: #21417b !important;
 }
 
 /* ==================== BUTTON STYLING ==================== */
@@ -4500,7 +4448,7 @@ footer.footer,
     bottom: 0;
     left: 0;
     right: 0;
-    background: #052a67 !important;
+    background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) !important;
     padding: 15px 0;
     z-index: 2000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
@@ -4519,13 +4467,46 @@ footer.footer,
     gap: 15px;
 }
 
+/* Social media icons */
+.sycone-social-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
+.sycone-social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(139, 105, 20, 0.2);
+    border: 2px solid #8b6914;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
 
+.sycone-social-icon:hover {
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+.sycone-social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #8b6914;
+    transition: fill 0.3s ease;
+}
+
+.sycone-social-icon:hover svg {
+    fill: white;
+}
 
 /* Copyright text */
 .sycone-copyright {
-    color: #ffffff;
+    color: #21417b;
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
@@ -4536,7 +4517,7 @@ footer.footer,
 }
 
 .sycone-copyright a {
-    color: #ffffff;
+    color: #21417b;
     text-decoration: none;
     font-weight: 500;
 }
@@ -4731,7 +4712,7 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
     padding: 20px 15px !important;
     border-radius: 0 !important;
     margin-left: 0 !important;
-    min-height: 10vh !important;
+    min-height: 100vh !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -4833,40 +4814,7 @@ use.like-icon {
 
 /*  Stock sidebar text end */
 
-
-
-.sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action:hover,
-.sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action *:hover {
-    background: #2a5298 !important;
-    color: #fff !important;
-    border: 1px solid #e0e3e8 !important;
-    box-shadow: none !important;
-}
-
-
 body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     min-height: 100vh !important;
 }
-
-
-/* Target only the Shift & Attendance icon */
-.list-sidebar.overlay-sidebar .sidebar-item .icon, 
-.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
-    font-size: 8px !important;
-    margin-right: 3px !important;
-    min-width: 10px !important;
-    fill: white !important;
-}
-
-
-
-/* text color */
-
-/* Navbar dropdown */
-
-.navbar .es-icon.icon-sm {
-  fill: white !important;
-  stroke: white !important;
-}
-/* Navbar dropdown ended */
