@@ -430,6 +430,22 @@
     const sendBtn = document.getElementById('chatbotSendBtn');
     const messages = document.getElementById('chatbotMessages');
 
+    function renderInitialMessages() {
+        if (!messages) return;
+        const introMessages = [
+            "👋 Hi! I'm your AI assistant. How can I help you today?",
+            `**Rule-based (Weak but Simple)**\n\n- Pattern matching: "show my leaves" → fetch leave records\n- Dies on anything complex\n- Brittle, requires constant maintenance\n\n**Specific tasks** the chatbot MUST handle:\n\n1. "Show my pending leave applications"\n2. "How many sick leaves do I have left?"\n3. "What's my reporting manager's email?"\n4. "Create a new leave request for next Monday"\n5. "Find employees in the Marketing department"`
+        ];
+
+        messages.innerHTML = introMessages.map((text) => `
+            <div class="chat-msg bot">
+                <div class="msg-bubble">${parseMarkdown(text)}</div>
+            </div>
+        `).join('');
+    }
+
+    renderInitialMessages();
+
     // Send message function
     window.sendMessage = async function() {
         const userMsg = input.value.trim();
@@ -532,12 +548,8 @@
         dropdown.classList.remove('active');
         overlay.classList.remove('active');
         
-        // Clear chat messages and restore welcome message
-        messages.innerHTML = `
-            <div class="chat-msg bot">
-                <div class="msg-bubble">👋 Hi! I'm your AI assistant. How can I help you today?</div>
-            </div>
-        `;
+        // Clear chat messages and restore welcome & guidance message
+        renderInitialMessages();
         
         console.log('Chatbot closed and cleared');
     };
