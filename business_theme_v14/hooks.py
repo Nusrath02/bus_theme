@@ -1,4 +1,3 @@
-from . import __version__ as app_version
 import time
 
 app_name = "business_theme_v14"
@@ -9,9 +8,6 @@ app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "sagar@midocean.tech"
 app_license = "MIT"
-
-# Includes in <head>
-# ------------------
 
 # Dynamic versioning for cache busting
 app_version = str(int(time.time()))  # current timestamp, changes every deploy
