@@ -24,6 +24,10 @@ app_include_js = [
    
 
 ]
+page_js = {
+    "organizational-chart": "public/js/custom_orgchart_override.js"
+}
+
 
 # Favicon
 # Website settings
