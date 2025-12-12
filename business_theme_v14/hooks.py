@@ -21,13 +21,14 @@ app_include_css = [
 app_include_js = [
     "/assets/business_theme_v14/js/sycone_footer.js",  # Added missing comma
     "/assets/business_theme_v14/js/chatbot_navbar.js" 
-    "/assets/business_theme_v14/js/orgchart_style_override.js",
+    
    
 
 ]
 page_js = {
     "organizational-chart": "public/js/custom_orgchart_override.js"
 }
+page_js = {"organizational-chart": "public/js/custom_orgchart_override.js"}
 
 
 # Favicon
